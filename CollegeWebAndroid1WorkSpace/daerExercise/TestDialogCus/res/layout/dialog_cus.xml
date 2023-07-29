@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="我的对话框"
+        android:background="#0080ff"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#ffffff"/>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/qq2"/>
+	    <TextView 
+	        android:id="@+id/cus_tvmsg"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:gravity="center"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:background="#e0e0e0"
+	    android:gravity="center">
+	    <Button 
+	        android:id="@+id/cus_confirm"
+	        android:layout_width="100dp"
+	        android:layout_height="40dp"
+	        android:background="#ff8000"
+	        android:text="确定"
+	        android:textColor="#ffffff"/>
+	    <Button 
+	         android:id="@+id/cus_cancel"
+	        android:layout_width="100dp"
+	        android:layout_height="40dp"
+	        android:background="#ff8000"
+	        android:text="取消"
+	        android:textColor="#ffffff"
+	        android:layout_marginLeft="20dp"/>
+	</LinearLayout>
+</LinearLayout>

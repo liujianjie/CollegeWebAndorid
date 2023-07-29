@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>星星评分</title>
+<link rel="stylesheet" type="text/css" href="css/css1.css"/>
+</head>
+	<script src="js/jquery.js"></script>
+	<script>
+		function addandremoveStar(e, tag){
+			// tag标识，0是添加，1是删除
+			var showtitle = tag == 0 ? $(e).attr('title') : '';
+			var offset = tag == 0 ? '-28px' : '0';
+			$(e).css('background-position', '0 '+offset+'').prevAll().css('background-position', '0 '+offset+'');
+			$('#div1 span').html(showtitle);
+		}
+		$(function(){
+			$('#div1 li').hover(function(){addandremoveStar(this, 0)}, function(){addandremoveStar(this, 1)})
+			.click(function(){
+				$('#div1 li').css('background-position', '0 0');
+				addandremoveStar(this, 0);
+				$('#div1 li').unbind('mouseleave').unbind('mouseenter');
+			})
+		})
+		
+	</script>
+<body>
+<div id="div1">
+<ul>
+	<li title="一星差评，呵呵呵，差的忍无可忍！！！"></li>
+	<li title="二星差评"></li>
+	<li title="三星差评"></li>
+	<li title="四星中评"></li>
+	<li title="五星中评"></li>
+	<li title="六星中评"></li>
+	<li title="七星好评"></li>
+	<li title="八星好评"></li>
+	<li title="九星好评"></li>
+	<li title="十星满评！！！666,酷毙了！！！"></li>
+	<span></span>
+</ul>
+</div>
+</body>
+</html>

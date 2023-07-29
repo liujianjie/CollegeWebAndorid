@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="getheroimg.php" method="post" enctype="multipart/form-data"  onsubmit="return isfile(this);">
+			<p>请选择你要上传的英雄头像</p>
+			<p><input type="file" name="files" /></p>
+			<p><input type="submit" value="提交"/> </p>
+		</form>
+		<script>
+			function isfile(frm){
+				var f = frm.files.value;
+				if(f == ""){
+					alert("请选择头像文件");
+					return false;
+				}else{
+					return true;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

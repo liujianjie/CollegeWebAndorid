@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css1.css"/>
+  
+  <script type="text/javascript" src="jquery.js" ></script>
+  </head>
+	<script>
+		$(function(){
+			$('.sendButton').click(function(){
+				// 获取文本框的内容
+				var txtval = $('.inputBox').val();
+				if(txtval == ""){
+					return;
+				}
+				// 清空
+				$('.inputBox').val('');
+				// 直接在聊天框中添加一句人说的话
+				var $pdiv = $('<div class="self clearfix" ><a href="#" class="f_r">人</a><p class="f_r">'+txtval+'</p></div>');
+				$('.message').append($pdiv);
+				// 发送请求
+				// 1.创建异步对象
+				var xhr = new XMLHttpRequest;
+				// 2.请求行
+				xhr.open('POST', 'chat.php');					
+				// 3.请求头
+				// 4.请求主题
+				xhr.send(null);
+				// 5.回调函数
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState == 4 && xhr.status == 200){
+						var respnsetext = xhr.responseText;
+						var $rdiv = $('<div class="robot clearfix"><a href="#" class="f_l">机</a><p class="f_l">'+respnsetext+'</p></div>');
+						$('.message').append($rdiv);
+						// 控制滚动条
+						var sh = $('.message').prop('scrollHeight');
+						$('.message').animate({scrollTop:sh}, 600);
+					}
+				}
+			});
+			$(document).keydown(function(e){
+				if(e.keyCode == 13){
+					$('.sendButton').trigger('click');
+				}
+			});
+		});
+		
+	</script>
+<body>
+  <h2>在线机器人</h2>
+  <div class="container">   
+    <div class="message">
+      <div class="self clearfix" >
+    		<a href="#" class="f_r">人</a>
+    		<p class="f_r">你爱吃什么？</p>
+      </div>
+      <div class="robot clearfix">
+        <a href="#" class="f_l">机</a>
+        <p class="f_l">我爱吃冰淇淋</p>
+      </div>
+   </div>
+   <div class="control">
+      <input type="text" class='inputBox f_l'>
+      <input type="button" class='sendButton f_r' value='发 送'>
+    </div>
+  </div>  	
+</body>
+</html>

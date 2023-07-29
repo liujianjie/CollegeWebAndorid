@@ -1,0 +1,16 @@
+img{
+	width: 640px;
+	height: 320px;
+}
+ul{
+	list-style: none;
+	width: 800px;
+	overflow: hidden;
+}
+ul li{
+	width: 40px;
+	float: left;
+}
+ul li:nth-child(3){
+	width: 640px;
+}

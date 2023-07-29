@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<beans xmlns="http://www.springframework.org/schema/beans"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xsi:schemaLocation="    
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd  
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+        <!-- f.spring 扫包 扫描 com.jlgouwu.service下所有子包注解都可以有用 如：@service-->
+    
+    <!-- a.读取属性文件，获得连接信息 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:db.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- b.配置数据源 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<!-- c.(事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- d.开启事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- e.配置MyBatis工厂SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描mappers.xml文件 -->
+		<property name="mapperLocations" value="classpath:com/camera/mappers/*.xml"></property>
+		<!-- mybatis配置文件 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+	<!-- f.配置mapper扫描器 dao -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.camera.dao" />
+	</bean>
+	<context:component-scan base-package="com.camera.service"/>
+</beans>    

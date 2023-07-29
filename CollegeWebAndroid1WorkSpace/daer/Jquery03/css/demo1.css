@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.sentBtn.disabled{
+	background-color:#CCC;
+	cursor:not-allowed;
+}
+
+.sentBtn {
+	min-width:100px;
+	padding:5px;
+	border:none;
+	color:#FFF;
+	background-color:#83EBF0;
+	border-radius:4px;
+	cursor:pointer;
+}

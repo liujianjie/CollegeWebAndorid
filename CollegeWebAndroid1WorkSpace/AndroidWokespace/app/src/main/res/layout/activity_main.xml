@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/bg_root_black"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/title_top_ll" >
+
+        <Button
+            android:layout_width="@dimen/size_icon_normal"
+            android:layout_height="@dimen/size_icon_normal"
+            android:background="@drawable/title_logo" />
+
+        <TextView
+            style="@style/title_top_tv"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_match"
+        android:layout_margin="@dimen/size_normal"
+        android:background="@color/bg_black"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/gv_main_function"
+            style="@style/match_wrap"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:horizontalSpacing="@dimen/gv_main_function_horizontalSpacing"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:padding="@dimen/size_large"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/gv_main_function_verticalSpacing" >
+        </GridView>
+    </LinearLayout>
+
+</LinearLayout>

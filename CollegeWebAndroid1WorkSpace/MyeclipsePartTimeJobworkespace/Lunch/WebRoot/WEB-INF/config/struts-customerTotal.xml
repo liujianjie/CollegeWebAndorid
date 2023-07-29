@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <!-- 顾客统计 -->
+   <package name="customerTotal" extends="default">
+      <action name="total_*" class="com.dc.controller.customerTotal.customerTotalAction" method="{1}">
+        <result name="success">${target}</result>
+      </action>
+   </package>
+</struts>    

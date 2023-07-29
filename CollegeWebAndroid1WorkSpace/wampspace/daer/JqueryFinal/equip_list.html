@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>游戏资料-英雄</title>
+		
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/bottom.css" />
+		<link rel="stylesheet" href="css/hero_list.css" />
+		
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js" ></script>
+		<script type="text/javascript" src="js/equiplist.js" ></script>
+	</head>
+	<body style="position:relative;">
+		<!-- 头部图片 -->
+		<div class="headdiv">
+			<img src="img/head.png"/>
+		</div>
+		<div class="bottomdiv">
+			<div class="widthdiv">
+				<!--
+                	作者：offline
+                	时间：2020-06-15
+                	描述：路径div
+                -->
+				<div class="pathdiv">
+					<a>英雄联盟首页</a>
+					<span>></span>
+					<a>游戏资料</a>
+					<span>></span>
+					<a>英雄</a>
+				</div>
+				<div class="herodiv">
+					<ul class="herotitleul">
+						<li><a href="hero_list.html">英雄</a></li>
+						<li class="active"><a>物品</a></li>
+						<li><a  href="skill_list.html">召唤师技能</a></li>
+						<li><a href="yasuo.html">亚索专场</a></li>
+					</ul>
+					<div class="herotxdiv">
+						<ul id="selectul" class="selectul">
+							<li class="selitem selcuritem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">所有装备</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">防御</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">攻击</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">法术</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">移动速度</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">消耗品</label>
+							</li>
+						</ul>
+						<div class="findboxdiv">
+							<input id="findinput" class="findinput" type="text" value="请输入您要搜索的装备名"/>
+						</div>
+						<ul class="herotxul">
+							<!-- 英雄 -->
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 尾部图片 -->
+		<div class="headdiv">
+			<img src="img/tail.png"/>
+		</div>
+		<div class="hint" id="hint">
+			<div class="hintctdiv">
+				<div class="hintftdiv">
+					<img src="img/SummonerBarrier.png" />
+					<h4>鞋子</h4>
+					<p class="cons">售价或合成费用:300</p>
+				</div>
+				<div class="hintsddiv">
+					限购1
+				</div>
+			</div>
+			<span class="sbg"></span>
+		</div>
+		<!--用form的input hidden 保存索引值-->
+		<form name="frm" action="hero_detail.php" method="get">
+			<input type="hidden" id = "heroname" name="heroname"/>
+		</form>
+		<script>
+			// 需要做的是 点击头像，将id赋予text，再提交表单
+			function test(name){
+				// 要去除空格。
+				$("#heroname").val(name.trim());
+//				document.frm.submit();
+			}
+		</script>
+	</body>
+</html>

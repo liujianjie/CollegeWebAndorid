@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多组全选</title>
+<link rel="stylesheet" type="text/css" href="css/css3.css"/>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		// 1.给头标题设置监听，当被点击选中时子标题都被选中，取消选中子标题都不选中
+		$(".row1-title .input").click(function(){
+			// 找到父元素class="row1"下的所有checkbox
+			var $check = $(this).parents(".row1").find(":checkbox");
+			if(this.checked){
+				// 全部选中
+				$check.prop("checked",true)
+			}else{
+				// 全部不选中
+				$check.prop("checked",false)
+			}
+			
+		});
+		// 2.给子标题设置监听，当被选中，找到同级子标题是否都选中，如果都选中了就给头标题选中，当没被选中就给头标题取消选中
+		$(".row1-content :checkbox").click(function(){
+			// 当被选中，找到同级子标题是否都选中，如果都选中了就给头标题选中
+			if(this.checked){
+				// 父元素下的所有checkbox即找到同级子标题
+				var $slibs = $(this).parents(".row1-content").find(":checkbox");
+				// 先遍历是否都选中
+				var isallche = true;
+				$.each($slibs, function(){
+					if(!this.checked){
+						isallche = false;// 有一个没选中就false
+						return false;
+					}
+				});
+				if(isallche){
+					var $parentdiv = $(this).parents(".row1");
+					$parentdiv.find(".row1-title :checkbox").prop("checked",true);
+				}
+			}else{
+				// 判断自身点击的是取消选中的话，父标题不选中
+				var $parentdiv = $(this).parents(".row1");
+				$parentdiv.find(".row1-title :checkbox").prop("checked",false);
+			}
+		});
+	});
+	
+</script>
+</head>
+
+<body>
+<div class="panel-body">
+    <div class="row1">
+        <div class="row1-title">
+            <label>
+            <input class="input" type="checkbox"><span>消息公告</span>
+        </label>
+        </div>
+        <div class="row1-content">
+            <div class="form-inline clearfix">
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询本校</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询全部</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row1-title">
+            <label>
+                <input class="input" type="checkbox"><span>报名资料</span>
+            </label>
+        </div>
+        <div class="row1-content">
+            <div class="form-inline clearfix">
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>增加</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>修改</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>删除</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>导入</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>导出</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询本校</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询全部</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row1-title">
+            <label>
+                <input class="input" type="checkbox"><span>培训作业</span>
+            </label>
+        </div>
+        <div class="row1-content">
+            <div class="form-inline clearfix">
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>删除</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>导入</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>导出</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询本校</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>查询全部</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row1-title">
+            <label>
+                <input class="input" type="checkbox"><span>通知管理</span>
+            </label>
+        </div>
+        <div class="row1-content">
+            <div class="form-inline clearfix">
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>通知编辑</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>审核</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>发布</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>取消通知</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>历史发布</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row1-title">
+            <label>
+                <input class="input" type="checkbox"><span>系统管理</span>
+            </label>
+        </div>
+        <div class="row1-content">
+            <div class="form-inline clearfix">
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>用户管理</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>角色设置</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>单位设置</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>个人资料</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>修改密码</span>
+                    </label>
+                </div>
+                <div class="fl">
+                    <label>
+                        <input type="checkbox" name="checkbox"><span>系统初始化</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

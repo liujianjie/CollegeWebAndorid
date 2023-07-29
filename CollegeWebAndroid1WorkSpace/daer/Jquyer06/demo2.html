@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格复制</title>
+<link rel="stylesheet" type="text/css" href="css/css2.css"/>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		// 1.绑定多选框按钮点击事件
+		$('.cb_fruit').on('click',function(){
+			// 2当自己选中,则往表格2添加tr元素块
+			if(this.checked){
+				// 2.1先获取到父亲tr
+				var $tr = $(this).parents('tr');
+				// 2.2组成tr元素块
+				var trhtml = "<tr>"+$tr.html()+"</tr>";
+				// 2.3字符串操作 删除第一个<td></td>
+				trhtml = trhtml.substring(0, trhtml.indexOf("<td>")) + trhtml.substring(trhtml.indexOf("</td>") + 5, trhtml.length);
+				// 2.4tr添加给表格2
+				$('#tb2').append(trhtml);
+			}else{
+				// 3当自己取消选择，表格2删除对应的tr元素
+				// 3.1获取到父亲td的下一个同级td的text值
+				var textv = $(this).parents('td').next().text();
+				// 3.2找到表格2中对应的textv的值的第一个td元素
+				var findt = $("#tb2 td:contains("+textv+")")[0];
+				// 3.3如果不为空 就父元素tr删除。一般不为空，因为先添加
+				if(findt != undefined){
+					$(findt).parent().remove();
+				}
+				
+			}
+		});
+	})
+	
+	
+</script>
+	
+</head>
+
+<body>
+<table>
+    <tbody><tr>
+        
+        <td><input type="checkbox" class="cb_fruit"></td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        
+        <td><input type="checkbox" class="cb_fruit"></td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        
+        <td><input type="checkbox" class="cb_fruit"></td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+</tbody></table>
+<br>
+
+<div>
+    <table id="tb2">
+        <tbody><tr>
+            <td name="a">第一列</td>
+            <td>第二列</td>
+            <td>第三列</td>
+            <td>第四列</td>
+            <td>第五列</td>
+        </tr>
+
+    </tbody>
+    
+    </table>
+
+</div>
+</body>
+</html>

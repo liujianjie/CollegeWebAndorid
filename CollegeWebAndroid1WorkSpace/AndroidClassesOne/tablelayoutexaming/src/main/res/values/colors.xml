@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tv_bg1">#B6EAF3</color>
+    <color name="tv_bg2">#EEEFBA</color>
+    <!--T4-->
+    <color name="t4_color1">#808040</color>
+    <!--T5-->
+    <color name="t5_color1">#AA6BE2BC</color>
+    <color name="t5_color2">#AAAD9CBA</color>
+    <color name="t5_color3">#AA96CEF7</color>
+    <color name="t5_color4">#AA94CEF7</color>
+    <color name="t5_color5">#AAE7CE91</color>
+</resources>

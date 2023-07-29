@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片轮播</title>
+<link rel="stylesheet" type="text/css" href="css/css2.css"/>
+<script src="js/jquery.js"></script>
+<!-- <script src="js/js1.js"></script> -->
+<script>
+	$(function(){
+		var $bli = $('.banner>.img>li');
+		var timer = null;
+		var $ul = $('.banner .img');
+		var w = $('.banner').width();
+		var $l = $('.banner .img li').length - 1;
+		var i = 0;
+		$('.btn>.next').click(function(){
+			carousel(1);
+		});
+		$('.btn>.prev').click(function(){
+			carousel(0);
+		});
+		// 轮播动画效果
+		function carousel(value){
+			if(value == 1){
+				i++;
+				// 分开来更好定位提示点位置
+				// 解决小bug，当最后一张照片执行动画的时候再快速点击时，不会进行重新定位到left：0这个回调函数，而是执行动画，现在分开就没问题了
+				if(i == $l){
+					$ul.stop().animate({'left':-i * w}, 1000, function(){
+						$ul.css('left', 0);
+						i = 0;
+						// 重新定位下，因为是回调函数，等函数执行完才会执行
+						$('.tab li:eq("'+i+'")').addClass('active').siblings().removeClass('active');
+					});
+				}else if(i < $l){// 要写上这个
+					$ul.stop().animate({'left':-i * w}, 1000);
+				}
+			}
+			else if(value == 0) {
+				i--;
+				if(i < 0){
+					i = $l;
+					$ul.css('left', -i * w);
+					// 应该还需要让i--，不需要点击两次
+					i--;
+				}
+				$ul.stop().animate({'left':-i * w}, 1000);
+			}
+			// 给当前的位置点 添加样式
+			$('.tab li:eq("'+i+'")').addClass('active').siblings().removeClass('active');
+		}
+		// 鼠标移入停，移出动,向前向后按钮出现
+		$('.banner').mouseenter(function(){
+			clearInterval(timer);
+			$('.btn').show(500);
+		}).mouseleave(function(){
+			timer = setInterval(function(){  
+				carousel(1);	
+			},2000);	
+			$('.btn').hide(500);		 
+		});
+		// 提示点的变化
+		$('.tab li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			var j = $(this).index()
+			$ul.stop().animate({'left':-j * w}, 1000);
+			// 要令i也等于j 
+			i = j;
+		});
+	});
+	
+</script>
+</head>
+
+<body>
+<div class="banner">
+    <ul class="img">
+        <li>
+            <a href="#"><img src="image/tu1.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu2.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu3.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu4.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu5.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu6.jpg"></a>
+        </li>
+        <li>
+            <a href="#"><img src="image/tu1.jpg"></a>
+        </li>
+    </ul>
+     <ul class="tab">
+        
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+     </ul>
+ 
+    <div class="btn">
+        <span class="prev">&lt;</span>
+        <span class="next">&gt;</span>
+    </div>
+
+</div>				
+</body>
+</html>

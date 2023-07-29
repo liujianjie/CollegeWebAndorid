@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.DistricDaoI">
+	<resultMap type="DistrictBean" id="dis">
+	    <id property="d_id" column="d_id"/>
+	    <result property="d_name" column="d_name"/>
+	</resultMap>
+<!-- 	查询所有列表 -->
+	<select id="seldislist" resultMap="dis">
+	    select * from district 
+	</select>
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jlgouwu.dao.GoodsDao">
+  	<select id="selGoods" resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id where 1=1
+  	</select> 
+  	<select id="selhtGoods" resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id limit #{0},#{1}
+  	</select>
+  	<select id="selBottom" resultType="Bottom">
+  		select * from bottom
+  	</select>
+  	<insert id="addGoods" parameterType="Bottom" >
+  		insert into goods
+  		(bottom_id,g_name,g_dress,g_dec,g_img,g_price,g_scj,g_count,g_sale,g_statu,gwccount,g_descrip) 
+  		values
+  		(#{bottom_id},#{g_name},#{g_dress},#{g_dec},#{g_img},#{g_price},#{g_scj},#{g_count},#{g_sale},#{g_statu},#{gwccount},#{g_descrip})
+  	</insert>
+  	<delete id="delGoods" parameterType="Integer">
+  		delete from goods where g_id=#{id}
+  	</delete>
+  	<select id="selhang" parameterType="Integer" resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id where 1=1 
+  		<if test="_parameter != null and _parameter > 0">
+			and g.g_id = #{id}
+		</if>
+		limit 0, 1
+  	</select> 
+  	<!-- 返回true的 -->
+  	<update id="alerthang" parameterType="Goods" >
+  		update goods set 
+  		bottom_id=#{bottom_id},g_name=#{g_name},g_dress=#{g_dress},
+  		g_dec=#{g_dec},g_img=#{g_img},g_price=#{g_price},
+  		g_scj=#{g_scj},g_count=#{g_count},g_sale=#{g_sale},
+  		g_statu=#{g_statu},gwccount=#{gwccount},g_descrip=#{g_descrip} 
+  		where g_id=#{g_id}
+	</update>
+	<select id="selthreeGoods"  resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id 
+  		where g.bottom_id=#{0} order by g_sale desc limit 0,#{1}
+  	</select> 
+  	<select id="selxsgoods" parameterType="String" resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id 
+  		where g_name like concat('%',#{name},'%')
+  	</select> 
+  	<select id="selbottom" parameterType="Integer" resultType="Bottom">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id where g.bottom_id=#{bottom_id} limit 0, 1   
+  	</select> 
+  	<select id="selmold" parameterType="Integer" resultType="Mold">
+  		select * from bottom b left join mold m on b.mold_id=m.mold_id where b.mold_id=#{mold_id} limit 0, 1
+  	</select> 
+  	<select id="selfyGoods"  resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id 
+  		order by g_sale desc limit #{0},#{1}
+  	</select>
+  	<select id="selgoodscount"  resultType="Integer">
+  		select count(*) from goods
+  	</select>
+  	<select id="sellistgoods"  resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id 
+  		where g.bottom_id=#{2} limit #{0},#{1}
+  	</select>
+  	<select id="selbottomgoodscount" parameterType="Integer" resultType="Integer">
+  		select count(*) from goods where bottom_id=#{bottom_id}
+  	</select>
+  	<select id="seldangegoods" parameterType="Integer" resultType="Goods">
+  		select * from goods g left join bottom b on b.bottom_id=g.bottom_id 
+  		where b.bottom_id=#{bottom_id} order by g_sale desc limit 0, 1
+  	</select>
+  	<delete id="delGoodsByBid" parameterType="Integer">
+  		delete from goods where bottom_id=#{bottom_id}
+  	</delete>
+</mapper>

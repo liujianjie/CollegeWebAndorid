@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="#f9f9fB">
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="40dp"
+	    android:background="#12B9F6"
+    	>
+    	<TextView 
+      	    android:id="@+id/ly2_tv_t1"
+      	    android:layout_width="wrap_content"
+      	    android:layout_height="wrap_content"
+      	    android:text="返回"
+      	    android:textColor="#ffffff"
+      	    android:textSize="20sp"
+      	    android:layout_centerVertical="true"
+      	    android:drawableLeft="@drawable/b"
+      	    />
+        <TextView 
+      	    android:id="@+id/ly2_tv_t2"
+      	    android:layout_width="wrap_content"
+      	    android:layout_height="wrap_content"
+      	    android:text="设置"
+      	    android:textColor="#ffffff"
+      	    android:textSize="20sp"
+      	    android:layout_centerInParent="true"
+      	    />
+        
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" 
+       android:layout_marginTop="10dp"
+       >
+
+       <View
+           android:id="@+id/view1"
+           android:layout_width="fill_parent"
+           android:layout_height="1dp"
+           android:background="#ebebeb" />
+
+       <TextView
+           android:id="@+id/rl1_tv_t1"
+           android:layout_width="fill_parent"
+           android:layout_height="40dp"
+           android:background="#ffffff"
+           android:gravity="left|center_vertical"
+           android:text="账号管理" />
+       
+       <ImageView
+           android:id="@+id/rl1_ig_i1"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_centerVertical="true"
+           android:layout_toLeftOf="@+id/rl1_ig_i2"
+           android:src="@drawable/bb" />
+       <ImageView
+           android:id="@+id/rl1_ig_i2"
+           android:layout_width="18dp"
+           android:layout_height="18dp"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:src="@drawable/a" />
+
+   </RelativeLayout>
+       
+   <View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+
+      	/>
+	<TextView
+	    android:id="@+id/ly_tv_t2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="40dp"
+	    android:drawableRight="@drawable/a"
+	    android:gravity="left|center_vertical"
+	    android:text="手机号码" 
+	    android:background="#ffffff"/>
+	<View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+      	/>
+	<TextView 
+       android:id="@+id/ly_tv_t3"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="QQ达人"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>
+	<View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+       android:layout_marginTop="20dp"
+      	/>
+
+	<TextView
+	    android:id="@+id/ly_tv_t4"
+	    android:layout_width="fill_parent"
+	    android:layout_height="40dp"
+	    android:background="#ffffff"
+	    android:drawableRight="@drawable/a"
+	    android:gravity="left|center_vertical"
+	    android:text="消息通知" />
+
+	<View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+      	/>
+	<TextView 
+       android:id="@+id/ly_tv_t5"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="聊天记录"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>
+	<View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+       android:layout_marginTop="20dp"
+      	/>	
+       <TextView 
+       android:id="@+id/ly_tv_t6"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="联系人、隐私"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>
+       <View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+      	/>
+        <TextView 
+       android:id="@+id/ly_tv_t7"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="设备锁"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>	
+       <View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+      	/>
+         <TextView 
+       android:id="@+id/ly_tv_t8"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="安全检测"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>
+         
+       <View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+      	/>	
+       <TextView 
+       android:id="@+id/ly_tv_t9"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="辅助功能"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>
+       <View android:layout_height="1dp" 
+       android:background="#ebebeb"
+       android:layout_width="fill_parent"
+       android:layout_marginTop="35dp"
+      	/>	 
+        <TextView 
+       android:id="@+id/ly_tv_t10"
+       android:layout_width="fill_parent"
+       android:layout_height="40dp"
+       android:text="关于QQ与帮助"
+       android:gravity="left|center_vertical"
+       android:drawableRight="@drawable/a"
+       android:background="#ffffff"/>	   		
+</LinearLayout>
+
+
+

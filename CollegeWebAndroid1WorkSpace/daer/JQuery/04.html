@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	 <script src="jquery.js"></script>
+	<body>
+		<ul>
+		  <li>list item 1</li>
+		  <li>list item 2</li>
+		  <li class="third-item">list item 3</li>
+		  <li>list item 4</li>
+		  <div id="div2"></div>
+		  <li>list item 5</li>
+		</ul>
+	</body>
+	<script>
+		var v = $(".third-item").next();
+		var alv = $(".third-item").nextAll().each(function(){
+				console.log(this);
+			})
+	</script>
+</html>

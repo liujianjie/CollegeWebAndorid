@@ -1,0 +1,25 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+li{
+	float:left;
+}
+dl{
+	list-style: none;
+}
+body{
+	background: #F7F8F8;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}

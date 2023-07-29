@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="div"></div>
+		<ul id="ul">
+			<li> li 1</li>
+			<li> li 2</li>
+			<li> li 3</li>
+			<li> li 4</li>
+		</ul>
+		<p>我是一个p</p>
+	</body>
+	<script>
+		var $ul = document.getElementById("ul");
+		var $div= document.getElementsByClassName("div");
+		var $p = document.getElementsByName("p");
+		console.log($ul, $div, $p);
+		console.log(document.querySelector("div"));
+		console.log(document.querySelectorAll("li"));
+		var $li = document.createElement("li");
+		$ul.appendChild($li);
+		//$ul.removeChild($li);
+		var $allli = document.querySelectorAll("li");
+		var $li2 = document.createElement("li");
+//		$ul.insertBefore($li2, $allli[1]);
+//		console.log($ul.childNodes);
+//		console.log($ul.children);
+
+//		console.log($allli[1].nextSibling);
+//		console.log($allli[1].nextElementSibling);
+//		console.log($allli[1].previousSibling);
+//		console.log($allli[1].previousElementSibling);
+//		
+		var $lia = $ul.children;
+		for(var i = 0; i < $lia.length; i++){
+			$lia[i].style.background = "red";
+		}
+	</script>
+</html>

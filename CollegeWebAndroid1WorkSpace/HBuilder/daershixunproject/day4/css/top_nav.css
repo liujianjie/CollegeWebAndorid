@@ -1,0 +1,82 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+.top_nav{
+	background: #333;
+	min-width: 1226px;
+}
+.top_nav .content{
+	/*height:40px;*/
+	width:1226px;
+	/*background:red;*/
+	margin:0 auto;
+	overflow: hidden;
+}
+.top_nav .content .left{
+	/*width: 300px;*/
+	line-height: 40px;
+	height:40px;
+	/*background: purple;*/	
+	float:left;
+}
+.top_nav .content .left a{
+	margin-top:0;
+	display: inline-block;
+	height:40px;
+	color:#b0b0b0;
+	font-size: 12px;
+}
+.top_nav .content .left a:hover{
+	color:white;
+}
+.top_nav .content .left span{
+	color:#424242;
+	font-size:12px;
+	margin: 0 3px;
+}
+.top_nav .content .right{
+	/*width: 300px;*/
+	height:40px;
+	line-height:40px;
+	/*background: green;*/
+	float:right;	
+}
+
+.top_nav .content .right a{
+	display: inline-block;
+	height:40px;
+	color:#b0b0b0;
+	font-size:12px;
+}
+
+.top_nav .content .right a:nth-of-type(3)
+{
+	margin-right:4px;
+}
+.top_nav .content .right a:nth-of-type(4)
+{
+	padding: 0 10px;
+}
+
+.top_nav .content .right a:nth-of-type(4):hover
+{
+	background: white;
+}
+
+.top_nav .content .right a:nth-of-type(4):hover span
+{
+	color: #ff6700;
+}
+
+.top_nav .content .right span{
+	color:#b0b0b0;
+	font-size:12px;
+	margin:0 3px;
+}

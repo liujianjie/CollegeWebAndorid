@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/zidingyi_dialog_shape">
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" 
+	    android:layout_centerInParent="true">
+		<Button
+			android:id="@+id/delphoto_tv0"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:text="放 大"
+			android:background="@android:color/transparent"
+			android:textColor="@android:color/holo_blue_light"
+			android:layout_gravity="center"/>
+		<View
+			android:id="@+id/delphoto_view0"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@android:color/holo_blue_light"/>
+	    <Button 
+	        android:id="@+id/delphoto_tv1"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:text="删 除"
+	        android:background="@android:color/transparent"
+	        android:textColor="@android:color/holo_blue_light"
+	        android:layout_gravity="center"/>
+	    <View 
+	        android:id="@+id/delphoto_view"
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:background="@android:color/holo_blue_light"/>
+		 <Button 
+	        android:id="@+id/delphoto_tv2"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:text="取 消"
+	        android:background="@android:color/transparent"
+	        android:textColor="@android:color/holo_blue_light"
+	        android:layout_gravity="center"/>
+		 
+	</LinearLayout>
+
+</RelativeLayout>

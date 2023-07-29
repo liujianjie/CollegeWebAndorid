@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>王者荣耀风琴栏</title>
+<link rel="stylesheet" type="text/css" href="css/css1.css"/>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		// 给元素添加移入事件
+		$('.king li').mouseenter(function(){
+			// 当前图片宽度增加，把小的图片退出，大的图片进入
+			$(this).stop().animate({'width':224}, 100).find('.small').
+			fadeOut(100).next('.big').fadeIn(100);
+			
+			// 当前图片的其它兄弟宽度变小，小的图片进入，大的图片退出
+			$(this).siblings().animate({'width':69}, 100).find('.small').
+			fadeIn(100).next('.big').fadeOut(100);
+			;
+			
+		})
+	});
+</script>
+</head>
+
+<body>
+<div class="king">
+  <ul>
+   <li class="current">
+    <a href="#">
+     <img src="images/t1.jpg" alt="" class="small">
+     <img src="images/t1.png" alt="" class="big">
+    </a> 
+   </li>
+   <li>
+    <a href="#">
+     <img src="images/t2.jpg" alt="" class="small">
+     <img src="images/t2.png" alt="" class="big">
+    </a> 
+   </li>
+   <li>
+    <a href="#">
+     <img src="images/t3.jpg" alt="" class="small">
+     <img src="images/t3.png" alt="" class="big">
+    </a> 
+   </li>
+   <li>
+    <a href="#">
+     <img src="images/t4.jpg" alt="" class="small">
+     <img src="images/t4.png" alt="" class="big">
+    </a> 
+   </li>
+   <li>
+    <a href="#">
+     <img src="images/t5.jpg" alt="" class="small">
+     <img src="images/t5.png" alt="" class="big">
+    </a> 
+   </li>
+   <li>
+    <a href="#">
+     <img src="images/t6.jpg" alt="" class="small">
+     <img src="images/t6.png" alt="" class="big">
+    </a> 
+   </li>
+      <li>
+    <a href="#">
+     <img src="images/t7.jpg" alt="" class="small">
+     <img src="images/t7.png" alt="" class="big">
+    </a> 
+   </li>
+
+</ul> 
+</div>
+
+</body>
+</html>

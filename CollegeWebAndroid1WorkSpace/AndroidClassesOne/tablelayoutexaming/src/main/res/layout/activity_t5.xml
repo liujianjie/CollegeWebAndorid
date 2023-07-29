@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".T5"
+    android:background="@drawable/bg3">
+    
+    <TableLayout
+        style="@style/t5_sty_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1">
+        <TableRow
+            style="@style/t5_sty_tablerow">
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color1"
+                android:text="@string/tv1"/>
+
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color2"
+                android:text="@string/tv2"/>
+        </TableRow>
+        <TableRow
+            style="@style/t5_sty_tablerow">
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color2"
+                android:text="@string/tv3"/>
+
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color1"
+                android:text="@string/tv4"/>
+        </TableRow>
+        <TableRow
+            style="@style/t5_sty_tablerow">
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color3"
+                android:text="@string/tv5"/>
+
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color4"
+                android:text="@string/tv6"/>
+        </TableRow>
+        <TableRow
+            style="@style/t5_sty_tablerow">
+            <TextView
+                style="@style/t5_sty_tablerow_tv"
+                android:background="@color/t5_color5"
+                android:text="@string/tv7"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

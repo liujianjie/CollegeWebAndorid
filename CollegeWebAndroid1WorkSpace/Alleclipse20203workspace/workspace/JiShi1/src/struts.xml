@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+    <!-- 这是 咨询表 -->
+    <package name="p1" namespace="/infor" extends="struts-default">
+        <action name="selinfor" class="com.ht.action.InforAction" method="selinfor">
+            <result name="ok">/inforlist.jsp</result>
+        </action>
+        <action name="selxq" class="com.ht.action.InforAction" method="selxq">
+            <result name="ok">/replies.jsp</result>
+        </action>
+        <!-- 从adds到replies中 -->
+        <action name="adds" class="com.ht.action.InforAction" method="adds">
+            <result name="ok" type="redirectAction">
+            	<!-- 需要传一个参数 -->
+<!-- 			selxq?inforid=${inforid} type="redirect"-->
+			<!-- 正确的格式 -->
+				<param name="actionName">selxq</param>
+				<param name="inforid">${inforid}</param>
+            </result>
+        </action>
+    </package>
+    <!-- 这是 回复表 -->
+    <package name="p2" namespace="/rep" extends="json-default">
+        <action name="*" class="com.ht.action.RepAction" method="{1}">
+            <result type="json"></result>
+        </action>
+    </package>
+    
+</struts>

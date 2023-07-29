@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
+	<style>
+		p{
+			color: red;
+		}
+	</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	var p = $("#textp");// 显示内容p
+	$('#emailtx').blur(function(){
+		$.ajax(
+		{   
+		   url:'checkemail.php',
+		   type: 'POST',
+		   data: {email:this.value},
+		   success:function(data,stutas,xhr){
+					p.html(data);
+			   }
+			}
+		)
+	});
+});
+
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" placeholder="请输入邮箱" id="emailtx"/>
+		<p id="textp"></p>
+		<input type="text" placeholder="请输入密码" /><br /><br />
+		<input type="button" value="注册"/><br />
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    <!-- 1配置数据源 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<!-- 数据驱动 -->
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    	<!-- 连接的url,连接到spring数据库 -->
+    	<property name="url" value="jdbc:mysql://localhost/spring"></property>
+    	<!-- 用户名 -->
+    	<property name="username" value="root"></property>
+    	<!-- 密码 -->
+    	<property name="password" value="tiger"></property>
+    </bean>  
+   	<!-- 2配置JDBC模板 -->
+   	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<!-- 使用数据源 -->
+   		<property name="dataSource" ref="dataSource"></property>
+   	</bean>
+	
+	<!-- 为dao注入属性 -->
+	<bean id="accountDao" class="com.ljj.jdbc.AccountDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+</beans>
+			

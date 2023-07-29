@@ -1,0 +1,28 @@
+		.title{
+			font-family:"Î¢ÈíÑÅºÚ";
+			font-size:20px;
+		}
+	
+		table{
+			border-radius:20px;
+			border:3px solid #F00;
+			background:#FFF;
+			margin:50px;
+			padding:10px;
+		}
+		table tr td{
+			padding:8px;
+		}
+		.btn01,.btn02{
+			width:60px;
+			height:25px;
+			border-radius:3px;
+			border:1px solid #6b5d50;
+			margin-left:10px;
+		}
+		.btn01{
+			background:#3bb7ea;
+		}
+		.btn02{
+			background:#fb8c16;
+		}

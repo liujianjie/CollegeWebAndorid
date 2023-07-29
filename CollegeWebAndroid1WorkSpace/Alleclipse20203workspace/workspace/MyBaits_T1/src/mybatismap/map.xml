@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="serviceI.DeptI">
+    <!-- 这个id为 flag 标识而已 type为bean的路径 --><!-- 实体与映射反应 -->
+    <resultMap type="dePt" id="deptMap">
+        <id column="deptno" property="deptno" javaType="java.lang.Integer"/>
+        <result column="dname" property="dname" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result column="loc" property="loc" javaType="java.lang.String" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- id为接口的方法名 --><!-- 接口与映射反应 resultType可以指定为Dept 因为在config中指定了bean包 也可以直接包.bean-->
+    <select id="selDept" resultMap="deptMap">
+        select * from dept
+    </select>
+    <!-- id为接口的方法 parameterType为参数类型 就是那个bean或者类型，resultType为返回的结果集 -->
+    <select id="getDept" parameterType="map" resultType="Dept">
+        select * from dept where dname = #{dnames} and loc = #{dlocs}
+    </select>
+    <!-- 不能用parameterMap -->
+    <insert id="add" parameterType="map">
+        insert into dept values(seq1_name.nextval,#{dnames},#{dlocs})
+    </insert>
+    <!-- 用dept 参数 则 #{}中的为dept的参数 -->
+    <update id="update" parameterType="dept">
+        update dept set dname=#{dname},loc=#{loc} where deptno = #{deptno}
+    </update>
+    <delete id="delete" parameterType="int">
+        delete from dept where deptno=#{deptno}
+    </delete>
+</mapper>

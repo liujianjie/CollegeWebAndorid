@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/bg_root_black"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/title_top_ll" >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/size_icon_normal"
+            android:layout_height="@dimen/size_icon_normal"
+            android:background="@drawable/btn_back_selector" />
+
+        <TextView
+            style="@style/title_top_tv"
+            android:text="@string/phone_number_attribution_query" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_match"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_result"
+            style="@style/wrap_wrap"
+            android:layout_margin="@dimen/size_large"
+            android:layout_marginBottom="@dimen/size_large"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textSize_large_large" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="@dimen/et_attribution_number_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_large"
+            android:layout_marginTop="@dimen/size_large"
+            android:background="@drawable/textfield_pressed"
+            android:hint="@string/please_input_phone_number"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textSize_small" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_query"
+            android:layout_width="@dimen/btn_circle_size"
+            android:layout_height="@dimen/btn_circle_size"
+            android:layout_marginTop="@dimen/size_large"
+            android:background="@drawable/btn_circle_selector"
+            android:padding="@dimen/size_large"
+            android:text="@string/query"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/textSize_large_large" />
+    </LinearLayout>
+
+</LinearLayout>

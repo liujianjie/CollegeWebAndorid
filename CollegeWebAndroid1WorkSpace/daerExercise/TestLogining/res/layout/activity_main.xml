@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+	
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <TableRow >
+            <TextView 
+                android:text="用户名:"/>
+            <EditText 
+                android:id="@+id/edt_name"/>
+        </TableRow>
+        <TableRow >
+            <TextView 
+                android:text="密   码:"/>
+            <EditText 
+                android:id="@+id/edt_pwd"
+                android:inputType="textPassword"/>
+        </TableRow>
+    </TableLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox 
+            android:id="@+id/ckb_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="记住密码"/>
+        <CheckBox 
+            android:id="@+id/ckb_auto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="自动登录"/>
+        <Button 
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="登录"/>
+    </LinearLayout>
+</LinearLayout>

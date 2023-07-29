@@ -1,0 +1,218 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+	
+}
+/*第二个div*/
+.sdtopdiv {
+	min-width: 1000px;
+	background: #F8F8F8;
+}
+.topdiv{
+	/*background: black;*/
+	min-width: 1000px;
+}
+.topdiv .topcontent{
+	width:1000px;
+	margin:0 auto;
+	overflow: hidden;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.topdiv .topcontent .topdivleft{
+	width: 35%;
+	height:44px;
+	float:left;
+	text-align: center;
+}
+.topdiv .topcontent .topdivright{
+	width: 65%;
+	height:44px;
+	/*background: green;*/
+	float:right;
+	text-align: center;
+}
+
+.topdiv .topcontent .topdivright a{
+	color:#b0b0b0;
+	font-size: 15px;
+	line-height: 44px;
+}
+.topdiv .topcontent .topdivright a{
+	color:#b0b0b0;
+	font-size: 15px;
+	line-height: 44px;
+	margin-right: 25px;
+}
+
+.topdiv .content{
+	width:1000px;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+/*第一个大div*/
+.topdiv .firstcontent,.secondtcontent,.thirdcontent{
+	width:1000px;
+	margin:0 auto;
+	overflow: hidden;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	/*background: #B0B0B0;*/
+}
+.topdiv .firstcontent .title{
+	text-align: center;
+}
+
+.topdiv .firstcontent .titlezi{
+	text-align: center;
+}
+.topdiv .firstcontent .ulcen{
+	margin: 0 auto;
+	width: 90%;
+	text-align: center;
+}
+.topdiv .firstcontent .ulcen li{
+	float:left;
+	width: 25%;
+}
+.topdiv .firstcontent .ulcen li .fuldiv{
+	padding:20px;
+	padding-top:15px;
+	color:#6D6D6D;
+	font-size: 13px;
+}
+.topdiv .firstcontent .ulcen li .fulfdiv{
+	padding-top:15px;
+	color:#434343;
+	font-size: 14px;
+	font-weight: bold;
+}
+/*第二个div*/
+.sdtopdiv .secondtcontent .title{
+	text-align: center;
+}
+
+.sdtopdiv .secondtcontent .titlezi{
+	text-align: center;
+}
+.sdtopdiv .secondtcontent .ulcen{
+	margin: 0 auto;
+	width: 85%;
+	text-align: center;
+	height: 200px;
+}
+.sdtopdiv .secondtcontent .ulcen li{
+	float:left;
+	width: 33%;
+}
+.sdtopdiv .secondtcontent .btndivcontent {
+	   
+}
+.sdtopdiv .secondtcontent .btndivcontent .btndiv{
+	margin: 0 auto;
+	width:150px; 
+	padding:5px;
+    border: 1px solid #66C5B4;
+    border-radius:15px;        
+    text-align: center;   
+    background: #66C5B4;
+}
+.sdtopdiv .secondtcontent .btndivcontent .btndiv span{
+	color: #ffffff; 
+}
+
+/*第三个div */
+.topdiv .thirdcontent .title{
+	text-align: center;
+}
+
+.topdiv .thirdcontent .titlezi{
+	text-align: center;
+}
+.topdiv .thirdcontent .ulcen{
+	margin: 0 auto;
+	width: 90%;
+}
+.topdiv .thirdcontent .ulcen li:first-child{
+	text-align: center;
+}
+.topdiv .thirdcontent .ulcen li{
+	float:left;
+	width: 33%;
+}
+
+.topdiv .thirdcontent .ulcen .tdlidc{
+}
+.topdiv .thirdcontent .ulcen .tdlileftdiv{
+	float:left;
+}
+.topdiv .thirdcontent .ulcen .tdlirightdiv{
+	width: 232px;
+	float:right;
+}
+
+.bottomdiv{
+	min-width: 1000px;
+	background-color: #66C5B4;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.bottomdiv .content{
+	width:1000px;
+	margin:0 auto;
+	overflow: hidden;
+	
+	height: 54px;
+	line-height: 54px;
+	font-size: 12px;
+	color: white;
+}
+.bottomdiv .content .leftp{
+	float:left;
+	margin-left: 88px;
+}
+.bottomdiv .content .rightp{
+	float:right;
+}
+.bottomdiv .content .rightp{
+	margin-right: 40px;
+}
+.bottomdiv .content .rightp a{
+	color: white;
+	margin: 0 10px;
+}
+/*通用属性*/
+.title{
+	font-size: 18px;
+}
+.titlezi{
+	color:#9F9F9F;
+	margin-bottom: 30px;
+}
+.tdlititle{
+	font-size: 14px;
+}
+.tdlict{
+	color: #B1B1B1;
+	font-size: 12px;
+	padding-top: 10px;
+}
+.tdlidc{
+	width: 300px;
+	height: 100px;
+}
+/*图片和文字混合*/
+.title{
+	position: relative;
+}
+.titlewenzi{
+	position: relative;
+	top:-20px;
+}

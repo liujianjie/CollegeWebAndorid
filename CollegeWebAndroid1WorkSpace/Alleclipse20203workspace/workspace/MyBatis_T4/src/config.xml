@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "mybatis-3-config.dtd" >
+<configuration>
+	<typeAliases>
+	    <package name="com.ht.bean"/>
+	</typeAliases>
+	<environments default="deployment">
+	    <environment id="deployment">
+	        <transactionManager type="JDBC"></transactionManager>
+	        <!-- 以数据源的方式 -->
+	        <dataSource type="POOLED">
+	            <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+                <property name="driver" value="oracle.jdbc.OracleDriver"/>
+                <property name="username" value="scott"/>
+                <property name="password" value="tiger"/>
+	        </dataSource>
+	    </environment>
+	</environments>
+    <mappers>
+        <mapper resource="com/ht/mapper/mapper.xml"/>
+        <mapper resource="com/ht/mapper/deptmap.xml"/>
+    </mappers>
+</configuration>

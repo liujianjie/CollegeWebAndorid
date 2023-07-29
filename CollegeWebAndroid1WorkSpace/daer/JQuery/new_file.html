@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1" style="color: red;">$(':nth-child(even)')</button>
+		<button id="btn2" style="color: blue;">$(':nth-child(odd)')</button>
+		<button id="btn3" style="color: green;">$(':nth-child(3n+1)')</button>
+		<button id="reset">还原</button>
+		<ul>
+		    <li>1</li>
+		    <li>2</li>
+		    <li>3</li>
+		    <li>4</li>
+		    <li>5</li>
+		</ul>
+		<script src="jquery.js"></script>
+		<script>
+		reset.onclick = function(){history.go();}
+		//匹配每个父元素为ul的偶数个元素，结果是2、4
+		btn1.onclick = function(){$('ul :nth-child(even)').css('color','red');}
+		
+		//匹配每个父元素为ul的奇数个元素，结果是1、3、5
+		btn2.onclick = function(){$('ul :nth-child(odd)').css('color','blue');}
+		
+		//匹配每个父元素为ul的(3n+1)个元素，结果是1、4
+		btn3.onclick = function(){$('ul :nth-child(3)').css('color','green');
+		
+			var l = $('ul:nth-child(3)').css('color','green');
+			alert(l.html());
+		}
+		</script>
+	</body>
+</html>

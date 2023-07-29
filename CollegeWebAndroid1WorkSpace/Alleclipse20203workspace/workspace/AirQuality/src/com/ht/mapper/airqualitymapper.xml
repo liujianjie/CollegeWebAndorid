@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.AirQualityDaoI">
+   <resultMap type="AirQualityBean" id="air">
+	    <id property="a_id" column="a_id"/>
+	    <result property="d_id" column="d_id"/>
+	    <result property="a_time" column="a_time"/>
+	    <result property="a_pm10" column="a_pm10"/>
+	    <result property="a_pm25" column="a_pm25"/>
+	    <result property="a_station" column="a_station"/>
+	    <result property="a_latetime" column="a_latetime"/>
+	   	<association property="dis" column="d_id"
+	   	    select="com.ht.dao.AirQualityDaoI.seldisproperties">
+	   	    
+	   	</association>
+	</resultMap>
+</mapper>

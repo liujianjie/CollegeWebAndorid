@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<!-- 全局设置 -->
+	<script>
+		$.extend({
+			bg : function(){
+				$('.box').css('background','green');
+			}
+		});
+		$.fn.extend({
+			bg : function(){
+				$('.box').css('background','green');
+			}
+		});
+	</script>
+	<script>
+		$(function(){
+//			$.bg();
+			$('p').bg();
+			$('div').bg();
+		});
+		
+	</script>
+	<body>
+		<div id="div10" class="box">他</div>
+		<p class="box">撒旦法</p>
+	</body>
+</html>

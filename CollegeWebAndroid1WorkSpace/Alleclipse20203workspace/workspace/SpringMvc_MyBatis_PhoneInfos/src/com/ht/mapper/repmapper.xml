@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.RepliesDaoI">
+    <!-- 为了更好维护还是写上，还有 级联关系 -->
+	<resultMap type="Replies" id="repmap">
+	    <id column="re_id" property="reId"/>
+	    <result column="in_inforid" property="inInforid"/>
+	    <result column="re_content" property="reContent"/>
+	    <result column="re_replyTime" property="reReplytime"/>
+	</resultMap>
+	
+	<!-- 添加回复 -->
+	<insert id="add" parameterType="Replies">
+	    insert into replies values(replies_seq.nextval,#{inInforid},#{reContent},sysdate)
+	</insert>
+	
+	<!-- 有条件的查询列表 -->
+	<select id="selrep" parameterType="int" resultMap="repmap">
+	    select * from replies where in_inforid = #{a}
+	</select>
+</mapper>

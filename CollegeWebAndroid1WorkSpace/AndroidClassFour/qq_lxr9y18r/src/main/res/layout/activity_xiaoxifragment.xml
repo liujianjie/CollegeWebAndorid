@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <RelativeLayout
+        android:id="@+id/xiaoxi_rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#12B9F6">
+        <com.example.qq_lxr9y18r.RoundView
+            android:id="@+id/xiaoxi_rl_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/bb" />
+        <RelativeLayout 
+            android:id="@+id/xiaoxi_rl_tou_zhong"
+            android:layout_width="93dp"
+            android:layout_height="25dp"
+            android:background="@drawable/xiaoxi_rl_tou_zhong_shape"
+            android:layout_centerInParent="true">
+            
+         <TextView 
+             android:id="@+id/xx_tv_xiaoxi"
+             android:layout_width="45dp"
+             android:layout_height="match_parent"
+             android:text="消息"
+             android:gravity="center"
+             android:textColor="#12B9F6"
+             android:textSize="12sp"
+             android:background="@drawable/xiaoxi_xiaoxitv_selector"
+             android:enabled="false"
+             android:padding="1dp"
+             android:layout_alignParentLeft="true"/>
+         <TextView 
+             android:id="@+id/xx_tv_dianhua"
+             android:layout_width="45dp"
+             android:layout_height="match_parent"
+             android:text="电话"
+             android:textColor="#ffffff"
+             android:textSize="12sp"
+             android:gravity="center"
+             android:layout_toRightOf="@id/xx_tv_xiaoxi"
+             android:background="@drawable/xiaoxi_dianhuatv_selector"
+          	 android:layout_alignParentRight="true"
+          	 android:layout_marginTop="1dp"
+             android:layout_marginBottom="1dp"
+             android:layout_marginRight="1dp"/>
+         </RelativeLayout>
+        
+        <TextView 
+	         android:id="@+id/xx_tv_jia"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:background="@drawable/mou"
+	         android:layout_marginRight="8dp"
+	         android:layout_alignParentRight="true"
+	         android:layout_centerVertical="true" />
+         
+     </RelativeLayout>
+    <RelativeLayout 
+	    android:id="@+id/xiaoxi_rl2_top2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/xiaoxi_rl_top"
+	    android:background="#ffffff"
+	    android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginTop="4dp"
+		android:layout_marginBottom="4dp">
+        <TextView 
+		    android:id="@+id/xiaoxi_rl2_et_sousuo"
+		    android:layout_width="match_parent"
+		    android:layout_height="25dp"
+		    android:gravity="center"
+		    android:hint="搜索"
+		    android:textSize="12sp"
+		    android:background="@drawable/lianxirenfragment_sousuo_shape"
+		    android:enabled="true"/>
+
+	</RelativeLayout>  
+	<ListView 
+	    android:id="@+id/xiaoxi_lv"
+	    android:layout_height="match_parent"
+	    android:layout_width="match_parent"
+	    android:layout_below="@id/xiaoxi_rl2_top2">
+	          
+	</ListView>
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>游戏资料-英雄</title>
+		
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/bottom.css" />
+		<link rel="stylesheet" href="css/hero_list.css" />
+		
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js" ></script>
+		<script type="text/javascript" src="js/herolist.js" ></script>
+	</head>
+	<body>
+		<!-- 头部图片 -->
+		<div class="headdiv">
+			<img src="img/head.png"/>
+		</div>
+		<div class="bottomdiv">
+			<div class="widthdiv">
+				<!--
+                	作者：offline
+                	时间：2020-06-15
+                	描述：路径div
+                -->
+				<div class="pathdiv">
+					<a>英雄联盟首页</a>
+					<span>></span>
+					<a>游戏资料</a>
+					<span>></span>
+					<a>英雄</a>
+				</div>
+				<div class="herodiv">
+					<ul class="herotitleul">
+						<li class="active"><a>英雄</a></li>
+						<li><a href="equip_list.html">物品</a></li>
+						<li><a href="skill_list.html">召唤师技能</a></li>
+						<li><a class="maheroa">管理英雄</a></li>
+						<li><a href="yasuo.html">亚索专场</a></li>
+					</ul>
+					<div class="herotxdiv">
+						<ul id="selectul" class="selectul">
+							<li class="selitem selcuritem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">所有英雄</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">战士</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">法师</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">刺客</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">坦克</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">射手</label>
+							</li>
+							<li class="selitem">
+								<span class="radio">
+									<i class="i"></i>
+								</span>			
+								<label class="sellb">辅助</label>
+							</li>
+							<li class="maheroli">
+								<input id="delherobt" type="button" value="删除英雄" />
+							</li>
+							<li class="maheroli">
+								<input id="addherobt" type="button" value="添加英雄" />
+							</li>
+						</ul>
+						<div class="findboxdiv">
+							<input id="findinput" class="findinput" type="text" value="请输入您要搜索的英雄名"/>
+						</div>
+						<ul class="herotxul">
+							<!-- 英雄 -->
+							
+						</ul>
+						<!--添加英雄-->
+						<div class="addherodiv">
+							<form action="php/lol_add_hero.php" method="post" enctype="multipart/form-data"  onsubmit="return isfile(this);">
+								<p>请输入英雄名:<input type="text" name="heroname"/> </p>
+								<p>请选择英雄头像:
+									<input type="file" name="heroimg" />
+								</p>
+								<p><input type="submit" value="添加英雄"/> </p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 尾部图片 -->
+		<div class="headdiv">
+			<img src="img/tail.png"/>
+		</div>
+		<!--用form的input hidden 保存索引值-->
+		<form name="frm" action="hero_detail.php" method="get">
+			<input type="hidden" id = "heroname" name="heroname"/>
+		</form>
+		<script>
+			// 需要做的是 点击头像，将id赋予text，再提交表单
+			function test(name){
+				// 要去除空格。
+				$("#heroname").val(name.trim());
+				document.frm.submit();
+			}
+		</script>
+		<script>
+			function isfile(frm){
+				var f = frm.heroimg.value;
+				var n = frm.heroname.value;
+				if(n.trim() == ""){
+					alert("英雄名不能为空");
+					return false;
+				}
+				if(f == ""){
+					alert("请选择头像文件");
+					return false;
+				}else{
+					return true;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

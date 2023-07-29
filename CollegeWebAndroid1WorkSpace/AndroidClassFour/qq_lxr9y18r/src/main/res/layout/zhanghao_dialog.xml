@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="210dp"
+    android:layout_height="70dp"
+    android:background="@drawable/zidingyi_dialog_shape">
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="70dp"
+	    android:orientation="vertical" 
+	    android:layout_centerInParent="true">
+		<TextView 
+		    android:id="@+id/zhanghao"
+		    android:layout_width="match_parent"
+		    android:layout_height="70dp"
+		    android:textColor="#12B9F6"
+		    android:textSize="14sp"
+		    android:gravity="center"/>		 
+	</LinearLayout>
+</RelativeLayout>

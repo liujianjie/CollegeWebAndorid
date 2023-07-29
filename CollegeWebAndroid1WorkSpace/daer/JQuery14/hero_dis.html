@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin:0px;
+				padding: 0px;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float:left;
+			}
+			body{
+				background: #F7F8F8;
+			}
+			.left{
+				float:left;
+			}
+			.right{
+				float:right;
+			}
+			/*底层最小大小*/
+			.bottomdiv{
+				min-width: 1238px;
+				margin-top: 30px;
+			}
+			.widthdiv{
+				width:1238px;
+				margin:0 auto;
+				overflow: hidden;
+			}
+			.herodiv{
+				width: 100%;
+				border-right: 1px solid #e8e8e8;
+				border-left: 1px solid #e8e8e8;
+				border-top: 1px solid #D7D7D7;
+				box-sizing:content-box;
+				background: #FFFFFF;
+			}
+			.herotitleul{
+				width: 100%;
+				background: #F0F0F0;
+				overflow: hidden;
+			}
+			.herotitleul li{
+				width: 160px;
+				height: 53px;
+				text-align: center;
+			}
+			.herotitleul li a{
+				display: inline-block;
+				line-height: 53px;
+				color: #00a383;
+			}
+			.herotitleul .active{
+				background: #ffffff;
+				border-top: 3px solid #00a383;
+			}
+			.herotxdiv{
+				width: 100%;
+				padding: 30px 37px 0px 30px;;
+				box-sizing: border-box;
+			}
+			.herotxul{
+				width: 100%;
+				overflow: hidden;
+				display: flex;
+				justify-content: space-between;
+			}
+			.herotxul li{
+				width: 150px;
+				height: 200px;
+				text-align: center;
+				margin-bottom: 22px;
+				cursor: pointer;
+			}
+			.herotxul li img{
+				width: 150px;
+				height: 130px;
+				
+			}
+			.herotxul li div{
+				text-align: left;
+				height: 35px;
+				overflow: hidden;
+				line-height: 35px;
+			}
+			.herotxul li div font{
+				font-size: 16px;
+			}
+			.herotxul li span{
+				display: inline-block;
+				font-size: 12px;
+				color: white;
+				display: inline-block;
+				height: 28px;
+				line-height: 28px;
+				text-align: center;
+				border-radius: 5px;
+				width: 45px;
+			}
+			.herotxul li span:first-child{
+				background: #337AB6;
+			}
+			.herotxul li span:last-child{
+				background: #F5EDED;
+				color: black;
+				border-color: #000000;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="bottomdiv">
+			<div class="widthdiv">
+				<div class="herodiv">
+					<ul class="herotitleul">
+						<li class="active"><a>英雄</a></li>
+						<li><a>物品</a></li>
+						<li><a>召唤师技能</a></li>
+						<li><a>符文</a></li>
+						<li><a>云顶之弈</a></li>
+					</ul>
+					<div class="herotxdiv">
+						<ul class="herotxul">
+							<li onclick="clickli(1)" >
+								<img src="images/1371093644361.png">
+								<div>
+									<font>暗裔剑魔</font>
+								</div>
+								<div>
+									<span>购买</span>
+									<span>详情</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--用form的input hidden 保存索引值-->
+		<form name="frm" action="hero_deatil.html" method="get">
+			<input type="hidden" name="heroindex"/>
+		</form>
+		<script>
+			// 需要做的是 点击头像，将id赋予text，再提交表单
+			function clickli(idx){
+				document.getElementsByName("heroindex")[0].value = idx;
+				document.frm.submit();
+			}
+		</script>
+	</body>
+</html>

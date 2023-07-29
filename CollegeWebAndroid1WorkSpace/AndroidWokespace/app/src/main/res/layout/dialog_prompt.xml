@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_root_width"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_dialog_prompt_title"
+        style="@style/dialog_title"
+        android:text="Title" />
+
+    <ImageView style="@style/line_icon" />
+
+    <EditText
+        android:id="@+id/et_dialog_prompt_content"
+        style="@style/dialog_et"
+        android:hint="Please"
+        android:inputType="number" />
+
+    <LinearLayout style="@style/match_wrap" >
+
+        <Button
+            android:id="@+id/btn_dialog_prompt_left"
+            style="@style/dialog_btn"
+            android:background="@drawable/btn_gray_selector"
+            android:text="Left" />
+
+        <Button
+            android:id="@+id/btn_dialog_prompt_right"
+            style="@style/dialog_btn"
+            android:background="@drawable/btn_blue_selector"
+            android:text="Right" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jlgouwu.dao.BottomDao">
+  	<select id="selbottom" resultType="Bottom">
+  		select * from bottom b left join mold m on b.mold_id=m.mold_id order by b.bottom_id
+  	</select> 
+  	<select id="selMold" resultType="Mold">
+  		select * from mold
+  	</select>
+  	<insert id="addbottom" parameterType="Bottom" >
+  		insert into bottom(bottom,mold_id) values(#{bottom},#{mold_id})
+  	</insert>
+  	<delete id="delbottom" parameterType="Integer">
+  		delete from bottom where bottom_id=#{id}
+  	</delete>
+  	<select id="selhang" parameterType="Integer" resultType="Bottom">
+  		select * from bottom where bottom_id=#{id} limit 0,1
+  	</select> 
+  	<!-- 返回true的 -->
+  	<update id="alerthang" parameterType="Bottom" >
+  		update bottom set bottom = #{bottom},mold_id = #{mold_id} where bottom_id = #{bottom_id}
+	</update>
+	<select id="selfenlei" parameterType="Integer" resultType="Bottom">
+  		select * from bottom b left join mold m on b.mold_id=m.mold_id where b.mold_id=#{mold_id}
+  	</select> 
+  	<select id="selonnbottom_id" parameterType="Integer" resultType="Integer">
+  		select bottom_id from bottom where mold_id=#{mold_id} limit 0,1
+  	</select> 
+  	<select id="selbottomname" parameterType="Integer" resultType="String">
+  		select bottom from bottom where bottom_id = #{bottomid}
+  	</select> 
+  	<select id="selMold2" parameterType="Integer" resultType="String">
+  		select mold from mold where mold_id=#{moldid}
+  	</select> 
+  	<select id="seloneBottomByMoldId" parameterType="Integer" resultType="Bottom">
+  		select * from bottom where mold_id=#{moldId} limit 0,1
+  	</select>
+</mapper>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" onselectstart="return false">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>亚索</title>
+<style type="text/css">
+	
+	body{
+		margin: 0;
+		padding: 0;
+		background-color: #000;
+	}
+	#d{
+		width:300px;
+		height:150px;
+		margin:250px auto;
+		transform-style:preserve-3d;
+		transform:perspective(800px) rotateX(-10deg);
+		position: relative;
+	}
+	
+	#d img{
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		transform:rotateY(10deg);
+		border-radius:5px;
+		box-shadow:0 0 10px #fff;
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+	<div id="d">
+		<img  src="yasuoimg/1.jpg">
+		<img  src="yasuoimg/2.jpg">
+		<img  src="yasuoimg/3.jpg">
+		<img  src="yasuoimg/4.jpg">
+		<img  src="yasuoimg/5.jpg">
+		<img  src="yasuoimg/6.jpg">
+		<img  src="yasuoimg/7.jpg">
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var roX=-10;
+			var roY=0;
+			var deg=360/$("#d img").size();
+			$("#d img").each(function(i){
+				$(this).css({
+					"transform":"rotateY("+deg*i+"deg) translateZ(325px)"
+
+				}).attr("ondragstart","return false ");
+			});
+			
+			$(document).mousedown(function(ev){
+				var x_=ev.clientX;
+				var y_=ev.clientY;
+				$(this).bind("mousemove",function(ev){
+					var x=ev.clientX;
+					var y=ev.clientY;
+					
+					var xN=x-x_;
+					var yN=y-y_;
+					
+					roX+=xN*0.1;
+					roY+=yN*0.1;
+					$("#d").css({
+						"transform":"perspective(800px) rotateY("+roX+"deg)  rotateX("+roY+"deg)"
+					});
+					
+					x_=ev.clientX;
+					y_=ev.clientY;
+				}).bind("mouseup",function(ev){
+					$(this).unbind("mousemove");
+				});
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+/*路径div*/
+.pathdiv{
+	width: 100%;
+	height: 96px;
+	line-height: 96px;
+	font-size: 14px;
+	color: #A9A9A9;
+}
+.pathdiv a,.pathdiv span{
+	display: inline-block;
+}
+.pathdiv span{
+	width: 40px;
+	text-align: center;
+}
+.pathdiv a:nth-child(5){
+	color: #000000;
+	font-size: 15px;
+}
+/*英雄div*/
+.herodiv{
+	width: 100%;
+	border-right: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #D7D7D7;
+	box-sizing:content-box;
+	background: #FFFFFF;
+}
+.herotitleul{
+	width: 100%;
+	background: #F0F0F0;
+	overflow: hidden;
+}
+.herotitleul li{
+	width: 160px;
+	height: 53px;
+	text-align: center;
+}
+.herotitleul li a{
+	display: inline-block;
+	line-height: 53px;
+	color: #00a383;
+}
+.herotitleul .active{
+	background: #ffffff;
+	border-top: 3px solid #00a383;
+}
+
+/*英雄div*/
+.herotxdiv{
+	width: 100%;
+	padding: 30px 37px 50px 30px;;
+	box-sizing: border-box;
+}
+
+/*选择分类英雄div*/
+.selectul{
+	width: 70%;
+	
+}
+.selitem{
+	min-width:60px;
+	margin-right: 17px;
+	position: relative;
+}
+.radio{
+	margin-right: 3px;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border:1px solid #b1b1b1;
+	border-radius: 10px;
+	position: relative;
+}
+
+.selcuritem .radio .i{
+	background:#00a383;
+	border-radius: 10px;
+}
+.radio .i{
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 10px;
+	width: 10px;
+	cursor: pointer;
+}
+.sellb{
+	font-size: 12px;
+	color: #666666;
+}
+/*搜索框div*/
+.findboxdiv{
+	float:right;
+	height: 40px;
+	background: #fff;
+	border:1px solid #cdcdcd;
+	box-shadow: -1px 0 3px rgba(0, 0, 0, 0.1) inset;
+	padding:0 10px 0 8px;
+	width: 24%;
+}
+.findinput{
+	margin-top: 10px;
+	float:left;
+	width: 87%;
+	height: 20px;
+	line-height: 20px;
+	border: 0;
+	background: 0 0;
+	color: #999;
+	border-right: 1px solid #e5e5e5;
+	outline: 0;
+}
+/*英雄列表div*/
+.herotxul{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 70px;
+}
+.herotxul li{
+	width: 90px;
+	height: 100px;
+	text-align: center;
+	margin-bottom: 22px;
+	cursor: pointer;
+}
+.herotxul li a img{
+	width: 66px !important;
+	height: 65px !important;
+}
+.herotxul li a img:hover{
+	opacity: 0.5;
+}
+.herotxul li .as{
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	height: 15px;
+	color:black;
+}
+/*英雄介绍*/
+.heroinfodiv{
+	margin-top: 30px;
+}
+.ptitle{
+	font-size: 24px;
+	color: #338c7a;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.heroleft{
+	width: 434px;
+}
+.heroright{
+	width:780px;
+}
+
+.heroj, .herob{
+	background: #FFFFFF;
+	height: 150px;
+	padding: 30px 30px 30px 30px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.spantag{
+	background: #00A483;
+	font-size: 12px;
+	color: white;
+	display: inline-block;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	border-radius: 5px;
+	padding: 0 4px 0 4px;
+}
+.heroj p{
+	font-weight: bold;
+	font-size: 25px;
+	height: 35px;
+	line-height: 35px;
+}
+.herob p{
+	height: 100%;
+	word-break:break-all;
+	font-size: 14px;
+	line-height: 24px;
+	overflow: hidden;
+	
+}
+
+.herotitleul li{
+	cursor: pointer;
+}
+
+/*
+ 显示物品详情
+ */
+#hint{
+	position: absolute;
+	padding-top:20px;
+	padding-left: 20px;
+	width: 300px;
+	height: 300px;
+}
+.hintctdiv{
+	color: #fff;
+	overflow: hidden;
+	left: 20px;
+	top: 20px;
+	position: absolute;
+	z-index: 6;
+}
+.hintftdiv{
+	overflow: hidden;
+	zoom: 1;
+}
+.hintftdiv img{
+	float:left;
+	margin-right: 20px;
+}
+.hintftdiv h4{
+	float:left;
+	width:60%;
+	font-size: 16px;
+	color:#00A383;
+	line-height: 30px;
+}
+.hintftdiv .cons{
+	float:left;
+	width:60%;
+	font-size: 14px;
+	line-height: 30px;
+}
+.hintsddiv{
+	padding:20px 0;
+	line-height: 18px;
+	font-size: 14px;
+}
+.sbg{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	opacity: 0.7;
+	background: black;
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 2;
+}
+
+
+/*公共的ul头部*/
+.herotitleul li:hover{
+	border-top: 3px solid #00a383;
+}
+
+.maheroli input{
+	margin-right: 5px;
+	padding: 2px;
+}
+/*删除英雄的a*/
+/*.dela{
+	visibility: hidden;
+}*/
+/*按钮的li*/
+/*.maheroli{
+	visibility: hidden;
+}*/
+
+/*添加英雄div*/
+.addherodiv{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 70px;
+}
+.addherodiv input{
+	padding: 2px;
+}
+.addherodiv p{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:frogcare="http://schemas.android.com/apk/res/com.bingoogol.frogcare"
+    style="@style/match_match"
+    android:background="@color/bg_root_black"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/title_top_ll" >
+
+        <include layout="@layout/view_back" />
+
+        <TextView
+            style="@style/title_top_tv"
+            android:text="@string/setting_center" />
+    </LinearLayout>
+
+    <ScrollView
+        style="@style/match_match"
+        android:layout_margin="@dimen/size_normal"
+        android:background="@color/bg_black"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/match_wrap"
+            android:orientation="vertical" >
+
+            <com.bingoogol.frogcare.ui.view.SettingView
+                android:id="@+id/sv_setting_autoupdate"
+                style="@style/match_wrap"
+                android:layout_marginBottom="@dimen/size_divider"
+                frogcare:content_off="@string/autoupdate_closed"
+                frogcare:content_on="@string/autoupdate_opened"
+                frogcare:title="@string/autoupdate" />
+
+            <com.bingoogol.frogcare.ui.view.SettingView
+                android:id="@+id/sv_setting_applock"
+                style="@style/match_wrap"
+                android:layout_marginBottom="@dimen/size_divider"
+                frogcare:content_off="@string/applock_closed"
+                frogcare:content_on="@string/applock_opened"
+                frogcare:title="@string/applock" />
+
+            <com.bingoogol.frogcare.ui.view.SettingView
+                android:id="@+id/sv_setting_attribution"
+                style="@style/match_wrap"
+                android:layout_marginBottom="@dimen/size_divider"
+                frogcare:content_off="@string/attribution_show_off"
+                frogcare:content_on="@string/attribution_show_on"
+                frogcare:title="@string/attribution_show" />
+
+            <com.bingoogol.frogcare.ui.view.SettingView
+                android:id="@+id/sv_setting_blacklist"
+                style="@style/match_wrap"
+                android:layout_marginBottom="@dimen/size_divider"
+                frogcare:content_off="@string/blacklist_intercept_off"
+                frogcare:content_on="@string/blacklist_intercept_on"
+                frogcare:title="@string/blacklist_intercept" />
+            <com.bingoogol.frogcare.ui.view.SettingView
+                android:id="@+id/sv_setting_phone_theft"
+                style="@style/match_wrap"
+                frogcare:content_off="@string/phone_theft_off"
+                frogcare:content_on="@string/phone_theft_on"
+                frogcare:title="@string/phone_theft" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

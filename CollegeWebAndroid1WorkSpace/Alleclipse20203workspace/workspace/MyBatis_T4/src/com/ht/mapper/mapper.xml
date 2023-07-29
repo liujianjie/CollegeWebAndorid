@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.EmpDao">
+    <!-- 为了更好维护还是写上，还有 级联关系 ,还有一个很重要的，为什么要写上，如果bean和字段不同则不会赋值到bean中，相同则会自动附上所以在bean于列名相同可以指定type-->
+	<resultMap type="Emp" id="empMap">
+	    <id column="empno" property="empno"/>
+	    <result column="ename" property="ename"/>
+	    <result column="job" property="job"/>
+	    <result column="mgr" property="mgrs"/>
+	    <result column="hiredate" property="hiredate" javaType="java.util.Date"/>
+	    <result column="sal" property="sal"/>
+	    <result column="comm" property="comm"/>
+	    <result column="deptno" property="deptno"/>
+	</resultMap>
+	
+	<select id="selEmpAndDept" resultType="EmpAndDept">
+	    select e.*,d.dname,d.loc from dept d,emp e where d.deptno = e.deptno
+	</select>
+</mapper>

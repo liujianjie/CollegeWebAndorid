@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片提示</title>
+<link rel="stylesheet" href="css/css2.css" />
+</head>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function(){
+			var myti = "";
+			$('li .hint').bind({
+				mouseenter:function(e){
+					var $hint = $('<div id = "hint" ><img src="'+this.href+'"/> <br/>'+this.title+'</div>');
+					$('body').append($hint);
+					$('#hint').css({
+						"top" : (e.pageY + 10)+"px",
+						"left": (e.pageX + 10)+"px"
+					});
+					myti = this.title;
+					this.title = '';
+				},
+				mouseleave:function(e){
+					$('#hint').remove();
+					this.title = myti;
+				},
+				mousemove:function(e){
+					$('#hint').css({
+						"top" : (e.pageY + 10)+"px",
+						"left": (e.pageX + 10)+"px"
+					});
+				}
+			});
+		});
+		
+	</script>
+<body>
+<h3>有效果：</h3>
+	<ul>
+		<li><a class="hint" href="image/iphone_b.jpg"    
+         title="苹果11"><img src="image/iphone.jpg" alt="苹果11" /></a></li>
+		<li><a class="hint" href="image/Galaxy_b.jpg" title="三星s20"><img src="image/Galaxy.jpg" alt="三星s20"/></a></li>
+		<li><a class="hint" href="image/huawei_b.jpg" title="华为P40"><img src="image/huawei.jpg" alt="华为P40"/></a></li>
+		<li><a  class="hint" href="image/mi_b.jpg" title="小米10"><img src="image/mi.jpg" alt="小米10"/></a></li>
+	</ul>
+
+
+<br/><br/><br/><br/>
+<br/><br/><br/><br/>
+<br/><br/><br/><br/>
+
+
+<h3>无效果：</h3>
+<ul>
+		<li><a href="image/iphone_b.jpg"    
+         title="苹果11"><img src="image/iphone.jpg" alt="苹果11" /></a></li>
+		<li><a href="image/Galaxy_b.jpg" title="三星s20"><img src="image/Galaxy.jpg" alt="三星s20"/></a></li>
+		<li><a href="image/huawei_b.jpg" title="华为P40"><img src="image/huawei.jpg" alt="华为P40"/></a></li>
+		<li><a href="image/mi_b.jpg" title="小米10"><img src="image/mi.jpg" alt="小米10"/></a></li>
+	</ul>
+
+
+</body>
+</html>

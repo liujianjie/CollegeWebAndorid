@@ -1,0 +1,69 @@
+.down_nav{
+	width:1226px;
+	height:100px;
+	background: gold;
+	margin:0 auto;	
+}
+.down_nav .logo{
+	width: 55px;
+	height:55px;
+	background: #FF6700;
+	margin-top: 23px;
+	float:left;
+	overflow:hidden;
+}
+.down_nav .logo div{
+	width:110px;
+	margin-left: -55px;
+	transition: all 0.4s;
+}
+.down_nav .logo:hover div{
+	margin-left: 0;
+}
+.down_nav .logo div a{
+	
+}
+.down_nav ul{
+	float:left;
+}
+.down_nav ul li{
+	padding: 0 10px;
+	height: 100px;
+	line-height: 100px;
+	float:left;
+}
+.down_nav ul li:hover{
+	color:#ff6700;
+}
+.down_nav ul li:first-child{
+	width: 142px;
+}
+.down_nav form{
+	margin-top:22px;
+	float:right;
+	position: relative;
+}
+.down_nav form input{
+	float:left;
+}
+.down_nav form input[type=text]{
+	width:245px;
+	height:50px;
+	font-size:16px;
+	outline: none;
+}
+.down_nav form button{
+	width:52px;
+	height:54px;
+}
+.down_nav form div{
+	position: absolute;
+	top: 17px;
+	right: 80px;
+}
+.down_nav form span{
+	background: #DCDCDC;
+	font-size: 10px;
+	top:30px;
+	left:100px;
+}

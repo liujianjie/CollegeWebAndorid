@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration
+PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="connection.username">scott</property>
+		<property name="connection.password">tiger</property>
+		
+		<!-- 解决No action instance for path /dis could be created -->
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		
+		<!-- 让sql语句输出在控制台中 -->
+		<property name="show_sql">true</property>
+		
+		<!-- 映射文件 -->
+		<mapping resource="vomapping/DepartmentVo.hbm.xml"></mapping>
+		<mapping resource="vomapping/EmpployeeVo.hbm.xml"></mapping>
+	</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,51 @@
+{
+  "id": "1791839",
+  "name": "myfrist",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8777510",
+      "name": "arrow_left",
+      "font_class": "icon-test3",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "720989",
+      "name": "购物",
+      "font_class": "xiazai49",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "739111",
+      "name": "购物 (1)",
+      "font_class": "gouwu1",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "8777494",
+      "name": "star",
+      "font_class": "icon-test",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "8777511",
+      "name": "arrow_down",
+      "font_class": "icon-test1",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "8777512",
+      "name": "arrow_right",
+      "font_class": "icon-test2",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    }
+  ]
+}

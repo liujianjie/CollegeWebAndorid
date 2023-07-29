@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+				width: 800px;
+				overflow: hidden;
+			}
+			ul li{
+				width: 40px;
+				float: left;
+				/*overflow: hidden;*/
+				transition: all 1s;
+			}
+			ul li:nth-child(3){
+				width: 640px;
+			}
+			ul:hover li{
+				width: 40px;
+			}
+			ul li:hover{
+				width: 640px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><img src="img/img1.jpg" alt="" /></li>
+			<li><img src="img/img2.jpg" alt="" /></li>
+			<li><img src="img/img3.jpg" alt="" /></li>
+			<li><img src="img/img4.jpg" alt="" /></li>
+			<li><img src="img/img5.jpg" alt="" /></li>
+		</ul>
+	</body>
+</html>

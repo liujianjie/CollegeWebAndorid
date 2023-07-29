@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <!-- 菜品销售统计 -->
+   <package name="mealTotal" extends="default">
+      <action name="mealtotal_*" class="com.dc.controller.mealTotal.mealTotalAction" method="{1}">
+        <result name="success">${target}</result>
+      </action>
+   </package>
+</struts>    

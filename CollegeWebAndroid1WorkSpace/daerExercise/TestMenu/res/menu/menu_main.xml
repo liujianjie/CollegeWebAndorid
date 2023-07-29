@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_fes"
+        android:title="节日"
+        android:icon="@drawable/top1"
+        app:showAsAction="always">
+    </item>
+	<item
+        android:id="@+id/action_edit"
+        android:title="编辑"
+        android:icon="@drawable/tx2"
+        app:showAsAction="always">
+        <menu >
+            <group 
+                android:checkableBehavior="single">
+                <item
+			        android:id="@+id/action_red"
+			        android:title="红色"
+			        android:checked="true"
+			        android:icon="@drawable/top1"/>
+                <item
+			        android:id="@+id/action_blue"
+			        android:title="蓝色"
+			        android:icon="@drawable/tx3"/>
+                <item
+			        android:id="@+id/action_green"
+			        android:title="绿色"
+			        android:icon="@drawable/tx2"/>
+            </group>
+            
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_delete"
+        android:title="删除"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/action_settings"
+        android:title="设置"
+        app:showAsAction="never">
+    </item>
+</menu>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="pack1" namespace="/bkuser" extends="json-default">
+		<action name="*" class="com.aaa.action.BkUserAction" method="{1}">
+			<result type="json"></result>
+			<result name="tobkLogin" type="redirect">/back/bkLogin.jsp</result>
+			<result name="tobkRegister" type="redirect">/back/bkRegister.jsp</result>
+		</action>
+	</package>
+	<package name="pack3" namespace="/bkdept" extends="json-default">
+		<action name="*" class="com.aaa.action.DeptAction" method="{1}">
+			<result type="json"></result>
+			<result name="alertdept" type="dispatcher">/front/alertdept.jsp
+			</result>
+
+			<result name="jiedianguanli" type="dispatcher">/front/jiedianguanli.jsp
+			</result>
+		</action>
+	</package>
+	<package name="pack4" namespace="/bkdepartment" extends="json-default">
+		<action name="*" class="com.aaa.action.DepartmentAction"
+			method="{1}">
+			<result type="json"></result>
+			<result name="alertdepartment" type="dispatcher">/front/alertdepartment.jsp
+			</result>
+
+		</action>
+	</package>
+	<package name="pack5" namespace="/bkcomment" extends="json-default">
+		<action name="*" class="com.aaa.action.CommentAction"
+			method="{1}">
+			<result type="json"></result>
+
+		</action>
+	</package>
+</struts>    

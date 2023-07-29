@@ -1,0 +1,202 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+/*底层最小大小*/
+.bottomdiv{
+	min-width: 1090px;
+}
+
+.widthdiv{
+	width:1090px;
+	margin:0 auto;
+	overflow: hidden;
+}
+/*位置divstart-----------*/
+.posdiv p{
+	line-height: 52px;
+	font-size:12px;
+}
+.posdiv p a{
+	color:#333333;
+}
+.posdiv p a:hover {
+	text-decoration: underline;
+}
+/*加>图片*/
+.posdiv p span{
+	background: url(../img/k_icon.png) no-repeat 0 -1055px;
+	display: inline-block;
+	font-size: 12px;
+	margin:0 5px;
+	width: 5px;
+	height: 11px;
+}
+/*位置divend----------*/
+
+/*商品信息divstart-----------*/
+.goodsinfodiv{
+	height: 564px;
+}
+.goodsinfoldiv{
+	width: 430px;
+}
+.goodsinfoimgdiv{
+	width: 430px;
+	height: 430px;
+}
+.goodsinfoimgdiv img{
+	width: 430px;
+	height: 430px;
+}
+.goodsinfosmallimgdiv{
+	margin-top: 14px;
+	height: 78px;
+	display: flex;
+	justify-content: space-between;
+}
+.goodsinfosi img{
+	width: 76px;
+	height: 76px;
+}
+.goodsinfosi{
+	
+}
+/*鼠标放上去有边框,padding实现*/
+.goodsinfosi:hover img{
+	width: 74px;
+	height: 74px;
+}
+.goodsinfosi:hover{
+	background: #B4A078;
+	padding:1px 1px 1px 1px;
+	text-align: center;
+	line-height: 74px;
+}
+.goodsinfobottomdiv{
+	margin-top: 14px;
+}
+.goodsinfobottomdiv a{
+	color:#B4A078;
+	font-size: 13px;
+	width: 131px;
+	height: 28px;
+	border:1px #B4A078 solid;
+	display: block;
+	line-height: 28px;
+	background: #F5F3EF;
+}
+.goodsinfobottomdiv a span{
+	padding-left: 15px;
+}
+
+.goodsinfordiv{
+	width: 620px;
+	height: 544px;
+}
+.goodsinfordiv span{
+	display: inline-block;
+}
+.goodsinfodiv .goodsinfotop{
+	height: 57px;
+}
+.goodsinfordiv .rone{
+	height: 20px;
+	margin-bottom: 8px;
+}
+
+.goodsinfordiv .name{
+	font-size: 19px;
+	font-family: "微软雅黑";
+	color:#000000;
+	font-weight: bold;
+}
+
+.goodsinfordiv .rtwo{
+	height: 20px;
+}
+.goodsinfordiv .goodssall{
+	height: 251px;
+	clear: both;
+	background: #F5F3EF;
+	margin-top: 20px;
+}
+.leftlabelwidth{
+	width: 55px;
+	font-size:13px;
+	margin-left: 10px;
+}
+.goodssall .pricelabel{
+	height: 30px;
+	margin-top: 20px;
+	
+}
+.goodssall .rfour{
+	text-align: center;
+	height: 33px;
+}
+.goodssall .rfive{
+	height: 28px;
+	line-height: 28px;
+}
+.goodssall .rsix,.rseven{
+	height: 24px;
+	line-height: 24px;
+}
+.goodssall .reight{
+	overflow: hidden;
+	height: 42px;
+}
+.goodssall .reight .policydiv{
+	width: 555px;
+}
+.goodsallccdiv{
+	height: 116px;
+	padding-left: 10px;
+}
+.goodsallccdiv .colordiv{
+	height: 67px;
+	width: 610px;
+	clear: both;
+}
+.fontsize13lable{
+	font-size:13px;
+}
+.colordiv .colorlabel{
+	width: 54px;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+}
+.colordiv .selectimgul{
+	width: 550px;
+	height: 67px;
+	display: inline-block;
+}
+.colordiv .selectimgul img{
+	width: 46px;
+	height: 46px;
+	margin: 0px;
+	padding: 0px;
+}
+.goodsallccdiv .countdiv{
+	height: 49px;
+	line-height: 49px;
+}
+.countdiv .countlabel{
+	width: 54px;
+	height: 30px;
+}
+/*商品信息divend-----------*/

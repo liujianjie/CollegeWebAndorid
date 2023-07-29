@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="vo.DepartmentVo" table="department">
+		<id name="deptid" column="deptid" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="sequence">sequence_emp</param>
+			</generator>
+		</id>
+		<property name="deptname" type="java.lang.String"></property>
+		<property name="parentid" type="java.lang.Integer"></property>
+		
+		<set name="employee" lazy="true" cascade="all">
+			<!-- 对方表的关联列 -->
+			<key column="deptid"></key>
+			<one-to-many class="vo.EmployeeVo"/>
+		</set>
+	</class>
+</hibernate-mapping>
+    

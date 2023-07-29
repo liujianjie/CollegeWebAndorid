@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.a{
+				width: 300px;
+				/*height: 200px;*/
+				background: red;
+				/* hidden auto scroll*/
+				/* 快速提示  alt  +  /  */
+				overflow: hidden;
+			}
+			.b{
+				width: 200px;
+				height: 100px;
+				background: green;
+				float: left;
+			}
+			.c{
+				width: 200px;
+				height: 100px;
+				background: darkblue;
+				float: left;
+			}
+			.d{
+				/*清除浮动*/
+				clear: both;
+			}
+			.clear::after{
+				/*不能少*/
+				content: "";
+				display: block;
+				clear: both;
+				/* visibility: hidden;  display: hidden; 区别？*/
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			高度塌陷{
+				解决方式：
+					1。在最后插入一个元素
+					2. overflow
+					3.伪元素
+			}
+			如果父级盒子宽大不够，浮动之后会换行
+			浮动之后，元素脱离了文本流；
+			
+		-->
+		<div class="a clear">
+			<div class="b"></div>
+			<div class="c"></div>
+			<!--<div class="d"></div>-->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				background: #123a;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div" style="opacity: 0.5;"></div>
+	</body>
+	<script>
+		var $div = document.querySelector(".div");
+//		$div.setAttribute("height", "180");
+//		$div.setAttribute("data-index", 1);
+//		$div.style.setProperty("height","180px")
+//		console.log($div.getAttribute("data-index"));
+//		$div.removeAttribute("height");
+//		$div.style.background = "aqua";
+		
+		// 只能获取行内样式
+		console.log($div.style.opacity);
+		// 可以获取css样式 行内和非行内都可以
+		console.log(getComputedStyle($div,false)["opacity"]);
+		
+		console.log($div.className);
+		console.log($div.classList.add("aa"));
+		// 获取高度
+		console.log($div.offsetHeight);
+		
+		// 获取定位的top left
+		console.log($div.offsetTop);
+		console.log($div.offsetLeft);
+	</script>
+</html>

@@ -1,0 +1,15 @@
+p{
+	text-align:center;
+	color:#0080ff;
+	background-color: #66b3ff;
+	font-size:47px;
+	margin-top:0px;
+}
+.centerdiv{
+	margin:100px auto;
+	text-align: center;
+}
+.input{
+	height:40px;
+	width:250px;
+}

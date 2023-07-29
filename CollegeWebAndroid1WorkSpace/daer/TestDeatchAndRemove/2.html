@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p{
+            margin: 6px;
+            background: yellow;
+        }
+        p.off{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <p>hello</p>
+    how are
+    <p>you?</p>
+    <button>按钮</button>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("p").click(function(){
+            $(this).toggleClass("off");
+        })
+
+        var p;
+        $("button").click(function(){
+            if(p){
+                p.appendTo("body");
+                p = null;
+            }else{	
+                p = $("p").detach();
+                console.log(p);
+            }
+        })
+    });
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/demo2.css"></link>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="mybox">
+			
+		</div>
+		
+		<script>
+			var text = "两只老虎 两只老虎跑得快 一只没有眼睛 一只没有尾巴 真奇怪 真奇怪 两只老虎 两只老虎 跑得快 跑得快 一只没有眼睛 一只没有尾巴 真奇怪 真奇怪两只老虎 两只老虎 跑得快 跑得快 一只没有眼睛 一只没有尾巴 真奇怪 真奇怪"
+			function rc(){
+				return parseInt(Math.random()*256);
+			}
+			$(function(){
+				var i = 0;
+				var timer = null;
+				timer = setInterval(function(){
+					if(i <= text.length){
+						var t = text.substr(i++, 1);
+						var color = "rgb("+rc()+","+rc()+","+rc()+")";
+						var spans = "<span style='color:"+color+"'>"+t+"</span>";
+						$('.mybox').html(function(i, v){
+							return v + spans;
+						});
+					}else{
+						clearInterval(timer);
+					}
+				},200)
+			})
+		</script>
+	</body>
+</html>

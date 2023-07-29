@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css1.css"/>
+<script src="js/jquery.js"></script>
+<title>弹幕</title>
+	<script>
+		  $(function(){
+			  $("#danmu").click(function(){
+				  $(".barrage").toggle();
+			  })
+			 $(".barrage-send").click(function(){
+				 var txt = $("<div>"+$(".barrage-txt").val()+"</div>");
+				 var height = Math.floor(Math.random() * $(".barrage").height());
+				 
+				 $(".show").append(txt);
+				 $(".show div:last").css("top", height)
+				 .animate({right:$(".barrage").width()}, 5000, function(){
+					$(this).remove();
+				 });
+				 $(".barrage-txt").val("");
+			 })
+		  });
+		  
+	</script>
+</head>
+
+<body>
+<center>
+  <a href="" id="danmu">弹幕区域</a>
+</center>
+
+<div class="barrage">
+  <div class="show">     
+  </div>
+</div>
+
+<div class="barrage">
+  <input type="text" class="barrage-txt"
+  placeholder="请输入弹幕内容">
+  <input type="button" value="发布评论" class="barrage-send">
+  
+</div>
+
+</body>
+</html>

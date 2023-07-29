@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css2.css"/>
+	<script src="js/jquery.js"></script>
+    <title>列表的增删和移动</title>
+	<script>
+		$(function(){
+			// 显式
+			$("span.list-add-show").click(function(){
+				$("div.list-add-area").removeClass("list-hide");
+			});
+			// 隐藏
+			$("#bt2").click(function(){
+				$("div.list-add-area").addClass("list-hide");
+			});
+			// 添加元素
+			$("#bt1").click(function(){
+				var li = $("<li class='list-option'><input class='list-input' type='text'><span class='list-btn'><span class='list-up' onclick='moveup(this);'> [上移] </span><span class='list-down' onclick='movedown(this);'>[下移] </span><span class='list-del' onclick='del(this);'>[删除]</span></span></li>");
+				var returnli = $("ul.list-ul").append(li);
+				$("input.list-input:last").val($("input.list-add-input").val());
+				$("input.list-add-input").val("");
+			});
+			// 上移
+			$("span.list-up").click(function(){
+				var li = $(this).parents("li");// 找到自己祖先元素是li的祖先
+				li.prev().before(li);
+			});
+			// 下移
+			$("span.list-down").click(function(){
+				var li = $(this).parents("li");// 找到自己祖先元素是li的祖先
+				li.next().after(li);
+			})
+			// 删除
+			$("span.list-del").click(function(){
+				var li = $(this).parents("li");// 找到自己祖先元素是li的祖先
+				li.remove();
+			});
+		});
+		// 通用方法,给动态添加的元素静态绑定事件
+		function moveup(span){
+			var li = $(span).parents("li");// 找到自己祖先元素是li的祖先
+			li.prev().before(li);
+		}
+		function movedown(span){
+			var li = $(span).parents("li");// 找到自己祖先元素是li的祖先
+			li.next().after(li);
+		}
+		function del(span){
+			var li = $(span).parents("li");// 找到自己祖先元素是li的祖先
+			li.remove();
+		}
+	</script>
+    </head>
+  <body>
+    <form>
+      <div class="list">
+        <ul class="list-ul">
+           <li class="list-option">
+            <input class="list-input" type="text" value="HTML+CSS">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          <li class="list-option">
+            <input class="list-input" type="text" value="JavaScript">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          <li class="list-option">
+            <input class="list-input" type="text" value="c">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          
+        </ul>
+        <div class="list-bottom">
+          <span id="show" class="list-add-show"><span>添加项目</span></span>
+          <div id="div1" class="list-add-area list-hide">
+            添加到列表：
+            <input class="list-add-input" type="text" name="list[]">
+            <input  id="bt1" class="list-add-add" type="button" value="添加">
+            <input  id="bt2" class="list-add-cancel" type="button" value="取消">
+          </div>
+        </div>
+      </div>
+    </form>
+     </body>
+</html>

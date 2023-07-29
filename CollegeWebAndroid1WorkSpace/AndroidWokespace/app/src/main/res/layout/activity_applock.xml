@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/bg_root_black"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/title_top_ll" >
+
+        <include layout="@layout/view_back" />
+
+        <TextView
+            style="@style/title_top_tv"
+            android:text="@string/applock" />
+    </LinearLayout>
+
+    <FrameLayout style="@style/match_auto" >
+
+        <LinearLayout
+            android:id="@+id/ll_unlock"
+            style="@style/match_match"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_unlock_count"
+                style="@style/list_title"
+                android:text="@string/unlock_count" />
+
+            <ListView
+                android:id="@+id/lv_unlock"
+                style="@style/match_match"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@color/divider"
+                android:dividerHeight="2dp"
+                android:listSelector="@android:color/transparent" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_locked"
+            style="@style/match_match"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_locked_count"
+                style="@style/list_title"
+                android:text="@string/locked_count" />
+
+            <ListView
+                android:id="@+id/lv_locked"
+                style="@style/match_match"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@color/divider"
+                android:dividerHeight="@dimen/size_divider"
+                android:listSelector="@android:color/transparent" >
+            </ListView>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/match_wrap"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_unlock_tab"
+            style="@style/applock_tab"
+            android:text="@string/unlock" />
+
+        <TextView
+            android:id="@+id/tv_locked_tab"
+            style="@style/applock_tab"
+            android:text="@string/locked" />
+    </LinearLayout>
+
+</LinearLayout>

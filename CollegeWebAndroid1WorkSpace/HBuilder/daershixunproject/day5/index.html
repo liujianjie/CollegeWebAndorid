@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<p id="a">aaaa</p>
+	</body>
+	<script>
+		function f1(){
+			console.log(e);
+			var e = 3;
+		}
+		//f1();
+		var arr = ["a", "b", "c"];
+		for(var temp in arr){
+			console.log(temp);
+		}
+		var people = {
+			name:"zs",
+			age:1,
+			sex:"n"
+		}
+		for(var k in people){
+			console.log(k+":"+people[k]);
+		}
+		var a,b,c;
+		var arr2 = [1,2,3];
+		[a,b,c] = [1,2,3];
+		console.log(a);
+		var {name, age} = people;
+		console.log(age);
+		
+		function f1(a,b,...temp){
+			console.log(temp);
+		}
+		f1(1,2,1,2,3,4);
+		document.getElementById("a").onclick = () =>{
+			alert(1);
+		}
+	</script>
+</html>

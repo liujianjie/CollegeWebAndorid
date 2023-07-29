@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 配置实体类 -->
+<service-config>
+	<service name="deptservice" class="serviceImp.DeptServiceImp"></service>
+	<!-- 多个servicefactory在下面多写几个service就行 -->
+</service-config>

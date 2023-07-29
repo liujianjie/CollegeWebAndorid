@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jlgouwu.dao.UserOrdersDao">
+
+	
+	<insert id="zhuce" parameterType="JRuser" >
+  		insert into jruser
+  		(uname,pwd,jr_img,jointime,birthday,moneys,phone) 
+  		values
+  		(#{uname},#{pwd},#{jr_img},#{jointime},#{birthday},#{moneys},#{phone})
+  	</insert>
+	<select id="denglu" resultType="Integer">
+  		select count(*) from jruser where uname=#{0} and pwd=#{1} limit 0, 1
+  	</select>
+	<select id="cunzaiuname" parameterType="String" resultType="Integer">
+  		select count(*) from jruser where uname=#{uname} limit 0, 1
+  	</select>
+	<select id="seljruser" parameterType="String" resultType="JRuser">
+  		select * from jruser where uname=#{uname} limit 0,1
+  	</select>
+	<insert id="addorders" parameterType="Orders" >
+  		insert into orders
+  		(jruser_id,xfm,statu,gtime,g_id,gname,gdec,gprice,gwccount,total,gimg)
+  		values
+  		(#{jruser_id},#{xfm},#{statu},#{gtime},#{g_id},#{gname},#{gdec},#{gprice},#{gwccount},#{total},#{gimg})
+  	</insert>
+	<select id="selorders" resultType="Orders">
+  		select * from orders where jruser_id=#{2} limit #{0},#{1}
+  	</select>
+  	<select id="selcountorders" parameterType="Integer" resultType="Integer">
+  		select count(*) from orders where jruser_id=#{jruser_id}
+  	</select>
+  	<update id="alertsale">
+  		update goods set g_sale=g_sale+#{1} where g_id=#{0}
+	</update>
+	<select id="xfyz" parameterType="String" resultType="Orders">
+  		select * from orders where xfm=#{xfm} limit 0,1
+  	</select>
+	<update id="alertstatu" parameterType="Integer">
+  		update orders set statu=2 where orders_id=#{orders_id}
+	</update>
+	<insert id="addcomment" parameterType="Comment" >
+  		insert into comments(jruser_id,g_id,c_comment,c_time) 
+  		values(#{jruser_id},#{g_id},#{c_comment},#{c_time})
+  	</insert>
+	<select id="selcomment" resultType="Comment">
+  		select * from comments c left join jruser j on c.jruser_id=j.jruser_id 
+  		where g_id=#{2} limit #{0},#{1}
+  	</select>
+  	<select id="selcommentcount" parameterType="Integer" resultType="Integer">
+  		select count(*) from comments where g_id=#{g_id}
+  	</select>
+  	<select id="shifougm" resultType="Integer">
+  		select count(*) from orders where g_id=#{1} and jruser_id=#{0} limit 0,1
+  	</select>
+  	<select id="seljruserpinglun" parameterType="Integer" resultType="JRuser">
+  		select * from jruser where jruser_id=#{jruser_id}
+  	</select>
+</mapper>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!--T4的文字-->
+    <string name="t4_tv1">&#060;--</string><!--特殊字符-->
+    <!--T5的文字-->
+    <string name="tv1">Array\nAdapter</string>
+    <string name="tv2">星座查询</string>
+    <string name="tv3">Simple\nAdapter</string>
+    <string name="tv4">好友列表</string>
+    <string name="tv5">软件评分</string>
+    <string name="tv6">Cursor\nAdapter</string>
+    <string name="tv7">扩展下拉列表</string>
+</resources>

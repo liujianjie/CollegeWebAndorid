@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp">
+    <RelativeLayout 
+        android:id="@+id/newfriendsitem_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <com.example.qq_lxr9y18r.RoundView 
+            android:id="@+id/newfriendsitem_iv_touxiang"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher"/>
+        <TextView 
+            android:id="@+id/newfriendsitem_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/newfriendsitem_iv_touxiang"
+            android:text="雨果"/>
+        <TextView 
+            android:id="@+id/newfriendsitem_tv2_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#B9B9B9"
+            android:layout_toRightOf="@id/newfriendsitem_iv_touxiang"
+            android:layout_below="@id/newfriendsitem_tv_name"
+            android:layout_marginTop="1dp"/>
+        <!-- 同意按钮 -->
+        <Button
+            android:id="@+id/newfriendsitem_btn_agreen"
+            android:layout_width="50dp"
+            android:layout_height="26dp"
+            android:text="同意"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_shape"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+            
+        </Button>
+    </RelativeLayout>
+	
+</RelativeLayout>

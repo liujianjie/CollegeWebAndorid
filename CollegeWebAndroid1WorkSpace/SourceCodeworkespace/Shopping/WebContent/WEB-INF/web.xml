@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <servlet>
+    <servlet-name>GoodsManage</servlet-name>
+    <servlet-class>com.zuxia.control.GoodsManage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SystemManage</servlet-name>
+    <servlet-class>com.zuxia.control.SystemManage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CustomerManage</servlet-name>
+    <servlet-class>com.zuxia.control.CustomerManage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GoodsTypeManage</servlet-name>
+    <servlet-class>com.zuxia.control.GoodsTypeManage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderManage</servlet-name>
+    <servlet-class>com.zuxia.control.OrderManage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BulletinManage</servlet-name>
+    <servlet-class>com.zuxia.control.BulletinManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartManage</servlet-name>
+    <servlet-class>com.zuxia.control.CartManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PayManage</servlet-name>
+    <servlet-class>com.zuxia.control.PayManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CustomerForwardManage</servlet-name>
+    <servlet-class>com.zuxia.control.CustomerForwardManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxGetIsEmailExists</servlet-name>
+    <servlet-class>com.zuxia.control.AjaxGetIsEmailExists</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>GoodsManage</servlet-name>
+    <url-pattern>/servlet/GoodsManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SystemManage</servlet-name>
+    <url-pattern>/servlet/SystemManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerManage</servlet-name>
+    <url-pattern>/servlet/CustomerManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsTypeManage</servlet-name>
+    <url-pattern>/servlet/GoodsTypeManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderManage</servlet-name>
+    <url-pattern>/servlet/OrderManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BulletinManage</servlet-name>
+    <url-pattern>/servlet/BulletinManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartManage</servlet-name>
+    <url-pattern>/servlet/CartManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PayManage</servlet-name>
+    <url-pattern>/servlet/PayManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerForwardManage</servlet-name>
+    <url-pattern>/servlet/CustomerForwardManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxGetIsEmailExists</servlet-name>
+    <url-pattern>/servlet/AjaxGetIsEmailExists</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>/index2.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

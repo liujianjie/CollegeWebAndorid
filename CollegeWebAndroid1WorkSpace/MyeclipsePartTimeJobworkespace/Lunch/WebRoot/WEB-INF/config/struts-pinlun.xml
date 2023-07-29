@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <!--  package的name名称不能冲突，但是可以相互继承 -->
+   <package name="pinlun" extends="default">
+      <action name="pl_*" class="com.dc.controller.Pinlun.PinlunAction" method="{1}">
+        <result name="success">${target}</result>
+      </action>
+      <action name="com_*" class="com.dc.controller.Pinlun.CommentAction" method="{1}">
+        <result name="success">${target}</result>
+      </action>
+   </package>
+</struts>    

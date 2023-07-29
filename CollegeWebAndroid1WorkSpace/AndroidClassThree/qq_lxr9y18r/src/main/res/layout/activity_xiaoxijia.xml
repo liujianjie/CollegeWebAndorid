@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/popupwindow_xiaoxi_shape">
+    
+    <RelativeLayout 
+        android:layout_width="100dp"
+    	android:layout_height="wrap_content"
+    	android:background="@drawable/popupwindow_xiaoxi_shape">
+	<TextView 
+	    android:id="@+id/xiaoxijia_tv1"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="多人聊天"
+	    android:textSize="14sp"
+	    android:gravity="center"/>
+    <TextView 
+	    android:id="@+id/xiaoxijia_tv2"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="加好友"
+	    android:textSize="14sp"
+	    android:layout_below="@+id/xiaoxijia_tv1"
+	    android:gravity="center"/>
+    <TextView 
+	    android:id="@+id/xiaoxijia_tv3"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="扫一扫"
+	    android:textSize="14sp"
+	     android:layout_below="@+id/xiaoxijia_tv2"
+	     android:gravity="center"/>
+    <TextView 
+	    android:id="@+id/xiaoxijia_tv4"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="面对面快传"
+	    android:textSize="14sp"
+	     android:layout_below="@+id/xiaoxijia_tv3"
+	     android:gravity="center"/>
+    <TextView 
+	    android:id="@+id/xiaoxijia_tv5"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="付款"
+	    android:textSize="14sp"
+	     android:layout_below="@+id/xiaoxijia_tv4"
+	     android:gravity="center"/>
+    
+    </RelativeLayout>
+</RelativeLayout>

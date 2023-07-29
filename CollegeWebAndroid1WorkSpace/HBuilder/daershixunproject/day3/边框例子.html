@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				width: 800px;
+				height: 400px;
+				/*background: darkgoldenrod;*/
+				position: relative;
+			}
+			.b{
+				width: 0px;
+				height: 150px;
+				/*background: red;*/
+				position: absolute;
+				top: 0;left: 0;right: 0;bottom: 0;
+				margin: auto;
+				border-top: 2px solid red;
+				border-bottom: 2px solid red;
+				transition: all 1s; 
+			}
+			.c{
+				width: 150px;
+				height: 0px;
+				/*background: blue;*/
+				position: absolute;
+				top: 0;left: 0;right: 0;bottom: 0;
+				margin: auto;
+				border-left: 2px solid green;
+				border-right: 2px solid green;
+				transition: all 1s;
+			}
+			
+			.a:hover .b{
+				width: 200px;
+			}
+			.a:hover .c{
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b"></div>
+			<div class="c"></div>
+		</div>
+		
+	</body>
+</html>

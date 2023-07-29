@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    
+<struts>
+	
+	<package name="p1" namespace="/ht" extends="struts-default">
+		<!-- name无论为什么都是去execute方法 不过路径要与name相对 -->
+		
+		<action name="down" class="action.DownloadAction"></action>
+	</package>
+	
+	<!-- 有jsonaction的这个package extends 要改成 json-default -->
+	<package name="p2" namespace="/ht2" extends="json-default">
+	<action name="upload" class="action.FileAction"></action>
+		<action name="*" class="action.JsonAction" method="{1}">
+		
+			<result type="json"></result>
+			
+			<result name="toindex">/index.jsp</result>
+		</action>
+		<action name="down" class="action.DownloadAction"></action>
+	</package>
+	<package name="p3" namespace="/email" extends="struts-default">
+		<action name="*" class="action.EmailAction" method="{1}">
+		</action>
+	</package>
+</struts>

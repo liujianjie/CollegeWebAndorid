@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  
+   <!--  package的name名称不能冲突，但是可以相互继承 -->
+   <package name="order" extends="default" namespace="/">
+   		<!-- 前台用户购物和订单 --> 		
+   		<action name="o_*" class="com.dc.controller.card.OrderDetail" method="{1}">
+			<result name="clear">/module/Buy/SelectCard.jsp</result>
+			<result name="delete">/card/SelectCard</result>			
+			<result name="myorder">/module/Buy/MyOrder.jsp</result>
+			<result name="detail">/module/Buy/MyOrderdetail.jsp</result>
+		</action>
+		<!-- 后台外卖订单 -->
+		<action name="d_*" class="com.dc.controller.order.Detail1" method="{1}">
+			<result name="success">/</result>
+		</action>
+		<!-- 前台登录session清空 -->
+		<action name="m_*" class="com.dc.controller.card.menu" method="{1}">
+			<result name="success">/module/Login/Menu.jsp</result>
+		</action>
+		<!-- 订单统计 -->
+		 <action name="c_*" class="com.dc.controller.order.OrderCount" method="{1}">
+			<result name="list">/module/Order/OrderCount.jsp</result>
+		</action>
+		<!-- 修改购物车数量 -->
+		<action name="u_*" class="com.dc.controller.card.CardUpdate" method="{1}">
+			<result name="success">/</result>
+		</action> 		
+   </package>
+</struts>    

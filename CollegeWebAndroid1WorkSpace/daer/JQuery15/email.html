@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<style>
+			p{
+				color: red;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var inp = document.getElementById("emailtx");
+				var p = document.getElementById("textp");
+				inp.onblur = function(){
+					// 1.创建异步对象
+					var xhr = new XMLHttpRequest;
+					// 2.请求行
+					xhr.open('GET', 'testemail.php?email='+this.value);					
+					// 3.请求头
+					// 4.请求主题
+					xhr.send(null);
+					// 5.回调函数
+					xhr.onreadystatechange=function(){
+						if(xhr.readyState == 4 && xhr.status == 200){
+							p.innerText = xhr.responseText;
+						}
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="请输入邮箱" id="emailtx"/>
+			<p id="textp"></p>
+			<input type="text" placeholder="请输入密码" /><br /><br />
+			<input type="button" value="注册"/><br />
+		</form>
+	</body>
+</html>

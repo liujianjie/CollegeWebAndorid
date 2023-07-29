@@ -1,0 +1,185 @@
+/*路径div*/
+.pathdiv{
+	width: 100%;
+	height: 96px;
+	line-height: 96px;
+	font-size: 14px;
+	color: #A9A9A9;
+}
+.pathdiv a,.pathdiv span{
+	display: inline-block;
+}
+.pathdiv span{
+	width: 40px;
+	text-align: center;
+}
+.pathdiv a:nth-child(5){
+	color: #000000;
+	font-size: 15px;
+}
+/*英雄div*/
+.herodiv{
+	width: 100%;
+	border-right: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #D7D7D7;
+	box-sizing:content-box;
+	background: #FFFFFF;
+}
+.herotitleul{
+	width: 100%;
+	background: #F0F0F0;
+	overflow: hidden;
+}
+.herotitleul li{
+	width: 160px;
+	height: 53px;
+	text-align: center;
+}
+.herotitleul li a{
+	display: inline-block;
+	line-height: 53px;
+	color: #00a383;
+}
+.herotitleul .active{
+	background: #ffffff;
+	border-top: 3px solid #00a383;
+}
+
+/*技能div*/
+.skilltxdiv{
+	width: 100%;
+	overflow: hidden;
+	padding: 30px 37px 50px 30px;;
+	box-sizing: border-box;
+}
+
+/*技能列表div*/
+.skillul{
+	width: 43%;
+	overflow: hidden;
+	margin-top: 30px;
+	padding-left:16px;
+	margin-right: 0;
+	border-right: 1px solid #f0f0f0;
+}
+.skillul li{
+	width: 90px;
+	height: 100px;
+	text-align: center;
+	margin-bottom: 22px;
+	cursor: pointer;
+	position: relative;
+}
+.skillul li img{
+	width: 66px !important;
+	height: 65px !important;
+}
+.skillul .current .sbor{
+	position: absolute;
+	top: 0;
+	left: 10px;
+	display: block;
+	width: 56px;
+	height: 56px;
+	border: 6px solid #00A383;
+} 
+.skillul li .as{
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	height: 15px;
+	color:black;
+}
+/*技能介绍*/
+.skillinfodiv{
+	width: 50%;
+	padding-top:30px;
+	padding-left: 40px;
+}
+.skillheaddiv{
+	overflow: hidden;
+	zoom: 1;
+}
+.skillheaddiv img{
+	float:left;
+	margin-right: 20px;
+}
+.skillheaddiv h4{
+	float:left;
+	width:60%;
+	font-size: 16px;
+	color:#00A383;
+	line-height: 30px;
+}
+.skillheaddiv .cons{
+	float:left;
+	width:60%;
+	font-size: 14px;
+	color:#9a9a9a;
+	line-height: 30px;
+}
+.skillmiddiv{
+	padding:20px 0;
+	line-height: 18px;
+	color:#333;
+	font-size: 14px;
+}
+.heroinfodiv{
+	margin-top: 30px;
+}
+.ptitle{
+	font-size: 24px;
+	color: #338c7a;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.heroleft{
+	width: 434px;
+}
+.heroright{
+	width:780px;
+}
+
+.heroj, .herob{
+	background: #FFFFFF;
+	height: 150px;
+	padding: 30px 30px 30px 30px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.spantag{
+	background: #00A483;
+	font-size: 12px;
+	color: white;
+	display: inline-block;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	border-radius: 5px;
+	padding: 0 4px 0 4px;
+}
+.heroj p{
+	font-weight: bold;
+	font-size: 25px;
+	height: 35px;
+	line-height: 35px;
+}
+.herob p{
+	height: 100%;
+	word-break:break-all;
+	font-size: 14px;
+	line-height: 24px;
+	overflow: hidden;
+	
+}
+
+.herotitleul li{
+	cursor: pointer;
+}
+
+/*公共的ul头部*/
+.herotitleul li:hover{
+	border-top: 3px solid #00a383;
+}

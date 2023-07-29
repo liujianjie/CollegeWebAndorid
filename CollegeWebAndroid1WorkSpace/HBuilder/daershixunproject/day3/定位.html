@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/**{
+				margin: 0;
+			}*/
+			.a{
+				width: 600px;
+				/*height: 600px;*/
+				background: red;
+				/*position: relative;*/
+			}
+			.b{
+				width: 200px;
+				height: 100px;
+				background: green;
+				/*position: relative;
+				top: 20px;
+				left: 20px;*/
+			}
+			.c{
+				width: 200px;
+				height: 100px;
+				background: darkblue;
+				position: relative;
+				top: 20px;
+				left: 20px;
+				/*position:absolute;
+				top: 0;
+				left: 0;*/
+				/*bottom: ;
+				right: ;*/
+			}
+			a{
+				position: fixed;
+				right: 0px;
+				bottom: 0px;
+			}
+			body{
+				height: 10000px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			position{
+				absolute 绝对定位
+					：相对对于父级元素并且该元素的父级元素设置了position
+					: position:absolute;  会导致元素脱离文档流
+				relative 相对定位
+					：不会导致元素脱离文档流
+					：相对于自己原来文本流的位置，发生位移
+				fixed 固定定位
+					: 相对于浏览器
+			}
+		-->
+		<!--<div class="a">
+			<div class="b"></div>
+			<div class="c"></div>
+			<div class="d"></div>
+		</div>-->
+		<span id="a">顶部</span>
+		<a href="#a">^</a>
+	</body>
+</html>

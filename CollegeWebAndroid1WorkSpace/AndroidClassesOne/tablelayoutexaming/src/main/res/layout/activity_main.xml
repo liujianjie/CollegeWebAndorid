@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="10dp"
+    android:stretchColumns="1"
+    android:background="@drawable/back">
+
+    <TableRow
+        style="@style/rowstyle">
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/user"/>
+        <TextView
+            android:textSize="22sp"
+            android:text="帐号管理"/>
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/next"/>
+    </TableRow>
+    <TableRow
+        style="@style/rowstyle">
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/search"/>
+        <TextView
+            android:textSize="22sp"
+            android:text="搜索商品"/>
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/next"/>
+    </TableRow>
+    <TableRow
+        style="@style/rowstyle">
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/recent"/>
+        <TextView
+            android:textSize="22sp"
+            android:text="浏览记录"/>
+        <ImageView
+            style="@style/imgstyle"
+            android:src="@drawable/next"/>
+    </TableRow>
+</TableLayout>

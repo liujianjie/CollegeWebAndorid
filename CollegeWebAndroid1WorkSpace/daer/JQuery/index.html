@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>选择器练习</title>
+ <link rel="stylesheet" type="text/css" href="css/style.css" />
+ <script src="jquery.js"></script>
+</head>
+<body>
+<h3>选择器.</h3>
+<input type="button" value="1.选择 class 为 mini 的所有元素." id="btn1" onclick="one()"/>
+<input type="button" value="2.选择id为one的下一个div元素." id="btn2" onclick="two()"/>
+<input type="button" value="3.选取含有文本“di”的div元素." id="btn3" onclick="three()"/>
+ <input type="button" value="4.选取所有不可见的元素并让其显示出来.包括&lt;input type='hidden'/&gt;和&lt;div style='display:none;'&gt;." id="btn4" onclick="four()"/>
+ <input type="button" value="5.选取属性title值 含有“es”的div元素." id="btn5" onclick="five()"/> 
+ <input type="button" value="6.选择索引值为偶数 的li元素." id="btn6" onclick="six()"/>
+ <input type="button" value="7.选取每个class为ol1父元素下索引值为偶数的子元素." id="btn7" onclick="seven()"/>
+
+<br /><br />
+   
+<!-- 测试的元素 -->
+<div class="one" id="one" >
+	id为one,class为one的div
+	<div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+	id为two,class为one,title为test的div.
+	<div class="mini"  title="other">class为mini,title为other</div>
+	<div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini"></div>
+</div>
+
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini"  title="tesst">class为mini,title为tesst</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+	style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div >
+	包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+<div class="last"><h2>全国城市列表</h2>
+<ol class="ol1">
+<li id="1">北京</li>
+<li id="2">上海</li>
+<li>广州</li>
+<li>深圳</li>
+<li>重庆</li>
+<li>天津</li>
+<li>南昌</li>
+<li>武汉</li>
+<li>长沙</li>
+<li>青岛</li>
+</ol></div>
+<script>
+	function one(){
+		var minidom = $(".mini");
+		alert(minidom[0].innerHTML);
+	}
+	function two(){
+		var idonenextdiv = $("#one + div");
+		alert(idonenextdiv[0].id);
+	}
+	function three(){
+		var containid = $("div:contains('di')");
+		alert(containid[2].innerHTML);
+	}
+	function four(){
+		var hiddendom = $("div:hidden,input:hidden");
+		$("div:hidden,input:hidden").show();
+	}
+	function five(){
+		var ele = $("div[title *= 'es']");
+	}
+	function six(){
+		var ele = $("li:even").css('color','green');
+	}
+	function seven(){ 
+		$('ol :nth-child(even)').css('color','green');
+	}
+</script>
+
+</body>
+</html>

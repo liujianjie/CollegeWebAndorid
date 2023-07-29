@@ -1,0 +1,55 @@
+/* 全局设置 */
+*{
+  margin: 0;
+  margin: 0;
+}
+ul,
+li{
+  list-style: none;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+/* 标题 
+  例子
+  <h3 class="title">居家生活</h3>
+*/
+.title{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  float: left;
+  margin-right: 20px;
+}
+/* 
+ */
+/* 查看更多 
+  例子
+  <a href="#" class="moreItems">查看更多 ></a>
+*/
+.moreItems{
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 14px;
+  font-size: 14px;
+  line-height: 1;   
+}
+.title:hover,
+.moreItems:hover{
+  color: #b4a078;
+}
+/* 左右按钮 */
+.btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #E2C199;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+}
+.btn:hover{
+  background-color: #b4a078;
+}

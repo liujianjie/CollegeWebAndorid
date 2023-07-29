@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				width: 400px;
+				height: 400px;
+				background: red;
+			}
+			.b{
+				width: 200px;
+				height: 200px;
+				background: green;
+			}
+			.c{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b">
+				<div class="c"></div>
+			</div>
+		</div>
+		
+	</body>
+	<script>
+		
+		var $a = document.querySelector(".a");
+		var $b = document.querySelector(".b");
+		var $c = document.querySelector(".c");
+		$a.addEventListener("click",function(){
+			alert("a");
+		}, true);
+		$b.addEventListener("click",function(){
+			alert("b");
+		}, true);
+//		$c.addEventListener("click",function(){
+//			alert("c");
+//		}, true);
+		
+//		$c.onclick = function(){
+//			alert("1");
+//		}
+//		document.onmousedown = function(e){
+//			console.log(e.button);
+//		}
+//		document.onkeydown = function(){
+//			console.log("onkeydown");
+//		}
+//		document.onkeyup = function(){
+//			console.log("onkeyup");
+//		}
+		document.onkeypress = function(e){
+//			console.log("onkeypress");
+			console.log(e.keyCode);
+		}
+		window.oncontextmenu = function(){
+			return false;
+		}
+	</script>
+</html>

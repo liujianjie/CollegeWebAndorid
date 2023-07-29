@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.InforDaoI">
+    <!-- 这个id为 flag 标识而已 type为bean的路径 --><!-- 实体与映射反应 -->
+    <resultMap type="Informations" id="informap">
+        <id column="in_inforids" property="inInforid"/>
+        <result column="in_title" property="inTitle"/>
+        <result column="in_content" property="inContent"/>
+        <result column="in_replyCount" property="inReplycount"/>
+        <result column="in_viewCount" property="inViewcount"/>
+        <!-- jdbcType="DATE" 为日期 没有时分秒 -->
+         <!-- jdbcType="TIME"有时分秒 没日期-->
+        <result column="in_reportTime" property="inReporttime" javaType="java.util.Date" />
+        <result column="in_lastPostTime" property="inLastposttime" javaType="java.util.Date"/>
+        <!-- 一对多 -->
+        <collection property="replieses" column="in_inforids"
+            select="com.ht.daoi.RepliesDaoI.selrep">
+        </collection>
+    </resultMap>
+    <!-- 查询所有资讯 -->
+    <select id="selinforlist" resultMap="informap">
+        select * from Informations
+    </select>
+    <!-- 查询单个资讯并级联查出回复 -->
+    <select id="getinfor" parameterType="int" resultMap="informap">
+        select * from Informations where in_inforids = #{id}
+    </select>
+	<!-- 修改资讯的光看人数 回复人数 时间 -->
+	<update id="alertinfor" parameterType="map" >
+	    update informations 
+	    <set>
+	        <if test="view==1">
+	            in_viewCount = in_viewCount+1,
+	        </if>
+	        <if test="view==2">
+	            in_replyCount = in_replyCount+1,in_lastPostTime = sysdate,
+	        </if>
+	    </set>
+	    where in_inforids = #{id}
+	</update>    
+</mapper>
