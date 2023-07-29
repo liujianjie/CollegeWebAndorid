@@ -1,0 +1,61 @@
+import csv
+import numpy
+import jieba
+import pygal
+from PIL import Image
+from wordcloud import WordCloud
+
+def getDataFromCsv():
+    dataShow = ["很差","较差","还行","推荐","力荐"]
+    dataList = []
+    with open("douban.csv",'r',encoding="utf-8") as file:
+        data = csv.reader(file)
+        for i in data:
+            if i[1] not in dataShow:
+                pass
+            else:
+               dataList.append(i)
+        file.close()
+    return dataList
+
+def doWordCloud():
+    data = getDataFromCsv()
+    str = ""
+    for i in data:
+        str += i[2]
+    cutCloud = "??".join(jieba.cut(str))
+    bgImg = numpy.array(Image.open("11.jpg"))
+    cloud = WordCloud(
+        font_path="?C:\Windows\Fonts\ARIALUNI.TTF",
+        mask=bgImg,
+        background_color="pink"
+    ).generate(cutCloud)
+    cloud.to_file("ciyun3.png")
+def getStar(star):
+    data = getDataFromCsv()
+    count = 0
+    for i in data:
+        if i[1] == star:
+            count += 1
+        else:
+            pass
+    return count
+def doStar():
+    oneStar = getStar("很差")
+    twoStar = getStar("较差")
+    threeStar = getStar("还行")
+    fourStar = getStar("推荐")
+    fiveStar = getStar("力荐")
+    line = pygal.Pie()
+    line._x_title = "星级"
+    line._y_title = "个数"
+    # line.x_labels = ["1?","2?","3?","4?","5?"]
+    line.y_labels = [0,5,10,15,20,25,30,35,40,45,50]
+    # line.add("影评分析数据图",[oneStar,twoStar,threeStar,fourStar,fiveStar])
+    line.add("1?",oneStar)
+    line.add("2?",twoStar)
+    line.add("3?",threeStar)
+    line.add("4?",fourStar)
+    line.add("5?",fiveStar)
+    line.render_to_file("2.svg")
+doStar()

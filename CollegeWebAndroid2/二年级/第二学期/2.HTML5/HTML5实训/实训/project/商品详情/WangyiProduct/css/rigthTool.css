@@ -1,0 +1,51 @@
+.rigthTool{
+  position: absolute;
+  top: 620px;
+  right: 0;
+  z-index: 99;
+  width: 72px;
+  height: 500px;
+}
+.rigthTool a{
+  box-sizing: border-box;
+  display: block;
+  width: 72px;
+  height: 82px;
+  background-color: #fff;
+  color: #666;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  padding-top: 14px;
+  position: relative;
+}
+.rigthTool a:hover{
+  color: #b4a078;
+}
+.rigthTool a .item-name{
+  line-height: 20px;
+  font-size: 14px;
+  margin: 8px auto 0;
+  position: relative;
+}
+.rigthTool .app{
+  height: 140px;
+}
+.rigthTool .app .item-name{
+  margin: 0;
+}
+.rigthTool a i{
+  display: block;
+  font-size: 30px;
+}
+.app .item-name p{
+  line-height: 17px;
+  font-size: 12px;
+  color: #666;
+}
+.app .item-name .name-red{
+  color: red;
+}
+body{
+  height: 2000px;
+}

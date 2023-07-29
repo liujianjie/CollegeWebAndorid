@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+    <style>
+      body{background:#ddd;text-align:center}
+      .list{display:inline-block;margin-top:20px;padding:40px;border-radius:8px;background:#fff;color:#333;text-align:left;font-size:13px}
+      .list-ul{list-style:none;margin:0;padding:0}
+      .list-option{padding:6px 0;}
+      .list-input{width:300px;border:1px solid #ccc;padding:4px;font-size:14px;color:#333}
+      .list-input:hover{background:#effaff}
+      .list-btn span{color:#0065A0;;cursor:pointer}
+      .list-btn span:hover{text-decoration:underline}
+      .list-btn b{text-align:center;background-color:#D6EDFF;border-radius:6px;width:20px;height:20px;display:inline-block;margin:0 2px;cursor:pointer;color:#238FCE;border:1px solid #B3DBF8;float:left}
+      .list-bottom{margin-top:5px}
+      .list-add-show{color:#f60;cursor:pointer}
+      .list-add-show:before{position:relative;top:1px;margin-right:5px;content:"+";font-weight:700;font-size:16px;font-family:arial}
+      .list-add-show span:hover{text-decoration:underline}
+      .list-add-area{margin-top:5px}
+      .list-add-add{cursor:pointer;margin-left:5px}
+      .list-add-cancel{cursor:pointer;margin-left:4px}
+      .list-add-input{width:180px;border:1px solid #ccc;padding:4px;font-size:14px;color:#333}
+      .list-add-input:hover{background:#effaff}
+      .list-tmp{display:none}
+      .list-hide{display:none}
+    </style>
+

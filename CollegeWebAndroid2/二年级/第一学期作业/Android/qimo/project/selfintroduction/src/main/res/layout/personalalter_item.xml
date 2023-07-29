@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+	<EditText 
+	    android:id="@+id/personalalter_itemtitle"
+	    android:layout_width="0dp"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+		android:hint="名称"
+	    android:layout_weight="1"
+	    />
+    <EditText 
+	    android:id="@+id/personalalter_itemcontext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+        android:hint="内容"
+	    android:layout_weight="1"/>
+	<Button 
+	    android:id="@+id/personalalter_itembtalter"
+	    android:layout_width="0dp"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="修改"
+	    android:layout_weight="1"/>
+	 <Button 
+	    android:id="@+id/personalalter_itembtdel"
+	    android:layout_width="0dp"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="删除"
+	    android:layout_weight="1"/>  
+</LinearLayout>

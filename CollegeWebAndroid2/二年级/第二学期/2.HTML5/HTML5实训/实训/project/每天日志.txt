@@ -1,0 +1,180 @@
+4月28日
+1.用for循环给元素数组对象加上事件监听的内部函数使用了i下标时需要用let定义
+2.animation：fade 2s;绑定fade的keyframe，动画所花时间2s
+@keyframes        规定动画。0% 是动画的开始时间，100% 动画的结束时间。
+
+3.获取css属性，要用getComputedStyle 才可以
+
+$heros[i].checked = false;设置多选框是否选中
+multiple="multiple" 设置select可以多选
+$select1.children[i];获取select对象的所有option
+$select1.children[i].selected;判断select下的第i个opton是否选中
+$select1.appendChild;给select对象添加option
+var arrs = [];数组对象
+arrs[0] = []可以定义二维数组
+$p.value；获取value属性值
+createTextNode创建文本节点
+创建一个option元素节点需要添加文本节点
+在for循环select对象的option时若删除了子option，记得i--，因为select的option数组对象是实时更新的。
+var swraper = (function(){})();自执行函数，可以有执行方法
+e.pageX，e.pageY，获取鼠标位于页面的x，y像素
+4月27日
+1.键值对对象模仿类
+2.Object对象
+3.函数和object对象模仿类，方法类。调用这个方法会调用创建内部方法，方法需要调用
+function
+4.function类  function Car(name, color){this.name = name;this.color = color;}
+Car.prototype.getName = function(){return this.name;}
+5.prototype:原型属性，原型属性的方法可以重写
+6.class关键字，对function类的封装
+constructor构造方法
+document元素
+1.
+元素查找：id、类名、标签名
+元素添加
+元素创建
+2.元素的父元素
+parentNode:
+parentElement:
+
+3.元素的子元素：
+childNodes: 子节点包括文本节点
+children:子元素
+
+4.元素的兄弟节点
+上一个兄弟节点
+上一个兄弟元素
+下一个兄弟节点
+下一个兄弟元素
+
+5.节点类型，nodeType
+元素节点：1
+属性节点：2
+文本节点：3
+
+6.
+
+node.nodeType
+4月24日
+1.伪元素详解，默认行内元素，
+2.js
+引入 
+直接写
+3.输出
+alert(),document.write(),console.log();
+4.定义
+var a = "asg";
+5.typeof 类型
+6.
+const:不能再改变，定义要初始值
+let const:只在当前代码块能使用
+var：变量提示，提到全局
+7.算术运算符，% + - * /
+会隐式转换
+8.赋值运算
+9.逻辑运算 && || ! 三元
+10.
+toString()
+split
+11. 
+条件语句 if else
+选择语句 switch case
+循环语句
+for(;;){} for(var i in arr){}
+do{}while()
+while
+
+12.数组、键值对
+13.
+break; 跳出本循环体
+continue;跳过当次循环进入下一次循环
+
+14.数据类型的相互转换
+string 转换 int：valueOf、parseInt、Number、+str、str - 0、
+int 转换string：int+""
+Boolean:toString()转String，valueOf()转int
+15.api
+parseInt与Number:parseInt("123abc")可以，Number("123abc");不可以
+科学计数：int.toExponential(6)
+确认小数点:toFixed(3)
+
+16.
+new Boolean(1)
+
+17.Date日期
+new Date()返回时间戳
+18.
+[a,b,c] = [1,2,3];
+var {name,age} = people;
+19.函数
+function 函数名([参数]){函数体[return]}
+形参与实参不匹配不会报错。
+形参保存在arguments类数组
+20.不定参，必须在后面
+function f1(a,b,...temp){}
+21.匿名函数，没有名字的函数
+getElementById("b").onclick=function(){}
+22.箭头函数
+document.getElementById("a").onclick = () =>{	}
+
+23.形参默认值
+function a(a="12"){}
+
+4月23日
+1.z-index
+2.opacity
+3.定位
+4.display:flex
+between
+
+4yue22
+1.高度塌陷解决
+2.visibility:none与display：hidden区别
+3.定位position
+(1)absolute
+(2)relative
+(3)fixed
+
+4.选择器
+(1)id
+（2）class
+（3）标签
+（4）>子代
+(5)属性
+(6)结构伪类 nth-child nth-of-type
+
+5.margin 与 padding
+
+6.box- border
+
+7.
+vertical-align:middle
+display：inline-block
+text-align:center;
+
+第二种
+
+8.
+display:flex
+flex-direction:row|column
+flex-wrap:wrap|nowrap
+justify-context:flex-start|end,space-around被空格包围|between
+
+9.百叶窗的hover使用
+
+10.锚点练习
+
+11.
+
+4yue21
+块
+行内
+行内块
+
+字体图标
+
+选择器
+
+nth-of-type
+
+nth-child

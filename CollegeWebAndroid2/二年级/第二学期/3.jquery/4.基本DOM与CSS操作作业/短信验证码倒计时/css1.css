@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+    .sentBtn.disabled {
+	background-color:#CCC !important;
+	cursor:not-allowed !important;
+}
+/* 发送按钮样式 */
+	.sentBtn {
+	min-width:100px;
+	padding:5px;
+	border:none;
+	color:#FFF;
+	background-color:#83EBF0;
+	border-radius:4px;
+	cursor:pointer;
+}
+

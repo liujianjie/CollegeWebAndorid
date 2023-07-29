@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+	<p id="p1"></p>
+    <script>
+		var person ={
+			firstName:"John",
+			lastName:"Mike",
+			age:50,
+			eyeColor:"blue",
+			fullName:function(){
+				return this.firstName+" ;"+this.lastName;	
+			}
+		}
+		alert(person.fullName());
+		document.getElementById("p1").innerHTML = person['age'];
+		document.write(person.firstName+"<br/>");
+    </script>
+</body>
+</html>

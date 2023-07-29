@@ -1,0 +1,24 @@
+import urllib.request
+import re
+#[1 2 3]
+id = 1
+for k in range(1,4):
+    html = urllib.request.urlopen('https://www.i4.cn/wper_1_0_0_%d.html'%k)
+    data = html.read()
+    print("------第%d页正在下载------"%k)
+    r=r"[a-zA-z]+://[^\s]*.jpg"
+    pat = re.compile(r)
+    imgs = re.findall(pat,str(data))
+    del imgs[-5:]
+    name = 1
+    for i in imgs:
+        #print(i)
+        if name == 10:
+            break
+        else:
+            if name%2==1:
+                urllib.request.urlretrieve(i,"img1/%d.jpg"%id)
+                print("第%d张壁纸下载完成"%id)
+                id += 1
+        name += 1
+

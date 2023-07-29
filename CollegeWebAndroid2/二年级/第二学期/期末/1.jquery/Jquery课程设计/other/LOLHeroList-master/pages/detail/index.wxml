@@ -1,0 +1,25 @@
+<swiper indicator-dots autoplay circular>
+  <block wx:for="{{hero.bgs}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <view class="left">
+    <view class="title">{{hero.title}}</view>
+    <view class="name">{{hero.name}}</view>
+    <view class="tags">
+      <text wx:for="{{hero.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="ability">
+      <view class="item">
+        <text>生存能力</text>
+        <progress percent="{{hero.Ability.life}}" stroke-width="12" activeColor="#1ec76b" active duration="10" backgroundColor="#363636"></progress>
+      </view>
+    </view>
+  </view>
+  <view class="right">
+    {{hero.story}}
+  </view>
+</view>

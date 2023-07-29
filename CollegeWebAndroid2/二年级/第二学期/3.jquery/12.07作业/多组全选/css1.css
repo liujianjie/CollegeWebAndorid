@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+.panel-body {
+	width:700px;
+	margin:0 auto;
+}
+.row1 {
+	width:100%;
+}
+.row1-title {
+	font-size:13px;
+	line-height:29px;
+	height:29px;
+	border-bottom:1px solid #b4c4d1;
+	background-color:#e8f1f7;
+}
+.row1-title span {
+	margin-left:5px;
+}
+.row1-title label {
+	margin-left:5px;
+	margin-top:-5px;
+}
+.row1-content {
+	height:29px;
+	padding-left:7px;
+	border-bottom:1px solid #b4c4d1;
+	background-color:#fff;
+}
+.row1-content label {
+	margin-left:18px;
+}
+.row1-content input {
+	line-height:29px;
+	vertical-align:middle;
+}
+.row1-content span {
+	line-height:29px;
+	margin-left:2px;
+	vertical-align:middle;
+}
+.row1-content .form-inline {
+	padding-top:0;
+}
+.one {
+	background:#9FC;
+}
+.two {
+	background:#FC6;
+}
+.fl {
+	float:left;
+}
+

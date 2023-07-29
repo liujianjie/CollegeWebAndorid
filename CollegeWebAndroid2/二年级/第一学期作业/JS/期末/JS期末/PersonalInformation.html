@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>PersonalPage</title>
+	  <link rel="stylesheet" href="style/Main.css"/>
+	  <script src="js/common.js"></script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		
+	<!--Top开始-->
+	<!-- 最上面的一部分显示，左边放图片和文字 右边放 导航栏 -->
+	<div class = "topcontent">
+		<div class = "topcontentcontent">
+			<div class = "topcontentcontentleftdiv">
+				<!--topcontentcontentleftdiv里定义了样式使文字在图片水平middle位置-->
+				<img src = "images/head/head1.png"  align = "left"> 
+			</div>
+			<div class="topcontentcontentrightdiv" >
+				<nav>
+					<ul >
+						<li style=""><a href="Main.html">酒店餐馆</a></li>
+						<li style=""><a href="PersonalInformation.html">用户信息</a></li>
+						<li style=""><a href="LatestOpinions.html">评论</a></li>
+						<li style=""><a onclick = "outMenuLoginAndRegister(this);">登录与注册</a></li>
+					</ul>
+					
+				</nav>
+			</div>
+		</div>
+
+	</div>
+	<!--Top结束-->
+
+
+	<!--中间 开始-->
+	<!--最外层div -->
+	<div id="container">
+		<!--下一层div定义了宽度-->
+		<div class="maincontent">
+			<!--中间容器的左边 开始。左边div占1/3 ，有两个样式 一个定义位置 宽度，一个row 是为了与右边占2/3的div高度相对应，使左边高度多少 右边div高度也多少 更改页面尺寸大小使能不会显示偏移-->
+			<div class="leftcontent row">
+	
+				<div class="leftcontentdiv" >
+					<!--同样leftcontentdiv里定义了文字在图片的水平middle位置 -->
+					<img id = "LeftProfilePicture" src = "images/head/touxiang.png" width = "80px" height = "80px" > 
+					<font size = "5"><span id = "LeftUsername">用户名</span></font>
+				</div>
+					
+				<!--使用html5新元素 dl 使呈现列形式，并且自动缩进功能，将左边页面分成3个块 Personal Information、Last Opinions、My Preferences，用dl代表一个块 再写内容进去-->
+				<dl class="leftcontentdl" >
+					<dl style ="width:100%">
+						<div><a href = "PersonalInformation.html" class = "personalInfoAndLastO" >我的信息</a></div>
+						<!--下面style使超出的****** 或者 文字 在页面尺寸更改后能自动换行和隐藏 美观-->
+						<dl style ="width:100%;word-wrap:break-word;
+								word-break:break-all;overflow: hidden;">
+							<dd id = "LeftPersonalInfoPlace">
+								<p>姓名:</p>
+								<p>生日:</p>
+                                <p>地址:</p>
+							</dd>
+						</dl>
+						<hr size = "1" color = "#797979" width = "100%" align = "left">
+					</dl>
+					<dl style ="width:100%">
+						<div><a href = "LatestOpinions.html" class = "personalInfoAndLastO">我的评价</a></div>
+						<dl>
+							<dd><a onclick = "openAddtionalWindow(this);" id = "res">幸福小馆, 广东, 深圳</a></dd>
+							<dd><strong>干净整洁，很舒服，很不错...</strong></dd>
+						</dl>
+						<dl>
+							<dd><a onclick = "openAddtionalWindow(this);" id = "hotel">禧廷酒店, 上海市 </a></dd>
+							<dd><strong>服务态度好，早餐特别好吃...</strong></dd>
+						</dl>
+						<dl>
+							<dd><a onclick = "openAddtionalWindow(this);" id = "res2">花乐餐厅, 江西, 九江</a></dd>
+							<dd><strong>菜很好吃，特别是香锅鱼香...</strong></dd>
+						</dl>
+						<hr size = "1" color = "#797979" width = "100%" align = "left">
+					</dl>
+					<!-- 让dl横着排 取消默认竖列显示，使用 border样式使dd呈现边框为矩形-->
+					<dl style ="width:100%">
+						<div >
+							<div style = "width:50%;float:left">
+								我的喜好
+							</div>
+							<div style = "width:50%;float:right">
+								<img src = "images/image_plus.png" style="float:right" onclick = "addMyPreferences();"> 
+							</div>
+						</div>
+						
+						<div  style= "clear:right"></div>
+
+						<dl class="leftcontentmypredl">
+							<dd>		
+								<dl id = "needAddPlace">
+									<dd id = "2">
+										服务态度
+										<img src = "images/X.png" align = "right" onclick = "removeSelf(this);">
+									</dd>
+									<dd >
+										经济实惠
+										<img src = "images/X.png" align = "right" onclick = "removeSelf(this);">
+									</dd>
+									<dd >
+										干净整洁
+										<img src = "images/X.png" align = "right" onclick = "removeSelf(this);">
+									</dd>
+								</dl>
+								
+							</dd>
+						</dl>
+						<!--<dl>-->
+					</dl>
+				</dl>
+			</div>
+			<!--中间的左边 结束>
+
+			<!--中间的右边 开始-->
+			<!--样式中定义了2/3位置-->
+			<div class="rightcontent row" id = "centerContent">
+				<form method='post' name = 'rightPerInfofrm'>
+                <div class = 'contentDiV'>
+                    <header><font size = '5'>用户信息</font></header>
+                    <div style='margin-top:3%'>
+                    <input style=' width:45%;height:25px;float: left' value='用户名' name='rtUsername' id='rtUsername'/>
+                    <input style=' width:45%;height:25px;float: right' value='姓名' name='rtName' id='rtName'/ >
+                  </div>
+                    <div>
+                    <input style=' width:100%;height:25px;margin-top:3%' value='邮箱' name='rtemail' id='rtemail'/ >
+                  </div>
+                    <div style='margin-top:3%'>
+                    <input style=' width:45%;height:25px;float: left' value='地址' name='rtaddress' id='rtaddress'/ >
+                    <input style=' width:45%;height:25px;float: right' value='电话号码'/ >
+                  </div>
+                    <div >
+                    <input type='date' style=' width:100%;height:25px;margin-top:3%' value='生日日期' name='rtbirthday' id='rtbirthday'/ >
+                  </div>
+                    <header style='margin-top:3%'><font size = '5'>在APP上的活跃</font></header>
+                    <dl class='rightcontentradius'>
+                    <dd>3<br/>
+                        点数</dd>
+                    <dd>2<br/>
+                        级别</dd>
+                    <dd>3<br/>
+                        评论</dd>
+                    <dd>5<br/>
+                        照片</dd>
+                  </dl>
+                    <div>
+                    <input type='button' onclick='checkModifyForm();' style=' width:100%;height:25px;margin-top:3%' value='修改'/ >
+                  </div>
+                  </div>
+              </form>
+			</div>
+			<!--中间的右边 结束-->
+		</div>
+	</div>
+    
+	</div>
+	<!--中间 结束-->
+
+
+	<!--页脚 开始-->
+	<!--使用nav 导航栏 自动排列横行，footer样式中定义了背景颜色，显示位置，字体-->
+	<nav class="footer" >
+			<img src="images/image_face.png" width="30px" height="30px" style="vertical-align:middle">
+			<a href="https://www.facebook.com/">Facebook |</a>
+			<img src="images/image_twitter.png" width="30px" height="30px" style="vertical-align:middle">
+			<a href="https://www.twitter.com/">Twitter |</a>
+			<img src="images/image_vk.png" width="30px" height="30px" style="vertical-align:middle">
+			<a href="https://vk.com/">Vine</a>
+	</nav>
+	<!--页脚 结束-->
+
+	<!-- 为了给子窗口传入值不是很好地方法-->
+	<input type = "hidden" id = "type" >
+	<input type = "hidden" id = "imgsrc" >
+	<input type = "hidden" id = "review" >
+
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>

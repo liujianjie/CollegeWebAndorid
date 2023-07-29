@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script>
+		var mydate = new Date();
+		document.write("<p>"+mydate+"</p>");
+		
+		var mydate2 = new Date("July 19,2007,10:30:00");
+		document.write("<p>"+mydate2+"</p>");
+		
+		var mydate3 = new Date(5000);
+		document.write("<p>"+mydate3+"</p>");
+		
+		//2
+		document.write("题目2静态时针");
+		var mydate4 = new Date();
+		var mt4 = mydate4.getMonth() +1;
+		var outstr1 = mydate4.getFullYear()+"年"+mt4+"月"+mydate4.getDate()+"日"+mydate4.getHours()+"时"+mydate4.getMinutes()+"分"+mydate4.getSeconds()+"秒"+"<br/>";
+		document.write("<p>"+outstr1+"</p>");
+		
+		//3
+		document.write("题目3动态时针");
+		function dynamticda(){
+			var mydate5 = new Date();
+			var ys = mydate5.getFullYear();
+			var mts = mydate5.getMonth() + 1;
+			var dy = mydate5.getDate();
+			var hr = mydate5.getHours();
+			var mt = mydate5.getMinutes();
+			var sd = mydate5.getSeconds();
+			var outstr2 = ys+"年"+mts+"月"+dy+"日"+hr+"时"+mt+"分"+sd+"秒";
+			document.getElementById("pid1").innerHTML = outstr2;
+		}
+		setInterval("dynamticda()",1000);	
+    </script>
+</head>
+
+<body>
+	<p id="pid1"></p>
+</body>
+</html>

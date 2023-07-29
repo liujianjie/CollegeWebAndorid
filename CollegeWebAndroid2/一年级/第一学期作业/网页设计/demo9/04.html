@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		@keyframes scroll{
+			0%{
+				transform:rotateX(-2deg)rotateY(0deg);
+			}
+			
+			100%{
+				transform:rotateX(-2deg)rotateY(360deg);
+			}
+			
+		}
+		#outer{
+			height:220px;
+			width:640px;
+			margin:100px auto;
+			position:relative;
+			transform-style:preserve-3d;
+			animation:scroll 15s linear 0s infinite;
+		}
+		
+		img{
+			display:block;
+			width:240px;
+			height:160px;
+			position:absolute;
+			top:30px;
+			left:200px;
+
+		}
+		#img8{
+			transform:rotateY(0deg) translateZ(400px);
+		}
+		#img7{
+			transform:rotateY(45deg) translateZ(400px);
+		}
+		#img6{
+			transform:rotateY(90deg) translateZ(400px);
+		}
+		#img5{
+			transform:rotateY(135deg) translateZ(400px);
+		}
+		#img4{
+			transform:rotateY(180deg) translateZ(400px);
+		}
+		#img3{
+			transform:rotateY(225deg) translateZ(400px);
+		}
+		#img2{
+			transform:rotateY(270deg) translateZ(400px);
+		}
+		#img1{
+			transform:rotateY(315deg) translateZ(400px);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="outer">
+    	<img src="1.jpg" id="img1"/>
+        <img src="2.jpg" id="img2"/>
+        <img src="3.jpg" id="img3"/>
+        <img src="4.jpg" id="img4"/>
+        <img src="5.jpg" id="img5"/>
+        <img src="6.jpg" id="img6"/>
+        <img src="7.jpg" id="img7"/>
+        <img src="8.jpg" id="img8"/>
+    </div>
+</body>
+</html>

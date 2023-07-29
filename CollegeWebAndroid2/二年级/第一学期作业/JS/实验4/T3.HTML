@@ -1,0 +1,44 @@
+<html>
+<title>3</title>
+<script>
+	function cl(){
+		var sum,sval1,sval2;
+		var val1 = document.getElementById('tx1').value;
+		var val2 = document.getElementById('tx2').value;
+		var op = document.getElementById('sel').value;
+		if(!isNaN(val1) && !isNaN(val2)){
+			sval1= parseInt(val1);
+			sval2= parseInt(val2);
+			switch(op){
+				case '1':
+					sum= sval1 + sval2;
+					break;
+				case '2':
+					sum= sval1 - sval2;
+					break;
+				case '3':
+					sum= sval1 * sval2;
+					break;
+				case '4':
+					sum= sval1 / sval2;
+					break;
+			}
+			document.getElementById('tx3').value = sum;
+		}else{
+			alert("«Î ‰»Î ˝÷µ");
+		}
+	}
+</script>
+<body>
+	<input type="text" id="tx1"/>
+	<select id = "sel">
+		<option value = '1'>+</option>
+		<option value = '2'>-</option>
+		<option value = '3'>*</option>
+		<option value = '4'>/</option>
+	</select>
+	<input type="text" id="tx2"/>
+	<input type="button" value="=" onclick = "cl()"/>
+	<input type="text" id="tx3"/>
+</body>
+</html>

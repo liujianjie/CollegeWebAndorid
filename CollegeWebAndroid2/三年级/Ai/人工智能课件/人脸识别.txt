@@ -1,0 +1,39 @@
+import cv2
+if __name__ == '__main__':
+    mayunImg = cv2.imread("faceImge/nba3.jpg")
+    # print(mayunImg)
+    #img = cv2.cvtColor(mayunImg,code=cv2.COLOR_BGR2GRAY)
+    # img=cv2.resize(mayunImg,dsize=(450,200))
+    # print(img)
+    # cv2.imshow("yy",img)
+    faceData = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+    face = faceData.detectMultiScale(mayunImg,scaleFactor=1.05,minNeighbors=7)
+    print(face)
+    for x,y,w,h in face:
+        cv2.rectangle(mayunImg,pt1=(x,y),pt2=(x+w,y+h),color=[0,0,255],thickness=2)
+
+    cv2.imshow("mayun",mayunImg)
+    cv2.waitKey()
+    cv2.destroyWindow("mayun")
+
+
+import cv2
+if __name__ == '__main__':
+    video = cv2.VideoCapture(0)
+
+    while(True):
+        flag,videoImg = video.read()
+        # print(videoImg)
+        faceData = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+        face = faceData.detectMultiScale(videoImg)
+        print(face)
+        for x,y,w,h in face:
+            cv2.rectangle(videoImg,pt1=(x,y),pt2=(x+w,y+h),color=[0,0,255],thickness=2)
+        videoImg = cv2.flip(videoImg,1)
+        cv2.imshow("mm",videoImg)
+        btn=cv2.waitKey(1000//24)
+        if btn==32:
+             break
+        # face = faceData.detectMultiScale(videoImg)
+        # print(face)
+    cv2.destroyWindow()

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css1.css"/>
+    <title>列表的增删和移动</title>
+    <script src="js1.js"></script>
+      </head>
+  <body>
+    <form>
+      <div class="list">
+        <ul class="list-ul">
+           <li class="list-option">
+            <input class="list-input" type="text" value="HTML+CSS">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          <li class="list-option">
+            <input class="list-input" type="text" value="JavaScript">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          <li class="list-option">
+            <input class="list-input" type="text" value="c">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+          
+        </ul>
+        <div class="list-bottom">
+          <span id="show" class="list-add-show"><span>添加项目</span></span>
+          <div id="div1" class="list-add-area list-hide">
+            添加到列表：
+            <input class="list-add-input" type="text" name="list[]">
+            <input  id="bt1" class="list-add-add" type="button" value="添加">
+            <input  id="bt2" class="list-add-cancel" type="button" value="取消">
+          </div>
+        </div>
+      </div>
+    </form>
+     </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
+<script type="text/javascript">
+window.onload=function(){
+	var inp=document.getElementsByTagName('input')[0];
+	var p=document.getElementsByTagName('p')[0];
+inp.onclick=function(){
+	//alert(123);
+	//1.创建异步对象
+	var xhr=new XMLHttpRequest;
+	//console.log(xhr.readyState);
+	//2.设置请求行  （get请求数据写在url后面）
+	//参数1：请求方式，参数2：请求地址，
+	//参数3：默认true 异步   false  同步
+	xhr.open('GET','xxx.php?user=aaa&pwd=888',true);
+	//console.log(xhr.readyState);	
+	//3.设置请求头（get请求可以忽略，post请求不发送数据可以省略）
+	xhr.setRequestHeader('heihei','momoda');
+	//4.请求主体发送（参数为空或者写NULL，post请求如果有数据提交就写在这里）
+	xhr.send(null)
+	//5.回调函数处理
+	xhr.onreadystatechange=function()
+	  {
+		//console.log(xhr.readyState);
+		//console.log(xhr.responseText);
+		if(xhr.readyState==4&&xhr.status==200)
+		{
+			//console.log(xhr.responseText);
+			p.innerHTML=xhr.responseText;
+			
+			}
+		 else
+		 {
+			 p.innerHTML='你好美呀！';
+			 }
+				}
+	}
+	}
+
+</script>
+</head>
+<body>
+<input type="button" value="get发送请求报文"/>
+<p></p>
+</body>
+</html>

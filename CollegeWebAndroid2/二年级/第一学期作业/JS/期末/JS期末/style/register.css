@@ -1,0 +1,42 @@
+    	/* per */
+		body{
+			background:url(../images/bg/bg3.jpg);
+
+			no-repeat;
+
+			height:100%;
+
+			width:100%;
+
+			overflow: hidden;
+
+			background-size:cover;
+		}
+		.title{
+			font-family:"微软雅黑";
+			font-size:25px;
+		}
+	
+		table{
+			border-radius:20px;
+			border:3px solid #F00;
+			background:#FFF;
+			margin:100px auto;
+			padding:10px;
+		}
+		table tr td{
+			padding:8px;
+		}
+		.btn01,.btn02{
+			width:60px;
+			height:25px;
+			border-radius:3px;
+			border:1px solid #6b5d50;
+			margin-left:10px;
+		}
+		.btn01{
+			background:#3bb7ea;
+		}
+		.btn02{
+			background:#fb8c16;
+		}

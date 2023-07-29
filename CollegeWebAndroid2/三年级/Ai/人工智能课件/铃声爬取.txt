@@ -1,0 +1,23 @@
+from bs4 import BeautifulSoup
+import urllib.request
+
+html = urllib.request.urlopen('https://www.i4.cn/ring_1_0_1.html')
+data = html.read()
+soup = BeautifulSoup(data,"html.parser")
+mp3s = soup.find_all('div',attrs={'title':'播放'})
+music_n = soup.find_all('div',attrs={'class':'title'})
+list_n = []
+for k in music_n:
+   list_n.append(k.get('title'))
+del list_n[0]
+del list_n[-1]
+name = 0
+for i in mp3s:
+    #print(i.get('data-mp3'))
+    if name==3:
+        break
+    else:
+        urllib.request.urlretrieve(i.get('data-mp3'),"music1/%s.mp3"%list_n[name])
+        print("第%d首铃声下载完成！"%(name+1))
+    name += 1
+

@@ -1,0 +1,52 @@
+page{
+  background-color: #363636;
+}
+swiper image{
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  color: #fff;
+  font-size: 12px;
+  padding:12px 10px;
+}
+
+.left{
+  flex: 1;
+}
+.right{
+  flex:1;
+  font-size: 14px;
+}
+
+.title{
+  font-size: 14px;
+}
+.name{
+  font-size: 20px;
+}
+
+.tags{
+  margin:12px 0 18px;
+}
+.tags text{
+  width: 30px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background-color: #029b7f;
+  border-radius: 4px;
+  margin-left:4px;
+  display: inline-block;
+}
+
+.ability .item{
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.ability .item progress{
+  width: 100px;
+  margin-left: 6px;
+}

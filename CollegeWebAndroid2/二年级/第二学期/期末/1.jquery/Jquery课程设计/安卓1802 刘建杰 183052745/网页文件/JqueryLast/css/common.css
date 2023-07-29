@@ -1,0 +1,22 @@
+/*底层最小大小*/
+.bottomdiv{
+	min-width: 1238px;
+	margin-bottom: 30px;
+}
+.widthdiv{
+	width:1238px;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+.herodeatilbottomdiv{
+	min-width: 1240px;
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+ /* 控制顶层图片和底层图片大小 */
+
+ .headdiv img{
+	 width: 100%;
+	 height: auto;
+ }

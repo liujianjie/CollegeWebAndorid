@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
+<style type="text/css">
+p { width:300px; height:300px; background:#CCCC66;}
+p:hover { background:#CCCCCC;}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('input').click(function(){
+		//第一个参数：请求地址
+		//$.get("xxx.php");
+		//第二个参数:传递的参数			//$.get("xxx.php","user=aaa&pwd=888");		//$.get("x,xx.php",{user:'aaa',pwd:888});
+		//第三个参数：回调函数
+		$.post("xxx.php",{user:'aaa',pwd:888},function(data,status,xhr){
+			console.log(data);
+			console.log(status);
+			console.log(xhr);			
+			});		
+		});
+	
+	
+	});
+
+</script>
+</head>
+<body>
+<input type="button" value="post发送请求报文"/>
+<p></p>
+</body>
+</html>

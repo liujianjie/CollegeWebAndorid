@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用ajax获取JSON数据并解析</title>
+<style type="text/css">
+p { width:300px; height:300px; background:#CCCC66;}
+p:hover { background:#CCCCCC;}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('input').click(function(){
+	  $.get('yyy.php',function(data){
+		  //console.log(data);
+		  for(var i=0;i<data.length;i++)
+		  $('p').html($('p').html()+'动物'+data[i].name+'叫声'+data[i].sing+'<br/>');
+		  });
+		});
+});  
+
+</script>
+</head>
+<body>
+<input type="button" value="发送请求报文"/>
+<p></p>
+
+</body>
+</html>

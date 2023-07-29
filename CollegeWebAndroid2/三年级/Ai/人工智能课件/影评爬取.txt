@@ -1,0 +1,66 @@
+import urllib.request
+from bs4 import BeautifulSoup
+import csv
+import random
+import time
+def getHeader(url):
+    #360浏览器
+    header1 = {
+        'Host':'movie.douban.com',
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+    }
+    #IE浏览器
+    header2 = {
+        'Host': 'movie.douban.com',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.58'
+    }
+    list = [header1,header2]
+    index = random.choice(list)
+    req = urllib.request.Request(url=url,headers=index)
+    return req
+
+def getData(url,dicList):
+    req = getHeader(url)
+    html = urllib.request.urlopen(req)
+    data = html.read()
+    soup = BeautifulSoup(data,'html.parser')
+    comments = soup.select("#comments")[0]
+    #comments=[数据]
+    commentItem = comments.select('.comment-item')
+    dic = {}
+    for i in commentItem:
+        info = i.select('.comment-info')[0]
+        #info = [数据（用户名，看过，星级，时间）]
+        author = info.select('a')[0].string
+        star = info.select('span')[1]['title']
+        #print()
+        short = i.select('.short')[0].string
+        dic = {"author":author,"star":star,"short":short}
+        dicList.append(dic)
+    # rating = soup.find_all('span',attrs={'class':'rating'})
+    # rating = soup.select('.rating')
+    # print(len(rating))
+    # for i in rating:
+    #     star = i.get('title')
+    # short = soup.select('.short')
+    # print(len(short))
+    # for i in short:
+    #     txt = i.string
+    #
+def writeData(dicList):
+    with open('douban.csv','w',newline='',encoding='utf-8') as openFile:
+        fp = csv.writer(openFile)
+        fp.writerow(['用户名','星级','短评'])
+        for i in dicList:
+            info = [i['author'],i['star'],i['short']]
+            fp.writerow(info)
+        openFile.close()
+if __name__ == '__main__':
+    dicList = []
+    for i in range(5):
+        url='https://movie.douban.com/subject/35051512/comments?start=%s&limit=20&status=P&sort=new_score'%(i*20)
+    #url = 'https://movie.douban.com/subject/35051512/comments?start=80&limit=20&status=P&sort=new_score'
+        getData(url,dicList)
+        print("第%d页爬取结束！"%i)
+        time.sleep(10)
+    writeData(dicList)

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+	<link href="style/login.css" rel="stylesheet" type="text/css" />
+	  <script src="js/common.js"></script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<form  name = "loginfrm" >
+	<div class="all" id= "all">
+    	<div class="title">
+        	欢迎回来
+        </div>
+        <div class="one">
+        	<span>邮 箱：</span>
+            <input type="text" name="loginemail" value="" placeholder="请输入邮箱" height="70"/>
+        </div>
+        <div class="two">
+       	 	<span>密 码：</span>
+            <input type="password" name="loginpassword" value="" placeholder="请输入密码"/>
+        </div>
+        <div class="three">
+       	 	<input type="button" class="btn01" value="登录"  onclick = "checkLoginSubm();"/>
+       	 	<input type="button" class="btn02" value="注册"  onclick = "goRegister();"/>            
+        </div>
+    </div>
+    </form>
+    
+    <script>
+    	// 去注册
+		function goRegister(){
+			location.href = "Register.html";
+		}
+		function goMain(){
+			location.href = "Main.html";
+		}
+		// 输入成功，准备跳
+		var se = 3;
+		function setText(){
+			var vs = "输入成功，剩余"+se+"秒，跳入主页面";
+			$("#all").html(vs);
+			if(se == 0){
+				goMain();
+			}else{
+				setTimeout("setText()",1000);
+				se--;
+			}
+		}
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery实现鼠标经过图片变亮效果 - 站长素材</title>
+<style type="text/css">
+body{background:#000;}
+body,div,ul,li,img{padding:0;margin:0; border:0; list-style:none;}
+.all{width:630px; border:1px solid #ccc; margin:100px auto; overflow:hidden; padding:10px 0 0 10px;}
+li{width:200px; height:186px; float:left; margin-right:10px; margin-bottom:10px; cursor:pointer;}
+
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('li').mouseover(function(e) {
+        $(this).siblings().stop().fadeTo(500,0.4);
+    });
+	$('li').mouseout(function(e) {
+        $(this).siblings().stop().fadeTo(500,1);
+    });
+})
+</script>
+</head>
+
+<body>
+<div class="all" id="box">
+	<ul>
+		<li><img src="images/01.jpg" width="200" height="186" /></li>
+		<li><img src="images/02.jpg" width="200" height="186" /></li>
+		<li><img src="images/03.jpg" width="200" height="186" /></li>
+		<li><img src="images/04.jpg" width="200" height="186" /></li>
+		<li><img src="images/05.jpg" width="200" height="186" /></li>
+		<li><img src="images/06.jpg" width="200" height="186" /></li>
+	</ul>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

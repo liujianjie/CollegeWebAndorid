@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>	
+		div{
+			height:450px;
+			width:350px;
+			position:relative;
+			margin:200px auto;
+			
+		}
+		img{
+			height:450px;
+			width:350px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			transition:transform 2s;
+			border:1px solid gray;
+			backface-visibility:hidden;
+			border-radius:15px;
+		}
+		#two{
+			transform:rotateX(180deg);
+			
+		}
+		div:hover #one{
+			transform:rotateX(180deg);
+		}
+		div:hover #two{
+			transform:rotateX(360deg);
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+    	<img src="p2.jpg" id="one"/>
+        <img src="p1.jpg" id="two"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+<link href="style/register.css" rel="stylesheet" type="text/css" />
+	  <script src="js/common.js"></script>
+</head>
+
+<body>
+<form name = "registerfrm" >
+  <table>
+  	<tr>
+      <td colspan="2" align="center" class="title">注册</td>
+    </tr>
+    <tr>
+      <td>用户名称</td>
+      <td><input type="text" name="Username" id="Username" value = ""></td>
+    </tr>
+    <tr>
+      <td>登录密码</td>
+      <td><input type="password" name="password" id="password"></td>
+    </tr>
+    <tr>
+      <td>真实姓名</td>
+      <td><input type="text" name="Name" id="Name"></td>
+    </tr>
+    <tr>
+      <td>E-mail</td>
+      <td><input type="text" name="email" id="email"></td>
+    </tr>
+    <tr>
+      <td>出生年月</td>
+      <td><input type="date" id="birthdate" name="birthdate"></td>
+    </tr>
+    <tr>
+      <td>头像</td>
+      <td><input type="file" accept="image/*" name="profilepicture" id="profilepicture"></td>
+    </tr>
+    <tr>
+      <td>住址</td>
+      <td><input type="text" name="Address" id="Address"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="left"><input type="checkbox" name="agree" id="agree">
+        我已经阅读相关协议，同意注册
+       </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="button" class="btn01" onclick = "checkFormSubm();" value="注册" >
+        <input type="reset" class="btn02" value="清除">
+        <input type="button" class="btn01" value="登录" onclick="goLogin()">
+      </td>
+    </tr>
+  </table>
+</form>
+	<script>
+
+    	function goLogin(){
+			location.href="Login.html";
+		}
+    </script>
+</body>
+</html>

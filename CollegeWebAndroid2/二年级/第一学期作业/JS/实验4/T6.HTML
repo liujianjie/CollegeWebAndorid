@@ -1,0 +1,36 @@
+<html>
+<title>5</title>
+<script>
+	function cl(){
+		var info;
+		var val1 = document.getElementById('tx1').value;
+		var val2 = document.getElementById('tx2').value;
+		var sval1 = parseInt(val1),sval3;
+		switch(val2){
+			case '1':case '3':case '5':case '7':case '8':case '10':case '12':
+				sval3 = 31;
+				break;
+			case '4':case '6':case '9':case '11':
+				sval3 = 30;
+				break;
+		}
+		if((sval1 % 4 == 0 && sval1 % 100 != 0)||(sval1 % 400 == 0)){
+			if(val2 == '2'){
+				sval3 = 29;
+			}		
+		}else{
+			if(val2 == '2'){
+				sval3 = 28;
+			}
+		}
+		document.getElementById('tx3').value = sval3;
+	}	
+</script>
+<body>
+	<p><h1>查询某年某月的天数:</h1><p/>
+	<p>输入年份：<input type="text" id="tx1"/></p>
+	<p>输入月份：<input type="text" id="tx2"/></p>
+	<p>当月天数：<input type="text" id="tx3"/></p>
+	<p><input type="button" value="查询天数" onclick = "cl()"/></p>
+</body>
+</html>

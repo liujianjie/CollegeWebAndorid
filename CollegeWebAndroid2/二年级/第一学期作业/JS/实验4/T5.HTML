@@ -1,0 +1,26 @@
+<html>
+<title>5</title>
+<script>
+	function cl(){
+		var info;
+		var val1 = document.getElementById('tx1').value;
+		var val2 = document.getElementById('tx2').value;
+		var val3 = document.getElementById('tx3').value;
+		if(val1 == ''){
+			info = '用户名不能为空';
+		}else if(val2 == ''){
+			info = '密码不能为空';
+		}else if(val2 != val3){
+			info = '密码不一致';
+		}
+		alert(info);
+	}
+</script>
+<body>
+	<p>用户登录<p/>
+	<p>用户名：<input type="text" id="tx1"/></p>
+	<p>密   码：<input type="text" id="tx2"/></p>
+	<p>确认密码：<input type="text" id="tx3"/></p>
+	<p><input type="button" value="登录" onclick = "cl()"/><input type="button" value="重置"/></p>
+</body>
+</html>

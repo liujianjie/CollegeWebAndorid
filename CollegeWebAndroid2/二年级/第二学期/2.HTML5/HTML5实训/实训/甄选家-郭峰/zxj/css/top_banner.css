@@ -1,0 +1,71 @@
+.kong{
+	height: 200px;
+}
+*{
+ margin: 0;
+ padding: 0;	
+}
+ul,li{
+	list-style: none;
+}
+a{
+	color: #000000;
+	text-decoration: none;
+}
+.top_bannner{
+	position: relative;
+	overflow: hidden;
+}
+.top_bannner .top_b_img{
+	width: 1920px;
+	height: 420px;
+	overflow: hidden;
+}
+.top_bannner .top_b_img img{
+	float: left;
+}
+.top_bannner .top_b_left{
+	position: absolute;
+	top: 6px;
+	left: 400px;
+}
+.top_bannner .top_b_left ul {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.s{
+	display: inline-block;
+}
+.top_bannner .top_b_left ul li{
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background: #FFFFFF;
+	opacity: 0.8;
+	margin-bottom: 2px;
+}
+.top_bannner .top_b_right{
+	position: absolute;
+	bottom: 20px;
+	left: 900px;
+}
+.top_bannner .top_b_right ul{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+.top_bannner .top_b_right ul li{
+	height: 20px;
+	width: 20px;
+	margin: 0 10px;
+	border-radius: 20px;
+	background: #FFFFFF;
+	cursor: pointer;
+}
+.top_bannner .top_b_right ul .show{
+	background: #cc9756;
+}

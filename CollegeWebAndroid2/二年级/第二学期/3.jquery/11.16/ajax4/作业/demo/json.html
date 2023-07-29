@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>json</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+var obj={a:'hello',b:'world'};
+var json1='{"a":"hello","b":"world"}';
+var json2='{"a":"hello","b":"world","c":["x","y","z"]}';
+var jobj1=JSON.parse(json1);
+var jobj2=JSON.parse(json2);
+console.log(obj);
+console.log(json1);
+console.log(jobj1.a);
+console.log(jobj2.c[1]);
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

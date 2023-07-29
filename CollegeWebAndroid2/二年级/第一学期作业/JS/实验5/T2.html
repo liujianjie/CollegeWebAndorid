@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script>
+		var ndnum = Math.ceil(Math.random() * 99 + 1);
+		alert("要猜的数"+ndnum);
+    	var val;
+		var runs = true;
+		do{
+			val = prompt("请输入你猜的数(1-100)");
+			if(val == null || isNaN(val) || val.trim() == "" ){// val == null 放最前面
+				alert("请输入数字");
+			}else{
+				val = Number(val);
+				if(val < ndnum){
+					alert("小了");
+				}else if(val > ndnum){
+					alert("大了");
+				}else if(val == ndnum){
+					runs = confirm("对了，是否继续");
+					ndnum = Math.ceil(Math.random() * 99 + 1);// 重新
+				}
+			}
+		}while(runs);
+    </script>
+</head>
+
+<body>
+</body>
+</html>

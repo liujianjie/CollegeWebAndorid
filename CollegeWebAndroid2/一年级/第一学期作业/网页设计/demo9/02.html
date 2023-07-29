@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		#outer{
+			width:500px;
+			height:330px;
+			border:2px solid gray;
+			margin:200px auto;
+			position:relative;
+			overflow:hidden;
+			padding:10px;
+		}
+		#tu{
+			width:2550px;
+			height:330px;
+			animation:move 16s linear 0s infinite;
+		}
+		img{
+			
+			float:left;
+			width:500px;
+			height:330px;
+			margin-right:10px;
+		}
+		@keyframes move{
+			0%{
+				transform:translate(0px);
+			}
+			18%{
+				transform:translate(0px);
+			}
+			25%{
+				transform:translate(-510px);
+			}
+			43%{
+				transform:translate(-510px);
+			}
+			50%{
+				transform:translate(-1020px);
+			}
+			68%{
+				transform:translate(-1020px);
+			}
+			75%{
+				transform:translate(-1530px);
+			}
+			93%{
+				transform:translate(-1530px);
+			}
+			100%{
+				transform:translate(-2040px);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="outer">
+    	<div id="tu">
+            <img src="h01.jpg"/>
+            <img src="h02.jpg"/>
+            <img src="h03.jpg"/>
+            <img src="h04.jpg"/>
+            <img src="h01.jpg"/>
+        </div>
+    </div>
+</body>
+</html>

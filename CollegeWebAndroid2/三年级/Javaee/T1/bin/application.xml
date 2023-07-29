@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    
+    <!-- 使用context命名空间，在该文件下的bean开启相应的注解处理器 -->
+    <context:annotation-config/>
+    <bean id="userDao" class="com.ljj.annotation.UserDaoImpl"></bean>
+    <bean id="userService" class="com.ljj.annotation.UserServiceImpl"></bean>
+    <bean id="userController" class="com.ljj.annotation.UserController">
+    <!-- 不用 不用手动配置property和ref了。-->
+<!--     	<property name="userService" ref="userService"></property> -->
+    </bean>
+    
+    <!-- 第二种方法：扫描。使用context命名空间 ，对该包下的类，进行注解解析-->
+<!-- 	<context:component-scan base-package="com.ljj.annotation"></context:component-scan> -->
+	
+</beans>

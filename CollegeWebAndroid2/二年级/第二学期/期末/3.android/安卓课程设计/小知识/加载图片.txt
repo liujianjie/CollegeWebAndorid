@@ -1,0 +1,53 @@
+public static Bitmap getLocalBitmap(String url) {
+		try {
+			FileInputStream fis = new FileInputStream(url);
+			BitmapFactory.Options options = new BitmapFactory.Options();
+			options.inJustDecodeBounds = false;
+			options.inSampleSize = 2;
+			Bitmap btp = BitmapFactory.decodeStream(fis, null, options);
+			return btp;  ///把流转化为Bitmap图片
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	// 从数据库读取图片并且保存为bitmap
+	public void readPhotoUriFromDataToBitmap() {
+		seqlite = new SelfSqlite(this, "personal.db", null, Version.dataversion);
+		db = seqlite.getReadableDatabase();// 以读方式打开
+
+		// 读取
+		photolist = photodao.readDataWithPhoto(db, photolist);
+		boolean isok;
+		// 转换为bitmap
+		int size = photolist.size();// 记录，因为list大小会变
+		for (int i = 0; i < size; i++) {
+			isok = true;
+			Bitmap bit = null;
+			try {
+				// 正确姿势
+				// bit = BitmapFactory.decodeFile(photolist.get(i).getPhotouri());
+				// change
+				bit = getLocalBitmap(photolist.get(i).getPhotouri());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				isok = false;
+			} 
+			// 如果图片不存在要删除list，和数据库 并且不添加到bitmaplist中
+			if (bit != null && isok) {
+				allphotobitmap.add(bit);
+			} else {
+				// 数据库先删除
+				photodao.deletePhotoByid(db, photolist.get(i).getPhotoid());
+				// 列表删除
+				photolist.remove(i);
+			}
+		}
+
+		// 最后一个加上
+		Bitmap b4 = readBitMaps(this, R.drawable.addphoto);
+		//Bitmap b4 = BitmapFactory.decodeResource(this.getResources(), R.drawable.addphoto);
+		allphotobitmap.add(b4);
+	}

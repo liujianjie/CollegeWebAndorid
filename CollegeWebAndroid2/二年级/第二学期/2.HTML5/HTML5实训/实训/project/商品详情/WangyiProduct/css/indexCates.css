@@ -1,0 +1,237 @@
+/* 索引 */
+.indexCates{
+  margin-top: 60px;
+  box-sizing: border-box;
+}
+.indexCates .row{
+  width: 1090px;
+  margin: 0 auto;
+  position: relative;
+}
+.indexCates .row .row-header{
+  padding-bottom: 20px;
+  height: 28px;
+}
+.row .row-header .row-header-right{
+  float: right;
+}
+.row-header .row-header-right .r-content{
+  display: inline-block;
+  font-size: 14px;
+  padding-top: 14px;
+  line-height: 1;
+}
+.r-content span{
+  margin: 0 13px;
+}
+.r-content a:hover{
+  color: #b4a078;
+}
+.indexCates .row .row-banner{
+  width: 1090px;
+  height: 310px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.row-banner .row-banner-imgs{
+  position: relative;
+}
+.row-banner .row-banner-imgs a{
+  position: absolute;
+  opacity: 0;
+  /* animation: hide 0.5s; */
+}
+ /* 横幅显示类 */
+.row-banner .row-banner-imgs .img-show{
+  opacity: 1;
+}
+@keyframes hide{
+  from{
+    opacity: 1;
+    z-index: 999;
+  }
+  to{
+    opacity: 0;
+  }
+}
+@keyframes show{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.row-banner-imgs .focus-bd{
+  position: relative;
+  overflow: hidden;
+}
+.focus-bd .bd-left{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+.focus-bd .bd-right{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+.focus-bd a{
+  color: #ffffff;
+  font-size: 28px;
+}
+.focus-bd .bd-dots{
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.focus-bd .bd-dots li{
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 8px 10px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+/* 选中标点显示类 */
+.focus-bd .bd-dots .dot-index{
+  background-color: #E2C199;
+  border: 4px solid #b4a078;
+  margin: 0 4px 6px;
+}
+.indexCates .row .row-box{
+  width: 1090px;
+  height: 411px;
+}
+.row-box .box-ul{
+  position: relative;
+  margin-right: -10px;
+}
+.row-box .box-ul li{
+  float: left;
+  margin: 0 10px 50px 0;
+  width: 265px;
+  height: 361px;
+}
+.box-ul li:hover {
+  background-color: #f4f0ea;
+  box-shadow: 2px 2px 4px #ccc;
+}
+.box-ul li .li-imgs{
+  position: relative;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+.li-imgs .img-focus{
+  display: none;
+}
+.box-ul li .li-imgs .img-label{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0 4px;
+  font-size: 14px;
+  color: #b4a078;
+  line-height: 18px;
+  height: 20px;
+  border: 1px solid #b4a078;
+  border-radius: 4px;
+  background-color: #f4f0ea;
+}
+.li-imgs .img-default{
+  position: relative;
+}
+.li-imgs .promBanner{
+  position: absolute;
+  text-align: left;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+  color: #ffffff;
+}
+.li-imgs .promBanner .promTitle{
+  background-image: url(../img/prom_title_bc.webp);
+  height: 36px;
+  background-size: auto 100%;
+  background-position: right;
+  margin-top: -6px;
+  padding: 0 14px 0 8px;
+  float: left;
+}
+.promBanner .promTitle .prom-title{
+  font-size: 12px;
+  height: 15px;
+  line-height: 1;
+  margin-top: 5px;
+}
+.promBanner .promTitle .prom-subTitle{
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -1px;
+  font-weight: 700;
+}
+.promBanner .promContent{
+  height: 30px;
+  line-height: 30px;
+  background: #f38245;
+  font-size: 12px;
+  padding-left: 86px;
+}
+.box-ul li .li-info{
+  height: 88px;
+  /* background: red; */
+  font-size: 12px;
+  text-align: center;
+}
+.li-info .info-activity{
+  height: 20px;
+  color: #ffffff;
+  width: 200px;
+  margin: 0 auto;
+}
+.li-info .info-activity span{
+  background-color: #e36844;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.li-info .info-activity span .app{
+  background-color: red;
+}
+.li-info .info-name{
+  width: 166px;
+  margin: 0 auto 4px;
+  line-height: 20px;
+  font-size: 13px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.li-info .info-name:hover{
+  color: #E2C199;
+}
+.li-info .info-price{
+  font-size: 13px;
+  line-height: 13px;
+  padding: 1px 0 9px;
+}
+.li-info .info-price span{
+  color: red;
+}
+.li-info .info-price .price-old{
+  color: #ccc;
+  margin-left: 5px;
+  text-decoration: line-through;
+}
+

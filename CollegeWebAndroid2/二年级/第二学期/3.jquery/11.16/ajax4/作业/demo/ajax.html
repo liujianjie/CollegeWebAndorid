@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
+<style type="text/css">
+p { width:300px; height:300px; background:#CCCC66;}
+p:hover { background:#CCCCCC;}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('input').click(function(){
+		$.ajax(
+		{   
+		   url:'xxx.php',
+		   type: 'POST',
+		   data: {user:'aaa',pwd:888},
+		   success:function(data,stutas,xhr){
+			 console.log(data);
+			console.log(stutas);
+			console.log(xhr);
+			   
+			   }
+			
+			}
+		)
+		
+		});
+	
+	
+	});
+
+</script>
+</head>
+<body>
+<input type="button" value="ajax发送请求报文"/>
+<p></p>
+</body>
+</html>

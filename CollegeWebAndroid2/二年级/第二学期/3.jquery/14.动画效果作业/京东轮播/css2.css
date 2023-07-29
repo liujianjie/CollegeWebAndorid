@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0;
+	padding:0;
+}
+ul {
+	list-style:none;
+}
+.banner {
+	width:590px;
+	height:470px;
+	border:2px solid #ccc;
+	margin:100px auto;
+	position:relative;
+	overflow:hidden;
+	z-index:1;
+}
+/*5. banner下面的li，要叠加在一起*/
+.banner>.img>li{ 
+	position:absolute;
+	left:0;
+	top:0;}
+.img>li.active {
+	z-index:1;
+	}
+
+.tab {
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	margin-left:-100px;
+	height:30px;
+	padding-left:10px;
+	background:rgba(0,0,0,.2);
+	border-radius:15px;
+	z-index:999;	
+}
+.tab:hover {
+	background:rgba(0,0,0,.7);
+	transform:scale(1.2);
+}
+.tab li {
+	width:20px;
+	height:20px;
+	float:left;
+	background:#fff;
+	border-radius:50%;
+	margin:5px 10px 0 0;
+	opacity:0.6;	
+    cursor:pointer;
+}
+.tab li.active {
+	background:#f60;
+}
+.btn {
+	display:none;
+	z-index:999;
+}
+.btn span {
+	display:block;
+	width:50px;
+	height:100px;
+	background:rgba(0,0,0,0.6);
+	color:#fff;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	cursor:pointer;
+	z-index:999;
+}
+.btn .prev {
+	position:absolute;
+	left:0;
+	top:50%;
+	margin-top:-50px;
+}
+.btn .next {
+	position:absolute;
+	right:0;
+	top:50%;
+	margin-top:-50px;
+}
+
+
+
+

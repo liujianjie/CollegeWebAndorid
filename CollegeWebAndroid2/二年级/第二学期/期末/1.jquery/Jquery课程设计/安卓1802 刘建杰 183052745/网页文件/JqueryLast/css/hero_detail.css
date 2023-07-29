@@ -1,0 +1,224 @@
+/*路径div*/
+.pathdiv{
+	width: 100%;
+	height: 96px;
+	line-height: 96px;
+	font-size: 14px;
+	color: #A9A9A9;
+}
+.pathdiv a,.pathdiv span{
+	display: inline-block;
+}
+.pathdiv span{
+	width: 40px;
+	text-align: center;
+}
+.pathdiv a:nth-child(7){
+	color: #000000;
+	font-size: 15px;
+}
+/*英雄div*/
+.heroimgdiv{
+	width: 100%;
+	height: 632px;
+	position: relative;
+}
+.heroprodiv .sbg{
+	width: 305px;
+	height: 100%;
+	overflow: hidden;
+	opacity: 0.6;
+	background: black;
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 2;
+}
+/*英雄详情*/
+.detaildiv{
+	position: absolute;
+	top: 50px;
+	left: 40px;
+	width: 290px;
+	height: 300px;
+	overflow: hidden;
+	color: #fff;
+	font-size: 12px;
+	z-index: 3;
+}
+.detaildiv .heroname{
+	font-size:24px;
+	line-height: 25px;
+	padding-bottom: 10px;
+	font-weight: 400;
+}
+.detaildiv .herotitle{
+	font-size: 42px;
+	padding-bottom: 10px;
+}
+.herotagdiv{
+	overflow: hidden;
+	zoom: 1;
+}
+/*tag*/
+.spantag{
+	float: left;
+	width: 35px;
+	height: 21px;
+	line-height: 21px;
+	margin-right: 5px;
+	background: #00A483;
+	font-size: 12px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 5px;
+}
+/*属性*/
+.herodl{
+	margin-top: 25px;
+	height: 90px;
+	width: 150px;
+}
+.herodl dt{
+	float:left;
+	width:40%;
+	margin-bottom: 5px;
+	height: 16px;
+	line-height: 16px;
+}
+.herodl dd{
+	float: left;
+	width: 60%;
+	margin:2px 0 7px;
+	height: 12px;
+	background: #363c3c;
+}
+/*颜色*/
+.herodl .up{
+	display: block;
+	height: 12px;
+}
+.herodl .up1{
+	background:#f2c500;
+}
+.herodl .up2{
+	background:#f59d00;
+}
+.herodl .up3{
+	background:#2c97de;
+}
+.herodl .up4{
+	background:#1eca6b;
+}
+/*购买*/
+.buyimg{
+	margin-top: 25px;
+}
+.buyimg img{
+	width:153px;
+	height: 40px;
+	overflow: hidden;
+}
+
+/*皮肤层*/
+.heroskindiv{
+	width: 100%;
+	height: 632px;
+	overflow: hidden;
+	position: relative;
+}
+.heroskinul{
+	width: 20000px;
+	position: relative;
+}
+.heroskinul li{
+	float: left;
+	width: 1240px;
+}
+.heroskinul img{
+	width: 1240px;
+	height: 632px;	
+}
+/*皮肤头像层*/
+.heroskinheaddiv{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding-left: 306px;
+}
+
+.heroskinheaddiv li{
+	position: relative;
+}
+.heroskinheaddiv li img{
+	width: 60px;
+	height: 60px;
+	opacity: 0.7;
+}
+.heroskinheadul .sbor{
+	cursor: pointer;
+}
+/*点击事件*/
+.heroskinheadul .current .sbor{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 52px;
+	height: 52px;
+	border: 4px solid #00A383;
+} 
+
+/*英雄介绍*/
+.heroinfodiv{
+	margin-top: 30px;
+}
+.ptitle{
+	font-size: 24px;
+	color: #338c7a;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.heroleft{
+	width: 63%;
+}
+.heroright{
+	width: 35%;
+}
+.heroj, .herob{
+	background: #FFFFFF;
+	height: auto;
+	padding: 30px 30px 30px 30px;
+	overflow: hidden;
+	box-sizing: border-box;
+	border:1px solid #e1e1e1;
+	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.herob p, .heroj p{
+	height: 100%;
+	word-break:break-all;
+	font-size: 14px;
+	line-height: 24px;
+	overflow: hidden;
+	color:#666;
+	text-indent: 2em
+}
+
+.herob a{
+	display: block;
+	padding-top: 10px;
+	color: #555;
+	font-size: 14px;
+}
+
+.heroj p{
+	text-indent: 0em
+}
+.heroj .heroinfoft{
+	color: #00A383;
+}
+/*公共的ul头部*/
+.herotitleul li:hover{
+	border-top: 3px solid #00a383;
+}

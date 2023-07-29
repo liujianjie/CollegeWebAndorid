@@ -1,0 +1,24 @@
+GridView 与GridLayout有区别
+
+属性：
+1.horizonalSpacing 
+2.verticalSpacing
+3.
+
+五大：静态内容、jsp指令、jsp表达式、jsp脚本元素、注释
+
+Scroll View
+1.只支持垂直滚动，而且只能包含一个组件，一般是LinearLayout 且vertical
+
+2.绝对 相对滚动
+
+fullScroll(ScrollView.FoCus_up)
+scrollTo(0, MCurPos);
+
+水平滚动视图 horizontalScrollView
+
+1.一般一个LinearLayout 且 horizontal
+
+2.垂直与水平结合 嵌套
+
+垂直在外

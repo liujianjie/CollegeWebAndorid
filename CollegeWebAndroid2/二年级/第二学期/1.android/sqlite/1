@@ -1,0 +1,8 @@
+--创建表
+create table testtable(
+    _id int not null primary key identity(1,1),
+    name char(10) not null
+)
+
+--插入
+insert into testtable(_id, name) values('1','张三');

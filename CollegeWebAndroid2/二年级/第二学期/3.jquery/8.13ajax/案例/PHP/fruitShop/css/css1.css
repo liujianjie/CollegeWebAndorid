@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+    html,
+    body,
+    div,
+    ul,
+    img {
+      padding: 0;
+      margin: 0;
+    }
+    
+    header {
+      background: lightgreen;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font: bold 24px/50px Arial;
+    }
+    
+    nav {
+      background: lightblue;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 180px;
+    }
+    
+    section {
+	  width:1100px;
+      background: lightyellow;
+      min-height: 600px;
+	  margin:0 auto;
+    }
+    
+    footer {
+      background: lightgray;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+    
+    #container {
+      width: 1010px;
+      height: auto;
+      margin: auto;
+      background: #E2F9AA;
+      padding-bottom: 10px;
+    }
+    ul { margin:0px auto;
+	    width:1000px;}
+    ul li {
+      list-style: none;
+      width: 190px;
+      height: 200px;
+      float: left;
+      background: lightyellow;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    
+    ul li img {
+      width: 190px;
+      height: 170px;
+      display: block;
+      cursor: pointer;
+    }
+    
+    ul li div {
+      background: #7DBD50;
+      width: 185px;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 5px;
+    }
+    a{
+       text-decoration: none;
+       text-align:center;
+    }
+
+

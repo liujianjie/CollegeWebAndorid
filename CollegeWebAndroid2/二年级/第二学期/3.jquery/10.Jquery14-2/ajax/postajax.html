@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
+<script type="text/javascript">
+window.onload=function(){
+	var inp=document.getElementsByTagName('input')[0];
+	var p=document.getElementsByTagName('p')[0];
+inp.onclick=function(){
+	//alert(123);
+	//1.创建异步对象
+	var xhr=new XMLHttpRequest;
+	//2.设置请求行  （get请求数据写在url后面）
+	xhr.open('POST','xxx.php')
+	//3.设置请求头（get请求可以忽略，post请求不发送数据可以省略）
+	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	//4.请求主体发送（参数为空或者写NULL，post请求如果有数据提交就写在这里,格式'key=value&key2=value2'）
+	xhr.send('user=aaa&pwd=888')
+	//5.回调函数处理
+	xhr.onload=function(){
+		//alert(123);
+		//alert(xhr.responseText);
+		p.innerHTML=xhr.responseText;
+		}
+
+	
+	}
+	}
+
+</script>
+</head>
+
+<body>
+<input type="button" value="post发送请求报文"/>
+<p></p>
+</body>
+</html>
