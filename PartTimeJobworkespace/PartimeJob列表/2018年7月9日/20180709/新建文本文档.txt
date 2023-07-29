@@ -1,0 +1,14 @@
+Design and build a mobile application to allow the user to serarch for content within the iTunes Store and the App Store. Use the JSON response from the serach service,Information about the Apple Serach API can be found here.
+
+Provide the user with a text field to enter the search term.Allow the user to choose one of music,and software as the entity from a drop down list. the user selects an entity, enters a search term, and then clicks the Search butom. Upon clicking the search button,the search results should be displayed in a table, Upon clicking any search result,more information should be displayed about the result, Provide appropriate navigation for the user
+
+
+https://itunes.apple.com/search?term=music
+
+Method does not override method from its superclas
+
+
+https://itunes.apple.com/search?entity=software
+
+
+https://itunes.apple.com/search?term=t&entity=software

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-config>
+<!-- 配置实体类  name 是实体类在工厂模式中的访问名称 class表示实体类的类路径 -->
+	<service name="deptEmpService" class="com.ht.service.impl.DeptEmpServiceImpl"></service>
+	<!-- 如果有多个service 配置多个service标签即可 -->
+</service-config>

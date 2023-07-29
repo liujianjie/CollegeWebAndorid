@@ -1,0 +1,5 @@
+.rightcontentdiv1 dl{
+	word-wrap:break-word;
+	word-break:break-all;
+	overflow: hidden;
+}

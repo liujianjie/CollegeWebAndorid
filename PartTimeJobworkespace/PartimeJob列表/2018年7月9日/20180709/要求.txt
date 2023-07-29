@@ -1,0 +1,9 @@
+1.重叠 问题
+
+2.没有图片
+
+3.大概是一个表格三列
+
+4.点每一行的trackName 可以看到more information
+
+5.sofware 是两列 两列 可以用简单的 table

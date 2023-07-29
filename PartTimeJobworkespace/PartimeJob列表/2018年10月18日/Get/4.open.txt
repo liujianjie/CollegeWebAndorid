@@ -1,0 +1,4 @@
+myWindow=window.open('','MyName','width=200,height=100')
+myWindow.document.write("This is 'myWindow'")
+myWindow.focus()
+myWindow.opener.document.write("This is the parent window")

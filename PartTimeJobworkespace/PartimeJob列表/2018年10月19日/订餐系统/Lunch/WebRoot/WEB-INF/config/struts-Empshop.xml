@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <!--  package的name名称不能冲突，但是可以相互继承 -->
+   <package name="empshop" extends="default">
+  		<action name="emp_*" class="com.dc.controller.EmpShop.Empshop" method="{1}">
+  			<result name="success">${target}</result>
+  		</action>
+  		<action name="car_*" class="com.dc.controller.EmpShop.EmpCar" method="{1}">
+  			<result name="success">${target}</result>
+  		</action>
+  		<action name="one_*" class="com.dc.controller.Login.OneCustomerinfo" method="{1}">
+  			<result name="success">${target}</result>
+  		</action>
+  		<action name="bgO_*" class="com.dc.controller.BgOrder.BgOrders" method="{1}">
+  			<result name="success">${target}</result>
+  			<result name="successto" type="chain">${target}</result>
+  		</action>
+   </package>
+</struts>    

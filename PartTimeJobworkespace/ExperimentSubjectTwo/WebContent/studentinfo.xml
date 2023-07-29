@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE ORDERS SYSTEM "orders.dtd"-->						
+<students>
+   <student>
+	  <username>zhangsan</username>
+	  <password>123456</password>
+	  <stuno>1</stuno>
+	  <stuname>张三丰</stuname>
+	  <sex>男</sex>
+	  <idcard>123</idcard>
+   </student>
+   <student>
+	  <username>lisi</username>
+	  <password>123456</password>
+	  <stuno>2</stuno>
+	  <stuname>李四</stuname>
+	  <sex>男</sex>
+	  <idcard>123</idcard>
+   </student>
+   <student>
+	  <username>xiaohong</username>
+	  <password>123456</password>
+	  <stuno>3</stuno>
+	  <stuname>小红</stuname>
+	  <sex>女</sex>
+	  <idcard>123</idcard>
+   </student>
+   <student>
+	  <username>xiaoxiao</username>
+	  <password>123456789</password>
+	  <stuno>4</stuno>
+	  <stuname>小小</stuname>
+	  <sex>女</sex>
+	  <idcard>123456789</idcard>
+   </student>
+</students>
+

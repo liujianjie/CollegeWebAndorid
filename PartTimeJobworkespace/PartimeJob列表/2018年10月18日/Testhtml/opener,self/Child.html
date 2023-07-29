@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> 子窗口 </title>
+	<script>
+		//子窗口向父窗口传值
+		function sendVal(){
+		//获取子窗口文本框的值
+		var val=document.getElementById("childname").value;
+		//把值赋值到父窗口的文本框
+		//opener 表示打开子窗口的父窗口
+		opener.frm.uname.value=val;
+
+		//关闭自己(在当前窗口中 以下三种方法都可以关闭窗口)
+		//window.close();
+		//self.close();
+		this.close();
+		}
+
+		function changecolor(colo){
+		//改变父窗口的背景颜色
+			opener.document.bgColor=colo;
+			//关闭自己
+			self.close();
+		}
+
+		function getVal(){
+		alert(opener.frm.uname.value);
+		}
+	</script>
+ </head>
+
+ <body>
+  我是子窗口
+
+
+  <input type="text" id="childname"><input type="button" value="获取文本框的值到父窗口的文本框" onclick="sendVal();">
+  <br/>
+  <input type="button" value="改变父窗口的背景颜色为红色" onclick="changecolor('red')">
+  <br/>
+  <input type="button" value="改变父窗口的背景颜色为蓝色" onclick="changecolor('blue')">
+  <br/>
+  <input type="button" value="获取父窗口文本框值并弹出" onclick="getVal();">
+ </body>
+</html>

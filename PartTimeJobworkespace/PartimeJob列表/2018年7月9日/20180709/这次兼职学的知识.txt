@@ -1,0 +1,17 @@
+json解析 布局 
+
+子线程 以及 需要activity 并且 context 可以获取activity
+
+那种布局 的确学了很多。
+
+还有很多，scorllVIEW的用法  只能一个 LinearLayout
+
+Activity 传需要 将bean 序列化
+
+显示图片不能再主线程，需要用子线程，子线程就是Thread 不错
+
+listview 与 baseApdater的用法 记忆了许多。
+
+
+***
+最重要的是那个，坑了我有点久 两个线程  一个 参数，同时使用，那么设值时会偏向于后一个的那个，然后调用 会出现重复图片 得注意，需要两个参数

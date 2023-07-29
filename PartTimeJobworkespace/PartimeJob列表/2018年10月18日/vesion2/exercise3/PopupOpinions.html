@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>LateOpinionPage</title>
+	<link rel="stylesheet" href="style/PopupOpinions.css"/>
+	
+</head>
+<body>
+		<div class = "contentDiV">
+			<header>
+				<font size = "5" onclick ="test();">Opinions</font>
+				
+			</header>
+			
+			<!--两个div层 内容都一样-->
+			<div class="contentDivdiv">
+				
+				<div class="rightcontentdiv1">
+					<img src="images/image_1.png" align = "left" width = "350" height = "350" id = "changeImgplace"/>
+					
+					<dl style = "line-height:32px" id = "showMessage">
+						<!--<dd id = "fullname">full name:Restourant Name</dd>
+						<dd id = "city">City,   Country</dd>
+						<dd id = "state">Day,Month, Year</dd>
+						<dd id = "">address:City,   Country</dd>
+						<dd id = "">website:Day,Month, Year</dd>
+						<dd id = "">number of phone:website:Day,Month, Year</dd>
+						<dd>the accounts of social networks:</dd>
+						<dd>description:</dd>
+						<dd>the accounts of social networks:</dd>
+						<dd>the type of food served:</dd>
+						<dd>economic class:</dd>-->
+					</dl>
+				</div>
+
+				<div class="rightcontentdiv2">
+					<header style="width:90%">
+						<span id="reviewplace">
+						</span>
+					</header>
+				</div>
+				
+			</div>
+			
+		</div>
+		<script>
+		window.onload=function(){
+			//var val = opener.document.getElementById("test").value ;
+			
+			var type = opener.document.getElementById("type").value;
+			var imgsrc = opener.document.getElementById("imgsrc").value;
+			var review = opener.document.getElementById("review").value;
+
+			document.getElementById("showMessage").innerHTML = type;
+
+			document.getElementById("changeImgplace").src = imgsrc;
+
+			document.getElementById("reviewplace").textContent = review;
+			
+		}
+		function test(){
+			
+			
+		}
+	</script>
+
+ </body>
+</html>

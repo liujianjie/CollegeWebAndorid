@@ -1,0 +1,14 @@
+1.不能静态，不能静态 h
+
+2.json
+
+3.// 注意是列名
+		String hql = "from Department where department_id = "+Id;
+
+4.json 记得不能返回""??至少要succuss？？或者null？
+
+5. json Alert(obj.name);
+ 
+    Alert(obj.sex);
+
+6.记得在packge里的jsp访问外面要加上全局

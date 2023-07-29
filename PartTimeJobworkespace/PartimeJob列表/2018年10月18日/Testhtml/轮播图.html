@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .pic{
+            list-style: none;
+            border: 0;
+        }
+        #box{
+            width: 800px;
+            height:800px;
+            overflow: hidden;
+            margin: 30px auto;
+            position: relative;
+            box-shadow: 10px 10px 5px #888888;
+            border-radius:10px;
+        }
+        #box .pic li{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="pic">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+        <li><img src="img/5.jpg" alt=""></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+         var imgindex = 0;
+		var lilength = $('.pic li').length;
+		$('.pic li').eq(imgindex).css("display","block");
+        setInterval(function () {
+			$('.pic li').eq(imgindex).fadeOut(0,"");
+			if(imgindex == 0){
+				imgindex = lilength - 1;
+			}else{
+				imgindex--;
+			}
+			$('.pic li').eq(imgindex).fadeIn(1000,"");
+        },2000);
+    });
+</script>
+</body>
+</html>

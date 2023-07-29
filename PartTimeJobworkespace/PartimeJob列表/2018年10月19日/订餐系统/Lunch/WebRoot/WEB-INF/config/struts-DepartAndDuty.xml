@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <!-- 部门和职务的禁用启用
+    -->
+   <package name="DepartAndDuty" extends="default">
+      <action name="de_*" class="com.dc.controller.department.DepartAction" method="{1}">
+        <result name="state">/</result>    
+      </action>
+      <action name="du_*" class="com.dc.controller.duty.DutyAciton" method="{1}">
+        <result name="duty">/</result>    
+      </action>
+   </package>
+</struts>    

@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+/* ~~ 元素/标签选择器 ~~ */
+ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定需要的数值，也可以在列表所包含的列表项（LI、DT 和 DD）中指定需要的数值。请注意，除非编写一个更为具体的选择器，否则您在此处进行的设置将会层叠到 .nav 列表。 */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	padding-right: 15px;
+	padding-left: 15px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+/* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
+	text-decoration: none;
+}
+
+/* ~~ 此固定宽度容器包含其它 div ~~ */
+.container {
+	width: 960px;
+	background-color: #FFF;
+	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐 */
+}
+
+/* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。标题包含一个图像占位符，该占位符应替换为您自己的链接徽标 ~~ */
+.header {
+	background-color: #ADB96E;
+}
+
+/* ~~ 这是布局信息。 ~~ 
+
+1) 填充只会放置于 div 的顶部和/或底部。此 div 中的元素侧边会有填充。这样，您可以避免使用任何“方框模型数学”。请注意，如果向 div 自身添加任何侧边填充或边框，这些侧边填充或边框将与您定义的宽度相加，得出 *总计* 宽度。您也可以选择删除 div 中的元素的填充，并在该元素中另外放置一个没有任何宽度但具有设计所需填充的 div。
+
+*/
+
+.content {
+
+	padding: 10px 0;
+}
+
+/* ~~ 脚注 ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #CCC49F;
+}
+
+/* ~~ 其它浮动/清除类 ~~ */
+.fltrt {  /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* 如果从 #container 中删除或移出了 #footer，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+#divmenu {
+	width: 100%;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #b4d76d;
+	background-color: #000000;
+	text-align: left;
+	padding: 10px 0px 10px 0px;
+	font-size: 14px;
+}
+
+#divmenu a {
+	font-size: 16px;
+	color: #FFFFFF; /*#1E33F7*/
+	font-family:黑体;
+	padding: 20px 20px 20px 20px;
+}
+
+#divmenu a:link {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#divmenu a:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#divmenu a:hover {
+	text-decoration: none;
+	color: #999999; /*颜色变换*/
+	font-weight: bold;
+}
+
+#divmenu a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#divsearch {
+	width: 100%;
+	background-color: #104E8B;
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#box_autoplay {
+	position:relative;
+	width:900px;
+	height:500px;
+	background:#fff;
+	border-radius:5px;
+	border:8px solid #fff;
+	margin:10px auto;
+	cursor:pointer;
+}
+#box_autoplay .list {
+	position:relative;
+	width:900px;
+	height:500px;
+	overflow:hidden;
+}
+#box_autoplay .list ul {
+	position:absolute;
+	top:0;
+	left:0;
+}
+#box_autoplay .list li {
+	width:900px;
+	height:500px;
+	overflow:hidden;
+}
+#box_autoplay .count {
+	position:absolute;
+	right:0;
+	bottom:5px;
+}
+#box_autoplay .count li {
+	color:#fff;
+	float:left;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	margin-right:5px;
+	overflow:hidden;
+	background:#F90;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	border-radius:20px;
+}
+#box_autoplay .count li.current {
+	color:#fff;
+	opacity:1;
+	filter:alpha(opacity=100);
+	font-weight:700;
+	background:#f60;
+}
+
+#tmp {
+	width:100px;
+	height:100px;
+	background:red;
+	position:absolute;
+}
+
+#divcontent {
+	width: 900px;
+	background-color: #FCFDEF;
+	border: 1px solid #EEEDDB;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+}
+#divpagecontent {
+	width: 900px;
+	margin-top: 10px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+}
+
+.listtitle {
+	padding: 5px 0px 5px 5px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	font-size: 14px;
+	font-weight: bold;
+	color: #1C3F09;
+}
+
+.listtd {
+	padding: 5px 0px 5px 30px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+
+.listcontent {
+	background-color: #FCFDEF;
+	border: 1px solid #CCCCCC;
+	margin-left: 5px;
+	width: 99%;
+}
+
+.listcontent td {
+	padding: 20px;
+}
+
+.infocontent {
+	background-color: #FCFDEF;
+	border: 1px solid #CCCCCC;
+	margin-left: 5px;
+	width: 99%;
+}
+
+/*分页*/
+.pagination {
+	padding: 5px;
+	width: 790px;
+	margin: 5px auto;
+	text-align: center;
+}
+
+.pagination ul {
+	width:270px;
+	margin: 5px auto;
+	padding: 5px;
+	font-size: 12px;
+}
+
+.pagination li {
+	list-style-type: none;
+	float:left;
+	padding: 1px;
+	margin: 1px;
+}
+
+.pagination a,.pagination a:visited {
+	padding:5px;
+	border: 1px solid #9aafe5;
+	text-decoration: none;
+	color: #2e6ab1;
+}
+
+
+
+.pagination li.currentpage {
+	font-weight: bold;
+	padding: 5px;
+	border: 1px solid navy;
+	background-color: #2e6ab1;
+	color: #FFF;
+}
+.disablepage_a{
+	display:block; 
+	width:75px; 
+	height:15px;
+	}
+.disablepage_a:link,.disablepage_a:visited{!important; padding:0; border:0;}
+.disablepage_a:hover{!important; padding:0; border:0; background:none; }
+.pagination li.disablepage_p {
+	width: 75px;
+	height: 15px;
+	padding: 5px;
+	color: #929292;
+	background:url(../images/previous_page.png) no-repeat center center;
+}
+
+.pagination li.disablepage_p2 {
+	width: 75px;
+	height: 15px;
+	padding: 5px;
+	color: #929292;
+	background:url(../images/previous_page2.png) no-repeat center center;
+}
+
+.pagination li.disablepage_n{	
+	width: 75px;
+	height: 15px;
+	padding: 5px;
+	color: #929292;
+	background:url(../images/next_page.png) no-repeat center center;
+}
+
+.pagination li.disablepage_n2{	
+	width: 75px;
+	height: 15px;
+	padding: 5px;
+	color: #929292;background:url(../images/next_page2.png) no-repeat center center;
+}
+
+.pagination li.nextpage {
+	font-weight: bold;
+	padding: 5px;
+}
+
+/*分页*/
+.upline {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #B0BEC7;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 20px;
+}
+
+.textinput {
+	margin-left: 10px;
+	font-size: 12px;
+	width: 150px;
+	height: 18px;
+	border: 1px solid #A4B5BD;
+}
+
+.textarea {
+	margin-left: 10px;
+	font-size: 12px;
+	width: 350px;
+	height: 75px;
+	border: 1px solid #A4B5BD;
+}
+
+#logindiv {
+	background-image: url(../images/loginbg.gif);
+	width: 305px;
+	height: 361px;
+	background-repeat: no-repeat;
+	margin: 20px;
+}
+
+.carttable {
+	border: 1px solid #CCCCCC;
+	width: 100%;
+	background-color: #E1FFE1;
+}
+
+.tableopen {
+	text-align: center;
+}
+
+.tableopentd01 {
+	text-align: center;
+	border: 1px solid #FFFFFF;+
+	padding: 3px;
+	color: #FFFFFF;
+}
+
+.tableopentd02 {
+	text-align: center;
+	padding: 3px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #C5E0E2;
+	border-right-color: #C5E0E2;
+	border-bottom-color: #C5E0E2;
+	border-left-color: #C5E0E2;
+}
+
+.tableopentd03 {
+	text-align: center;
+	padding: 3px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #C5E0E2;
+	border-right-color: #C5E0E2;
+	border-bottom-color: #C5E0E2;
+	border-left-color: #C5E0E2;
+}
+
+.searchtable {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #CCCCCC;
+}

@@ -1,0 +1,12 @@
+$("input[name=keyword]").keypress(function(e){
+        var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+        if (eCode == 13){
+            alert('您按了回车键')
+            //自己写判断函数
+        }
+})
+--------------------- 
+作者：绝影A 
+来源：CSDN 
+原文：https://blog.csdn.net/lllliulin/article/details/50445331 
+版权声明：本文为博主原创文章，转载请附上博文链接！

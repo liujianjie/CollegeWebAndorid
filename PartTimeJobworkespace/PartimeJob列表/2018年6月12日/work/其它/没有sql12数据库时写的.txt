@@ -1,0 +1,95 @@
+
+实验1：
+1.
+1）
+首先在插入时：保证每个元组都有自己的主要标识 为每个元组提供了唯一，为列或列集合提供了唯一性的保证
+
+查询时      ：由于有唯一标识的列，那么倘若这列是int 类型，那么就可以更快检索 相当于自动为表添加了一个索引
+
+删除时      ：可以根据这条元组的唯一标识列 删除数据，不会造成误删，提供方便性
+
+为了防止不符合规范的数据进入数据库，在用户对数据进行插入、修改、删除等操作时，DBMS自动按照一定的约束条件对数据进行监测，使不符合规范的数据不能进入数据库，以确保数据库中存储的数据正确、有效、相容。
+
+是数据完善性约束重要组成部分，保证数据完整性约束的建成？
+
+2）
+
+2.
+1）not null 只是不允许一个数据列下的一行数据中这个列不允许是空值
+
+2）primary key 不仅不允许空值，而且每一行这列数据不允许相同，如：第一行：1 第二行：不能为1 插入时会报错
+
+
+实验2：
+
+1)create database name 
+
+2)update dabatase name
+
+
+实验3：
+1)create table S
+
+  create table C
+
+  create table SC
+
+2) insert into S
+
+3) alter table S add column "出生日期"
+
+4）delte table S column "年龄"
+
+5) drop table SC 
+
+实验4：
+
+
+备份不会 恢复也不会
+
+实验5：
+
+1) select * 
+
+2) select
+
+3) 
+
+实验6：
+
+1）create view stud_view1 from select stuno from S
+
+2) select avg(score) stud_view1 group 
+
+
+实验7：
+
+1) drop view stud_view1
+
+2) delete C 
+
+3) drop database 
+
+s
+
+实验8：
+ 
+2）
+
+begin transaction: 开启一个事务，使这段语句有事务加成
+
+commit transaction:Sql多步操作之后，提交事务，数据真正保存到数据库 对数据库作永久的改动
+
+rollback transcation:sql多步操作发生错误，调用次语句，数据回滚到最初是状态，语句擦除所有改动，回滚到begin transaction开始后
+
+
+3）
+一级封锁
+
+二级封锁
+
+三级封锁
+
+
+
+

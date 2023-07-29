@@ -1,0 +1,62 @@
+document.getElementById("centerContent").innerHTML = "<div class = 'contentDiV'>
+					<header>
+						<font size = '5'>Personal Information</font>
+						
+					</header>
+
+					<!--需要用margin 手动使input之间间距 和 float 让input并列-->
+					<div style='margin-top:3%'>
+						<input style=' width:45%;height:25px;float: left' value='Name'/ >
+						<input style=' width:45%;height:25px;float: right' value='SurName'/ >
+					</div>
+					<div>
+						<input style=" width:100%;height:25px;margin-top:3%" value='email'/ >
+					</div>
+
+					<div style="margin-top:3%">
+						<input style=' width:45%;height:25px;float: left' value='address'/ >
+						<input style=' width:45%;height:25px;float: right' value='mobile phone'/ >
+					</div>
+
+					<div >
+						<input style=' width:100%;height:25px;margin-top:3%' value='birthday'/ >
+					</div>
+
+					<header style='margin-top:3%'>
+						<font size = "5">My Activity in the App</font>					
+					</header>
+
+					<!-- 让dl横着排 取消默认竖列显示，使用 border-radius样式使dd呈现画圆，其实圆是边框-->
+					<dl class='rightcontentradius'>				
+						
+						<dd>
+							X<br/>
+							points
+						</dd>
+					
+					
+						<dd>
+							2<br/>
+							level
+						</dd>
+					
+					
+						<dd>
+							3<br/>
+							opinions
+						</dd>
+					
+					
+						<dd>
+							5<br/>
+							photos
+						</dd>
+							
+						
+					</dl>
+				</div>";
+
+
+function outPersonalInfo(){
+			document.getElementById("centerContent").innerHTML = "<div class = 'contentDiV'><header><font size = '5'>Personal Information</font></header><div style='margin-top:3%'><input style=' width:45%;height:25px;float: left' value='Name'/><input style=' width:45%;height:25px;float: right' value='SurName'/ ></div><div><input style=' width:100%;height:25px;margin-top:3%' value='email'/ ></div><div style='margin-top:3%'><input style=' width:45%;height:25px;float: left' value='address'/ ><input style=' width:45%;height:25px;float: right' value='mobile phone'/ ></div><div ><input style=' width:100%;height:25px;margin-top:3%' value='birthday'/ ></div><header style='margin-top:3%'><font size = '5'>My Activity in the App</font></header><dl class='rightcontentradius'><dd>X<br/>points</dd><dd>2<br/>level</dd><dd>3<br/>opinions</dd><dd>5<br/>photos</dd></dl></div>";
+		}

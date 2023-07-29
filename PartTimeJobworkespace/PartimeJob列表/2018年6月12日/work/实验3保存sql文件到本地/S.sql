@@ -1,0 +1,37 @@
+USE [学生管理]
+GO
+
+/****** Object:  Table [dbo].[S]    Script Date: 2018/6/12 18:38:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[S](
+	[Sno] [int] NOT NULL,
+	[Sname] [varchar](50) NOT NULL,
+	[Ssex] [varchar](2) NOT NULL,
+	[Sage] [tinyint] NOT NULL,
+	[sdept] [varchar](50) NOT NULL,
+ CONSTRAINT [pk_S] PRIMARY KEY CLUSTERED 
+(
+	[Sno] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[S]  WITH CHECK ADD  CONSTRAINT [ck_S] CHECK  (([Ssex]='男' OR [Ssex]='女'))
+GO
+
+ALTER TABLE [dbo].[S] CHECK CONSTRAINT [ck_S]
+GO
+
+

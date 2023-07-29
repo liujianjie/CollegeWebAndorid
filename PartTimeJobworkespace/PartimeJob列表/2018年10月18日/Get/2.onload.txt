@@ -1,0 +1,7 @@
+window.onload=function(){
+      //do something
+}
+或者经常用到的图片，假设这个
+document.getElementById("imgID").onload=function(){
+     //do something
+}

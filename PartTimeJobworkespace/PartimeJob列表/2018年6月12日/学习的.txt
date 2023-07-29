@@ -1,0 +1,61 @@
+数据完整性是包括以下几种内容
+
+实体完整性：在关系中用主关键字来唯一标识一个实体，实体具有独立性，关系中的这种约束条件称为实体完整性。
+
+参照完整性：就是引用。。
+
+用户定义完整性： check 这些 或者 unique？？
+
+
+2.check 约束
+
+格式： check (列名 like '%k')
+
+不能 check 列名 like '%k' 就是说括号要的
+
+3.更改数据库名称
+
+EXEC sp_renamedb '学生管理数据库','学生管理'
+
+4.BACKUP DATABASE 数据库名称  TO DISK ='C:\DBBACK\mydb.BAK' ---指定文件路径  WITH INIT /NOINIT 
+(INIT是现在备份的覆盖当前备份设备上的内容，以前的就没了，NOINIT就是不覆盖，继续加在当前备份内容的后面)
+  NAME = 备份名称,  DESCRIPTION='TEXT' 给出了备份描述
+
+with init 不能把数据表和数据备份 就是新的
+
+WITH FORMAT 到覆盖任何现有的备份和创建一个新的媒体集
+
+5.in > < ! 是嵌套查询
+
+=返回一个的是子查询
+
+
+5.> < = 后面直接加括号的是 是子查询 
+
+in  独自使用
+
+> < = 后面是 all some 则为嵌套查询
+
+exist嵌套查询
+
+嵌套查询 ：这个比较模糊，与子查询很相似，查阅相关资料得知，可能与子查询不同的是子查询是做条件给予外部，而嵌套查询是做添加给予内部
+
+
+6.查询数据库状态
+select state_desc from sys.databases where name =''
+
+select * from sys.databases where name = '数据库名'
+
+7.IF exists (select name from sysobjects   where id=object_id(N'[stud_view1]') )
+DROP VIEW stud_view1
+
+GO
+
+8.
+CREATE LOGIN login1 WITH PASSWORD = 'tiger',default_database = 学生管理;
+
+CREATE LOGIN login2 WITH PASSWORD = 'tiger',default_database = 学生管理;
+
+--CREATE USER login1_user1 FOR login1
+
+--CREATE USER login2_user1 FOR login2

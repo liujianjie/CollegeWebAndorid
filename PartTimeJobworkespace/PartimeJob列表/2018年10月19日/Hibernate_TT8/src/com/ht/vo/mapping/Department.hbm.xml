@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.ht.vo.DepartmentVo" table="department">
+		<id name="did" column="did" type="java.lang.Integer">
+		<!-- 指定ID的增长方式为序列 -->
+			<generator class="sequence">
+				<param name="sequence">seq_orcl</param>
+			</generator>
+		</id>
+		<property name="dname" type="java.lang.String"></property>
+		<property name="parentId" type="java.lang.Integer"></property>
+		
+		<!-- 一的一端   配置set集合  指定多的一端的对象  lazy 延迟加载 true表示不加载附属对象  false  表示加载  inverse=true表示关系由对方维护-->
+		<set name="employees" cascade="all"  inverse="false" lazy="false">
+			<key column="deptid"></key>
+			<one-to-many class="com.ht.vo.EmployeeVo"/>
+		</set>
+	</class>
+</hibernate-mapping>

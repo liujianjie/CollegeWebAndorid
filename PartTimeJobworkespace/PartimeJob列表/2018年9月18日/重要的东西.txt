@@ -1,0 +1,9 @@
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+漏掉了 height=device-height
+
+因为例子只是用width 而我要用height 却没写，后面才加上，导致浪费了很多时间 
+
+并且不知道 css 里好像 不能 不能 不能 用@media
+
+很麻烦 那个bug 应该好好改 好好看 height 没有定义到的

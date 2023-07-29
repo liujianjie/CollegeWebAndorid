@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="liuyanssh"
+  id="myeclipse.1539843927944"
+  context-root="/liuyanssh"
+  j2ee-spec="5.0"
+  archive="liuyanssh.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,18 @@
+1.userpassword = tiger
+
+2.comment 增加了一条字段 就是回复的
+
+3.staff 表 增加了一条字段 用详细表太麻烦
+
+4.DROP TABLE IF EXISTS `level`;
+CREATE TABLE `level` (
+  `level_id` int(11) NOT NULL AUTO_INCREMENT,
+  `level_name` varchar(255) NOT NULL,
+  `level_url` varchar(255),
+  `level_point` varchar(255)
+  PRIMARY KEY (`level_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+5.有些地方notnull为null 比如部门那里
+
+6.改了员工与员工详细关系断了

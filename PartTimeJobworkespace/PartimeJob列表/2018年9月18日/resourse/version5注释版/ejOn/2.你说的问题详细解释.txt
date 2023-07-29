@@ -1,0 +1,13 @@
+1.文件MoblieAndTablePersonalInformation.html是练习三的所要求的 本应该PersonalInformation.html上的代码就是为MoblieAndTablePersonalInformation.html文件里的代码，
+
+但是如果放进去 我怕影响 练习1 练习2所做的东西 所以单独提出来了 
+
+2.在高度为768px的电脑上打开 按住ctrl键滑动鼠标 为更改页面大小 会有页面变化， 更改页面大小就是更改分辨率，更改的分辨率将和手机上的一样则会显示本该在手机上显示的样子
+
+显示在电脑上，这是练习3所要求的。
+
+3.将页面放在手机上显示右边页面 ，放在平板电脑 高768px的显示左边页面，你可以好好看看 试试
+
+4.手机显示MoblieAndTablePersonalInformation.html页面建议使用谷歌浏览器 火狐浏览 百度浏览器打开，应该会显示很正常，这些浏览器也是文件里要求的，最能体现出html5的效果
+
+5.手机打开页面只需把ejon文件夹放在手机里 点击html文件选择浏览器打开即可

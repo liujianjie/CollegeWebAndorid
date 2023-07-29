@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:id="@+id/drlayout"
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" >
+    <!-- 被掩盖的部分 设置android:layout_gravity="start"   -->
+  
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:layout_gravity="start"  
+        android:background="@android:color/holo_blue_light"  
+        android:orientation="vertical" >
+        
+        
+        <TextView
+            android:layout_width="fill_parent"  
+        	android:layout_height="fill_parent"
+			android:text="不想写了。。。。。。"/>
+    </LinearLayout>
+    
+    <!-- 内容部分 -->
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+		<LinearLayout 
+		    android:id="@+id/main_bottom"
+	        android:weightSum="3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:orientation="horizontal">
+		    <RelativeLayout 
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1">
+		        <Button
+		            android:id="@+id/btn"
+		            android:layout_width="50dp"
+		            android:layout_height="50dp"
+		            android:background="@drawable/msgbtn_selector"
+		            android:enabled="false" 
+		            android:layout_centerInParent="true"/>
+		        <TextView
+		            android:id="@+id/wenzi"
+		            android:layout_width="6dp"
+		            android:layout_height="6dp"
+		            android:background="@drawable/skin_tips_dot"
+		            android:gravity="center"
+		            android:textColor="#ffffff" 
+		            android:layout_toRightOf="@id/btn"
+		            android:layout_marginLeft="-18dp"
+		            android:layout_marginTop="8dp"/>
+			</RelativeLayout>
+			<RelativeLayout 
+			    android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1">
+		        <Button
+		            android:id="@+id/btn2"
+		            android:layout_width="50dp"
+		            android:layout_height="50dp"
+		            android:layout_centerInParent="true"
+		            android:background="@drawable/lxrbtn_selector"
+		            android:enabled="true" />
+			</RelativeLayout>
+			<RelativeLayout 
+			    android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1">
+		        <Button
+		            android:id="@+id/btn3"
+		            android:layout_width="50dp"
+		            android:layout_height="50dp"
+		            android:layout_centerInParent="true"
+		            android:background="@drawable/dongtaibtn_selector"
+		            android:enabled="true" />
+		    </RelativeLayout>
+	    </LinearLayout>
+	    
+		<View
+		    android:id="@+id/main_view"
+	        android:layout_width="fill_parent"
+	        android:layout_height="1dp"
+	        android:background="#EBEBE6" 
+	       	android:layout_above="@id/main_bottom"/>
+		
+		<!-- 	这里放fragment文件 -->
+		<LinearLayout 
+		    android:id="@+id/main_zhong"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:layout_above="@id/main_view"
+		    android:background="@android:color/white">
+		    
+		    
+		</LinearLayout>
+	</RelativeLayout>
+	
+</android.support.v4.widget.DrawerLayout>

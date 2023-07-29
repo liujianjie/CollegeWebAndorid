@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Lunch"
+  id="myeclipse.1505735346650"
+  context-root="/Lunch"
+  j2ee-spec="5.0"
+  archive="Lunch.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

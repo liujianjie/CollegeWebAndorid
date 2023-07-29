@@ -1,0 +1,4 @@
+Layout parameters specified on an <include> tag will only be used if you also overrride layout_width and layout_height on the <include> tag;otherwise they will be ignored
+布局参数layout_below被忽略，除非layout_width和layout_hegith都是
+
+Layout parameter layout_below ignored unless both layout_width and layout_hegith are alse

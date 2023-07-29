@@ -1,0 +1,36 @@
+<html>
+<head>
+
+</head>
+
+<body >
+	<input type="text" value="set" onclick = "setcookie();"/>
+	<input type="text" value="get" onclick = "getCookie();"/>
+<script>
+	function setcookie(){
+		/*var Days = 30;
+		var exdate = new Date();
+		exdate.setTime(exdate.getTime() + Days*24*60*60*1000);//一月
+
+		var password = "12321321";
+		var email = "12321321";
+		document.cookie="password=" + password + ";expires="+exdate.toGMTString();
+		document.cookie="email=" + email + ";expires="+exdate.toGMTString()+";path='/'";
+		alert(document.cookie);*/
+
+
+		var date=new Date();
+		var expireDays=10; //将date设置为10天以后的时间
+		date.setTime(date.getTime()+expireDays*24*3600*1000); //将userId和userName两个cookie设置为10天后过期
+
+		document.cookie="userIds=828;expires="+date.toGMTString(); 
+	
+	}
+	function getCookie(){
+		alert(document.cookie);
+	}
+
+</script>
+
+</body>
+</html>

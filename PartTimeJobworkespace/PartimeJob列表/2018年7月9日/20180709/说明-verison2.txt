@@ -1,0 +1,20 @@
+1.这是用了picasso 第三方包解决 music movie 在listview 图片问题，代码变更了
+
+2.解决一个bug 找不到值会报错，顺便改了下书写位置，希望你不要介意 谢谢
+
+3.导入第三方包 可以看链接
+
+https://blog.csdn.net/u013134722/article/details/54602510
+
+简洁的步骤
+
+1）退到project位置，打开app的位置，add-new direction 新建libs 在app下
+
+2）把包拷过去
+
+3）右键包 Add As Library 选择ok 就行
+
+这个项目已经改了过去，不用再改 
+
+4.不好意思，没有第一时间解决bug，有问题call我
+

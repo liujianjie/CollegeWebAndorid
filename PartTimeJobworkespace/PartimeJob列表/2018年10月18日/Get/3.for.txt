@@ -1,0 +1,3 @@
+for(var val in infos){
+				alert(infos[val]);
+			}

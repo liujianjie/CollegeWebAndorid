@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> 父窗口 </title>
+  <script>
+	var childwindow;//表示子窗口对象
+	function openwindow(){
+		// JS打开子窗口(单独打开一个小窗口)
+		//window.open("子窗口的路径","子窗口的name（一般为空）","子窗口的属性")
+		//locationbar、menubar、scrollbars、statusbar、toolbar 对子窗口属性的设置（不能用了）
+		//top 设置子窗口离上边界的距离 left 设置子窗口离左边界的距离
+		childwindow=window.open("Child.html","","width=300 height=200 top=200 left=400");
+	}
+
+	//在父窗口中关闭子窗口
+	function closewindow(){
+		childwindow.close();
+	}
+  </script>
+ </head>
+
+ <body>
+ <form name="frm">
+ <input type="text" name="uname">
+  <input type="button" value="打开子窗口" onclick="openwindow();"/> 
+  <input type="button" value="关闭子窗口" onclick="closewindow();">
+  </form>
+ </body>
+</html>

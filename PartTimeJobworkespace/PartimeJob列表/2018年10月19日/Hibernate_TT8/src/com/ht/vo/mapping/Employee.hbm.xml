@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.ht.vo.EmployeeVo" table="employee">
+		<id name="eid" column="eid" type="java.lang.Integer">
+		<!-- 指定ID的增长方式为序列 -->
+			<generator class="sequence">
+				<param name="sequence">seq_orcl</param>
+			</generator>
+		</id>
+		<!-- 设置了deptid为关联列就不再需要映射 -->
+		<property name="deptid"  type="java.lang.Integer"></property>
+		<property name="ename" type="java.lang.String"></property>
+		<property name="sex" type="java.lang.String"></property>
+		
+		<!-- 在多的一端配置many-to-one 指定一的对象   以及 关联的外键  column  -->
+		<many-to-one name="departmentVo" class="com.ht.vo.DepartmentVo" column="deptid" insert="false" update="false"></many-to-one>
+	</class>
+</hibernate-mapping>

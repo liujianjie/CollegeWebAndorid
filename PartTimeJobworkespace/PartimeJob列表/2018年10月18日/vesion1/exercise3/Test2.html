@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .pic{
+            list-style: none;
+            border: 0;
+        }
+        #box{
+            width: 520px;
+            height:280px;
+            overflow: hidden;
+            margin: 30px auto;
+            position: relative;
+            box-shadow: 10px 10px 5px #888888;
+            border-radius:10px;
+        }
+        #box .pic li{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="pic">
+        <li><img src="https://img.alicdn.com/tfs/TB1m_Q_vN9YBuNjy0FfXXXIsVXa-520-280.jpg_q90_.webp" alt=""></li>
+        <li><img src="https://img.alicdn.com/tfs/TB1jYXMwntYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+        <li><img src="https://aecpm.alicdn.com/tps/i1/TB1r4h8JXXXXXXoXXXXvKyzTVXX-520-280.jpg" alt=""></li>
+        <li><img src="https://img.alicdn.com/simba/img/TB1k54Wr1uSBuNjSsziSuvq8pXa.jpg" alt=""></li>
+        <li><img src="https://img.alicdn.com/tfs/TB1qI1Kv_tYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        var numberImg=$('.pic li').length;//获取图片的长度
+        var index=0;//定义图片初始化个数
+        setInterval(function () {
+            index++;
+            if(index==numberImg){
+                index=0;
+            }
+            //$('.pic li').eq(index).siblings().css("display","none");
+            $('.pic li').eq(index).css("display","block");
+        },2000);
+    });
+</script>
+</body>
+</html>

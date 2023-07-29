@@ -1,0 +1,11 @@
+margin: 0 auto 20px; 上0px auto自动适应 下20
+
+height:auto 高度自适应
+
+border:1px solid #000 黑色实心边框
+
+a{text-decoration: none;color: #8A2BE2;font-size:20px;vertical-align:center;} a的显示
+
+line-height:80px;
+
+display 最好设置成block

@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" 
+    android:orientation="vertical"
+    android:background="#ffffff">
+	
+	<TextView 
+	    android:id="@+id/hobbyalter_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:gravity="center"
+	    android:padding="10dp"
+	    android:text="修改个人爱好"
+	    android:background="#ccbbaa"
+	    android:layout_weight="1"/>
+    <GridView
+        android:id="@+id/hobbyalter_gridview"  
+	    android:layout_width="match_parent"  
+	    android:layout_height="0dp"  
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="30dp"
+	    android:gravity="center"
+	    android:numColumns="2"  
+	    android:orientation="horizontal"
+	    android:layout_weight="7">
+        
+    </GridView>
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:orientation="horizontal"
+	    android:gravity="center">
+	    <EditText 
+	        android:id="@+id/hobbyalter_edit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="请输入你想添加的爱好类型"
+	        />
+	    <Button 
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="添加"
+		    android:onClick="HobbyNameAdd"/>
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:orientation="horizontal"
+	    android:gravity="center">
+	    <Button 
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="选定爱好"
+		    android:onClick="HobbyNameAlter"
+		    android:layout_weight="1"/>
+        <Button 
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="返回"
+		    android:onClick="Back"
+		    android:layout_weight="1"/>
+        
+    </LinearLayout>
+	
+</LinearLayout>

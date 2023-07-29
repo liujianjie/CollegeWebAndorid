@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            margin: 0 auto;
+            width: 770px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script src="jquery/jquery-3.3.1.min.js"></script>                   //应用一个jQuery的文件
+</head>
+<body>
+<input type="button" value="纯js轮播效果" onclick="setTimeout(imgmove, 2000)"/>
+<!--<input type="button" value="移动消失效果"/>-->
+使用jquery实现div内部的图片移动并消失，类似轮播效果
+<div id="divimg">
+    <img id="img7"  src="images/image_1.png" alt="广告"/>
+    <img id="img6"  src="images/image_face.png" alt="广告"/>
+    <img id="img5"  src="images/image_twitter.png" alt="广告"/>
+    <img id="img4"  src="images/image_vine.png" alt="广告"/>
+    <img id="img3"  src="images/image_vk.png" alt="广告"/>
+    <img id="img2"  src="images/image_vk.png" alt="广告"/>
+    <img id="img1"  src="images/image_vk.png" alt="广告"/>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<script>
+    function imgmove(){
+        //使用循环来使每张图片按顺序进行移动，移动的时间设置为300毫秒
+        $("#divimg img").each(function(i){
+            //使用自定义动画来使每张图片都进行平移
+            $(this).animate({
+                left:parseInt($(this).css("left"))+770
+            },300,"swing",function(){
+                //移动完毕后执行判断，如果向右移出了可见范围，则重新到最左边排序
+                if(parseInt($(this).css("left"))>=770){
+                    $(this).css("left",6*(-770)+"px");
+                }
+            });
+        });
+        //移动完毕后再次调用函数，但是时间间隔必须把移动所使用的时间也要计算在内
+        setTimeout(imgmove, 2300);
+    }
+    $(function(){
+        //页面加载完成后将图片设置样式和坐标
+        $("#divimg img").css("position","absolute").each(function(i){
+            $(this).css("left",i*(-770)+"px");
+        });
+    });
+</script>
+</body>
+</html>

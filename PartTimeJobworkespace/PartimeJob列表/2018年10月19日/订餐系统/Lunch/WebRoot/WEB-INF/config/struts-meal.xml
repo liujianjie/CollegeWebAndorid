@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 更改常亮,保证的可以上传文件的大小.对整个工程生效越大越好 -->
+	<!-- <constant name="struts.multipart.saveDir" value="/tmp"/>
+	<constant name="struts.multipart.maxSize" value="1000000000"/> -->
+	<constant name="struts.custom.i18n.resources" value="mysou"/> 
+	
+   <!--  package的name名称不能冲突，但是可以相互继承 -->
+   <package name="meal" extends="default" >
+   		<action name="meals_*" class="com.dc.controller.repertory.Repertory" method="{1}">
+   			<result name="select">${repertory}</result>
+   		</action>
+   		<action name="library_*" class="com.dc.controller.warehouse.LibraryMaterials" method="{1}">
+   			<result name="select">${target}</result>
+   			<result name="selectchain" type="redirect">/library_findLibraryMaterials.action</result>
+   			<result name="ware">${target}</result>
+   			<result name="selectOutList"  type="redirect">/dc/Warehouse</result>
+   			<result name="selectw">${target}</result>
+   			<result name="insertw">${target}</result>
+   		</action>
+   		<action name="pur_*" class="com.dc.controller.purchaseOrder.PurchaseOrder" method="{1}">
+   			<result name="select">${target}</result>
+   			<result name="find">${target}</result>
+   			<result name="ware">${target}</result>
+   			<result name="selectOutList">/pur_findPurchaseOrder.action</result>
+   			<result name="insertw">${target}</result>
+   		</action>
+   		<!-- 
+   		<action name="upload_*" class="com.dc.controller.goods.Picture" method="{2}">
+   				文件上传一般都要限制
+		<interceptor-ref name="fileUpload"/>
+   			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">1000000000</param>
+			</interceptor-ref>
+			
+			
+		<interceptor-ref name="defaultStack"/>
+		 name=input 接收的是fileUpload拦截器,如果拦截住了,返回的是input 就是提示异常信息
+		 
+			 <result name="input">/module/warehouse/Error.jsp</result>
+			<result name="success">/dc/Goods</result> 
+   		</action> -->
+   		
+   		
+      <!--  2017-10-34   下午		 -->
+   		<action name="Prcute_*" class="com.dc.controller.goods.PrctureAction" method="{1}">
+		      	<result name="success">/index.jsp</result>
+		      	<result name="input">/error.jsp</result>
+	    </action> 
+	  <!--  2017-10-34   下午		 -->
+   </package>
+</struts>    

@@ -1,0 +1,7 @@
+1.每一个student是一个学生
+
+2.可以添加一个student根节点
+
+3.username ，password，stuno，stuname，sex这些是对应StudentBean里的对象
+
+4.username password 是登录的用户名与密码
