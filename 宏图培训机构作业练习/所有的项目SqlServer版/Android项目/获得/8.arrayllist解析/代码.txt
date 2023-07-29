@@ -1,0 +1,3 @@
+ArrayListAndroidQqMessage msgs = gson.fromJson(arg1.optString(msg),  
+							new TypeTokenListAndroidQqMessage() {}.getType());
+					

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="repliesDao">
+	<resultMap type="replies" id="repliesMap">
+		<id column="id" property="id" />
+		<result column="content" property="content" />
+		<result column="infoId" property="infoId" />
+		<result column="replytime" property="replytime" javaType="java.util.Date" />
+	</resultMap>
+	<select id="findAllToInfo" resultMap="repliesMap" parameterType="int">
+		select * from replies where infoId=#{id}
+	</select>
+	<insert id="addReplies" parameterType="replies">
+		INSERT INTO replies
+		(id, content, replytime, infoid)
+		VALUES
+		(seq_replies.NEXTVAL, #{content}, SYSDATE, #{infoId})
+	</insert>
+</mapper>

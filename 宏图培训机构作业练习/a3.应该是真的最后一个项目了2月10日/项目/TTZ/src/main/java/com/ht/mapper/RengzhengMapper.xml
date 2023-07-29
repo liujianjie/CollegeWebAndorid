@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.RengzhengDao">
+	<resultMap type="Rengzheng" id="rmap">
+		<id column="rid" property="rid" />
+		<result column="userid" property="userid" />
+		<result column="rtype" property="rtype" />
+		<result column="rimage" property="rimage" />
+		<result column="rdate" property="rdate" />
+		<result column="ryes" property="ryes" />
+		<result column="xyed" property="xyed" />
+	</resultMap>
+	
+	<resultMap type="Rengzheng2" id="rmap2" extends="rmap">
+	<association property="ttzuser" column="userid" select="com.ht.dao.TtzuserDao.selmyuserid2"></association>
+	</resultMap>
+
+	<select id="sel" parameterType="string" resultType="Rengzheng">
+		select * from rengzheng where userid = #{userid}
+	</select>
+	
+	<select id="selone" parameterType="map" resultType="Rengzheng">
+		select * from rengzheng where userid = #{userid} and rtype = #{rtype}
+	</select>
+	
+	<select id="selAll" resultMap="rmap2">
+		select * from rengzheng 
+	</select>
+	
+	<insert id="insert" parameterType="Rengzheng">
+		insert into rengzheng values(sys_guid(),#{userid},#{rtype},#{rimage},sysdate,'1',0)
+	</insert>
+	
+	<delete id="deleteone" parameterType="map">
+		delete rengzheng where userid = #{userid} and rtype = #{rtype}
+	</delete>
+	
+	<update id="updatexyed" parameterType="map">
+		update rengzheng set xyed = #{xyed} where userid = #{userid} and rtype = #{rtype}
+	</update>
+
+</mapper>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.TtzuserDao">
+	<resultMap type="Ttzuser" id="ttzmap">
+		<id column="tid" property="tid" />
+		<result column="userid" property="userid" />
+		<result column="username" property="username" />
+		<result column="pwd" property="pwd" />
+		<result column="zpwd" property="zpwd" />
+		<result column="vip" property="vip" />
+		<result column="zsname" property="zsname" />
+		<result column="idcard" property="idcard" />
+		<result column="email" property="email" />
+		<result column="tel" property="tel" />
+		<result column="money" property="money" />
+		<result column="syed" property="syed" />
+		<result column="xylevel" property="xylevel" />
+		<result column="jifen" property="jifen" />
+		<result column="head" property="head" />
+		<result column="newuser" property="newuser" />
+		<result column="shren" property="shren" />
+	</resultMap>
+
+	<insert id="Zhuce" parameterType="map">
+		insert into ttzuser
+		values(sys_guid(),#{userid},#{username},#{pwd},'',0,'','','',#{tel},0,0,0,0,'touxiang.png','1','')
+	</insert>
+
+	<select id="Login" parameterType="map" resultType="Ttzuser">
+		select
+		t.*,(select pname from people where t.tel=ptel) pname,
+		(select psex
+		from people where t.tel=ptel) psex from
+		ttzuser t
+		where
+		t.username=#{username} and
+		t.pwd=#{pwd}
+	</select>
+
+	<select id="selectAllTtzUser" resultType="Ttzuser">
+		select t.*,p.* from
+		ttzuser t,people p where t.tel=p.ptel
+	</select>
+
+	<select id="selectNewuser" resultType="Ttzuser">
+		select * from
+		ttzuser where
+		newuser='1'
+	</select>
+
+	<select id="UserList" resultType="Ttzuser">
+		select * from ttzuser
+	</select>
+	<update id="updateTel" parameterType="map">
+		update ttzuser set tel =
+		#{tel} where tid = #{tid}
+	</update>
+
+	<update id="updateZsname" parameterType="map">
+		update ttzuser set
+		zsname = #{zsname},idcard = #{pcard} where tid = #{tid}
+	</update>
+
+	<update id="updateZpwd" parameterType="map">
+		update ttzuser set zpwd =
+		#{zpwd} where tid = #{tid}
+	</update>
+
+	<update id="updateemail" parameterType="map">
+		update ttzuser set email
+		= #{email} where tid = #{tid}
+	</update>
+
+	<update id="updatenewuser" parameterType="map">
+		update ttzuser set
+		shren
+		= #{shren},newuser = '2' where tid = #{tid}
+	</update>
+
+	<update id="updatepwd" parameterType="map">
+		update ttzuser set pwd =
+		#{pwd} where tid = #{tid}
+	</update>
+	<!-- 满标之后通过复审得到借款金额 -->
+	<insert id="updateTtzBorrowMoney" parameterType="map">
+		begin
+		<!-- 修改最终还款时间 -->
+		update borrowmoney set
+		realreplay_time=add_months(sysdate,borrowqx),
+		repay_lasttime=add_months(sysdate,borrowqx)
+		where
+		b_id=#{b_id};
+		<!-- 让所有投资更换为收益中 -->
+		update tenderrecord set tender_statu=1 where t_id=#{b_id};
+		<!-- 收款 -->
+		update ttzuser set money=money+#{paid_money} where userid=#{tid};
+		<!-- 资金记录 -->
+		insert into MONEYRECORD
+		values(sys_guid(),#{tid},'贷款发放',#{paid_money},0,0,0,sysdate,'融资支付',1003);
+		<!-- 手续费 -->
+		insert into factorage
+		values(sys_guid(),#{manage_money},#{manage_money},'2','借款管理费用收取',#{b_id},sysdate,1,#{tid});
+		end;
+	</insert>
+
+
+
+	<select id="selUserMoney" resultType="int">
+		select nvl(sum(money),0)
+		from ttzuser
+	</select>
+
+	<select id="selUserCount" resultType="int">
+		select nvl(count(*),0) from
+		ttzuser
+	</select>
+
+	<select id="selmyuserid" parameterType="String" resultType="Ttzuser">
+		select * from ttzuser where userid = #{userid}
+	</select>
+
+	<select id="UsrtlistPage" resultMap="ttzmap">
+		select * from
+		(select
+		a.*,rownum
+		rn from(select
+		* from ttzuser)a where
+		rownum &lt;=
+		#{currPage}*#{pageCount})
+		where rn &gt;=
+		(#{pageCount}*(#{currPage}-1))+1
+
+	</select>
+
+	<select id="selmyuserid2" parameterType="String" resultType="Ttzuser">
+		select * from ttzuser where tid=#{tid}
+	</select>
+
+	<update id="updateSYED" parameterType="map">
+		update ttzuser set syed =
+		syed + #{syed} where userid = #{userid}
+	</update>
+
+	<update id="uploadhead" parameterType="map">
+		update ttzuser set head =
+		#{head} where tid = #{tid}
+	</update>
+
+	<select id="seluserbyname" parameterType="String" resultType="Ttzuser">
+		select * from ttzuser where username like '%'||#{yonghuming}||'%'
+	</select>
+	<select id="selUserForbank" parameterType="String" resultType="Ttzuser">
+		select * from ttzuser where username like '%'||#{username}||'%' and
+		rownum &lt;=5
+	</select>
+	<!-- // 验证用户名是否存在 -->
+	<select id="YanZhengUsername" parameterType="String" resultType="int">
+		select count(*) from ttzuser where username=#{username}
+	</select>
+</mapper>

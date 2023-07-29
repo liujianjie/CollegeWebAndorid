@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyInfo comment="introduce myself">
+  <name>zhangsan</name>
+  <sex value="male" />
+  <contact>
+    <telephone>1232121412</telephone>
+  </contact>
+</MyInfo>
+

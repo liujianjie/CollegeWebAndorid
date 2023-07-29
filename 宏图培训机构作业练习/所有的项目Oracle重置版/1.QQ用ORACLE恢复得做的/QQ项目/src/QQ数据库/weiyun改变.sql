@@ -1,0 +1,17 @@
+--qqweiyun
+
+--QQweiyun±í
+
+create table weiyun(
+  qqnum varchar2(50),
+  qqname varchar2(50),
+  filepath varchar2(100),
+  filenames varchar2(100),
+  dateremix varchar2(100),
+  filelayout varchar2(100)
+)
+select * from weiyun
+
+select * from qq
+
+select * from game

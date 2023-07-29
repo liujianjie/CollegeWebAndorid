@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+  <order>
+    <customerid limit="1000">123124</customerid>
+    <status>pending</status>
+    <item instock="Y" itemid="SA15">
+      <name>Silver Show Saddle, 16 inch</name>
+      <price>825.00</price>
+      <qty>1</qty>
+    </item>
+    <item instock="Y" itemid="SA15">
+      <name>Silver Show Saddle, 16 inch</name>
+      <price>825.00</price>
+      <qty>1</qty>
+    </item>
+  </order>
+  <order>
+    <customerid limit="1000">123124</customerid>
+    <status>pending</status>
+    <item instock="Y" itemid="SA15">
+      <name>Silver Show Saddle, 16 inch</name>
+      <price>825.00</price>
+      <qty>1</qty>
+    </item>
+  </order>
+</orders>
+

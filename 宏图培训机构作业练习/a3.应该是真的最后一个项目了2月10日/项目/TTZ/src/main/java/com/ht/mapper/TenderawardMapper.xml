@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.TenderawardDao">
+  <resultMap type="tenderaward" id="tenderawardMap">
+		<id column="taward_id" property="taward_id"/>
+		<result column="tborrowing_id" property="tborrowing_id"/>
+		<result column="tmembers_id" property="tmembers_id"/>
+		<result column="trecharge_id" property="trecharge_id"/>
+		<result column="ttender_id" property="ttender_id"/>
+		<result column="treward" property="treward"/>
+		<result column="tnote" property="tnote"/>
+		<result column="trewardtype" property="trewardtype"/>
+		<result column="tcreationtime" property="tcreationtime"/>
+	</resultMap>
+</mapper>

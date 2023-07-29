@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.ForengmessageDao">
+	<resultMap type="Forengmessage" id="ForengmessageMap">
+		<id column="m_id" property="m_id" />
+		<result column="m_title" property="m_title" />
+		<result column="m_content" property="m_content" />
+		<result column="m_userid" property="m_userid" />
+		<result column="m_time" property="m_time" />
+		<result column="m_type" property="m_type" />
+		<result column="m_statu" property="m_statu" />
+	</resultMap>
+
+	<!-- // 插入公告 -->
+	<insert id="insertForengmessage" parameterType="Forengmessage">
+		insert into
+		Forengmessage
+		values(sys_guid(),#{m_title},#{m_content},
+		#{m_userid},#{m_time},#{m_type},#{m_statu})
+	</insert>
+	<!-- // 查找全部公告 -->
+	<select id="selectAllMsg" parameterType="map" resultType="Forengmessage">
+		select
+		* from
+		(select a.*,rownum
+		rn from(select
+		* from Forengmessage where
+		m_userid =#{m_userid} order by m_time desc)a where
+		rownum &lt;=
+		#{currPage}*#{pageCount} )
+		where rn &gt;=
+		(#{pageCount}*(#{currPage}-1))+1
+	</select>
+	<!-- // 公告总条数 -->
+	<select id="countAllMsg" resultType="int">
+		select
+		count(*) from
+		Forengmessage where m_userid=#{m_userid}
+	</select>
+
+</mapper>

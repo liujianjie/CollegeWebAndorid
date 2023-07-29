@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Cars_distributionDao">
+ 	<resultMap type="com.ht.yfbc.pojo.Cars_distribution" id="cars_dismap">
+ 		<id column="id" property="id"/>
+ 		<result column="carsid" property="carsid"/>
+ 		<result column="userid" property="userid"/>
+ 		<result column="warehouseid" property="warehouseid"/>
+ 		<result column="distributiondate" property="distributiondate"/>
+ 	</resultMap>
+ 	 <!-- 查询 -->
+ 	<select id="selCars_dis" resultMap="cars_dismap">
+  		select * from cars_distribution
+  	</select>
+  	<!-- 分页查询 -->
+  	<select id="selCars_disPage" parameterType="map" resultType="com.ht.yfbc.pojo.Cars_distribution">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM cars_distribution ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+  </select>
+  <select id="selCount" resultType="java.lang.Integer">
+  	select count(1) from cars_distribution 
+  </select>
+  	<!-- 添加 -->
+  	<insert id="addCars_dis" parameterType="cars_distribution">
+      	insert into cars_distribution 
+       		(id,carsid,userid,warehouseid,distributiondate )
+		values 
+			(sys_guid(),#{carsid},#{userid},#{warehouseid},#{distributiondate})
+  	</insert>
+  	<!-- 删除 -->
+  	<delete id="delcars_dis" parameterType="cars_distribution">
+		delete from cars_distribution where id=#{id}
+	</delete>
+  	<!-- 根据userid查询 -->
+  	<select id="selCars_disbyuserid" parameterType="String" resultType="cars_distribution">
+  		select * from cars_distribution where userid = #{value}
+  </select>
+  <!-- 根据仓库id查询 -->
+  <select id="selCars_distributionByWhid" parameterType="String" resultType="com.ht.yfbc.pojo.Cars_distribution">
+ 		select * from cars_distribution where warehouseid=#{warehouseid}
+  </select>
+  <!-- 根据id查询 -->
+  <select id="selCars_disbyid" parameterType="String" resultType="com.ht.yfbc.pojo.Cars_distribution">
+		select * from cars_distribution where id = #{value}
+	</select>
+	<!-- 修改 -->
+	<update id="updCars_dis" parameterType="cars_distribution" >
+		update cars_distribution set
+		carsid = #{carsid},userid = #{userid},warehouseid =
+		#{warehouseid},distributiondate = #{distributiondate}
+		where id = #{id}
+	</update>
+</mapper>

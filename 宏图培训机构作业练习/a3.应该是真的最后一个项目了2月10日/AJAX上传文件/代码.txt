@@ -1,0 +1,27 @@
+<script>
+		//按钮
+		function have(){
+			$("#sbt").attr("disabled",false);
+		}
+		function UpladFile() {
+			var bkuserid = $("#backuserid").val();
+            var fileObj = document.getElementById("files").files[0]; // 获取文件对象
+            var FileController = "${pageContext.request.contextPath }/backuser/indexupdateFace.action";                    // 接收上传文件的后台地址 
+            // FormData 对象
+            var form = new FormData();
+            form.append("author", "hooyes");                        // 可以增加表单数据
+            form.append("files", fileObj);                           // 文件对象 files是name
+            form.append("id", bkuserid); //还有id
+            // XMLHttpRequest 对象
+            var xhr = new XMLHttpRequest();
+            xhr.open("post", FileController, true);
+            xhr.onload = function (results) {
+                //修改头像
+                var src = "${pageContext.request.contextPath }/backgroundSystem/image/"+fileObj.name;
+                $("#touxiang").attr("src",src); 
+            };
+            xhr.send(form);
+        }
+		
+	</script>
+	<!-- 修改头像结束 -->

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+	<script>
+		function chuang(){
+			var x=document.getElementById("tx").value
+			opener.document.frm.tx1.value=x;
+		}
+		function fucolor(cl){
+			opener.document.bgColor=cl;
+			self.close();
+			//window.close();
+			//this.close();
+		}
+	</script>
+ </head>
+
+ <body>
+  子类
+  <br/>
+  <input type="text" id="tx"/>
+  <input type="button" value="把值传到父窗口" onclick="chuang();"/>
+  <br/>
+  <input type="button" value="把父窗口的背景颜色改为红色" onclick="fucolor('red')"/>
+  <input type="button" value="把父窗口的背景颜色改为蓝色" onclick="fucolor('blue')"/>
+  <br/>
+  <input type="button" value="获取父窗口的值" onclick="alert(opener.document.frm.tx1.value);">
+ </body>
+</html>

@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta name="google-site-verification" content="ZZrI3qro9RwKFP-BNzqNAeRlYs8oUwVEoaLHtc_6zsw"/>
+  <meta name="verify-v1" content="gY+gArUFX2U0l8jDaYPaOsM5qEYbx7neulwziePY7BA="/>
+  <meta name="y_key" content="394e70b82fa445c0"/>
+  <meta name="msvalidate.01" content="7385C8E9BE1B40578F51FADF81D55C29"/>
+  <meta name="description" content="点融网为广大个人和微小企业提供便利的投融资服务。借款产品灵活、大额、费用低、手续快；投资方式人性友好、回报高、百分百本金保护！Dianrong.com provides online efficient investment and financing services for individuals and SMEs. Better rates, lower cost, faster way to borrowers and more flexible investment, higher returns, 100% principal protection to investors."/>
+  <meta name="keywords" content="P2P网贷,P2P网络贷款平台,P2P网络投资平台,P2P投资理财平台,网络贷款平台,团团赚,点融,点融网,点融官网">
+  <meta property="wb:webmaster" content="a40d53a94fee4eb7"/>
+  <meta property="qc:admins" content="1501616152764116276763757"/>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <title>
+  团团赚购买
+-点融网官网</title>
+
+  <link href="/static/tp/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/styles/components.css?ver=148764808" rel="stylesheet"/>
+  <link href="/static/styles/main.css?ver=148764808" rel="stylesheet"/>
+
+  
+
+  <style type="text/css">
+    @font-face {
+      font-family: 'proxima-nova';
+      src: url(/static/fonts/proximanova/proximanova-regular-webfont.eot);
+      src: url(/static/fonts/proximanova/proximanova-regular-webfont.eot?#iefix) format('embedded-opentype'),
+        url(/static/fonts/proximanova/proximanova-regular-webfont.woff) format('woff'),
+        url(/static/fonts/proximanova/proximanova-regular-webfont.ttf) format('truetype'),
+        url(/static/fonts/proximanova/proximanova-regular-webfont.svg#proxima_nova_rgregular) format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'proxima-nova';
+      src: url(/static/fonts/proximanova/proximanova-bold-webfont.eot);
+      src: url(/static/fonts/proximanova/proximanova-bold-webfont.eot?#iefix) format('embedded-opentype'),
+      url(/static/fonts/proximanova/proximanova-bold-webfont.woff) format('woff'),
+      url(/static/fonts/proximanova/proximanova-bold-webfont.ttf) format('truetype'),
+      url(/static/fonts/proximanova/proximanova-bold-webfont.svg#proxima_nova_rgbold) format('svg');
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+
+  <!-- Add support for bootstrap in IE8 -->
+  <!--[if lt IE 9]>
+  <link href="/static/styles/ie-hack/ie8.css?ver=148764808" rel="stylesheet"><![endif]-->
+  <!--[if IE 9]>
+  <link href="/static/styles/ie-hack/ie9.css?ver=148764808" rel="stylesheet"><![endif]-->
+  <!-- Add support for media queries in IE7+ -->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/static/tp/respondjs-1.3.0/respond.min.js"></script><![endif]-->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/static/tp/html5shiv-1.0/html5shiv.js"></script><![endif]-->
+
+  <script type="text/javascript" src="/resource/lang/zh-client?ver=148764808"></script>
+  
+
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    _vds.push(['setImp', false]);
+    _vds.push(['enableHT', true]);
+    window._vds = _vds;
+    (function(){
+      _vds.push(['setAccountId', 'a20c274701ec9918']);
+      setTimeout(function() {
+        var vds = document.createElement('script');
+        vds.type='text/javascript';
+        vds.async = true;
+        vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(vds, s);
+      },500);
+    })();
+</script>
+
+
+
+</head>
+<body ng-controller="MainCtrl">
+  
+<div sl-notice></div>
+
+
+  
+<!--[if IE 8]>
+<div class="alert alert-warning text-center" style="margin-bottom:0;">
+  <p>你的浏览器不支持点融网的一些新特性，请升级你的浏览器至<a href="http://se.360.cn/">360浏览器</a>或<a href="http://browsehappy.com/">Chrome</a>。
+  </p>
+  <p>2017年了，IE8老了...</p>
+</div>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<div class="alert alert-danger text-center" style="margin-bottom:0;">
+  <p>你的浏览器不支持点融网的一些新特性，请升级你的浏览器至<a href="http://se.360.cn/">360浏览器</a>或<a href="http://browsehappy.com/">Chrome</a>。
+  </p>
+  <p>2017年了，IE7及以下都老了...</p>
+</div>
+<![endif]-->
+
+  <div class="wrapper ">
+    <!--header-->
+    
+    <header class="simple-header">
+  <div class="container">
+    <a href="/" class="header-logo">点融网 - DianRong</a>
+    <div class="service-number"><i class="sl-icon-bold-phone"></i>客服热线：10109188</div>
+  </div>
+</header>
+<div id="notifications" ng-show="notify.messages.msg.length > 0" class="ng-hide ng-cloak affix-top" data-spy="affix" data-offset-top="0">
+  <div class="container">
+    <div class="msg-fold-bg" ng-class="{ 'alert-success' : notify.messages.type == 'success', 'alert-danger' : notify.messages.type == 'error', 'alert-info' : notify.messages.type == 'info' }">
+      <div class="alert msg-content">
+        <a type="button" class="close sl-icon-cross" ng-click="notify.dismiss($index)" aria-hidden="true"></a>
+        <p ng-repeat="m in notify.messages.msg track by $index" ng-bind-html="m"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <!--content-->
+    
+<div class="plan-buy-detail-wrapper container" ng-controller="PlanBuyDetailCtrl">
+
+  <p ng-show="loading" class="loading text-center"><i class="spinner sl-icon-loading"></i></p>
+
+  <div ng-show="!loading" ng-cloak>
+    <div ng-switch="state">
+      <div ng-switch-when="PREPARE">
+        <div class="plan-detail-info bg-color" ng-switch="action">  
+          <header  ng-switch-when="BUY">投资产品</header>
+          <header  ng-switch-when="ORDER" >预约产品</header>
+          <div class="row">
+            <div class="col-xs-1 plan-bg no-padding" ng-style="{'background-color': plan.planColor}">
+              <span class="plan-img"></span>
+            </div>
+            <div class="col-xs-1 plan-name no-padding" ng-bind="plan.simpleName"></div>
+            <div class="col-xs-4 plan-rate-col no-padding">
+              <p class="plan-rate" ng-show="plan.planType!=='HuoQi'">
+                {{ plan | planIntRate}}<span>%</span><i class="reinvest-icon" ng-show="plan.enableAutoReinvest">+复利</i>
+              </p>
+              <p class="plan-rate" ng-show="plan.planType==='HuoQi'">
+                {{plan.intRate | percentage:false:true}}<span>%</span>
+              </p>
+              <p class="plan-rate-words" ng-show="plan.planType!=='HuoQi'">历史年化收益率</p>
+              <p class="plan-rate-words" ng-show="plan.planType==='HuoQi'">七日年化收益率</p>
+            </div>
+
+            <div class="col-xs-5 plan-cash-num no-padding">
+              <p>开放额度：<span ng-bind="plan.openAmount | slCurrency:false:true:true"></span><span>元</span></p>
+              <p>总上限额：<span ng-bind="plan.maxInvestAmount ||0 | slCurrency:false:true:true"></span><span>元</span></p>
+              <p>退团手续费：<span ng-bind="plan.feeExplainM"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-buy-detail bg-color" ng-switch="action">
+          <header ng-switch-when="BUY">投资金额</header>
+           <header ng-switch-when="ORDER">预约金额</header>
+          <form name="investmentForm" ng-submit="buyPlan(investment)" novalidate>
+            <div class="add-rate-coupon">
+              <p class="invest-amount">
+                <span class="title" ng-switch-when="BUY">投资金额</span>
+                 <span class="title" ng-switch-when="ORDER">预约金额</span>
+                <span class="money" ng-bind-html="investment.amount | slMoney:false:false:2:false"></span>
+                <span><a href="#" ng-click="modifyAmount()">修改</a></span>
+                <span class="tip-modify" ng-show="investment.coupon && investment.coupon.floatAmountLowBoundary > investment.amount">
+                  使用当前加息券须至少投资{{investment.coupon.floatAmountLowBoundary| slCurrency:false:true:true}}元
+                </span>
+                <span class="tip-modify" ng-show="investment.coupon && investment.coupon.floatAmountHighBoundary < investment.amount">
+                  使用当前加息券最多可投资{{investment.coupon.floatAmountHighBoundary| slCurrency:false:true:true}}元
+                </span>
+              </p>
+              <div class="coupon-row">
+                <span class="title title-coupon">加息券</span>
+                <div class="btn-group select select-block mbn">
+                  <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span ng-show="coupons.available.length <= 0">该团无加息券可用</span>
+                  <span ng-show="coupons.available.length > 0 && !investment.coupon">请选择加息券({{coupons.available.length}}张可用)</span>
+                  <span class="selected-coupon" ng-show="investment.coupon">
+                    加息{{investment.coupon.rate|percentage:true}}／加息{{investment.coupon.period}}天／投资限额：{{investment.coupon.floatAmountLowBoundary| slCurrency:false:true:true}}元～{{investment.coupon.floatAmountHighBoundary| slCurrency:false:true:true}}元
+                  </span>
+                  <span class="caret"></span>
+                </button>
+                  <a href="#" class="no-use-coupon" ng-show="investment.coupon" ng-click="disselectCoupon()">不使用</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li ng-repeat="coupon in coupons.available" rel="{{$index}}" class="avaliable-coupon" ng-class="{ selected : coupon == investment.coupon }">
+                      <a href="" ng-click="selectCoupon(coupon)">
+                        <p><span class="limit-divider">加息{{coupon.rate |percentage:true}}</span>可加息{{coupon.period}}天</p>
+                        <p class="invest-limit">投资限额：{{coupon.floatAmountLowBoundary| slCurrency:false:true:true}}元～{{coupon.floatAmountHighBoundary|
+                          slCurrency:false:true:true}}元
+                          <span>有效期至：{{coupon.endDay |date :'yyyy-MM-dd'}}</span>
+                        </p>
+                      </a>
+                    </li>
+                    <li ng-repeat="coupon in coupons.unavailable" class="unavaliable-coupon">
+                      <p><span class="limit-divider">加息{{coupon.rate|percentage:true}}</span>可加息{{coupon.period}}天
+                        <span class="unavaliable-words">该团不可用</span>
+                      </p>
+                      <p class="invest-limit">投资限额：{{coupon.floatAmountLowBoundary | slCurrency:false:true:true}}元～{{coupon.floatAmountHighBoundary
+                        | slCurrency:false:true:true}}元
+                        <span>有效期至：{{coupon.endDay |date :'yyyy-MM-dd'}}</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-invest">
+              <p>
+                <span class="title">可用余额</span>
+                <span class="money" ng-bind-html="Assets.userAsset.availableCash || 0 | slMoney:false:false:2:false"></span>
+              </p>
+              <p class="pay-col" ng-show="Assets.userAsset.availableCash < investment.amount">
+                <span class="title">应付金额</span>
+                <span class="money" ng-bind-html="( Assets.userAsset.availableCash < investment.amount  ? investment.amount-Assets.userAsset.availableCash:0) | slMoney:false:false:2:false"></span>
+                <a href="/account/deposit" target="_blank" class="recharge-btn" ng-click="recharge()">充值</a>
+              </p>
+
+              <p class="tradekey-col">
+                <span class="title">交易密码</span>
+                <input type="password" class="form-control" id="tradekey-input" required="required" maxlength="6" ng-minlength="6" ng-maxlength="6"
+                  ng-model="investment.tradeKey" placeholder="请输入6位数字交易密码">
+                <a class="reset-pwd" href="/account/my-account#/account-profile" target="_blank">忘记密码？</a>
+              </p>
+
+              <div class="alert-msg">
+                <span ng-repeat="err in errors" ng-show="errors.length > 0" ng-bind="err"></span>
+              </div>
+
+              <div class="accept-agreement">
+                <div class="check-box">
+                  <input type="checkbox" id="check" required ng-model="investment.agreement" />
+                  <label for="check"><span class="tick-wrapper"><span></span></span> </label>
+                </div>
+                <p class="text">
+                  我已确认可承受该团所包含的借贷项目的风险，其所描述的借贷项目标准与我的出借标准一致，同意出借予该团所包含的借贷项目且授权点融网遵循所描述的标准不时调整借贷项目配比。历史收益不代表预期收益，未来收益存在不确定性。
+                  <a class="open-agreement-popup" href="/mkt/protocols/realtime_exchange_match_agreement.html" ng-show="plan.planType!=='HuoQi'">《系统实时匹配交易功能服务协议》</a>
+                  <a class="open-agreement-popup" href="/mkt/srtp/index.html " ng-show="plan.planType==='HuoQi'">《小融包系统实时匹配交易功能服务协议》</a>
+                  <a class="open-agreement-popup" href="/mkt/protocols/loan_trade_agreement.html">《债权转让协议》</a>
+                  <a class="open-agreement-popup" href="/mkt/protocols/lender_mutual_aid_imprest_rule.html" ng-show="plan.planType!=='HuoQi'">《出借人风险互助备用金规则》</a>
+                   <a class="open-agreement-popup" href="/mkt/mrrfr/index.html" ng-show="plan.planType==='HuoQi'">《小融包出借人风险互助备用金规则》</a>
+                </p>
+              </div>
+            </div>
+            <div class="btn-invest" ng-switch='action'>
+              <button class="btn btn-wide btn-primary" type="submit" ng-disabled="investmentForm.$invalid || investment.coupon.floatAmountLowBoundary > investment.amount || investment.coupon.floatAmountHighBoundary < investment.amount || buying">
+               <span ng-switch-when="BUY">
+                确认投资
+                </span>
+                <span ng-switch-when="ORDER">
+                  确认预约
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="plan-buy-success bg-color" ng-switch-when="SUCCEED" ng-class="{'enable-invest-statis': enableInvestStatis}">
+        <div class="plan-oper-result">
+          <div class="section"><div class="icon"><span class="sl-icon-check"></span></div><div class="desc"><div ng-switch on="action"><p ng-switch-when="BUY" class="primary-text primary-title">恭喜您成功投资{{plan.simpleName}}</p><p ng-switch-when="ORDER" class="primary-text primary-title">恭喜您预约成功</p></div><p class="secondary-text secondary-title"><span ng-switch on="action"><span ng-switch-when="BUY">成功提交投资</span><span ng-switch-when="ORDER">成功预约</span></span>{{investment.amount | slCurrency:false:false:true }}元</p><p class="secondary-text normal-text">投资成功即刻开始计算收益</p><a class="link-text bigger-text" href="/account/my-account#/group-buy">查看团团赚管理 ></a></div><p class="primary-text normal-text hint" ng-show="note.transferInfo.transFlag">您可设置{{planDetails.simpelName}}到期后资金转投其他产品，以持续获得收益，<a ng-href="{{ '/market/plan/' + plan.loanId + '/note/' + note.lpId +'/transfer' }}">点击设置</a></p></div><div class="section"><div><div class="icon"><span class="icon-wrapper"><span class="icon-app"></span></span></div><div class="desc"><p class="primary-text secondary-title">扫一扫下载点融APP</p><p class="secondary-text normal-text">随时掌握投资动态，把收益装进口袋</p></div></div></div>
+        </div>
+
+        <div class="plan-invest-statis public">
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th><p class="title">团投资成交情况</p></th>
+                  <th class="spacing" ng-if="statisControls.pendingInvestment"><p class="prop">新融资项目已募资金</p></th>
+                  <th class="spacing large" ng-if="statisControls.completedInvestment"><p class="prop">今日团成交金额</p></th>
+                  <th class="spacing large" ng-if="statisControls.exitTime"><p class="prop">今日平均退团时间</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td class="spacing" ng-if="statisControls.pendingInvestment"><p class="value"><span ng-bind="chart.statis.planWaitingInvestAmount | number:2"></span>元</p></td>
+                  <td class="spacing large" ng-if="statisControls.completedInvestment"><p class="value"><span ng-bind="chart.statis.todayPlanTransAmount | number:2"></span>元</p></td>
+                  <td class="spacing large" ng-if="statisControls.exitTime"><p class="value"><span ng-bind="chart.statis.averageTradeTime"></span><span ng-bind="chart.statis.timeLimitSign"></span><span ng-show="chart.statis.timeLimitSign !== '--'">分钟</span></p></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="amount-trend-chart" ng-class="{ORDER: 'order', BUY: 'buy'}[action]">
+              <p class="hint">以下图表仅显示最近的待转让和待投资金额</p>
+              <div class="chart-title">
+                <p class="title"><span class="square"></span>待转让金额(元)</p><p class="title invest"><span class="square"></span>待投资金额(元)</p><p class="title order"><span class="square"></span>团预约金额(元)</p>
+              </div>
+              <div class="grid">
+                <div class="split-line" ng-repeat="splitLine in chart.splitLines"><span class="split-label"><span ng-bind="splitLine.label"></span><span>万</span></span></div>
+                <div class="data">
+                  <div class="series pending">
+                    <div class="bar" ng-repeat="bar in chart.series.pending track by bar.key" ng-style="bar.style">
+                      <div class="col pending"></div>
+                    </div>
+                  </div>
+                  <div class="series investing">
+                    <div class="bar" ng-repeat="bar in chart.series.investing track by bar.key" ng-style="bar.style" ng-class="{adjust: bar.adjust}">
+                      <div class="marker" ng-if="bar.current">
+                        <p>您提交的投资在此排队</p>
+                        <img src="/static/images/market/star.png" />
+                      </div>
+                      <div class="col" ng-class="bar.type"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-title axis">
+                <p class="title trade-axis">近15分钟</p><p class="title invest-axis">1天</p>
+              </div>
+              <div class="anim-area">
+                <div class="scene" id="invest-scene">
+                  <div class="stage">
+                    <div class="sprite old">
+                      <div class="user old"></div>
+                    </div>
+                    <div class="sprite old">
+                      <div class="user old"></div>
+                    </div>
+                    <div class="sprite old">
+                      <div class="user old"></div>
+                    </div>
+
+                    <div class="sprite new">
+                      <div class="user new"></div>
+                      <p class="text-center" style="margin-top: 32px; width: 60px;">新投资人</p>
+                    </div>
+
+                    <div class="sprite borrower">
+                      <div class="user borrower"></div>
+                      <p class="text-center" style="margin-top: 32px;">借款人</p>
+                    </div>
+
+                    <p class="old-label text-center" style="position: absolute">团团赚投资人</p>
+
+                    <div class="credit lender" data-group="0" data-index="0"></div>
+                    <div class="credit lender" data-group="0" data-index="1"></div>
+                    <div class="credit lender" data-group="0" data-index="2" data-move="true"></div>
+
+                    <div class="credit lender" data-group="1" data-index="0"></div>
+                    <div class="credit lender" data-group="1" data-index="1" data-move="true"></div>
+
+                    <div class="credit lender" data-group="2" data-index="0"></div>
+                    <div class="credit lender" data-group="2" data-index="1" data-move="true"></div>
+
+                    <div class="credit borrower" data-group="3"></div>
+                    <div class="credit borrower" data-group="3"></div>
+                    <div class="credit borrower" data-group="3"></div>
+                    <div class="credit borrower" data-group="3"></div>
+
+                    <div class="coin"></div>
+                    <div class="coin"></div>
+                    <div class="coin"></div>
+                    <div class="coin"></div>
+
+                    <div class="square invest"></div>
+                  </div>
+                </div>
+                <div class="scene" id="trade-scene">
+                  <div class="stage">
+                    <div class="sprite old trader">
+                      <div class="user old"></div>
+                      <p class="trade-label text-center" style="margin-top: 32px; width: 120px;position: relative;left: -30px;">已退团投资人</p>
+                    </div>
+                    <div class="sprite old">
+                      <div class="user old"></div>
+                    </div>
+                    <div class="sprite old">
+                      <div class="user old"></div>
+                    </div>
+
+                    <div class="sprite new">
+                      <div class="user new"></div>
+                      <p class="text-center" style="margin-top: 32px; width: 60px;">新投资人</p>
+                    </div>
+
+                    <p class="old-label text-center" style="position: absolute">团团赚投资人</p>
+
+                    <div class="credit lender trader" data-group="0" data-index="0"></div>
+                    <div class="credit lender trader" data-group="0" data-index="1"></div>
+                    <div class="credit lender trader" data-group="0" data-index="2"></div>
+
+                    <div class="credit lender" data-group="1" data-index="0"></div>
+                    <div class="credit lender" data-group="1" data-index="1" data-move="true"></div>
+
+                    <div class="credit lender" data-group="2" data-index="0"></div>
+                    <div class="credit lender" data-group="2" data-index="1" data-move="true"></div>
+
+                    <div class="coin"></div>
+                    <div class="coin"></div>
+                    <div class="coin"></div>
+                    <div class="square invest"></div>
+
+                    <div class="circle trade"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="grade-detail-table">
+              <div class="loan-description">
+                <p>
+                  新融资项目
+                  <span class="public">仅显示部分新融资项目，请至“团团赚管理”查看全部详情</span>
+                </p>
+              </div>
+              <div class="grade-detail-table">
+
+                <h2 class="text-center" ng-show="!loansTable.usable">
+                  <i class="spinner sl-icon-loading"></i>
+                </h2>
+
+                <div ng-show="loansTable.usable">
+                  <div class="alert alert-warning clearfix" ng-show="loansTable.items.length <= 0">
+                    <span>无任何记录</span>
+                    <a class="close sl-icon-cross" data-dismiss="alert" aria-hidden="true"></a>
+                  </div>
+                  <div>
+                    <div class="plans-table">
+                      <table class="table data-table table-hover table-striped" ng-show="loansTable.items.length > 0">
+                        <thead>
+                          <tr>
+                            <th class="text-left"><span>名称</span></th>
+                            <th class="text-right"><span>团待投资金额</span>(元)</th>
+                            <th class="text-center"><span>借款人约定的借款利率</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="every-row" ng-repeat="loan in enabledLoans(loansTable.items) track by loan.loanId">
+                            <td>
+                              <p ng-bind="loan.loanName"></p>
+                              <p class="secondary-text">
+                                <span>编号</span>
+                                <span ng-bind="loan.loanId"></span>
+                              </p>
+                            </td>
+                            <td class="text-right"><p>{{ loan.committedAmount | number:2}}</p></td>
+                            <td class="text-center"><p>{{ loan.intRate | percentage }}</p></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div id="modifyAmountModal" class="modal fade modify-amount-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" ng-switch="action">
+          <button type="button" class="close sl-icon-cross" data-dismiss="modal" aria-hidden="true"></button>
+          <span class="modal-title"  ng-switch-when="BUY" >请输入投资金额</span>
+           <span class="modal-title" ng-switch-when="ORDER">请输入预约金额</span>
+        </div>
+        <form name="modifyAmountForm" class="modify-amount-form" novalidate>
+          <div class="input-wrapper">
+            <input type="text" growing-track="true" id="modifyAmount" class="form-control" ng-model="modify.amount" ng-change="investAmountChange(modify.amount)"
+              placeholder="{{ investment.amount | slCurrency:false:true:true }}" sl-positive-number required/>
+            <span class="unit-end">元</span>
+          </div>
+
+          <div class="alert-msg text-center" ng-switch="modify.status">
+            <span ng-switch-when="LOW" >
+              <span ng-show="action!=='ORDER'">
+                使用当前加息券须至少投资{{investment.coupon.floatAmountLowBoundary | slCurrency:false:true:true}}元
+              </span>
+              <span ng-show="action==='ORDER'">
+                使用当前加息券须至少预约{{investment.coupon.floatAmountLowBoundary | slCurrency:false:true:true}}元
+              </span>
+            </span>
+            <span ng-switch-when="HIGH">
+              <span ng-show="action!=='ORDER'">
+                使用当前加息券最多可投资{{investment.coupon.floatAmountHighBoundary | slCurrency:false:true:true}}元
+             </span>
+              <span ng-show="action==='ORDER'">
+                使用当前加息券最多可预约{{investment.coupon.floatAmountHighBoundary | slCurrency:false:true:true}}元
+              </span>
+            </span>
+          </div>
+          <div class="row button-wrapper">
+            <div class="col-xs-6">
+              <button class="btn btn-wide btn-primary cancel-btn" data-dismiss="modal" aria-hidden="true">取消</button>
+            </div>
+            <div class="col-xs-6 text-right">
+              <button class="btn btn-wide btn-primary" ng-click="confirmModifyAmount()" ng-disabled="modifyAmountForm.$invalid">
+                确认
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="rechargeTipModal" class="modal fade recharge-tip-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close sl-icon-cross" data-dismiss="modal" aria-hidden="true"></button>
+          <header class="modal-title">完成充值后请选择</header>
+        </div>
+        <div>
+          <p>
+            <span class="right"></span><span class="result">充值成功</span>
+            <span class="action">您可以:</span>
+            <a href="" ng-click="refreshPage()">刷新页面</a>
+          </p>
+          <p>
+            <span class="wrong"></span><span class="result">充值失败</span>
+            <span class="action">您可以:</span>
+            <a href="/account/deposit" target="_blank">再次充值</a>
+            <a href="/public/help-center" target="_blank">查看充值帮助</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--footer-->
+    
+    <footer class="simple-footer">
+  
+<ul class="footer-copyright">
+  <li>©2017&nbsp;点融网</li>
+  <li><a href="http://www.miibeian.gov.cn/">沪ICP备14028311号</a></li>
+  <li>上海点荣金融信息服务有限责任公司</li>
+</ul>
+
+<div class="footer-authentication-info">
+  <a target="_blank" class="picp" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102002033" rel="nofollow"><span>31010102002033</span></a>
+  <a target="_blank" class="norton" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.dianrong.com&amp;lang=zh_cn" rel="nofollow"></a>
+  <a target="_blank" class="jblogo" href="http://www.shjbzx.cn/" rel="nofollow"></a>
+  <a target="_blank" class="iac" href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&serial=9031000020160418194226000000627114-SAIC_SHOW_310000-20160812190229663070&signData=MEUCIH3dbhj+OSXYLIY3SfE2rs3WpZ8IqNBP/GXNMeTdPL0SAiEA51boZ4RqRdc9uwVD4t7TIOKl6kL7O99sBCs094n8WII=" rel="nofollow"></a>
+  <a target="_blank" class="verifyseal" href="https://ss.knet.cn/verifyseal.dll?sn=e15010631011557181nh4l000000&amp;ct=df&amp;a=1&amp;pa=0.6343199273105711">
+  </a>
+  <a id="__szfw_logo__" class="szfw" href="https://search.szfw.org/cert/l/CX20150107006323006821" target="_blank"></a>
+  <script type="text/javascript">(function(){document.getElementById('__szfw_logo__').oncontextmenu = function(){return false;}})();</script>
+  <a target="_blank" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1062547634" class="itrust" rel="nofollow"></a>
+</div>
+<div class="container feedback">
+  <p>客户意见反馈专线：4009219218；专用邮箱：ts@dianrong.com。收到您的意见反馈后，我们将及时处理和回复。如涉及违法或不良信息，我们将及时核查和删除、屏蔽、断开链接，并对违法账号采取警示教育、暂停更新、限制发布直至关闭等处置措施。</p>
+</div>
+
+</footer>
+
+    
+  </div>
+
+  <div id="login-modal" class="modal fade login-modal"  tabindex="-1" role="dialog" aria-hidden="true"  ng-controller="LoginModalCtrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close sl-icon-cross" data-dismiss="modal" aria-hidden="true"></button>
+        <header>
+          <div ng-if="session.isAuthenticated">
+            <p>登录超时，为了您的账户安全，请重新登录</p>
+          </div>
+          <div ng-if="!session.isAuthenticated" class="clearfix">
+            <h3 class="modal-title">登录<span class="pull-right secondary-title">没有账号？<a href="/account/create">立即注册</a></span></h3>
+          </div>
+        </header>
+      </div>
+      <div class="modal-body">
+        <div sl-login-form on-success="onLoginSuccess(response)" on-failure="onLoginFailure(response)">
+          <div class="row" ng-if="!session.isAuthenticated">
+            <div class="col-xs-6 text-left checkbox-wrapper">
+              <input type="checkbox" name="remember" ng-model="options.rememberMe" id="login-modal-remember"/><label for="login-modal-remember"><span class="sl-icon-checked" ng-class="{'active': options.rememberMe}"></span>记住我</label>
+            </div>
+            <div class="col-xs-6 text-right">
+              <a class="link" href="/account/password-reset" target="_self"><label>忘记密码？</label></a>
+            </div>
+          </div>
+          <div>
+            <p ng-repeat="error in errors track by $index"  ng-bind="error" class="alert alert-danger error-info"></p>
+          </div>
+        </div>
+
+        <div class="text-left third-login" ng-if="!session.isAuthenticated">
+          <span class="third-party-login-platform">使用第三方账号登录</span>
+          <a href="javascript:void(0)" title="用新浪微博登录" ng-click="WeiBo.oauth()" class="weibo-wrapper"><span class="font-icon weibo-sina"></span></a>
+          <a href="javascript:void(0)" title="用腾讯QQ登录" ng-click="QQ.oauth()" class="qq-wrapper"><span class="sl-icon-qq font-icon tencent-qq"></span></a>
+        </div>
+
+      </div>
+      <div class="modal-footer" ng-if="!session.isAuthenticated">
+        <p class="footer-text text-center">借款人登录&nbsp;<a href="/new-borrower/login">请点击此处</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="tool-bar" ng-hide="">
+  <ul class="list-unstyled">
+    <li>
+      <a href="javascript:void(0)" sl-scroll-to class="social-icons icon-arrow to-top scroll-to-top">
+        <span class="arrow-info">返回顶部</span>
+      </a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" class="social-icons icon-wechat">
+        <span>微信客服</span>
+      </a>
+      <div class="wechat-content text-center">
+        <div class="triangle"></div>
+        <div class="triangle triangle-color"></div>
+        <div class="qr-code"></div>
+        <p>点融微信公众号</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  <!-- SL App -->
+<script type="text/javascript">
+  var SLConfig = {
+    staticDomain: '',
+    scriptsBaseUrl: '/static/scripts',
+    additionalScripts: [],
+    devMode: false,
+    env: 'production',
+    slServicesEndpoint:'https://www.dianrong.com',
+    ssoAuthServicesEndpoint:'',
+    oldSiteEndpoint:'',
+    locale:'zh',
+    buildNumber:148764808,
+    enableBrowserLog: true,
+    showSecondaryForPublic:true,
+    regFormType:  2,
+    jsonFromDB:true,
+    publicKey:'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqE2M4+LDkmRX50waOx+aTBgUUUH8l7S1pFzdEKEtKULnYtKlA9eCxU4W8nmdVAxHEpatwr1Z5p7ZiDoWxINyatV24pVgiDKYIPlr7ubBJlbFX2RLPCfV+SCm7jrgx9hqnUr6zMxaYvbFOre+G+/loC+Q1Wl2RpMYaqOl9gL5UanTPS2rX+qdQdxzRZe2ytL3hMi87f4FPYwptZpbGorc/bYBrsRrt8KsMnGCCNcLODyiSdbrmOOyBWPwKhHvI/sOUXwib5D7NtYmsjqLjDaHxapnPsl6EiEzoFQvCRWDLyDBkuRE2Th3ni5/UCx+WgOhbLvwNSojqRu324CZlfkWewIDAQAB',
+    customRequire:{},
+    lenderModuleEndpoint: "https://www.dianrong.com/mkt/ldm/lender-lego-adapter.entry.js",
+    slAppScript:"",
+    bootstrapInsideMin:true,
+    apiPrefix: null,
+    nodeAPI: false,
+    // Brand details
+    brand:""
+  };
+
+  window.isLandingPage = false;
+
+  //scripts
+  
+    
+      SLConfig.additionalScripts.push('market/plan-buy');
+    
+  
+
+  
+
+  if ("undefined" === typeof window.console) {
+    window.console = {};
+    window.console.log = function () {
+      return;
+    };
+  }
+
+  if (!SLConfig.devMode) {
+    window.console.log = function () {
+      return;
+    };
+  }
+
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(item) {
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == item) {
+          return i;
+        }
+      }
+
+      return -1;
+    };
+  }
+</script>
+
+  
+<script src="/static/tp/requirejs/require.min.js"></script>
+
+
+<script src="/static/scripts/sl.desktop.libs.min.js?ver=148764808"></script>
+<script src="/static/scripts/sl.desktop.app.min.js?ver=148764808"></script>
+
+
+
+  
+
+
+<script type="text/javascript">
+  (function (d) {
+    (window.bd_cpro_rtid = window.bd_cpro_rtid || []).push({id:"nH01njnk"});
+    var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+    var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+  })(document);
+</script>
+
+<script src="/static/scripts/util/afinit.1216.js" async></script>
+
+
+
+
+</body>
+</html>

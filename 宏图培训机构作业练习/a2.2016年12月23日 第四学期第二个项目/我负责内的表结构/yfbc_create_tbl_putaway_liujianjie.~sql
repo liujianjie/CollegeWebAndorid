@@ -1,0 +1,24 @@
+--摆货单 
+create table 刘建杰.put_away
+(
+       ptid varchar2(32) not null,
+       inid varchar2(32) not null,
+       reid varchar2(32) not null,
+       sheid varchar2(32)not null,
+       ptbln number(1)   not null                                                                                                                       
+);
+
+comment on table 刘建杰.put_away is '摆货单';
+comment on column 刘建杰.put_away.ptid is '主键';
+comment on column 刘建杰.put_away.inid is '入库计划单id';
+comment on column 刘建杰.put_away.reid is '收货单id';
+comment on column 刘建杰.put_away.sheid is '货架id';
+comment on column 刘建杰.put_away.ptbln is '是否还存在货架中 0不存在，1存在';
+
+create index ix_put_away on 刘建杰.put_away(ptid);
+alter table 刘建杰.put_away
+      add constraint pk_put_away primary key(ptid)
+      using index ix_put_away
+      
+      
+                                              

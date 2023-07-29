@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.BasesalaryDao">
+ 	<resultMap type="com.ht.yfbc.pojo.Basesalary" id="basesalarymap">
+ 		<id column="id" property="id"/>
+ 		<result column="positionid" property="positionid"/>
+ 		<result column="basesal" property="basesal" />
+ 	</resultMap>
+  	<select id="selBasesalaryByPositionId" parameterType="String" resultType="basesalary">
+  		select * from basesalary where positionid=#{positionid}
+  	</select> 
+  	<select id="selBasesalaryList" resultType="basesalary">
+  		select * from basesalary
+  	</select>
+  	<update id="updateBasesalaryById" parameterType="basesalary" >
+  		update basesalary set basesal=#{basesal} where id=#{id}
+  	</update>
+  	<delete id="deleteBasesalaryById" parameterType="String">
+  		delete from basesalary where id=#{id}
+  	</delete>
+</mapper>

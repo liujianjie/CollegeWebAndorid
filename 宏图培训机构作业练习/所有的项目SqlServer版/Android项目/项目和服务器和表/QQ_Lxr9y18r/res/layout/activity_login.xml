@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F6F6F7">
+
+    <!-- 放旋转控件 -->
+   	<TextView 
+   	    android:id="@+id/login_logining"
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="wrap_content"
+   	    android:visibility="visible"
+   	    android:layout_gravity="center"/>
+    
+	<!-- 图标 -->
+   	<com.example.qq_lxr9y18r.RoundView
+   	    android:id="@+id/login_ig_tu"
+   	    android:layout_width="80dp"
+   	    android:layout_height="80dp"
+   	    android:layout_marginTop="50dp"
+   	    android:layout_gravity="center"
+   	    android:src="@drawable/gco"
+   	    />
+   	<!-- 输入控件 -->
+   	<LinearLayout
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginTop="20dp"
+   	    android:orientation="vertical"
+   	    android:background="#ffffff">
+		<EditText 
+		    android:id="@+id/login_et_zh"
+		    android:layout_width="fill_parent"
+		    android:layout_height="40dp"
+		    android:hint="QQ号/手机号/邮箱"
+		    android:textSize="15sp"
+		    android:inputType="number"
+		    android:background="@null"
+		    android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="10dp"
+		    />
+		<View android:layout_width="fill_parent" android:layout_height="1dp"
+		    android:background="#EBEBE6"/>
+		<!-- 输入控件 -->
+		<EditText 
+		    android:id="@+id/login_et_mm"
+		    android:layout_width="fill_parent"
+	 		android:layout_height="40dp"
+		    android:hint="密码"
+		    android:textSize="15sp"
+		    android:background="@null"
+		    android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="10dp"   
+		    android:inputType="textPassword"/>
+	</LinearLayout>
+	<Button
+	    android:id="@+id/login_but_dr"
+	    android:layout_width="fill_parent"
+	    android:layout_height="38dp"
+	    android:background="@drawable/btn_shape"
+	    android:text="登 录"
+	    android:textSize="15sp"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:textColor="#ffffff" />
+	
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="match_parent"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginBottom="18dp"
+	    android:gravity="bottom">
+	    <TextView
+	        android:id="@+id/login_tv_wfdl" 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="无法登录？"
+	        android:textSize="12sp"
+	        android:textColor="#12B9F6"/>
+	    <TextView
+	        android:id="@+id/login_tv_zhuce" 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="新用户注册"
+	        android:textSize="12sp"
+	        android:textColor="#12B9F6"
+	        android:layout_alignParentRight="true"/>
+	</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.ConSignMentDao">
+  <resultMap type="ConSignMent" id="consignmap">
+  	<id column="conid" property="conid" />
+  	<result column="DONO" property="DONO" />
+  	<result column="pickdate" property="pickdate" javaType="java.util.Date" />
+  	<result column="whid" property="whid" />
+  	<result column="PickID" property="PickID" />
+  	<result column="SKUmodel" property="SKUmodel" />
+  	<result column="packageqty" property="packageqty" />
+  	<result column="pickqty" property="pickqty" />
+  	<result column="damagedqty" property="damagedqty" />
+  	<result column="damagedreason" property="damagedreason" />
+  	<result column="totalweight" property="totalweight" />
+  	<result column="totalvolume" property="totalvolume" />
+  	
+  </resultMap>
+  
+  <select id="selConSignMent" resultType="ConSignMent">
+  	select * from ConSignMent
+  </select>
+  <insert id="addConSignMent" parameterType="ConSignMent">
+      insert into consignment values(sys_guid(),sys_guid(),sysdate,sys_guid(),sys_guid(),sys_guid(),10,10,0,'没有坏货',10,10)
+  </insert>
+</mapper>

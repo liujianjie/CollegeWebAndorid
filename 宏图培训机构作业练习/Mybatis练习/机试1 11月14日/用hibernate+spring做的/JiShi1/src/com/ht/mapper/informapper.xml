@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.service.InformationsI">
+    <!-- 这个id为 flag 标识而已 type为bean的路径 --><!-- 实体与映射反应 -->
+    <resultMap type="Informations" id="informap">
+        <id column="in_inforid" property="inInforid"/>
+        <result column="in_title" property="inTitle"/>
+        <result column="in_content" property="inContent"/>
+        <result column="in_replyCount" property="inReplycount"/>
+        <result column="in_viewCount" property="inViewcount"/>
+        <result column="in_reportTime" property="inReporttime" javaType="java.util.Date" jdbcType="DATE"/>
+        <result column="in_lastPostTime" property="inLastposttime" javaType="java.util.Date" jdbcType="DATE"/>
+        
+    </resultMap>
+    <!-- 查询所有资讯 -->
+    <select id="selinforlist" resultMap="informap">
+        select * from Informations
+    </select>
+    <!-- 查询单个资讯并级联查出回复 -->
+    <select id="getinfor" parameterType="int" resultMap="informap">
+        select * from Informations where in_inforid = #{id}
+    </select>
+	<!-- 修改资讯的光看人数 回复人数 时间 -->
+	<update id="alertinfor" parameterType="Informations" >
+	    update informations 
+	    <set>
+	        <if test="inReplycount!=null and inReplycount!=''">
+	            in_replyCount = #{inReplycount},
+	        </if>
+	        <if test="inViewcount!=null and inViewcount!=''">
+	            in_viewCount = #{inViewcount},
+	        </if>
+	        <if test="inLastposttime!=null and inLastposttime!=''">
+	            in_lastPostTime = #{inLastposttime},
+	        </if>
+	    </set>
+	    where in_inforid = #{inInforid}
+	</update>    
+	
+	<!-- 测试查询部门 -->
+    <select id="seldept" resultType="dept">
+        select * from dept
+    </select>
+</mapper>

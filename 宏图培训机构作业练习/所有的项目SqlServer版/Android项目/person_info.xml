@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_blue_dark" >
+
+        <ImageView
+            android:id="@+id/left_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/l_jiantou" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/left_back_iv"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="更多"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_below="@id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:orientation="vertical"
+		android:background="@drawable/back_info"
+         >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+            <ImageView
+                android:id="@+id/tx_big_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tx_big" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/chat_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="飞翔"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="20岁" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="江西赣州" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/layout3"
+        android:layout_below="@id/layout2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <ImageView 
+             android:id="@+id/info_icon1_iv"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_icon1"
+            android:layout_centerVertical="true"
+            />
+        <TextView 
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/info_icon1_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14723089"
+            />
+        <ImageView 
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/r_jiantou_touming"
+            />
+    </RelativeLayout>
+    
+    <View 
+        android:id="@+id/line1"
+        android:layout_below="@id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#afafaf"
+        />
+    
+     <RelativeLayout 
+         android:id="@+id/layout4"
+         android:layout_below="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <ImageView 
+            android:id="@+id/info_icon2_iv"
+             android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_icon2"
+            android:layout_centerVertical="true"
+            />
+        <TextView 
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/info_icon2_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="努力学习img"
+            />
+        
+        <ImageView 
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/r_jiantou_touming"
+            />
+    </RelativeLayout>
+    
+     <LinearLayout 
+         android:layout_alignParentBottom="true"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:weightSum="2"
+         >
+         
+         <Button 
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:layout_height="50dp"
+             android:text="QQ电话"
+             android:textSize="18sp"
+			 android:background="@drawable/border_shape1"
+             />
+         
+         <Button
+             android:id="@+id/send_msg_btn" 
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:layout_height="50dp"
+             android:text="发消息"
+             android:textSize="18sp"
+             android:background="@drawable/border_shape2"
+             />
+         
+     </LinearLayout>
+
+</RelativeLayout>

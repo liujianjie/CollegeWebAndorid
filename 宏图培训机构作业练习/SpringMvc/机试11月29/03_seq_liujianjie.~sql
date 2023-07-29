@@ -1,0 +1,11 @@
+create sequence seq_users
+increment by 1
+start with 1
+nocache;
+
+create sequence seq_blog
+increment by 1
+start with 1
+nocache;
+
+select seq_blog.nextval from dual

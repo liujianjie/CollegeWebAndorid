@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"  ?>
+<?xml-stylesheet type="text/css" href="1.css" ?>
+<!-- 标记 -->
+<student>
+	<!-- 属性 -->
+	<name ywnm="ljj">刘建杰</name>
+	<sex>男</sex>
+	<!-- 嵌套 -->
+	<gerenxinxi>
+		<height>168cm</height>
+		<tizhong>58kg</tizhong>
+	</gerenxinxi>
+	<!-- 空标记 一般都有属性 要不然无意义-->
+	<zuoyouming></zuoyouming>
+	<shuaifou ywnm="shuai"></shuaifou>
+</student>
+<!--空标记还有这种标记-->
+-<fangfou></fangfou>
+-<jiehunfou/>

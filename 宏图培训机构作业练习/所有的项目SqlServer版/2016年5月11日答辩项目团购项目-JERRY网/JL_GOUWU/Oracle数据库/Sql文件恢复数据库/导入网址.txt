@@ -1,0 +1,3 @@
+https://jingyan.baidu.com/article/335530da80e60319ca41c37d.html
+
+注意 自增序列要自己创建

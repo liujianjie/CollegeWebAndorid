@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+	
+ </head>
+
+ <body>
+  <a href="http://www.baidu.com">链接1</a>
+  <a href="http://www.qq.com">链接2</a>
+  <a href="http://xinlang.com">链接3</a>
+  <form name="frm1">
+	<input type="button" value="点我吧" name="tt">
+  </form>
+  <form name="frm2">
+  
+  </form>
+    <form name="frm3">
+  
+  </form>
+  <script>
+	var s=document.links;
+	for(var i=0;i<s.length;i++){
+		alert(s[i]);
+	}
+	//直接获取第一个连接的属性
+
+	alert(document.links[0]);
+	var x=document.forms;
+	for(var i=0;i<x.length;i++){
+		alert(x[i].name);
+	}	
+	//直接获取第一个form下控件的值
+	alert(document.forms[0].tt.value);
+  </script>
+ </body>
+</html>

@@ -1,0 +1,14 @@
+
+
+1、右键MyEclipse快捷方式——属性——打开文件位置
+
+2、将解压的features、plugins文件夹 直接复制到该文件夹下  覆盖features、plugins文件夹
+
+3、重启MyEclipse，右键顶部空白处 Customize Perspective
+4、Shortcuts选项卡下将SVN勾上，Commands选项卡下将SVN勾上、确定！（这时工具栏上已经出现SVN工具栏）
+5、点击SVN工具栏 create a new repository location  新建一个SVN连接  下载所需要的项目即可！
+
+
+6、如果没有customize perspective的选项，就需要 依次打开 file->orther->svn
+
+7、URL：https://计算机名/svn/用户/

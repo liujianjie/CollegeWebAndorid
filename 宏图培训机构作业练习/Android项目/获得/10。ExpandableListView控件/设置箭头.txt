@@ -1,0 +1,1 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">     <item android:state_expanded="true" android:drawable="@drawable/expandablelistviewindicatordown" />     <item android:drawable="@drawable/expandablelistviewindicator" /> </selector> 其次，在程序的主体部分编写类似如下的代码： expandList.setGroupIndicator(this.getResources().getDrawable(R.layout.expandablelistviewselector));

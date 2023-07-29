@@ -1,0 +1,35 @@
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="http://localhost:8080/JL_GOUWU/">
+    
+    <title>My JSP 'top.jsp' starting page</title>
+
+  </head>
+  
+  <body>
+
+<a href="javascript:void(0);" onclick="AddFavorite('http://blog.csdn.net/linlin2294592017','我的博客');">
+                    收藏博客</a>
+<script>
+ function AddFavorite(sURL, sTitle) {
+        try {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e) {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    </script>
+  </body>
+</html>

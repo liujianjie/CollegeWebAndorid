@@ -1,0 +1,3 @@
+WindowManager.LayoutParams ip= getWindow().getAttributes();
+		ip.alpha = 0.7f;//alpha通道 设置透明度
+		getWindow().setAttributes(ip);

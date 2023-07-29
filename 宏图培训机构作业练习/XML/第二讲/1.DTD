@@ -1,0 +1,7 @@
+<!ELEMENT ti (#PCDATA)>
+<!ELEMENT style ANY>
+<!ELEMENT cpu EMPTY>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT computer (style?,cpu*,price+)*>
+<!ELEMENT computer2 ((style|cpu),price)>
+<!ELEMENT computerprice (#PCDATA|ti|computer|computer2)*>

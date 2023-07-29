@@ -1,0 +1,17 @@
+<%DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		%>
+		<c:forEach items="${inforlist }" var="infor">
+			<c:set var="att1" value="${infor.inReporttime }" ></c:set>
+			<c:set var="att2" value="${infor.inLastposttime }" ></c:set>
+			<!-- 发布日期 -->
+			<%Date pdate = (Date)pageContext.getAttribute("att1"); 
+			  String pdates = df.format(pdate);
+			%>
+			
+			<tr align="center" bgcolor="#ffffff" height="30">
+				<td>
+					<%=pdates %>
+				</td>
+				
+			</tr>
+		</c:forEach>

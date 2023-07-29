@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE studentxx [
+	<!ENTITY ti "this is student xx">
+	<!ELEMENT ti (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT sex (#PCDATA)>
+	<!ELEMENT age (#PCDATA)>
+	<!ELEMENT height (#PCDATA)>
+	<!ELEMENT person (#PCDATA)>
+	<!ELEMENT student (name,sex,age,height,person*)>
+	<!ELEMENT studentxx (ti,student)>
+	
+	<!ATTLIST name ywmz CDATA "中文">
+	<!ATTLIST age zhousui CDATA #REQUIRED>
+	<!ATTLIST sex xingbie CDATA #IMPLIED>
+	<!ATTLIST height tizhong CDATA #FIXED "有固定值">
+	<!ATTLIST sex xingbie2 (男|女) #REQUIRED>
+	<!ATTLIST person pid ID #REQUIRED>
+	<!ATTLIST person classmate IDREF #REQUIRED>
+	<!ATTLIST person classmate2 IDREFS #IMPLIED>
+]>
+
+<!-- 
+	给定默认值 属性值可以不填写,属性可以不存在元素中 字符串
+	<!ATTLIST name ywmz CDATA "中文"> 
+-->
+
+<!-- 
+	#REQUIRED没有默认值，属性值可以不填写，属性必须存在元素中
+ -->
+
+<!-- 
+	#IMPLIEDM没有默认值 属性值可以不填写,属性可以不存在元素中
+ -->
+ 
+ <!-- 
+ 	#FIXED:含有固定值 属性值必须填写，属性可以不出现在元素中
+  -->
+  
+<!-- 
+	Enumerated类型 从给定的值中选择 |
+ -->
+ 
+<!-- 
+	ID类型 在同一个XML文档中 该属性的值是唯一的
+ -->
+ 
+ <!-- 
+ 	IDREF类型 值需要是属性类型为ID的属性值
+  -->
+  
+  <!-- 
+  	实体定义与引用
+  	外部:<!ENTITY ti SYSTEM "URL">
+  	
+   -->
+<studentxx>
+	<ti>&ti;</ti>
+	
+	<student>
+		<name ywmz="呵呵"></name>
+		<sex xingbie="呵呵" xingbie2="男"></sex>
+		<age zhousui="15">16</age>
+		<height tizhong="有固定值"></height>
+		<person pid="p1001" classmate="p1001"></person>
+		<person pid="p1002" classmate="p1001" classmate2="p1002 p1001"></person>
+		<person pid="p1003" classmate="p1001"></person>
+	</student>
+</studentxx>
+
+

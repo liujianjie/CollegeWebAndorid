@@ -1,0 +1,118 @@
+--存储过程头
+create or replace package a_pack is
+       --查询 通过b的id查询出a_id 再查出a的name
+       procedure sel_btoa(p_b_id number);
+       
+       --检测是否b表中是否有id
+       function deal_bhave(p_b_id number) return boolean;
+       
+       --简单的返回
+       function deal_bhave2 return boolean;
+       
+       --修改过程
+       procedure upd_btoa;
+end a_pack;
+/
+
+--存储过程
+create or replace package body a_pack is
+       --查询 通过b的id查询出a_id 再查出a的name
+       procedure sel_btoa(p_b_id number) is
+       a_ids number;
+       begin
+         if deal_bhave(p_b_id) then
+           select a_id into a_ids from b  where b_id = p_b_id;
+            --查出结果
+            select a_name from a where a_id = a_ids;
+         end if;         
+       end sel_btoa;
+       
+       --检测是否b表中是否有id
+       function deal_bhave(p_b_id number) return boolean is
+       bln boolean:=false;
+       cout number(1);
+       begin
+         --有记录
+         select count(1) into cout from b where b_id = p_b_id;
+         if cout = 1 then
+            bln := true;
+         end if;
+         return bln;
+       end deal_bhave;
+      --修改过程
+      procedure upd_btoa is
+         begin
+         update a set a_name='大大' where a_id = 2;
+         
+      end upd_btoa;   
+       
+      function deal_bhave2 return boolean is
+        begin
+          return true;
+       
+      end deal_bhave2;
+      
+end a_pack;
+/
+
+
+
+--存储过程头
+create or replace package a_pack is
+     
+       --修改过程
+       procedure upd_btoa;
+       
+       --检测是否b表中是否有id
+       function deal_bhave(p_b_id number) return boolean;
+       
+       --查询 通过b的id查询出a_id 再查出a的name
+       --procedure sel_btoa(p_b_id number);
+       
+       
+       function deal_bhave2 return boolean;
+       
+end a_pack;
+/
+
+--存储过程
+create or replace package body a_pack is
+     --查询 通过b的id查询出a_id 再查出a的name
+       --procedure sel_btoa(p_b_id number) is
+       --a_ids number;
+       --begin
+         --if deal_bhave(p_b_id) then
+           --select a_id into a_ids from b  where b_id = p_b_id;
+            --查出结果
+            --select a_name from a where a_id = a_ids;
+         --end if;         
+      -- end sel_btoa;
+       
+      --修改过程
+      procedure upd_btoa is
+      begin
+         update a set a_name='大哥' where a_id = 2;
+         
+      end upd_btoa;   
+      
+      
+      --检测是否b表中是否有id
+       function deal_bhave(p_b_id number) return boolean is
+       bln boolean:=false;
+       cout number(1);
+       begin
+         --有记录
+         select count(1) into cout from b where b_id = p_b_id;
+         if cout = 1 then
+            bln := true;
+         end if;
+         return bln;
+       end deal_bhave;
+      
+      function deal_bhave2 return boolean is
+       begin
+        return true;
+       
+      end deal_bhave2;
+end a_pack;
+/

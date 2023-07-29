@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+	<script>
+		var d=new Date();
+		var y,m,week,h,mm,s,dd;
+		y=d.getYear();
+		//y=d.getFullYear(); 怎么一样。。。
+		
+		m=d.getMonth()+1;
+		dd=d.getDate();
+		
+		h=d.getHours();
+		mm=d.getMinutes();
+		s=d.getSeconds();
+
+		week=d.getDay();
+		document.write(y+"年"+m+"月"+dd+"日 "+h+":"+mm+":"+s);
+		alert(week);
+	</script>
+ </body>
+</html>

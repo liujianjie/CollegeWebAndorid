@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Cars_repairsDao">
+	<resultMap type="com.ht.yfbc.pojo.Cars_repairs" id="cars_repmap">
+		<id column="id" property="id" />
+		<result column="userid" property="userid" />
+		<result column="carsid" property="carsid" />
+		<result column="repairsdate" property="repairsdate" />
+		<result column="repairsmoney" property="repairsmoney" />
+		<result column="repairsreason" property="repairsreason" />
+		<result column="state" property="state" />
+		<result column="processinstanceid" property="processinstanceid" />
+		
+	</resultMap>
+	<!-- 查询 -->
+	<select id="selCars_rep" resultMap="cars_repmap">
+		select * from cars_repairs
+	</select>
+	<!-- 分页查询 -->
+	<select id="selCars_repPage" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Cars_repairs">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM cars_repairs ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+	</select>
+	<select id="selCount" resultType="java.lang.Integer">
+		select count(1) from cars_repairs
+	</select>
+	<!-- 添加 -->
+	<insert id="addCars_rep" parameterType="cars_repairs">
+		insert into cars_repairs
+		(id,userid,carsid,repairsdate,repairsmoney,repairsreason,state,processinstanceid
+		)
+		values
+		(sys_guid(),#{userid},#{carsid},#{repairsdate},#{repairsmoney},#{repairsreason},#{state},#{processinstanceid})
+	</insert>
+	<!-- 删除 -->
+	<delete id="delCars_rep" parameterType="cars_repairs">
+		delete from cars_repairs where id=#{id}
+	</delete>
+	<select id="selCars_repbyid" parameterType="String" resultType="com.ht.yfbc.pojo.Cars_repairs">
+		select * from cars_repairs where id = #{value}
+	</select>
+	<update id="updCars_rep" parameterType="cars_repairs" >
+		update cars_repairs set
+		userid = #{userid},carsid = #{carsid},repairsdate =
+		#{repairsdate},repairsmoney = #{repairsmoney},repairsreason =
+		#{repairsreason},state =#{state},
+		processinstanceid = #{processinstanceid}
+		where id = #{id}
+	</update>
+	
+	
+</mapper>

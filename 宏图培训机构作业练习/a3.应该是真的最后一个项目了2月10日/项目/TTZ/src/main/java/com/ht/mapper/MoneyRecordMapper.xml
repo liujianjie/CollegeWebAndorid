@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.MoneyRecordDao">
+	<resultMap type="MoneyRecord" id="MoneyRecordMap">
+		<id column="m_id" property="m_id" />
+		<result column="p_userid" property="p_userid" />
+		<result column="m_jytype" property="m_jytype" />
+		<result column="m_yxmoney" property="m_yxmoney" />
+		<result column="m_kymoney" property="m_kymoney" />
+		<result column="m_djmoney" property="m_djmoney" />
+		<result column="m_dsmoney" property="m_dsmoney" />
+		<result column="m_happentime" property="m_happentime" />
+		<result column="m_remark" property="m_remark" />
+		<result column="m_type" property="m_type" />
+	</resultMap>
+
+	<select id="TopupMoner" resultType="MoneyRecord">
+		select * from moneyrecord
+		where m_jytype = '充值'
+	</select>
+	<select id="TopupCount" resultType="Integer">
+		select Count(*) from
+		moneyrecord where m_jytype = '充值'
+	</select>
+	<select id="TradingRecord" resultType="MoneyRecord">
+		select * from moneyrecord
+	</select>
+	<select id="TradingCount" resultType="Integer">
+		select Count(*) from
+		moneyrecord
+	</select>
+
+
+	<select id="ConditionQuery" resultType="MoneyRecord"
+		parameterType="String">
+		select * from moneyrecord
+		<where>
+			<if test="m_happentime!=null">
+				to_char(m_happentime,'yyyy-MM-dd') = #{m_happentime}
+			</if>
+		</where>
+	</select>
+
+
+	<select id="list" parameterType="map" resultMap="MoneyRecordMap">
+		SELECT * FROM
+		(
+		SELECT A.*, ROWNUM RN
+		FROM (SELECT * FROM moneyrecord
+		<where>
+			<if test="m_happentime!=null">
+				to_char(m_happentime,'yyyy-MM-dd') = #{m_happentime}
+			</if>
+			and p_userid=#{p_userid}
+		</where>
+		order by m_id desc) A
+		WHERE ROWNUM &lt;= #{pageCount}*#{currPage}
+		)
+		WHERE RN &gt;= (#{pageCount}*(#{currPage}-1))+1
+	</select>
+
+	<select id="count" resultType="MoneyRecord" parameterType="map">
+		select * from moneyrecord
+		<where>
+			<if test="m_happentime!=null">
+				to_char(m_happentime,'yyyy-MM-dd') = #{m_happentime}
+			</if>
+			and p_userid=#{p_userid}
+		</where>
+	</select>
+	<select id="yxmoney" resultType="double">
+		select nvl(sum(m_yxmoney),0)
+		m_yxmoney
+		from moneyrecord where m_happentime &gt;= trunc(sysdate) and
+		m_happentime &lt; trunc(sysdate + 1) and m_jytype='提现' and
+		p_userid=#{userid}
+	</select>
+
+	<select id="countrow" resultType="MoneyRecord">
+		select * from moneyrecord where
+		p_userid=#{p_userid}
+	</select>
+
+	<insert id="cunchu" parameterType="map">
+		{call
+		bank_deal_pkg.proc_user_chongzhi(#{b_bkmoney},#{b_bkcard},#{p_userid})}
+	</insert>
+	<select id="withdrawList" resultMap="MoneyRecordMap">
+		select m_id from MONEYRECORD where m_jytype ='提现'
+	</select>
+	<select id="wdListPage" resultMap="MoneyRecordMap">
+		select * from
+		(select a.*,rownum
+		rn from(select
+		* from MONEYRECORD where m_jytype ='提现')a where
+		rownum &lt;=
+		#{currPage}*#{pageCount})
+		where rn &gt;=
+		(#{pageCount}*(#{currPage}-1))+1 
+	</select>
+	
+	<select id="sel_bank" parameterType="String" resultType="Bankcard">
+		select * from BANKCARD where bkcard = #{bank_id}
+	</select>
+	
+	<select id="todayList" resultMap="MoneyRecordMap">
+		select * from moneyrecord where m_happentime &gt;= trunc(sysdate) and m_happentime &lt; trunc(sysdate + 1) and m_jytype='提现'
+	</select>
+	<select id="weekList" resultMap="MoneyRecordMap">
+		select * from moneyrecord a where trunc(m_happentime)&gt;=trunc(sysdate,'d')
+and trunc(m_happentime)&lt;= next_day(trunc(sysdate,'d'),7) and m_jytype='提现'
+	</select>
+	<select id="monthList" resultMap="MoneyRecordMap">
+		select * from moneyrecord t      
+where t.m_happentime &gt;=TRUNC(SYSDATE, 'MM')       
+and t.m_happentime&lt;=last_day(SYSDATE) and m_jytype='提现'
+	</select>
+	<select id="lastdayList" resultMap="MoneyRecordMap">
+		select * from moneyrecord where m_happentime &gt;= trunc(sysdate-1) and m_happentime &lt; trunc(sysdate) and m_jytype='提现'
+	</select>
+	<select id="lastweekList" resultMap="MoneyRecordMap">
+		select * from moneyrecord t      
+where t.m_happentime &gt;=(trunc(next_day(sysdate - 8, 1)-6))       
+and t.m_happentime&lt;=trunc(next_day(sysdate - 8, 1)) and m_jytype='提现'
+	</select>
+	<select id="lastmonthList" resultMap="MoneyRecordMap">
+		select * from moneyrecord t      
+where t.m_happentime &gt;=last_day(add_months(sysdate,-2))+1      
+and t.m_happentime&lt;=last_day(add_months(sysdate,-1)) and m_jytype='提现'
+	</select>
+</mapper>

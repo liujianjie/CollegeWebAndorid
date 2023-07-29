@@ -1,0 +1,20 @@
+<!--解決springMVC提交form表单Date类型属性无法自动转换问题，
+要与@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")结合使用，
+如：
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date replytime;
+-->
+<mvc:annotation-driven  conversion-service="conversionService" />
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="registerDefaultFormatters" value="false"/>
+		<property name="formatterRegistrars">
+			<set>
+				<bean class="org.springframework.format.datetime.DateFormatterRegistrar">
+					<property name="formatter" ref="dateFormatter"/>
+				</bean>
+			</set>
+		</property>
+	</bean>
+	<bean id="dateFormatter" class="org.springframework.format.datetime.DateFormatter">
+		<property name="pattern" value="yyyy-MM-dd"/>
+	</bean>

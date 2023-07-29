@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Cars_attendanceDao">
+ 	<resultMap type="com.ht.yfbc.pojo.Cars_attendance" id="cars_attmap">
+ 		<id column="id" property="id"/>
+ 		<result column="userid" property="userid"/>
+ 		<result column="carsid" property="carsid"/>
+ 		<result column="carsstartdate" property="carsstartdate"/>
+ 		<result column="carsarrivedate" property="carsarrivedate"/>
+ 		<result column="warehouseid" property="warehouseid"/>
+ 		<result column="inno" property="inno"/>
+ 	</resultMap>
+ 	 <!-- 查询 -->
+ 	<select id="selCars_att" resultMap="cars_attmap">
+  		select * from cars_attendance
+  	</select>
+  	<!-- 分页查询 -->
+  	<select id="selCars_attPage" parameterType="map" resultType="com.ht.yfbc.pojo.Cars_attendance">
+		 <![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM cars_attendance ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+  </select>
+  <select id="selCount" resultType="java.lang.Integer">
+  	select count(1) from cars_attendance 
+  </select>
+  	<!-- 添加 -->
+  	<insert id="addCars_att" parameterType="cars_attendance">
+      	insert into cars_attendance 
+       		(id,userid,carsid,carsstartdate,carsarrivedate,warehouseid,inno )
+		values 
+			(sys_guid(),#{userid},#{carsid},#{carsstartdate},#{carsarrivedate},#{warehouseid},#{inno})
+  	</insert>
+  	<!-- 删除 -->
+  	<delete id="delcars_att" parameterType="String">
+	delete from cars_attendance where id=#{id}
+	</delete>
+  	<select id="selUsersByCarId" parameterType="String" resultType="users">
+  		select id,username from users where id=(select userid from cars_distribution where carsid=#{carid})
+  	</select>
+  	
+  	 <!-- 根据id查询 -->
+  <select id="selCars_attbyid" parameterType="String" resultType="com.ht.yfbc.pojo.Cars_attendance">
+		select * from cars_attendance where id = #{value}
+	</select>
+	<!-- 修改 -->
+	<update id="updCars_att" parameterType="cars_attendance" >
+		update cars_attendance set
+		userid = #{userid},carsid = #{carsid},carsstartdate =
+		#{carsstartdate},carsarrivedate = #{carsarrivedate},
+		warehouseid =#{warehouseid},inno = #{inno}
+		where id = #{id}
+	</update>
+  	
+</mapper>

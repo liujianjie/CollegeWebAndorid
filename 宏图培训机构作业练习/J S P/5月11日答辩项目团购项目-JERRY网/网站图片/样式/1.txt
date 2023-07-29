@@ -1,0 +1,25 @@
+.single-header h3{
+	font-size:4em;
+	color: #000;
+	text-transform: uppercase;
+	margin-bottom:1em;
+	text-align:center;
+	font-family: 'Squada One', cursive;
+}
+
+
+
+
+
+
+.header-top{
+	background:#D8CA9D;
+	padding: 1em 0;
+}
+
+
+
+
+.header-top {
+  padding: 10px 0 5px;
+}

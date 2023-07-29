@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <select id="sel" >
+	<!--<option value="1">我</option>
+	<option value="2">是</option>-->
+  </select>
+  <br/>
+  <input type="text" id="tx" value="请输入你要创建新增的下拉框的内容" size=30 onfocus="qing(this.value)">
+  <input type="button" value="创建" onclick="chuang();"/>
+  <script>
+	//alert(document.getElementById("sel").options[0].value);//下拉框有下标 0开始 有连个参数 一个是//value 一个是text
+	//alert(document.getElementById("sel").options[0].text);
+	//alert(document.getElementById("sel").options[1].value);
+	//alert(document.getElementById("sel").options[1].text);
+	//创建选项
+	
+	var i=0;
+	function qing(val){
+		if(val!=""&&i==0){
+			document.getElementById("tx").value="";
+			i++;
+		}
+	}
+	
+	function chuang(){
+		var str=document.getElementById("tx").value;
+		if(str!=""){
+			var j=document.getElementById("sel").length;
+			//第一种方法
+			//document.getElementById("sel").options[j]=new Option(str,j);
+			//第二种方法
+			document.getElementById("sel").add(document.createElement("option"));
+			document.getElementById("sel").options[j].text=str;
+			document.getElementById("sel").options[j].value=j;
+
+		}
+		document.getElementById("tx").value="";
+	}
+  </script>
+ </body>
+</html>

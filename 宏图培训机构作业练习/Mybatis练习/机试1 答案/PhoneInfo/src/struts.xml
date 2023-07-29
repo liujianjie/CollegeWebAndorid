@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="infos" class="org.ht.controller.InfoAction"
+			method="infos">
+			<result name="success">infos.jsp</result>
+		</action>
+		<action name="torep" class="org.ht.controller.InfoAction"
+			method="toReplies">
+			<result name="success">toReplies.jsp</result>
+		</action>
+		<action name="addRep" class="org.ht.controller.InfoAction"
+			method="addRep">
+			<result name="success" type="redirectAction">
+				<param name="actionName">torep</param>
+				<param name="infoId">${replies.infoId}</param>
+			</result>
+		</action>
+	</package>
+</struts>    

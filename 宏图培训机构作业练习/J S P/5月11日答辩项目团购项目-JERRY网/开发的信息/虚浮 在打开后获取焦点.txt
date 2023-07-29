@@ -1,0 +1,26 @@
+  	          悬浮框是用DIV实现的，对应代码如下，可以根据需要调整大小、背景：
+<div id="cen" style="DISPLAY: none; FONT-SIZE: 13px; Z-INDEX: 99; BACKGROUND: #ffff00; WIDTH: 200px; POSITION: absolute"></div>
+	<input type="text"  onmouseover="cc(5,50)" onblur="out();">
+	<script>
+		//onmouseover 事件触发的函数
+		function cc(e, message){
+	       cen.innerText = message;
+	       var ttop = e.offsetTop;                     //这里得到指定控件离父容器控件顶部的距离 px
+	       var tleft= e.offsetLeft;                   //这里得到指定控件离父容器控件左边的距离 px
+	       var h = e.clientHeight;                  //这里得到指定控件的高度
+	       var w = e.clientWidth;                  //这里得到指定控件的宽度
+	       var originalE = e;
+	
+	       //这里通过 e = e.offsetParent 操作，一直将e变成document对象，既最高级别的容器；
+	       //这里ttop 和 tleft 就	得到了指定控件距离网页 顶部 和 左部 的距离；
+	       while (e = e.offsetParent){ttop += e.offsetTop; tleft += e.offsetLeft;}
+	       cen.style.display = "";  //层显示
+	       cen.style.top = ttop + h;
+	       cen.style.left= tleft + w - cen.clientWidth; //上面的代码都是将悬浮层调整到指定控件的正下方
+		}
+
+		//onmouseout 事件触发的函数
+		function out(){cen.style.display = "none";}
+ 
+ 
+	</script>

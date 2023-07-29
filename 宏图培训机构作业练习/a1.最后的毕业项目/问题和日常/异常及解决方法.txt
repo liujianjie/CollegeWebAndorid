@@ -1,0 +1,21 @@
+1.无法更新 ("YFB5"."STUDENT"."HOURID") 为 NULL
+
+原因：SET NULL指当删除主表中被引用列的数据时，将子表中相应引用列的值设置为NULL值。SET NULL有个前提就是外键引用列必须可以设置为NULL。
+
+
+2、String 转 Long
+
+String str="222";//整数
+        long l=Long.parseLong(str);
+        System.out.println(l);
+
+
+3、没有找到列
+
+	主表没数据
+
+4.java.lang.reflect.InvocationTargetException
+
+	get映射文件没设置
+
+5.InvocationTargetException get映射文件没设置

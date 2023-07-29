@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- <!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd"> <beans>-->
+	<!-- 注入hibernate  -->
+	<!-- 注入一个datasource数据源 -->
+	<bean id="dSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:orcl</value>
+		</property>
+		<property name="username">
+			<value>scott</value>
+		</property>
+		<property name="password">
+			<value>tiger</value>
+		</property>
+	</bean>
+	
+	<!-- 注入 sessionfactory-->
+	<bean id="sFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<!-- 引入数据源得到sessionfactory -->
+		<property name="dataSource">
+			<ref local="dSource"/>
+		</property>
+		<!-- 配置映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/ht/bean/Informations.hbm.xml</value><!-- 用户 -->
+				<value>com/ht/bean/Replies.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 配置hibernate参数 -->
+		<property name="hibernateProperties">
+			<props>
+			<!-- 配置数据库方言（告诉hibernate链接的是什么数据库） -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9iDialect</prop>
+				<!-- 显示sql -->
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 注入service -->
+</beans>

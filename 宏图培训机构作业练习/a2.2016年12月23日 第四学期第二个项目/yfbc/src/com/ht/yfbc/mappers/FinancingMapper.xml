@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.FinancingDao">
+	<resultMap type="com.ht.yfbc.pojo.Financing" id="financingmap">
+		<id column="id" property="id" />
+		<result column="fintime" property="fintime" javaType="java.util.Date" />
+		<result column="income_money" property="income_money" />
+		<result column="expend_money" property="expend_money" />
+		<result column="profit" property="profit" />
+	</resultMap>
+	
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="JL_GOUWU"
+  id="myeclipse.1461024658789"
+  context-root="/JL_GOUWU"
+  j2ee-spec="5.0"
+  archive="JL_GOUWU.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.PermissionDao">
+
+	<resultMap type="Permission" id="permissionmap">
+		<id column="p_id" property="p_id"/>
+ 		<result column="b_id" property="b_id"/>
+ 		<result column="p_list" property="p_list" />
+	</resultMap>
+ 	
+  	
+  	<select id="selectlistbybid" parameterType="String" resultType="int">
+  		select p_list from permission where b_id = #{b_id}
+  	</select>	
+  	
+  	<delete id="deluserpermission" parameterType="map">
+  		delete from permission 
+  		<where>
+  			<if test="b_id!=null and b_id!=''">
+  				and b_id = #{b_id}
+  			</if>
+  			<if test="p_list!=null and p_list!=''">
+  				and p_list = #{p_list}
+  			</if>
+  		</where>
+  	</delete>
+  	
+  	<insert id="adduserpermission" parameterType="map">
+  		insert into permission(p_id,b_id,p_list) values(sys_guid(),#{b_id},#{p_list})
+  	</insert>
+  	<delete id="delpermissionforuserid" parameterType="String">
+  		delete from PERMISSION where b_id=#{id}
+  	</delete>
+</mapper>

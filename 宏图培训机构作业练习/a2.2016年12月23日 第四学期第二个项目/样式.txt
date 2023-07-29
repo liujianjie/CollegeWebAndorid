@@ -1,0 +1,5 @@
+红： <span  class="btn btn-xs btn-danger"><i class="heart"></i>收藏</span>
+
+绿：<span class="label label-primary">存在</span>
+
+灰：<span class="label label-default">不存在</span>

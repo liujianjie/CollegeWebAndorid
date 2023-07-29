@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.BanmcardDao">
+	<resultMap type="Bankcard" id="bankcard">
+		<id column="bkid" property="bkid" />
+		<result column="bkcard" property="bkcard" />
+		<result column="bktype" property="bktype" />
+		<result column="pcard" property="pcard" />
+		<result column="bkmoney" property="bkmoney" />
+	</resultMap>
+
+	<select id="selbybkcard" parameterType="String" resultType="Bankcard">
+		select * from bankcard where bkcard = #{bankcard}
+	</select>
+	
+	<select id="selbytwo" parameterType="map" resultType="Bankcard">
+		select * from bankcard where bkcard = #{bankcard} and pcard = #{pcard}
+	</select>
+	
+
+</mapper>

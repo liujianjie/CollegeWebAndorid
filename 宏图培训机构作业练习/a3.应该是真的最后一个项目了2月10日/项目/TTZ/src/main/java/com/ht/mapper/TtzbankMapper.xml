@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.TtzbankDao">
+	<resultMap type="Ttzbank" id="ttzmap">
+		<id column="tbid" property="tbid" />
+		<result column="userid" property="userid" />
+		<result column="username" property="username" />
+		<result column="bankcard" property="bankcard" />
+		<result column="banktype" property="banktype" />
+		<result column="idcard" property="idcard" />
+		
+	</resultMap>
+
+	
+	<insert id="addTtzbank" parameterType="Ttzbank">
+		insert into ttzbank values(sys_guid(),#{userid},#{username},#{bankcard},#{banktype},#{idcard})
+	</insert>
+	
+	<select id="seluserBank" parameterType="String" resultType="Ttzbank">
+		select t.*,(select bkmoney from BANKCARD where bkcard=t.bankcard) bkmoney from ttzbank t where t.userid = #{userid}
+	</select>
+	<select id="selBankcard" parameterType="String" resultType="Ttzbank">
+		select * from ttzbank where userid = #{userid}
+	</select>
+	<insert id="withDraw" parameterType="map">
+		{call ttz_deal_pkg.proc_user_withdraw(#{p_user_id},#{p_bankcard},#{p_current_money})}
+	</insert>
+	<delete id="delbankcard" parameterType="String">
+		delete from ttzbank where tbid= #{tbid}
+	</delete>
+</mapper>

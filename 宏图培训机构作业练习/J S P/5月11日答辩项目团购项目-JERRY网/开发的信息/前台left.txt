@@ -1,0 +1,177 @@
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="http://localhost:8080/JL_GOUWU/">
+    
+    <title>My JSP 'top.jsp' starting page</title>
+    <style>
+    	#foot a{text-decoration: none;color: black}
+    	.leftstyle{
+			border-style:solid; 
+			border-width:1px;
+			border-top-color:#f9f9f9;
+			border-bottom-color:#ebebeb;
+			border-right-color:#ebebeb;
+			border-left-color:#ebebeb;
+			background-color:#f9f9f9;
+			height:50px;
+			width:260px;
+
+		}
+		#topfoot a{text-decoration: none;color: white}
+		.allmoldstop{
+			border-style:solid; 
+			border-width:1px;
+			border-top-color:#008080;
+			border-bottom-color:#008080;
+			border-right-color:#008080;
+			border-left-color:#008080;
+			background-color:#008080;
+			height:50px;
+			width:260px;
+
+		}
+		 #wrap {
+  			height:50px;
+  			display:table;
+ 		}
+ 		#content {
+  			vertical-align:middle;
+  			display:table-cell;
+ 		}	
+    </style>
+  </head>
+  
+  <body>
+  	<table width="70%" align="right">
+  		<tr height="50">
+  				<td>
+    				<div id="topfoot" class="allmoldstop">
+    				<div id="wrap">
+  					<div id="content">
+  						<a href=""><b>&nbsp&nbsp全部分类</b></a>
+  					</div>
+  					</div>
+  					</div>
+  				</td>
+  		</tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=1" target="main"><font size="4"><b>&nbsp&nbsp美食</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=2" target="main"><font size="4"><b>&nbsp&nbsp电影</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=3" target="main"><font size="4"><b>&nbsp&nbsp酒店/客栈</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=4" target="main"><font size="4"><b>&nbsp&nbspKTV</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=5" target="main"><font size="4"><b>&nbsp&nbsp休闲娱乐</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=6" target="main"><font size="4"><b>&nbsp&nbsp周边游/旅游</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=7" target="main"><font size="4"><b>&nbsp&nbsp生活服务</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=8" target="main"><font size="4"><b>&nbsp&nbsp购物</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+	  		<tr>
+	  			<td>
+		  		    <div id="foot" class="leftstyle">
+    				<div id="wrap">
+  					<div id="content">
+			  			<a href="bottom?method=qtlist&id=9" target="main"><font size="4"><b>&nbsp&nbsp丽人</b></font></a>
+			  		</div>
+  					</div>
+  					</div>
+			  	</td>
+		  	 </tr>
+	  	
+
+  	</table>
+  	<br/>
+  	
+  </body>
+</html>

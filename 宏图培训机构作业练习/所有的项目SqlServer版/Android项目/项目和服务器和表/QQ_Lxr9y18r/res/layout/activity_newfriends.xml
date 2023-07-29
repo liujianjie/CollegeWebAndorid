@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#F6F6F7">
+    <RelativeLayout 
+        android:id="@+id/newfriends_rl_top"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+        android:background="#12B9F6">
+        <TextView 
+            android:id="@+id/newfriends_rl_tv1_lxr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:drawableLeft="@drawable/zhen_zjiantou"/>
+        <TextView 
+            android:id="@+id/newfriends_rl_tv2_xpy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新朋友"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"/>
+        <TextView 
+            android:id="@+id/newfriends_rl_tv3_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+	</RelativeLayout>
+	
+	<ListView 
+	    android:id="@+id/newfriends_lv"
+	    android:layout_height="match_parent"
+	    android:layout_width="match_parent"
+	    android:layout_below="@id/newfriends_rl_top"
+	    android:background="#ffffff">
+        
+	</ListView>
+	
+</RelativeLayout>

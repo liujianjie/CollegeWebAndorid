@@ -1,0 +1,30 @@
+编写Schema文件，定义实现以下xml文档：
+<employees>
+	<employee id="e1001">
+		<name>员工名册</ename>
+		<age>年龄</age>
+		<sex>性别</sex>
+		<country
+>中国</country
+>
+		<height>身高</height>
+		<联系信息>
+			我的联系信息
+			<email>Email</email>
+			<phone>13888888888</phone>
+			<address>地址</address>	
+		</联系信息>		
+	</employee>
+</employyes>
+
+要求：
+	1、name 为字符串类型。
+	2、age 为整形，而且在0-120岁之间。
+	3、sex 字符串类型,只能填男或者女，并设置默认值为男。
+	4、country
+为字符串类型，并设置固定值中国。
+	5、height为浮点数类型
+	6、联系信息为混合的复合类型
+	7、email为字符串类型，要求验证格式
+	8、phone为字符串类型要求符合11位手机号码
+	9、address为字符串类型，可以选择赣州、广州、杭州、苏州等城市。

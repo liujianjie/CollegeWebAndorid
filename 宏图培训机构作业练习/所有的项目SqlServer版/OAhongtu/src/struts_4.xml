@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="c" namespace="/lcy" extends="json-default">
+		<action name="*" class="com.ht.action.CaiwuAction" method="{1}">
+			<result name="totable1">/caiwu/table1.jsp</result>
+			<result name="flush_table1" type="redirect">shouru.action</result>
+			<result name="to_upd1">/caiwu/upd1.jsp</result>
+			
+			<result name="totable2">/caiwu/table2.jsp</result>
+			<result name="flush_table2" type="redirect">zhichu.action</result>
+			<result name="to_upd2">/caiwu/upd2.jsp</result>
+			
+			<result name="totable(xuefei)">/caiwu/table(xuefei).jsp</result>
+			<result name="flush_table(xuefei)" type="redirect">xuefei.action</result>
+		
+			<!-- 工资 -->
+			<result name="slist">/caiwu/b.jsp</result>
+			<result name="tosalary">/caiwu/table(salary).jsp</result>
+			<result name="flush_salary" type="redirect">selSalay.action</result>
+			<result name="salary_add">/caiwu/add(salary).jsp</result>
+			<result name="tosalary_xiangxi">/caiwu/table(salary).jsp</result>
+			<result name="flist">/caiwu/fafang.jsp</result>
+			
+			<!-- 去添加学费 -->
+			<result name="toadd_xuefei">/caiwu/add(xuefei).jsp</result>
+			<!-- 去修改工资 -->
+			<result name="toupd_salary">/caiwu/upd(salary).jsp</result>
+			<!-- 刷新本月工资表 -->
+			<result name="flush_salary(NowYearMonth)" type="redirect">selSalaryNowYearMonth.action</result>
+		</action>
+		
+		<!-- 局部刷新 -->
+		<action name="json" class="com.ht.action.CaiwuAction">
+			<result type="json"></result>
+		</action>
+	</package>
+	
+	
+
+	
+</struts>

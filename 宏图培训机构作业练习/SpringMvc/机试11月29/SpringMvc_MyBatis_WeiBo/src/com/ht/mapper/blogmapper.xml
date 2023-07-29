@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.BlogDaoI">
+    <resultMap type="blog" id="blogmap">
+  	    <id property="b_id" column="b_id"/>
+  	    <result property="b_content" column="b_content"/>
+ 	    <result property="b_publishtime" column="b_publishtime" javaType="java.util.Date"/>
+ 	    <result property="b_userid" column="b_userid"/>
+ 	    <association property="users" column="b_userid" select="selusersofid"></association>
+  	</resultMap>
+    
+    <!-- 级联查询 用户-->
+    <select id="selusersofid" parameterType="int" resultType="users">
+        select * from users where u_id = #{a} 
+    </select>
+    
+  	<select id="selbloglist" parameterType="map" resultMap="blogmap">
+  	  	select * from(select rownum r,s.* from blog s where rownum &lt; (#{pagecount}*#{currpage})+1 order by b_publishtime desc) where r &gt; (#{currpage}-1)*#{pagecount}
+  	</select>
+  	
+  	<!-- 大小 -->
+  	<select id="selbloglistcount" resultType="int">
+		select count(*) from blog   	    
+  	</select>
+  	
+  	<select id="seluserblogcount" parameterType="int" resultType="int">
+		select count(*) from blog  where  b_userid = #{id}	    
+  	</select>
+  	
+  	<!-- 个人微博 -->
+  	<select id="seluserblog" parameterType="map" resultMap="blogmap">
+  	    select * from(select rownum r,s.* from blog s where rownum &lt; (#{pagecount}*#{currpage})+1 and b_userid = #{id} order by b_publishtime desc) where r &gt; (#{currpage}-1)*#{pagecount}
+  	</select>
+  	
+  	<insert id="addblog" parameterType="map">
+  	    insert into blog values(seq_blog.nextval,#{text},sysdate,#{id})
+  	</insert>
+  	
+  	<delete id="delblog" parameterType="int">
+  	    delete blog where b_id = #{a}
+  	</delete>
+  	
+</mapper>

@@ -1,0 +1,85 @@
+Connected to Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 
+Connected as scott@orcl
+ 
+SQL> conn sys/hongtu as sysdba;
+Connected to Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 
+Connected as sys AS SYSDBA
+ 
+SQL> grant  create session to test;
+ 
+grant  create session to test
+ 
+ORA-01917: 用户或角色 'TEST' 不存在
+ 
+SQL> grant create session to "刘建杰"
+  2  ；
+  3  ;
+ 
+grant create session to "刘建杰"
+；
+ 
+ORA-00911: 无效字符
+ 
+SQL> grant create session to "刘建杰"
+  2  ；
+  3  ;
+ 
+grant create session to "刘建杰"
+；
+ 
+ORA-00911: 无效字符
+ 
+SQL> grant create session to "刘建杰";
+ 
+Grant succeeded
+ 
+SQL> grant create table to 刘建杰；
+  2  ；
+  3  ;
+ 
+grant create table to 刘建杰；
+；
+ 
+ORA-00911: 无效字符
+ 
+SQL> grant create table to 刘建杰;
+ 
+Grant succeeded
+ 
+SQL> grant select any to 刘建杰;
+ 
+grant select any to 刘建杰
+ 
+ORA-00990: 权限缺失或无效
+ 
+SQL> grant select any table to 刘建杰；
+  2  ;
+ 
+grant select any table to 刘建杰；
+ 
+ORA-00911: 无效字符
+ 
+SQL> grant select any table to 刘建杰;
+ 
+Grant succeeded
+ 
+SQL> grant unlimited tablespace to 刘建杰;
+ 
+Grant succeeded
+ 
+SQL> grant create user to 刘建杰 with admin option；
+  2  ;
+ 
+grant create user to 刘建杰 with admin option；
+ 
+ORA-00911: 无效字符
+ 
+SQL> grant create user to 刘建杰 with admin option;
+ 
+Grant succeeded
+ 
+SQL> grant create session to 刘建杰 with admin option;
+ 
+Grant succeeded
+ 
+SQL> 

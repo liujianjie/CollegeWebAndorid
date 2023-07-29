@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+ </head>
+
+ <body>
+  <font id="fnt"></font>
+  <span id="spa"></span>
+  <script>
+	//临时定时器
+	//setTimeout("alert('欢迎进来')",100);
+	
+	//永久定时器
+	//setInterval("alert('欢迎')",100);
+	 //永久定时器
+	//setInterval("time()",1000);
+	function timea(){
+		var d=new Date();
+		var h,m,s,sum;
+		h=d.getHours();
+		m=d.getMinutes();
+		s=d.getSeconds();
+		var sum=h+":"+m+":"+s;
+		document.getElementById("fnt").innerHTML=sum;
+		//setTimeout("time()",1000);
+	}
+	var tim=null;
+	function star(){
+		tim=setInterval("timea()",1000);
+	}
+	function stop(){
+		clearInterval(tim);
+	}
+	
+  </script>
+  	<input type="button" value="开始" onclick="star();">
+		
+	<input type="button" value="停止" onclick="stop();">
+ </body>
+</html>

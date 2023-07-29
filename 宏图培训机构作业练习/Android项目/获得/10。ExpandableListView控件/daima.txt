@@ -1,0 +1,9 @@
+<ExpandableListView 
+        android:id ="@+id/lianxiren_lv"   
+	    android:layout_width ="match_parent"   
+	    android:layout_height ="wrap_content"
+	    android:background="#ffffff"   
+        android:layout_below="@id/lianxiren_ll2_top3"
+        android:layout_marginTop="15dp">
+	    
+     </ExpandableListView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.PermissionsDao">
+  <resultMap type="com.ht.yfbc.pojo.Permissions" id="permissionsmap">
+  	<id column="id" property="id" />
+  	<result column="userid" property="userid" />
+  	<result column="lmtlist" property="lmtlist" />
+  	
+  </resultMap>
+  
+  <select id="selPermissionsList"  resultType="com.ht.yfbc.pojo.Permissions">
+  	select * from permissions
+  </select>
+  <select id="selPermissionsByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+  	select lmtlist from permissions where userid=#{userid}
+  </select>
+  
+</mapper>

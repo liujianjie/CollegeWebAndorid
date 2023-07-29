@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="e" namespace="/xiebaolei" extends="json-default">
+		<action name="*" class="com.ht.action.TongZhiAction" method="{1}">
+			<result name="totongzhi">/tongzhi/tongzhi.jsp</result>
+			
+			<!-- 查看学生、员工通知详情 -->
+			<result name="totongzhi2">/tongzhi/tongzhi2.jsp</result>
+			
+			<result name="flush_tongzhi1" type="redirect">list1.action</result>
+			<result name="flush_tongzhi2" type="redirect">list2.action</result>
+			
+			<result name="release">/tongzhi/release.jsp</result>
+			<!-- 发布成功 -->
+			<result name="chenggong">/tongzhi/chenggong.jsp</result>
+			
+			<result name="flush_release" type="redirect">release.action</result>
+			
+			<result name="tongzhi_upd">/tongzhi/TongZhiUpd.jsp</result>
+			
+			<result name="totongzhiget">/tongzhi/tongzhiGet.jsp</result>
+			<result name="details">/tongzhi/details.jsp</result>
+			<result name="addpage">/tongzhi/TongZhiadd.jsp</result>
+		</action>
+		
+		<action name="json" class="com.ht.action.TongZhiAction">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

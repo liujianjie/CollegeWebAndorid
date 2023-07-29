@@ -1,0 +1,4 @@
+sheet.setDefaultRowHeightInPoints(10);//设置缺省列高
+sheet.setDefaultColumnWidth(20);//设置缺省列宽
+//1.用来设置备注的宽度 (指定哪个单元格)
+			sheet.setColumnWidth(row48.getColumnIndex(),180 * 50);

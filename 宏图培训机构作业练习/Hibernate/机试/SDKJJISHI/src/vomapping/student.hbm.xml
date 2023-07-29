@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="vo.StudentVo" table="hbntjs_student">
+ 		<id name="stu_id" column="stu_id" type="java.lang.Integer">
+ 			<generator class="sequence">
+ 				<param name="sequence">HBNT_JISHI</param>
+ 			</generator>
+ 		</id>
+ 		<property name="stu_name" type="java.lang.String"></property>
+ 		
+ 		<property name="stu_age" type="java.lang.Integer"></property>
+ 		
+ 		<property name="stu_sex" type="java.lang.String"></property>
+ 		
+ 		<property name="stu_desc" type="java.lang.String"></property>
+ 		
+ 		<property name="stu_aihao" type="java.lang.String"></property>
+ 		
+ 		<property name="stu_city" type="java.lang.String"></property>
+ 	</class>
+ </hibernate-mapping>

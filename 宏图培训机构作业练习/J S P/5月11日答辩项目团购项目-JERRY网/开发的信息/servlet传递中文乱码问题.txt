@@ -1,0 +1,6 @@
+页面提交的url为:
+leavesp?work=部门主管审批
+ 
+后台处理:
+String inStr=request.getParameter("work ");
+String outStr = new String(inStr.getBytes("iso-8859-1"),"UTF-8");

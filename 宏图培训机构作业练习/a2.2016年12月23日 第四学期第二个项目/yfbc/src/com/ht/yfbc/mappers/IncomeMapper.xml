@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.IncomeDao">
+	<resultMap type="com.ht.yfbc.pojo.Income" id="incomemap">
+		<id column="id" property="id" />
+		<result column="inctime" property="inctime" javaType="java.util.Date" />
+		<result column="types" property="types" />
+		<result column="money" property="money" />
+	</resultMap>
+	<insert id="addIncome" parameterType="income">
+		insert into income values(sys_guid(),#{inctime},#{types},#{money})
+	</insert>
+	<select id="selIncomeListByMap" parameterType="map" resultType="income">
+		select * from income in
+		<where>
+			<if test="inctime!=null and inctime!=''">
+				and to_char(in.inctime,'yyyy-MM')=#{inctime}
+			</if>
+		</where>
+	</select>
+
+	<select id="selIncomeList" resultType="com.ht.yfbc.pojo.Income">
+		select * from income order by inctime desc
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="findIncomeList" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Income">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM income order by inctime desc) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+	</select>
+	<select id="selCount" resultType="java.lang.Integer">
+		select count(1) from income
+	</select>
+
+	<delete id="delIncome" parameterType="String">
+		delete from income where
+		id=#{id}
+	</delete>
+
+	<update id="updIncome" parameterType="com.ht.yfbc.pojo.Income">
+		update income set inctime =
+		#{inctime},types = #{types},money =#{money} where id = #{id}
+	</update>
+	
+	<select id="selincome" parameterType="map" resultType="java.lang.Double">
+		select sum(money) from income inc where to_char(inc.inctime,'yyyy-MM')=#{inctime}
+	</select>
+</mapper>

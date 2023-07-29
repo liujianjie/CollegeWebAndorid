@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+	function check(){
+		var sum1=document.getElementById("tx1").value;
+		var sum2=document.getElementById("tx2").value;
+		var sf=document.getElementById("se").value;
+		var sum;
+		if(sum1==""||isNaN(sum1)){
+			alert("请正确输入第一位数");
+			document.getElementById("tx1").value="";
+		}else if(sum2==""||isNaN(sum2)){
+			alert("请正确输入第二位数");
+			document.getElementById("tx2").value="";
+		}else{
+			sum1=parseInt(sum1);
+			sum2=parseInt(sum2);
+			switch(sf){
+				case '+':
+					sum=sum1+sum2;
+					break;
+				case '-':
+					sum=sum1-sum2;
+					break;
+				case '*':
+					sum=sum1*sum2;
+					break;
+				case '/':
+					sum=sum1/sum2;
+					break;
+			}
+			document.getElementById("tx3").value=sum;
+		}
+
+	}
+  </script>
+ </head>
+
+ <body>
+	<h1 align="center">计算器</h1>  
+	<hr color="blue"/>
+	<input type="text" size="5" id="tx1"/>
+	<select id="se">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" size="5" id="tx2"/> =
+	<input type="text" id="tx3"/>
+	<input type="button" value="计算" onclick="check();"/>
+ </body>
+</html>

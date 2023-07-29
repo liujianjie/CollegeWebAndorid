@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="mform" type="form.EmpForm"></form-bean>
+		<form-bean name="eform" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="emp_id" type="java.lang.String"></form-property>
+			<form-property name="emp_name" type="java.lang.String"></form-property>
+			<form-property name="emp_sex" type="java.lang.String"></form-property>
+			<form-property name="emp_salary" type="java.lang.String"></form-property>
+			<form-property name="join_date" type="java.lang.String"></form-property>
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<!-- name指定动态表单好了 -->
+		<action path="/dis" type="action.DisAction" parameter="method" name="eform"> 
+		
+		</action>
+	</action-mappings>
+
+</struts-config>

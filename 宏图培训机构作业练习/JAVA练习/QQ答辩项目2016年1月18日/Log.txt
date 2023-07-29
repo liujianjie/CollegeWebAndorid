@@ -1,0 +1,170 @@
+0:ƒVƒXƒeƒ€‚Ìî•ñ‚ðo—Í‚µ‚Ü‚·
+0:	‚c‚wƒ‰ƒCƒuƒ‰ƒŠ Ver2.23
+0:	‚n‚r  WindowsVista ( Build 7601 Service Pack 1 )
+100:	‚b‚o‚t“®ì‘¬“xF‘å‘Ì1.91GHz
+100:	‚l‚l‚w–½—ß‚ðŽg—p‚µ‚Ü‚·
+100:	‚b‚o‚tƒxƒ“ƒ_FGenuineIntel
+101:	‚b‚o‚t–¼FIntel(R) Core(TM) i3-5010U CPU @ 2.10GHz
+101:‚b‚n‚l‚Ì‰Šú‰»... ¬Œ÷‚µ‚Ü‚µ‚½
+105:ƒƒ‚ƒŠ‘—Ê:3995.38MB  ‹ó‚«ƒƒ‚ƒŠ—Ìˆæ:1540.95MB 
+105:ƒ^ƒCƒ}[‚Ì¸“x‚ðŒŸ¸‚µ‚Ü‚·
+105:¸“xŒ‹‰Ê XV‰ñ” ƒ}ƒ‹ƒ`ƒƒfƒBƒAƒ^ƒCƒ}[F0  ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[F60
+106: ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[‚ðŽg—p‚µ‚Ü‚· ƒ^ƒCƒ}[•ª‰ð”\ : 2046.074000 KHz 
+106: ƒ\ƒtƒg‚Ì“ñd‹N“®ŒŸ¸... “ñd‹N“®‚Í‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ‚Å‚µ‚½
+106:ƒEƒCƒ“ƒhƒEƒNƒ‰ƒX‚ð“o˜^‚µ‚Ü‚·... “o˜^‚É¬Œ÷‚µ‚Ü‚µ‚½
+107:ƒEƒCƒ“ƒhƒEƒ‚[ƒh‹N“®—p‚ÌƒEƒCƒ“ƒhƒE‚ðì¬‚µ‚Ü‚·
+240:‚h‚l‚d‚ð–³Œø‚É‚µ‚Ü‚µ‚½
+441:ƒEƒCƒ“ƒhƒEƒXƒ^ƒCƒ‹‚ðƒEƒCƒ“ƒhƒEƒ‚[ƒh—p‚É•ÏX‚µ‚Ü‚·... Š®—¹
+442:DirectInputŠÖŒW‰Šú‰»ˆ—
+442:	DirectInput7 ‚ÌŽæ“¾’†... ¬Œ÷
+450:		ˆø‚«‘±‚«‰Šú‰»ˆ—... ‰Šú‰»¬Œ÷
+451:	ƒWƒ‡ƒCƒpƒbƒh‚Ì‰Šú‰»... 
+454:	ƒWƒ‡ƒCƒpƒbƒh‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+454:	ƒ}ƒEƒXƒfƒoƒCƒX‚Ì‰Šú‰»... ‰Šú‰»¬Œ÷
+455:	ƒL[ƒ{[ƒhƒfƒoƒCƒX‚Ì‰Šú‰»... ‰Šú‰»¬Œ÷
+457:DirectInput ŠÖ˜A‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+457:DirectSound ‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+457:DirectSound ƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌŽæ“¾‚ðs‚¢‚Ü‚·....  ¬Œ÷
+459:ˆø‚«‘±‚«ƒCƒ“ƒ^[ƒtƒF[ƒX‚Ì‰Šú‰»ˆ—...  ¬Œ÷
+588:	DirectSound ƒfƒoƒCƒX‚ð—ñ‹“‚µ‚Ü‚·
+589:		ƒ‚ƒWƒ…[ƒ‹–¼:                 ƒhƒ‰ƒCƒo‹Lq:Ö÷ÉùÒôÇý¶¯³ÌÐò 
+589:		ƒ‚ƒWƒ…[ƒ‹–¼:{0.0.0.00000000}.{3e004c4d-bfa8-40da-ad9f-0ba529c0bc67}  ƒhƒ‰ƒCƒo‹Lq:ÑïÉùÆ÷ (Conexant SmartAudio HD) 
+589:	Å‘åƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg:200.00KHz Å¬ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg:0.10KHz 
+590:	‘ƒTƒEƒ“ƒhƒƒ‚ƒŠ—Ìˆæ:0.00KB ‹ó‚«ƒTƒEƒ“ƒhƒƒ‚ƒŠ—Ìˆæ:0.00KB 
+
+590:	—˜—p‰Â”\ƒTƒ“ƒvƒŠƒ“ƒO¸“x
+590:	 ƒvƒ‰ƒCƒ}ƒŠ ‚P‚Ubit = OK  ‚Wbit = OK 
+590:	 ƒZƒJƒ“ƒ_ƒŠ ‚P‚Ubit = OK  ‚Wbit = OK 
+
+591:	—˜—p‰Â”\ƒ`ƒƒƒ“ƒlƒ‹
+591:	 ƒvƒ‰ƒCƒ}ƒŠ MONO = OK  STEREO = OK 
+591:	 ƒZƒJƒ“ƒ_ƒŠ MONO = OK  STEREO = OK 
+
+592:DirectSound ‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+592:DirectDraw ŠÖ˜A‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+592:	DirectDraw ƒIƒuƒWƒFƒNƒg‚ÌŽæ“¾‚ðs‚¢‚Ü‚·....  ¬Œ÷
+596:	ˆø‚«‘±‚«‰Šú‰»ˆ—... ‰Šú‰»‚É¬Œ÷‚µ‚Ü‚µ‚½
+617:	ƒrƒfƒIƒJ[ƒh‚Ìî•ñ
+618:		‰æ–Êƒ‚[ƒh•ÏXˆ—‚ðŠJŽn‚µ‚Ü‚·
+678:			‰æ–Êƒ‚[ƒh‚Ì•ÏXˆ—‚ðŠJŽn‚µ‚Ü‚· 480 x 420  16 bit 
+678:				ƒEƒCƒ“ƒhƒEƒ‚[ƒh‚É‚µ‚Ü‚·
+678:			‰æ–Êƒ‚[ƒh‚Ì•ÏX‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½ 
+679:			ƒJƒ‰[î•ñ
+679:				A:00000000  B:00ff0000  G:0000ff00  B:000000ff
+679:			ƒEƒCƒ“ƒhƒEƒXƒ^ƒCƒ‹‚ðƒEƒCƒ“ƒhƒEƒ‚[ƒh—p‚É•ÏX‚µ‚Ü‚·... Š®—¹
+680:			o—Í‰æ–Ê—p‚Ì DirectDrawSurface ‚ðì¬‚µ‚Ü‚·
+687:				ŠeƒXƒNƒŠ[ƒ“ƒƒ‚ƒŠ‚Ì”z’uˆÊ’u
+687:					PrimaryBuffer : VIDEOMEMORY  
+688:					BaskBuffer : VIDEOMEMORY  
+688:			o—Í‰æ–Ê—p‚Ì DirectDrawSurface ‚Ìì¬‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+688:			Direct3D ŠÖ˜A‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+688:			‚c‚‰‚’‚…‚ƒ‚”‚R‚cƒIƒuƒWƒFƒNƒg‚ðŽæ“¾‚µ‚Ü‚·
+690:			‚c‚‰‚’‚…‚ƒ‚”‚R‚cƒIƒuƒWƒFƒNƒg‚ðŽæ“¾‚µ‚Ü‚µ‚½
+690:			‚R‚cƒfƒoƒCƒX‚ðì¬‚µ‚Ü‚·... ‚R‚cƒfƒoƒCƒX‚Ìì¬‚É¬Œ÷‚µ‚Ü‚µ‚½
+692:				ƒeƒNƒXƒ`ƒƒÅ‘å•:8192 Å¬•:1 
+692:				•`‰æ§ŒÀ: D_D3DPTEXTURECAPS_POW2 = 0  D_D3DPTEXTURECAPS_SQUAREONLY = 0 
+692:				ƒeƒNƒXƒ`ƒƒƒsƒNƒZƒ‹ƒtƒH[ƒ}ƒbƒg
+692:					’ÊíƒOƒ‰ƒtƒBƒbƒN—p
+693:						 BIT:16  RED:5  GREEN:6  BLUE:5 
+693:						 RED:00f800 GREEN:0007e0 BLUE:00001f 
+
+693:						 BIT:32  RED:8  GREEN:8  BLUE:8 
+693:						 RED:ff0000 GREEN:00ff00 BLUE:0000ff 
+
+693:					ƒAƒ‹ƒtƒ@ƒ`ƒƒƒ“ƒlƒ‹•t‚«ƒOƒ‰ƒtƒBƒbƒN—p
+693:						 BIT:16  ALPHA:4  RED:4  GREEN:4  BLUE:4 
+693:						 ALPHA:0000f000 RED:00000f00 GREEN:000000f0 BLUE:0000000f 
+
+694:						 BIT:32  ALPHA:8  RED:8  GREEN:8  BLUE:8 
+694:						 ALPHA:ff000000 RED:00ff0000 GREEN:0000ff00 BLUE:000000ff 
+
+694:			Direct3D ŠÖ˜A‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+694:			ƒOƒ‰ƒtƒBƒbƒNŠÇ—Œn‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+695:				‚R‚cƒOƒ‰ƒtƒBƒbƒN•`‰æ‹@”\‚ðŽg—p‚µ‚Ü‚·
+709:				ƒtƒHƒ“ƒg‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+711:				ƒtƒHƒ“ƒg‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+711:			ƒOƒ‰ƒtƒBƒbƒNŠÇ—Œn‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+842:			ƒT[ƒtƒFƒXŠÔ“]‘—‚É‚Í BltFast ‚ðŽg—p‚µ‚Ü‚·
+842:			BitBlt:125502ƒÊs   BltFast:3851ƒÊs
+843:			ƒXƒLƒƒƒ“ƒ‰ƒCƒ“‚Ì”:768
+
+972:			‚PƒtƒŒ[ƒ€“–‚½‚è‚ÌŽžŠÔ‚Í 17 msec‚Å‚·
+972:				Tri00:17 msec
+972:				Tri01:17 msec
+973:				Tri02:16 msec
+973:				Tri03:17 msec
+973:		‰æ–Êƒ‚[ƒh•ÏXˆ—‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1008:	DirectDraw ŠÖ˜A‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1010:	•¶ŽšƒR[ƒhƒoƒbƒtƒ@‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·... Š®—¹‚µ‚Ü‚µ‚½
+1114:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/player.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1114:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/brock.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1115:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/item.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1115:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/teki.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1116:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/haikei.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1116:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/brock2.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1116:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/omake.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1117:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/omake2.png ‚ª‚ ‚è‚Ü‚¹‚ñ
+1117:	ƒOƒ‰ƒtƒBƒbƒNƒtƒ@ƒCƒ‹ res/syobon3.PNG ‚ª‚ ‚è‚Ü‚¹‚ñ
+1117:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FBGM/titerman.mp3
+1117:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FBGM/titerman.mp3
+1118:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FBGM/spelunk.mp3
+1118:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FBGM/spelunk.mp3
+1118:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FBGM/star4.mp3
+1118:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FBGM/star4.mp3
+1118:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FBGM/makaimura.mp3
+1119:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FBGM/makaimura.mp3
+1119:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FBGM/puyo.mp3
+1119:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FBGM/puyo.mp3
+1119:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/jump.mp3
+1119:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/jump.mp3
+1120:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/brockbreak.mp3
+1120:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/brockbreak.mp3
+1120:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/coin.mp3
+1120:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/coin.mp3
+1120:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/humi.mp3
+1121:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/humi.mp3
+1121:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/koura.mp3
+1122:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/koura.mp3
+1123:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/dokan.mp3
+1123:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/dokan.mp3
+1123:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/brockkinoko.mp3
+1123:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/brockkinoko.mp3
+1124:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/powerup.mp3
+1124:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/powerup.mp3
+1124:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/kirra.mp3
+1124:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/kirra.mp3
+1125:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/goal.mp3
+1125:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/goal.mp3
+1125:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/death.mp3
+1125:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/death.mp3
+1126:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/Pswitch.mp3
+1126:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/Pswitch.mp3
+1126:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/jumpBlock.mp3
+1126:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/jumpBlock.mp3
+1127:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/hintBlock.mp3
+1127:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/hintBlock.mp3
+1127:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/4-clear.mp3
+1127:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/4-clear.mp3
+1127:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/allclear.mp3
+1128:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/allclear.mp3
+1128:	‰E‹L‚Ìƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½FSE/tekifire.mp3
+1128:	‰E‹L‚Ì‰¹ºƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ÉŽ¸”s‚µ‚Ü‚µ‚½_1FSE/tekifire.mp3
+1182:	ƒEƒCƒ“ƒhƒE‚ð•Â‚¶‚æ‚¤‚Æ‚µ‚Ä‚¢‚Ü‚·
+1186:	ƒEƒCƒ“ƒhƒE‚ª”jŠü‚³‚ê‚æ‚¤‚Æ‚µ‚Ä‚¢‚Ü‚·
+1186:	ƒ\ƒtƒg‚ðI—¹‚·‚é€”õ‚ª®‚¢‚Ü‚µ‚½
+1192:	DirectDraw ŠÖ˜A‚ÌI—¹ˆ—‚ð‚¨‚±‚È‚¢‚Ü‚·
+1193:		ƒtƒHƒ“ƒg‚Ì‰Šú‰»‚ðs‚¢‚Ü‚·
+1194:		ƒtƒHƒ“ƒg‚Ì‰Šú‰»‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1195:		ƒOƒ‰ƒtƒBƒbƒNŠÇ—Œn‚ÌI—¹ˆ—‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1195:		Direct3D ŠÖ˜A‚ÌI—¹ˆ—‚ðs‚¢‚Ü‚·
+1196:		‚R‚cƒfƒoƒCƒX‚Ìíœ‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1196:		Direct3D ŠÖ˜A‚ÌI—¹ˆ—‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1196:		ƒƒCƒ“ƒT[ƒtƒFƒX‚ð”jŠü‚ð‚µ‚Ü‚·... Š®—¹‚µ‚Ü‚µ‚½
+1196:		‚c‚‰‚’‚…‚ƒ‚”‚c‚’‚‚—ƒIƒuƒWƒFƒNƒg‚ð‰ð•ú‚µ‚Ü‚·
+1198:		‚c‚‰‚’‚…‚ƒ‚”‚c‚’‚‚—ƒIƒuƒWƒFƒNƒg‚ð‰ð•ú‚µ‚Ü‚µ‚½
+1198:	DirectDraw ŠÖ˜A‚ÌI—¹ˆ—‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1198:	DirectInput ŠÖ˜A‚ÌI—¹ˆ—... Š®—¹
+1223:	DirectSound ‚ÌI—¹ˆ—‚Í³í‚ÉI—¹‚µ‚Ü‚µ‚½
+1224:	
+1224:	Alloc memory dump	Total size:0(0.000kb)  Alloc num:0
+1224:	

@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <title>不知道 </title>
+
+ </head>
+
+ <body onload="time();">
+	<span id="sp"></span>
+	<script>
+	//不断的获取当前时间 所以封装
+	function time(){
+		var date=new Date();
+		var h,min,s;
+		h=date.getHours()+"";
+		min=date.getMinutes()+"";
+		s=date.getSeconds()+"";
+		var num=h+":"+min+":"+s;
+		document.getElementById("sp").innerHTML=num;
+		setTimeout("time()",1000);
+	}
+	</script>
+ </body>
+</html>

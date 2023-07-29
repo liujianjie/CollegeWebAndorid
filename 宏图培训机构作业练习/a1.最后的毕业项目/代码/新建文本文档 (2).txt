@@ -1,0 +1,80 @@
+<!--											<c:forEach begin="1" end="10" var="xs" step="1">-->
+<!--												<tr>-->
+<!--													<td>-->
+<!--														<select name="classids"-->
+<!--																data-rel="chosen" style="width:90px;">-->
+<!--															<c:forEach items="${clslist}" var="cls">-->
+<!--																<option value="${cls.classid }">${cls.classname }</option>-->
+<!--															</c:forEach>-->
+<!--														</select>-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<select name="hourids"-->
+<!--																data-rel="chosen" style="width: 70px;">-->
+<!--															<c:forEach items="${hrslist}" var="hrs">-->
+<!--																<option value="${hrs.hourid }">${hrs.hourname }</option>-->
+<!--															</c:forEach>-->
+<!--														</select>-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intennames"-->
+<!--																class="form-control" -->
+<!--																style="width: 80px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<select name="intensexs"-->
+<!--																data-rel="chosen" style="width: 60px;">-->
+<!--															<option value="ÄÐ" selected="selected">ÄÐ</option>-->
+<!--															<option value="Å®">Å®</option>-->
+<!--														</select>-->
+<!--													</td>-->
+<!--														-->
+<!--													<td>-->
+<!--														<select name="intenages"-->
+<!--																data-rel="chosen" style="width: 60px;">-->
+<!--															<c:forEach begin="15" end="30" var="xs" step="1">-->
+<!--																<option value="${xs }">-->
+<!--																	${xs }-->
+<!--																</option>-->
+<!--															</c:forEach>-->
+<!--														</select>-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intenbirs"-->
+<!--																class="form-control" -->
+<!--																style="width: 100px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intenfats"-->
+<!--																class="form-control" -->
+<!--																style="width: 80px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intentels"-->
+<!--																class="form-control" -->
+<!--																style="width: 115px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intenfatels"-->
+<!--																class="form-control" -->
+<!--																style="width: 115px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="text" name="intenaddrs"-->
+<!--																class="form-control" -->
+<!--																style="width: 100px" >-->
+<!--													</td>-->
+<!--													<td>-->
+<!--														<input type="file" name="files"-->
+<!--																-->
+<!--																style="width: 75px" >-->
+<!--													</td>-->
+<!--													-->
+<!--													<td>-->
+<!--														<input type="text" name="intentimes"-->
+<!--																class="form-control" -->
+<!--																style="width: 100px" >-->
+<!--													</td>-->
+<!--												</tr>-->
+<!--											-->
+<!--											</c:forEach>-->

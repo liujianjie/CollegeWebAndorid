@@ -1,0 +1,27 @@
+insert into out_storage values(sys_guid(),sys_guid(),sysdate,sys_guid(),sys_guid(),sys_guid(),sys_guid(),1,1,sys_guid(),10)
+select sys_guid() from dual
+select sysdate from dual
+
+insert into picking_list values(sys_guid(),sys_guid(),10,10);
+insert into picking values(sys_guid(),sys_guid(),10,10,0,'没有坏货');
+insert into consignment values(sys_guid(),sys_guid(),sysdate,sys_guid(),sys_guid(),sys_guid(),10,10,0,'没有坏货',10,10);
+
+insert into stage values(sys_guid(),sys_guid(),sys_guid(),10,10,1)
+
+insert into in_storage values(sys_guid(),'欧普灯','电器',50,'个','欧普','18160774016','刘建杰','18160774016',sysdate,1);
+
+insert into receiving values(sys_guid(),1,2,3,4,5,6,7,8);
+
+insert into put_away values(sys_guid(),sys_guid(),sys_guid(),sys_guid(),1)
+
+select * from put_away 
+delete put_away
+select * from out_storage  for update
+select * from warehouse
+select * from in_storage for update
+
+select * from rack for update
+
+select * from rack where whid = '1D2CADFA114E479AB0E8C4042DEA07AC' and unit = 1 and statu = 1
+
+ update rack set rsurplus = rsurplus-50 where Rid = 'EDCC94CA0AC04AC983F988BE50E4ADDB'

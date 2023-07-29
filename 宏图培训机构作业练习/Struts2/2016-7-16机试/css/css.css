@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body{margin:0px;padding:0px;font-size:12px;font-family:宋体 , Arial;line-height:24px;color:#4f4f4f;background:#fff;}
+textarea{font-size:12px;}
+ul,li,form,dl,dt,dd,p,table,tr,td,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size: 12px;font-weight: normal;}
+img{border:0;}
+ul{ list-style:none;}
+a{color:#4f4f4f; text-decoration:none;}
+
+/*命名：大的范围，不准使用关键字，如 .title .box .page */
+.fclear{clear:both;}
+.clear{clear:both;height:0;overflow:hidden;}
+.left{float:left;}
+.right{float:right;}
+.blank6{clear:both;height:6px;overflow:hidden;}
+.blank8{clear:both;height:8px;overflow:hidden;}
+.blank10{clear:both;height:10px;overflow:hidden;}
+.blank12{clear:both;height:12px;overflow:hidden;}
+.blank15{clear:both;height:15px;overflow:hidden;}
+.blank20{clear:both;height:20px;overflow:hidden;}
+.tac{text-align:center;}
+.tal{text-align:left;}
+.tar{text-align:right;}
+.fwb {font-weight:bold;}
+.fs12 {font-size:12px;}
+.fs14 {font-size:14px;}
+.fs16 {font-size:16px;}
+.fs18 {font-size:18px;}
+.yahei {font-family:"Microsoft Yahei";}
+.red{ color:#F00;}
+.mt10{ margin-top:10px;}
+.mt20{ margin-top:20px;}
+.mt40{ margin-top:40px;}
+.mr10{ margin-right:10px;}
+.mr20{ margin-right:20px;}
+.mr50{ margin-right:50px;}
+.mb10{ margin-bottom:10px;}
+.ml10{ margin-left:10px;}
+.ml20{ margin-left:20px;}
+.borderB{ border-bottom:solid 1px #ccc;}
+.dn {display:none;}
+.vam {vertical-align:middle;}
+.vat {vertical-align:top;}
+.pr {position:relative;}
+.huise {color:#999;}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.WarehouseDao">
+	<resultMap type="com.ht.yfbc.pojo.Warehouse" id="whmap">
+		<id column="WHID" property="whid" />
+		<result column="WHINAME" property="whiname" />
+		<result column="USERID" property="userid" />
+		<result column="WHVOLUME" property="whvolume" />
+		<result column="WHISTATE" property="whistate" />
+	</resultMap>
+
+	<resultMap type="com.ht.yfbc.pojo.Warehouse2" id="whmap2"
+		extends="whmap">
+		<association property="city" column="WHCITY"
+			select="com.ht.yfbc.dao.CityDao.selcitybyid"></association>
+		<association property="user" column="USERID"
+			select="com.ht.yfbc.dao.UsersDao.seluserbyid"></association>
+	</resultMap>
+
+	<select id="selWarehouse" resultMap="whmap2" parameterType="map">
+		select * from (select a.*, rownum rn from warehouse a where
+		#{max}>=rownum ) b where b.rn>#{min}
+	</select>
+
+	<select id="selWarehouseAll" resultMap="whmap2">
+		select * from warehouse
+	</select>
+
+	<insert id="addWarehouse" parameterType="com.ht.yfbc.pojo.Warehouse">
+		insert into warehouse
+		values(sys_guid(),#{whiname},#{userid},#{whvolume},#{cityid},#{whistate})
+	</insert>
+
+	<select id="selWarehouseById" parameterType="String"
+		resultType="com.ht.yfbc.pojo.Warehouse">
+		select * from warehouse where whid = #{whid}
+	</select>
+
+	<select id="selWarById" parameterType="map" resultMap="whmap2">
+		select * from warehouse where whid = #{whid}
+	</select>
+
+	<delete id="delwar" parameterType="map">
+		delete warehouse where whid = #{whid}
+	</delete>
+
+	<update id="update" parameterType="com.ht.yfbc.pojo.Warehouse">
+		update warehouse set whiname = #{whiname},userid = #{userid},whvolume =
+		#{whvolume},whistate = #{whistate} where whid = #{whid}
+	</update>
+	<!-- 根据用户id查询她的仓库  刘建杰 1月4日-->
+	<select id="selWarByUserId" parameterType="String"
+		resultType="Warehouse">
+		select * from warehouse where userid = #{userid}
+	</select>
+	<select id="selWarehouseNameById" parameterType="String" resultType="String">
+		select whiname from Warehouse where whid=#{whid}
+	</select>
+	
+	<select id="selWarByUserId2" parameterType="String"
+		resultMap="whmap2">
+		select * from warehouse where userid = #{userid}
+	</select>
+</mapper>

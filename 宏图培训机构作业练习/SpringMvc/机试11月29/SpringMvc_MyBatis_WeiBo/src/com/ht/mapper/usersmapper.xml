@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.UsersDaoI">
+  	<resultMap type="users" id="usersmap">
+  	    <id property="u_id" column="u_id"/>
+  	    <result property="u_username" column="u_username"/>
+ 	    <result property="u_password" column="u_password"/>
+ 	    <result property="u_age" column="u_age"/>
+ 	    <result property="u_sex" column="u_sex"/>
+ 	    <result property="u_nickname" column="u_nickname"/>
+ 	     <result property="u_mobile" column="u_mobile"/>
+ 	      <result property="u_address" column="u_address"/>
+ 	       <result property="u_supper" column="u_supper"/>
+ 	        <result property="u_picpath" column="u_picpath"/>
+  	</resultMap>
+    
+    <select id="getUsersandlog" parameterType="map" resultType="users">
+        select * from users where u_username = #{uname} and u_password = #{pwd}
+    </select>
+   
+    <update id="alertuser" parameterType="map">
+        update users set u_username = #{uname},u_password=#{pwd} where u_id=#{id}
+    </update>
+    
+    <select id="userlist" resultType="users">
+        select * from(select rownum r,s.* from users s where rownum &lt; (#{pagecount}*#{currpage})+1 ) where r &gt; (#{currpage}-1)*#{pagecount}
+    </select>
+    
+     <select id="seluserlistcount" resultType="int">
+        select count(*) from users
+    </select>
+    
+    <insert id="useradd" parameterType="users">
+        insert into users values(seq_users.nextval,#{u_username},#{u_password},#{u_age},#{u_sex},#{u_nickname},#{u_mobile},#{u_address},0,#{u_picpath})
+    </insert>
+    
+    <delete id="userdel" parameterType="int">
+        delete from users where u_id = #{a}
+        
+    </delete>
+</mapper>

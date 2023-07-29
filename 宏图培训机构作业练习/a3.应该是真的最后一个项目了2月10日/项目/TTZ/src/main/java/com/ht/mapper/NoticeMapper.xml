@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.NoticeDao">
+	<resultMap type="Notice" id="NoticeMap">
+		<id column="n_id" property="n_id"/>
+		<result column="n_title" property="n_title"/>
+		<result column="n_body" property="n_body"/>
+		<result column="n_date" property="n_date" javaType="java.util.Date" />
+		<result column="n_author" property="n_author"/>
+		<result column="n_count" property="n_count" />
+	</resultMap>
+	
+	<select id="selnoticelistindex" resultMap="NoticeMap">
+		select * from(select * from notice n order by n_date desc)where rownum&lt;=5 order by rownum 
+	</select>
+	
+	<select id="getnoticeone" parameterType="String" resultMap="NoticeMap">
+		select * from notice where n_id = #{n_id}
+	</select>
+	
+	<update id="addnoticecount" parameterType="String">
+		update notice set n_count = n_count+1 where n_id = #{n_id}
+	</update>
+
+	<select id="selnoticelist" parameterType="Map" resultMap="NoticeMap">
+		select * from(select row_number()over(order by n_date desc) r,s.* from notice s)
+			where r &lt;= (#{pageCount}*#{currPage}) and r &gt; (#{currPage}-1)*#{pageCount}
+	</select>
+	
+	<select id="selnoticelistsize" resultType="int">
+		select count(*) from notice
+	</select>
+	
+	<select id="selnoticelistback" resultMap="NoticeMap">
+		select * from notice order by n_date desc
+	</select>
+
+	<insert id="addnotice" parameterType="Notice" >
+		insert into notice values(sys_guid(),#{n_title},#{n_body},#{n_date},#{n_author},0)
+	</insert>
+	
+	<delete id="delnotice" parameterType="String">
+		delete from notice where n_id = #{n_id}
+	</delete>
+	
+	<update id="updnotice" parameterType="Notice">
+		update notice set n_title = #{n_title},n_body=#{n_body},n_date = #{n_date},n_author = #{n_author},n_count = #{n_count} where n_id = #{n_id}
+	</update>
+</mapper>

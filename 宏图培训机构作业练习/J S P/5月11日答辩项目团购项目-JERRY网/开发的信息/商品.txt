@@ -1,0 +1,46 @@
+<!-- 商品开始 MD一个空格都不能多-->
+	<c:if test="${goodslist!=null}">
+	<div class="top">
+  		<p><img src="image/3.png"><font size="2" color="#6666">即日起,凡购买商品者可得签名照一张</font></p><!-- 这个以后放后面吧 -->
+  	</div>
+  	<!-- div id="nav"	距离页面的距离 这个样式先放放 #nav ul {margin-top:50px; margin-left:90px;}-->	
+  	<ul style="list-style-type:none;margin-left:0px;margin-top:0px">
+    	<c:forEach items="${goodslist}" var="goodslists">
+    		<li style="width:33%;float:left">
+    		<table border="0" width="630" style="table-layout:fixed">
+    			<tr>
+    				<td colspan="2">
+    					<a href="goods?method=goodsxq&id=${goodslists.g_id }" target="_blank"><img src="file/${goodslists.g_img }" width="330" height="230"></a>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<font size="4">${goodslists.g_name }</font>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td colspan="2">
+    					<font size="3" color="#797979">
+	    					<c:set var="testStr" value="${goodslists.g_dec}"></c:set>
+					    	<c:choose>  
+							    <c:when test="${fn:length(testStr) > 22}">  
+							        <c:out value="${fn:substring(testStr, 0, 22)}..." />  
+							    </c:when>  
+							   <c:otherwise>  
+							      <c:out value="${testStr}" />  
+							    </c:otherwise>  
+							</c:choose>
+						</font> 
+    				</td>
+    			</tr>
+    			<tr>
+					<td><font color="OrangeRed" size="5">￥${goodslists.g_price }</font> <font color="#797979" size="3">门店价:<s>￥${goodslists.g_scj }</s></font></td>
+					<td><font color="#797979" size="3">已售 ${goodslists.g_sale }</font></td>
+    			</tr>
+    		</table>
+    		</li>
+    	</c:forEach>
+    </ul>
+  <a href="goods?method=selmore&mdid=${moldid} " target="_blank">查看更多</a>
+  </c:if>
+  <!-- 商品结束 -->

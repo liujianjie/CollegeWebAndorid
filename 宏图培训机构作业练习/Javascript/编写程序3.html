@@ -1,0 +1,30 @@
+<html>
+ <head>
+  <title>nul </title>
+	<script>
+		function test(){
+			var num=document.getElementById("ta").value;
+		
+			document.getElementById("num").innerHTML=num.length;
+
+			if(num.length>=20){
+				document.getElementById("∫«∫«").innerHTML=num;
+			}
+		}
+	</script>
+ </head>
+
+ <body>
+ <table align="center" border="1">
+	<tr>
+		<td width="150">¡Ù—‘</td>
+		<td width="30" id="num">0</td>
+	</tr>
+	<tr>	
+		<td colspan="2"><textArea cols="30" rows="5" id="ta" onkeyup="test();"></textArea></td>
+	</tr>
+ </table>
+ <br/>
+ <p id="∫«∫«" align="center"></p>
+ </body>
+</html>

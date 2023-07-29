@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+	function aonclick(){
+		var str=document.getElementById("hehe").value;
+		if(str=="确定"){
+			document.getElementById("hehe").value="取消";
+		}else{
+			document.getElementById("hehe").value="确定";
+	
+		}
+		//var obj ={ }; 
+		var s1=parseInt("101中学");
+		//document.write(s1);
+
+		if((4>=4)&&(5<=2)){
+			alert("哈哈");
+		}
+		var a1=10;
+		var a2=20;
+		alert("a1+a2="+a1+a2)
+		//document.title("新的标题内容");
+		var s="sdafsaADFASDF";
+		alert(s.toLowerCase());
+	}
+
+	function achange(){
+		alert("真心呵呵");
+	
+	}
+	function replaceStr(inStr, oldStr, newStr){
+		var rep = inStr; 				
+		while (rep.indexOf(oldStr) > -1)	{		
+			rep = rep.replace(oldStr, newStr);
+			alert(rep);
+			}
+			return rep;
+		}
+	alert(replaceStr("how do you do","do","are"));
+
+  </script>
+ </head>
+
+ <body>
+  <input type="button" id="hehe" value="确定" onchange="achange()";
+	onclick="aonclick();">
+	<a href="history.go(1)">sdfsd</a>
+ </body>
+</html>

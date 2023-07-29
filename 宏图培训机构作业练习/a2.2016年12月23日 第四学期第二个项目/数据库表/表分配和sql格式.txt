@@ -1,0 +1,68 @@
+
+权限管理(超管)：（刘宗龙）
+	用户表：user
+	岗位表：position
+	权限表：limit
+车辆管理：(黄建秀)
+	车库信息表：cars
+	车辆分配表：cars_distribution
+	车辆报修表：cars_repairs
+	车辆变更记录表：cars_change
+	车辆出勤记录表：cars_attendance
+系统任务：(钟金莲)
+	待办任务表：backlog_task
+	通知表：notifaction
+
+仓库管理：（刘建杰和魏海明）
+	货架:shelf		ok
+	仓库表：warehouse	ok
+	入库管理
+		入库计划单表：in_storage	ok
+		收货表：receiving		ok
+		摆货：put_away			ok
+	
+	中间临时表（出入库移库中转表）：stage和实际收货差不多 记录实际收货的id就行了 还是要些基本货物的信息	ok
+				主键
+				收货id	reid
+				货物型号	SKUmodel	
+				外包装数量	packageqty
+				货物基本单位数量	receiveqty
+				是否越库	stgstate
+				
+		
+	出库管理
+		出库计划单表：out_storage	ok
+		拣货单表：picking_list		ok
+		拣货:picking 			ok
+		发货:consignment		ok
+	重点：
+	移库管理
+		移库计划单表：move_storage
+	
+	库内作业管理：
+		盘点表：take_stock
+		移货记录表：move_goods
+		结算：
+		费用类型：
+		费用规则：
+		费用结算：
+		流通加工：
+		组合包装：
+		货主变更：
+
+	
+结算：（刘宗龙）
+	费用类型表：fee_type
+	费用规则表：fee_rule
+财务：(陈豪)
+	财务总表（只记录月度支出，收入）：financing
+		月度收入、支出明细表：
+			收入表：income
+			支出表：expend
+
+1、sql文件命名，看我的命名方式
+2、一个数据库表，要一个创建表的sql文件，删除表的sql文件
+3、建表时，请写好初始化表的语句（insert语句），数据正式点
+
+（暂时先这样，有问题提出来）
+

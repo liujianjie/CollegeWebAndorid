@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gb2312" standalone="no"?>
+<!DOCTYPE computerprice PUBLIC "this my one dtd" "1.dtd">
+
+<!-- 标记名的大小写不会关联到整体 -->
+<!-- DTD定义有关的关键字一半都是大写 -->
+<!-- PCDATA可解析的字符数据，且不能包含其他元素 -->
+<!-- ANY表示内容,即时可解析的字符数据，且可以包含其他元素 -->
+<!-- 严格设置子元素设置子元素的数目和顺序 -->
+
+<!-- 元素的数量控制 -->
+<!-- ?  0次或1次 -->
+<!-- *  0次或多次 -->
+<!-- +  1次或多次 -->
+
+<!-- 子元素 选择 "|" 表示两个元素之间只能选择一个出现 comuter(style|cpu) -->
+<!-- 混合元素: note(#PCDATA|ti|com)*这样 就可以在note标记中加入中文或英文 其中 ti和com也是可选的了
+	其中一定要加 *-->
+<!-- 空元素:EMPTY不能有标签内容 与PCDATA的区别就是PCDATA可以空且有数据，EMPTY不能有数据 -->
+<!-- 
+	外部DTD引用 
+	1.私有DTD：SYSTEM 后不能加 "内容"
+	2.公共DTD: PUBLIC 后必须加 "内容"
+	3.不管是哪个引用方法 standalone必须是no了（意思为:不是单独的了）
+-->
+
+<computerprice>
+	可以自定义文字了
+	<computer>
+		<style><a>的</a>就</style>
+		<cpu></cpu>
+		<cpu></cpu>
+		
+		<price></price>
+		<price></price>
+	</computer>
+	
+	<computer2>
+		<!-- 二选一 -->
+		<style></style>
+		
+		<price></price>
+	</computer2>	
+</computerprice>
+

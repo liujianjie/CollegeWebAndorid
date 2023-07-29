@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.FeeTypeDao">
+  <resultMap type="com.ht.yfbc.pojo.Limit" id="feetypemap">
+  	<id column="id" property="id" />
+  	<result column="typename" property="typename" />
+  </resultMap>
+  
+  <select id="selFeeTypeList"  resultType="com.ht.yfbc.pojo.FeeType">
+  	select * from feetype
+  </select>
+  <select id="selFeeTypeById" parameterType="java.lang.String" resultType="java.lang.String">
+  	select typename from feetype where id=#{value}
+  </select>
+  <update id="updateFeeType" parameterType="map" >
+  	update feetype set typename=#{typename} where id=#{id}
+  </update>
+</mapper>

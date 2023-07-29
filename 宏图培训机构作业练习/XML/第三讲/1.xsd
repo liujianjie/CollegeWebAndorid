@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:element name="student">
+		<!-- 在complexType中加上mixed=true可以自由加入内容了 -->
+		<xs:complexType mixed="true"><!-- student下面有复合元素 子元素 属性或者元素 -->
+			<xs:sequence><!-- 序列 -->
+				<!-- 简单元素 只能有内容，不能有其它元素或属性-->
+				<xs:element name="stu_name" type="xs:string"></xs:element>
+				<xs:element name="stu_age" type="xs:string"></xs:element>
+				
+				<!-- 设置次数 maxOccurs设置最多能出现的次数 unbounded不限制 -->
+				<!-- minOccurs最少要出现的次数 -->
+				<xs:element name="birthday" type="xs:date" maxOccurs="1"></xs:element>
+				
+				<!-- 限定元素值内容 对单个元素的处理 -->
+				<!-- 1.内容的范围设置 -->
+				<xs:element name="age">
+					<!-- 不必有complexType因为只是内容的处理 没有子元素且属性 -->
+					<xs:simpleType><!-- 文本 -->
+						<xs:restriction base="xs:integer"><!-- 内容类型 -->
+							<xs:minInclusive value="0"></xs:minInclusive>
+							<xs:maxInclusive value="100"></xs:maxInclusive>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+				<!-- 2.限定只能从限定的值中选择 -->
+				<xs:element name="stu_sex">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="男"></xs:enumeration>
+							<xs:enumeration value="女"></xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+				<!-- 使用pattern正则表达式限定 -->
+				<xs:element name="stu_nub">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[0-9][3|7|8|5][0-9]"></xs:pattern>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+				<!-- 通过whiteSpace关键字来对元素和属性的空格处理 -->
+				<!-- preserve 保留空格 -->
+				<!-- replace 将空格 回车 tab等用空格代替 -->
+				<!-- collapse 将空格 回车 tab等用空格代替 并且取消开头和结尾的空格 -->
+				<xs:element name="adress">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:whiteSpace value="preserve"></xs:whiteSpace>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+				<!-- 复合元素 对子元素和属性和内容的处理 -->
+				
+				<!-- 1.定义空内容复合元素 只包含属性不能放内容 -->
+				<xs:element name="country">
+					<xs:complexType mixed="true"><!-- 复合 -->
+						<xs:attribute name="sheng" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- 包含其它元素的复合元素 可以有内容 有序列sequence -->
+				<!-- all 可以任意顺序出现 -->
+				<!-- choice 二选一 -->
+				<xs:element name="name">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="xingname"></xs:element>
+							<xs:element name="mingname"></xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- 定义复合文本元素 既有内容也有属性 序列sequence换位simpleContent -->
+				<xs:element name="marry">
+					<xs:complexType>
+						<xs:simpleContent><!-- 有属性的文本 -->
+							<xs:extension base="xs:integer"><!-- 内容 -->
+								<xs:attribute name="qiname" type="xs:string"></xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- 元素组的使用 -->
+				<xs:element name="ysz">
+					<xs:complexType>
+						<xs:group ref="yuansuzu"></xs:group>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- 属性组的使用 -->
+				<xs:element name="sxz">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string"><!-- 内容 -->
+								<xs:attributeGroup ref="shuxingzu"></xs:attributeGroup>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+	</xs:element>
+	
+	
+	<!-- 元素组 -->
+	<xs:group name="yuansuzu">
+		<xs:sequence>
+			<xs:element name="xingname" type="xs:string"></xs:element>
+			<xs:element name="mingname" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:group>
+		
+	<!-- 属性组 -->
+	<xs:attributeGroup name="shuxingzu">
+		<xs:attribute name="xingname" type="xs:string"></xs:attribute>
+		<xs:attribute name="mingname" type="xs:string"></xs:attribute>
+	</xs:attributeGroup>
+	
+</xs:schema>

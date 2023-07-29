@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.PostDao">
+ 	<resultMap type="Post" id="postmap">
+ 		<id column="p_id" property="p_id"/>
+ 		<result column="p_name" property="p_name"/>
+ 		<result column="p_jianjie" property="p_jianjie"/>
+ 		<result column="p_list" property="p_list"/>
+ 	</resultMap>
+ 	
+ 	<select id="selpostlist" resultType="Post">
+		select * from post  	
+ 	</select>
+ 	<insert id="addpost" parameterType="Post">
+ 		insert into post values(sys_guid(),#{p_name},#{p_jianjie},#{p_list})
+ 	</insert>
+ 	<delete id="delpost" parameterType="String">
+ 		delete from post where p_id = #{p_id}
+ 	</delete>
+  	<select id="getpost" parameterType="String" resultType="Post">
+  		select * from post where p_id = #{id}
+  	</select>
+  	<update id="updpost" parameterType="Post">
+  		update post set p_name = #{p_name},p_jianjie = #{p_jianjie},p_list = #{p_list} where p_id=#{p_id}
+  	</update>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.CityDao">
+  <resultMap type="com.ht.yfbc.pojo.City" id="citymap">
+  	<id column="CITYID" property="cityid" />
+  	<result column="PROVINCEID" property="provinceid" />
+  	<result column="NAME" property="name" />
+  </resultMap>
+  
+  <select id="selcity" parameterType="Integer" resultType="com.ht.yfbc.pojo.City">
+  	select * from city where provinceid = #{provinceid}
+  </select>
+  
+  <select id="selcitybyid" parameterType="Integer" resultType="com.ht.yfbc.pojo.City">
+  	select * from city where cityid = #{whcity}
+  </select>
+  
+  <select id="selcityNameById" parameterType="Integer" resultType="java.lang.String">
+  	select name from city where cityid = #{cityid}
+  </select>
+</mapper>

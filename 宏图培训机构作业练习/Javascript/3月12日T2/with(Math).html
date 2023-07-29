@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+	<form name="frm">
+	<input type="text" name="tx1" value="1111">
+	<input type="text" name="tx2" value="222">
+	</form>
+	<script>
+		with(document){
+			var a1=frm.tx1.value;
+			var a2=frm.tx2.value;
+			alert(a1+"   "+a2);
+		}
+		alert(Math.PI);
+		alert("LN10  "+Math.LN10);
+		alert("E "+Math.E);
+		alert("10的绝对值是："+Math.abs(-10));
+		alert("sin 30是："+Math.sin(Math.PI/6));
+		with(Math){
+			alert(PI);
+			alert("LN10  "+LN10);
+			alert("E "+E);
+			alert("10的绝对值是："+abs(-10));
+			alert("sin 30是："+sin(PI/6));
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,11 @@
+/*Ã·œ÷*/
+.rechargebox .Choose{ font-size:16px; margin-top:-10px; color:#666;}
+.Withdrawals{ border-bottom-style:solid;}
+.Withdrawals .item,.Withdrawals .add{ float:left; width:228px; height:128px; margin:10px 15px 10px 0; border:1px solid #e0e0e0;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; text-align:center; cursor:pointer;}
+.Withdrawals .item .card-num{ height:32px; line-height:32px; border-bottom:1px solid #e0e0e0; background:#f5f5f5;}
+.Withdrawals .item .img{ height:95px; vertical-align:middle;}
+.Withdrawals .add{ display:block; border:1px dashed #e0e0e0; background:#f5f5f5 url(../images/add.jpg) no-repeat center;} 
+.Withdrawalss .item,.Withdrawals .add{ float:left; width:228px; height:128px; margin:10px 15px 10px 0; border:1px solid #e0e0e0;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; text-align:center; cursor:pointer;}
+.Withdrawalss .item .card-num{ height:32px; line-height:32px; border-bottom:1px solid #e0e0e0; background:#f5f5f5;}
+.Withdrawalss .item .img{ height:95px; vertical-align:middle;}
+.Withdrawalss .add{ display:block; border:1px dashed #e0e0e0; background:#f5f5f5 url(../images/add.jpg) no-repeat center;} 

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+	<script>
+		var b=null;
+		function zilei(){
+			b=window.open("子类.html","","width=300 height=200 top=300 left=300");
+		}
+		function ziclose(){
+			b.close();
+		
+		}
+	</script>
+ </head>
+	
+ <body>
+  父类 
+  <br/>
+  <form name="frm">
+  <input type="button" value="打开子窗口" onclick="zilei();"/>
+  <input type="button" value="关闭子窗口" onclick="ziclose();"/>
+  <br/>
+  <input type="text" name="tx1">
+  <form/>
+  <a href="///" onclick="window.open('子类.html','弹出窗口','width=400,height=300,top=150,left=200')">呵呵
+ </body>
+</html>

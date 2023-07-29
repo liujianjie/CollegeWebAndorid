@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+    <!-- 这是 咨询表 -->
+    <package name="p1" namespace="/infor" extends="struts-default">
+        <action name="*" class="com.ht.action.InforAction" method="{1}">
+            <result name="inforlist" >/inforlist.jsp</result>
+            <result name="replies">/replies.jsp</result>
+        </action>
+    </package>
+    <!-- 这是 回复表 -->
+    <package name="p2" namespace="/rep" extends="json-default">
+        <action name="*" class="com.ht.action.RepAction" method="{1}">
+            <result type="json"></result>
+        </action>
+    </package>
+    
+</struts>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+	var date=new Date();
+	document.write("欢迎使用Javascript "+date);
+
+	
+	function check(){
+		var a1= document.frm.ty1.value;
+		var a2=document.frm.ty2.value;
+
+		if(isNaN(a1)){
+			alert("请正确输入第一个数");
+		}
+		if(isNaN(a2)){
+			alert("请正确输入第二个数");
+		}
+		if(a1==""){
+			alert("请输入第一个数");
+		}
+		else if(a2==""){
+			alert("请输入第二个数");
+		}else{
+			var sum=parseInt(a1)+parseInt(a2);
+			document.frm.ty3.value=sum;
+		}
+//		document.getelementbyid('frm.ty1').focus();
+//		document.getelementbyid('frm.ty1').select();
+	}
+  </script>
+ </head>
+
+ <body>
+	<br/>
+	<form name="frm">
+	<input type="button" value="关闭" onclick="window.close();">
+	<input type="text" name="ty1">+<input type="text" name="ty2"/>
+	<input type="button" value="计算" onclick="check()"/>
+	<input type="text" name="ty3"/>
+	</form>
+ </body>
+</html>

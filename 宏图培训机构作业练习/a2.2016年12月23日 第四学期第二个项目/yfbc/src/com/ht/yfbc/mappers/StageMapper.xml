@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.StageDao">
+  <resultMap type="Stage" id="stagemap">
+  	<id column="STGID" property="stgid" />
+  	<result column="REID" property="reid" />
+  	<result column="SKUMODEL" property="SKUmodel" />
+  	<result column="PACKAGEQTY" property="packageqty" />
+  	<result column="RECEIVEQTY" property="receiveqty" />
+  	<result column="STGSTATE" property="stgstate" />
+  </resultMap>
+  
+  <select id="selStage" resultType="Stage">
+  		select * from stage
+  </select>
+  <insert id="addStage" parameterType="Stage">
+      insert into stage values(sys_guid(),sys_guid(),sys_guid(),10,10,1)
+  </insert>
+</mapper>

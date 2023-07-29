@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="exployee.xsd"
+>  
+	<employee id="e1001">    
+		<name>员工名册</name>             
+		<age>100</age>
+		<sex>男</sex>          
+		<country>中国</country>   
+		<height>178.5</height>         
+		<connect>           
+			我的联系信息       
+			<email>10753611@qq.com</email>
+			<phone>13888888888</phone>   
+			<address>赣州</address>	
+		</connect>	  	   
+	</employee>  
+</employees>
+      

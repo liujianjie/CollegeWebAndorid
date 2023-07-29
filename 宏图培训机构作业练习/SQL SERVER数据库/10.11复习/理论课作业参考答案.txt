@@ -1,0 +1,11 @@
+1. 实体完整性, 引用完整性,域完整性
+2. 主键约束, 唯一约束,检查约束,外键约束,非空约束,默认约束.
+3. 默认约束, 外键约束,检查约束
+4.create table goods(
+good_id int primary key,
+good_name varchar(50) not null,
+good_price float not null,
+good_form  varchar(20) not null,
+good_time  datetime not null,
+good_address varchar(50) not null
+)

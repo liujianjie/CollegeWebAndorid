@@ -1,0 +1,2 @@
+//合并单元格CellRangeAddress构造参数依次表示起始行，截至行，起始列， 截至列
+		sheet.addMergedRegion(new CellRangeAddress(1,2,0,1));

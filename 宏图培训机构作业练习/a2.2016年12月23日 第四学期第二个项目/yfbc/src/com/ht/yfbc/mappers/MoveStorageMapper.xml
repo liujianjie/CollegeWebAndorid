@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.MoveStorageDao">
+  <resultMap type="MoveStorage" id="movestoragemap">
+  	<id column="MOID" property="moid" />
+  	<result column="MOUSER" property="mouser" />
+  	<result column="MOWHINAME" property="mowhiname"/>
+  	<result column="PTID" property="ptid" />
+  	<result column="TOUSER" property="touser" />
+  	<result column="TOWHINAME" property="towhiname" />
+  	<result column="MOSTATE" property="mostate" />
+  	<result column="CARSID" property="carsid" />
+  	<result column="PROCESSINSTANCEID" property="processInstanceId" />
+  	<association property="ptay3" column="ptid"
+  	    select="com.ht.yfbc.dao.PutawayDao.selPutawayByPid3">
+  	    
+  	</association>
+  </resultMap>
+  
+  <insert id="addMoveStorage" parameterType="movestorage">
+      insert into move_storage values(sys_guid(),#{mouser},#{mowhiname},#{ptid},#{touser},#{towhiname},#{mostate},#{carsid},#{processInstanceId})
+  </insert>
+  
+  <!-- 用来查询这个用户的移库流程 -->
+  <select id="selMoveStorage" parameterType="map" resultMap="movestoragemap">
+      select * from (select rownum r,i.* from move_storage i where rownum &lt;=(#{pagecount}*#{currpage}) and mouser = #{userid})where r&gt;(#{currpage}-1)*#{pagecount}
+  </select>
+  
+  <!-- 根据主键查数据 一条 -->
+   <select id="getOneMoveStorage" parameterType="String" resultType="MoveStorage">
+      select * from move_storage where moid = #{moid}
+  </select>
+  
+  <!-- 修改 -->
+  <update id="updateMoveStorage" parameterType="MoveStorage">
+  	update move_storage set mouser=#{mouser},mowhiname=#{mowhiname},ptid=#{ptid},touser=#{touser},towhiname=#{towhiname},mostate=#{mostate},carsid=#{carsid},processinstanceid=#{processInstanceId}
+       where moid = #{moid}
+  </update>
+  
+  <!-- 查询touser是我并且 审核中 -->
+  <!-- 用来查询这个用户的移库流程 -->
+  <select id="selMoveStorageByTouser" parameterType="String" resultMap="movestoragemap">
+      select * from move_storage where touser = #{userid} and mostate = 1
+  </select>
+  
+  <!-- 查出代办数量 -->
+   <select id="getMoveStorageCount" parameterType="String" resultType="int">
+      select count(*) from move_storage where touser = #{userid} and mostate = 1
+  </select>
+  
+    <!-- 查出移货数量和发车的 -->
+   <select id="getMoveStorageMoCount" parameterType="String" resultType="int">
+      select count(*) from move_storage where mouser = #{userid}
+  </select>
+   
+   <!-- 1月17日 所有的数量 -->
+   <select id="getAllMoveStorageCount" parameterType="map" resultType="int">
+       select count(*) from move_storage
+       <where>
+           <if test="mowhiname!=null and mowhiname!=''">
+ 		        and mowhiname = #{mowhiname}
+ 		    </if>
+ 		    <if test="towhiname!=null and towhiname!=''">
+ 		        and towhiname = #{towhiname} 
+ 		    </if>
+       </where>
+   </select>
+	<select id="selAllMoveStorage" parameterType="map" resultMap="movestoragemap">
+      select * from (select rownum r,i.* from move_storage i 
+      	<where>
+ 		    <if test="pagecount!=null and pagecount!=''">
+ 		        and rownum &lt;=(#{pagecount}*#{currpage}) 
+ 		    </if>
+ 		    <if test="mowhiname!=null and mowhiname!=''">
+ 		        and mowhiname = #{mowhiname}
+ 		    </if>
+ 		    <if test="towhiname!=null and towhiname!=''">
+ 		        and towhiname = #{towhiname} 
+ 		    </if>
+ 		</where>
+      
+      )where r&gt;(#{currpage}-1)*#{pagecount}
+  	</select>
+</mapper>

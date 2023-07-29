@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="vo.JingliVo" table="hbntjs_jingli">
+		<id name="jl_jid" column="jl_jid" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="sequence">HBNT_JISHI</param>
+			</generator>
+		</id>
+		<property name="jl_starttime" type="java.lang.String"></property>
+		<property name="jl_endtime" type="java.lang.String"></property>
+		<property name="jl_school" type="java.lang.String"></property>
+
+		<!-- stu_id这里写的关联列 -->
+		<!-- 多对一  column 自己的id 一个studentvo对象 和stu_id属性-->
+		<many-to-one name="studentvo" column="stu_id" class="vo.StudentVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

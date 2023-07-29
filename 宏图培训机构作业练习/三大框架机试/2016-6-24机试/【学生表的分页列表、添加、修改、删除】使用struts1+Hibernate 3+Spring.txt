@@ -1,0 +1,16 @@
+
+学生 student
+sid   学生ID  主键
+
+sname  学生姓名
+
+age 年龄
+
+sex 性别 (单选框)
+
+desc 个人说明（文本域）
+
+loves 爱好（复选框）
+
+city 城市 （下拉框 ）
+

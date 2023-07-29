@@ -1,0 +1,499 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://www.jb51.net/article/29787.htm -->
+<!DOCTYPE html><HTML lang="zh-CN"><HEAD>
+<META charset="gb2312">
+<META name="applicable-device" content="pc">
+<META name="viewport" content="width=device-width, initial-scale=1">
+<META content="no-siteapp" http-equiv="Cache-Control">
+<META content="no-transform" http-equiv="Cache-Control"><TITLE>win7下IIS的安装和配置 
+图文教程_win服务器_脚本之家</TITLE>
+<META content="IE=EDGE" http-equiv="X-UA-Compatible">
+<META name="keywords" content="win7,IIS">
+<META name="description" content="win7下IIS的安装和配置 图文教程，需要的朋友可以参考下"><LINK rel="alternate" 
+href="http://m.jb51.net/article/29787.htm" media="only screen and(max-width: 640px)">
+<META content="format=html5; url=http://m.jb51.net/article/29787.htm" 
+http-equiv="mobile-agent">
+<META content="format=xhtml; url=http://m.jb51.net/article/29787.htm" 
+http-equiv="mobile-agent">
+<SCRIPT type="text/javascript">
+var tougao="mdxy-dxy";var lmname="服务器";var ourl="";
+(function(){var reWriteUrl=function(url){if(url){var Splits=url.split("/"),siteName=window.location.pathname;if(typeof siteName!=="undefined"){return "http://m.jb51.net"+siteName}}};if(/Android|webOS|iPhone|iPad|Windows Phone|iPod|BlackBerry|SymbianOS|Nokia|Mobile/i.test(navigator.userAgent)){var url=window.location.href;var pathname=window.location.pathname;if(url.indexOf("?pc")<0){try{window.location.href=reWriteUrl(url)}catch(e){}}}})();
+</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/base.css">
+<LINK rel="stylesheet" type="text/css" href="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/common.css">
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/jquery.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/base.js"></SCRIPT>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16737"></HEAD>
+<BODY><!--head Star -->
+<DIV id="head">
+<DIV class="toolBar">
+<DIV class="main"><!--topNav Star -->
+<DIV class="topNav clearfix">
+<UL class="navList fl">
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/" 
+  target="_blank">脚本之家</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/softs/" target="_blank">软件下载<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"><A href="http://www.jb51.net/softs/android.html" target="_blank">android软件</A> 
+  <A href="http://www.jb51.net/softs/mac.html" target="_blank">MAC软件</A> <A 
+  href="http://www.jb51.net/qudong/" target="_blank">驱动下载</A> <A href="http://www.jb51.net/fonts/" 
+  target="_blank">字体下载</A> <A href="http://www.jb51.net/dll/" 
+  target="_blank">DLL下载</A> </DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/codes/" target="_blank">源码下载<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"> <A href="http://www.jb51.net/codes/asp.html" 
+  target="_blank">asp源码</A> <A href="http://www.jb51.net/codes/php.html" target="_blank">php源码</A> 
+  <A href="http://www.jb51.net/codes/aspnet.html" target="_blank">asp.net源码</A> 
+  <A href="http://www.jb51.net/codes/jsp.html" target="_blank">jsp源码</A> <A 
+  href="http://www.jb51.net/codes/editor.html" target="_blank">网页编辑器</A> <A 
+  href="http://www.jb51.net/codes/list123_1.html" target="_blank">数据库管理</A> <A 
+  href="http://www.jb51.net/codes/list124_1.html" target="_blank">常用组件</A> <A 
+  href="http://www.jb51.net/jiaoben/" target="_blank">脚本下载</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://tools.jb51.net/" target="_blank">在线工具<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"> <A href="http://www.jb51.net/shouce/" 
+  target="_blank">在线手册</A> <A href="http://www.jb51.net/tools/cssyasuo.shtml" 
+  target="_blank">CSS格式化</A> <A href="http://tools.jb51.net/tools/js_geshihua.asp" 
+  target="_blank">JS格式化</A> <A href="http://www.jb51.net/tools/html-js.htm" 
+  target="_blank">Html转化为Js</A> <A href="http://tools.jb51.net/regex/javascript" 
+  target="_blank">js正则表达式</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/w3school/" 
+  target="_blank">网页教程基础</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://s.jb51.net/" 
+  target="_blank">服务器常用软件</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://m.jb51.net/" target="_blank">手机版</A></DIV>
+  <DIV class="two"><IMG src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/m.jb51.net.png" 
+  data-baiduimageplus-ignore=""></DIV></LI>
+  <LI class="watch">
+  <DIV class="one"><A href="http://weibo.com/jb51net" rel="nofollow" target="_blank"><I 
+  class="icon"></I>关注微信</A></DIV>
+  <DIV class="two"><IMG src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/weixin_200.gif" 
+  data-baiduimageplus-ignore=""></DIV></LI></UL>
+<DIV id="jb51_topbar" class="navUser mt5 fr">
+<DIV class="userbar"><A href="http://tougao.jb51.net/" 
+target="_blank">投稿中心</A><IMG style="width: 32px; height: 22px;" alt="hot" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/newn.gif"></DIV></DIV></DIV><!--topNav End --></DIV>
+</DIV>
+<DIV class="main clearfix">
+<DIV class="mtb10 clearfix">
+<DIV class="logo"><A href="http://www.jb51.net/"><IMG title="脚本之家" alt="脚本之家" 
+src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/logo.gif"></A></DIV>
+<DIV class="logom fl"><SPAN id="logo_m" class="jbTestPos"></SPAN></DIV>
+<DIV class="logor fr"><SPAN id="logo_r" class="jbTestPos"></SPAN></DIV></DIV><!-- 导航-->
+<DIV class="nav_top clearfix">
+<UL>
+  <LI><A href="http://www.jb51.net/web/">网页制作</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_1.htm">网络编程</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_96.htm">脚本专栏</A></LI>
+  <LI><A href="http://www.jb51.net/jiaoben/">脚本下载</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_104.htm">数据库</A></LI>
+  <LI><A href="http://www.jb51.net/cms/">CMS教程</A></LI>
+  <LI><A href="http://www.jb51.net/books/">电子书籍</A></LI>
+  <LI><A href="http://www.jb51.net/pingmian/">平面设计</A></LI>
+  <LI><A href="http://www.jb51.net/media/">媒体动画</A></LI>
+  <LI><A href="http://www.jb51.net/os/">操作系统</A></LI>
+  <LI><A href="http://www.jb51.net/yunying/">网站运营</A></LI>
+  <LI><A href="http://www.jb51.net/hack/">网络安全</A></LI>
+  <LI class="last"><A href="http://www.jb51.net/shouce/">在线手册</A></LI></UL></DIV><!--导航结束-->
+<DIV class="subnav clearfix">
+<UL>
+  <LI><A title="星外虚拟主机" 
+  href="http://www.jb51.net/list/list_192_1.htm">星外虚拟主机</A></LI>
+  <LI><A title="华众虚拟主机" 
+  href="http://www.jb51.net/list/list_193_1.htm">华众虚拟主机</A></LI>
+  <LI><A title="Linux/apache" 
+  href="http://www.jb51.net/list/list_203_1.htm">Linux/apache</A></LI>
+  <LI><A title="win服务器" 
+  href="http://www.jb51.net/list/list_204_1.htm">win服务器</A></LI>
+  <LI><A title="FTP服务器" 
+  href="http://www.jb51.net/list/list_218_1.htm">FTP服务器</A></LI>
+  <LI><A title="DNS服务器" 
+  href="http://www.jb51.net/list/list_219_1.htm">DNS服务器</A></LI>
+  <LI><A title="Tomcat " href="http://www.jb51.net/list/list_223_1.htm">Tomcat 
+  </A></LI>
+  <LI><A title="nginx" 
+  href="http://www.jb51.net/list/list_226_1.htm">nginx</A></LI>
+  <LI><A title="zabbix" 
+  href="http://www.jb51.net/list/list_247_1.htm">zabbix</A></LI>
+  <LI><A title="服务器其它" 
+  href="http://www.jb51.net/list/list_220_1.htm">服务器其它</A></LI></UL></DIV>
+<DIV class="NavBar clearfix ptb10">
+<DIV class="fl w690">
+<DIV class="box mb15 mt10"><I class="icon"></I>您的位置：<A href="http://www.jb51.net/">首页</A> 
+→ <A title="网站技巧" href="http://www.jb51.net/list/index_27.htm">网站技巧</A> → <A 
+title="服务器" href="http://www.jb51.net/list/list_82_1.htm">服务器</A> → <A title="win服务器" 
+href="http://www.jb51.net/list/list_204_1.htm">win服务器</A> → 正文内容 win7下IIS</DIV>
+</DIV>
+<DIV class="fr w300">
+<DIV class="search">
+<FORM action="http://so.jb51.net/cse/search" target="_blank"><INPUT name="s" 
+value="10520733385329581432" type="hidden"><INPUT name="ie" value="gbk" type="hidden"><INPUT 
+class="key_input" name="q" type="text" placeholder="请输入关键词"><INPUT class="c_btn" value="搜索" type="submit">
+</FORM></DIV></DIV></DIV></DIV><!--head End -->
+<DIV class="main mb10 clearfix">
+<DIV class="clearfix"><SPAN id="tonglan1" class="jbTestPos"></SPAN></DIV></DIV><!--content Star -->
+<DIV id="contents">
+<DIV class="main clearfix">
+<DIV class="w690 fl">
+<DIV class="article-content border">
+<DIV class="title">
+<H1 class="YaHei">win7下IIS的安装和配置 图文教程</H1>
+<P>作者：  字体：[<A href="javascript:turnbig()">增加</A> <A href="javascript:turnsmall()">减小</A>] 
+类型：转载 时间：2012-02-29<A href="http://www.jb51.net/article/29787.htm#comments"> 
+我要评论</A></P></DIV>
+<DIV class="art_desc mt10">
+<DIV id="art_demo">win7下IIS的安装和配置 图文教程，需要的朋友可以参考下</DIV></DIV>
+<DIV class="lbd clearfix"><SPAN id="art_up" class="jbTestPos"></SPAN></DIV>
+<DIV id="content">
+<P>最近工作需要IIS，自己的电脑又是Windows7系统，找了下安装的方法，已经安装成功。在博客里记录一下，给需要的朋友，也是给自己留个备份，毕竟我脑子不是很好使。</P>
+<P>一、首先是安装IIS。打开控制面板，找到“程序与功能”，点进去</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008253.jpg" 
+width="626" height="454"></P>
+<P>二、点击左侧“打开或关闭Windows功能”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008254.jpg" 
+width="558" height="232"></P>
+<P>三、找到“Internet 信息服务”，按照下图打勾即可</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008255.jpg" 
+width="428" height="1140"></P>
+<P>等待安装完成</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008256.jpg" 
+width="361" height="182"></P>
+<P>四、安装完成后，再回到控制面板里面，找到“管理工具”，点进入</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008257.jpg" 
+width="622" height="403"></P>
+<P>五、双击“Internet 信息服务(IIS)管理器”就是IIS了。如果经常需要使用IIS的朋友，建议鼠标指到“Internet 
+信息服务(IIS)管理器”上，右键--发送到--桌面快捷方式，这样就能从桌面进入IIS，而不用每次都点控制面板。</P>
+<P>IIS界面：</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008258.jpg" 
+width="623"></P>
+<P>六、选中“Default Web Site”，双击中间的“ASP”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/201202290008259.jpg" 
+width="453" height="298"></P>
+<P>把“启用父路径”改为“True”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082510.jpg" 
+width="584" height="400"></P>
+<P>七、下面就是配置站点了。单击右侧“高级设置”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082511.jpg" 
+width="199" height="206"></P>
+<P>选择你网站的目录</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082512.jpg" 
+width="446" height="216"></P>
+<P>八、回到IIS，单击右侧的“绑定...”，选中你要绑定的网站，点“编辑”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082513.jpg" 
+width="571" height="293"></P>
+<P>如果是一台电脑，只修改后面的端口号就行，可以随意修改数字。如果是办公室局域网，点击下拉框，选择自己电脑上的局域网IP，例如：192.168.**.**，然后修改端口号</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082514.jpg" 
+width="477" height="189"></P>
+<P>九、回到IIS，如果右侧显示停止，就选择启动，然后点击下面的浏览网站，就可以打开你绑定文件夹里面的网站了</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082515.jpg" 
+width="197" height="205"></P>
+<P>十、如果有多个网站，在IIS左边“网站”右键“添加网站”</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082516.jpg" 
+width="265" height="221"></P>
+<P>主要修改三个地方，“网站名称”、“物理路径”、“端口”，如果局域网，请修改“IP地址”，同上</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082517.jpg" 
+width="527" height="577"></P>
+<P>十一、添加好后，点击新建的网站名字，就是这个网站的详情了。</P>
+<P><IMG class="alignnone" title="Windows7安装IIS" alt="Windows7安装IIS" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/2012022900082518.jpg" 
+width="202" height="182"></P>
+<P>本来这次是打算用Discuz!NT来做的，方便与以后做的asp.net网站对接会员。但是老板要求快速，而Discuz!NT我连放到本地VS里面运行都忘记了，所以只好用Discuz! 
+7.2来做算了。关于主题我也只能下载一个类似的主题然后修改颜色，因为自己也没接触过制作论坛主题。</P><!-- 添加文章版权 2010/3/30 -->&gt;&gt;原创文章，欢迎转载。原文链接地址：http://ons.me/147.html 
+<BR></DIV><!--endmain-->
+<DIV class="art_xg">
+<H4>您可能感兴趣的文章:</H4>
+<UL>
+  <LI><A title="IIS和.net framework 4.0的安装顺序导致的问题(重新注册.net 4.0)" href="http://www.jb51.net/article/72807.htm" 
+  target="_blank">IIS和.net framework 4.0的安装顺序导致的问题(重新注册.net 4.0)</A></LI>
+  <LI><A title="在IIS上安装PHP4.0正式版" href="http://www.jb51.net/article/2272.htm" 
+  target="_blank">在IIS上安装PHP4.0正式版</A></LI>
+  <LI><A title="在windows iis5下安装php4.0+mysql之我见" href="http://www.jb51.net/article/2164.htm" 
+  target="_blank">在windows iis5下安装php4.0+mysql之我见</A></LI>
+  <LI><A title="Win2003 IIS 安装方法 图文教程" href="http://www.jb51.net/article/21274.htm" 
+  target="_blank">Win2003 IIS 安装方法 图文教程</A></LI>
+  <LI><A title="2009年最新版 win2003 IIS6+PHP5+MySQL5+Zend Optimizer+phpMyAdmin安装配置教程" 
+  href="http://www.jb51.net/article/17408.htm" target="_blank">2009年最新版 win2003 
+  IIS6+PHP5+MySQL5+Zend Optimizer+phpMyAdmin安装配置教程</A></LI>
+  <LI><A title="win2008里IIS安装以及IIS7简单设置教程[图文]" href="http://www.jb51.net/article/34507.htm" 
+  target="_blank">win2008里IIS安装以及IIS7简单设置教程[图文]</A></LI>
+  <LI><A title="WinXP下安装IIS搭建ASP环境教程[图文]" href="http://www.jb51.net/article/30051.htm" 
+  target="_blank">WinXP下安装IIS搭建ASP环境教程[图文]</A></LI>
+  <LI><A title="iis中ASP运行环境配置图解 IIS的安装和基本设置" href="http://www.jb51.net/article/30049.htm" 
+  target="_blank">iis中ASP运行环境配置图解 IIS的安装和基本设置</A></LI>
+  <LI><A title="Win7/Windows2003下IIS6.0、IIS7.5的伪静态组件安装和伪静态配置方法" href="http://www.jb51.net/article/29395.htm" 
+  target="_blank">Win7/Windows2003下IIS6.0、IIS7.5的伪静态组件安装和伪静态配置方法</A></LI>
+  <LI><A title="IIS和4.0安装到底有没有先后顺序解答" href="http://www.jb51.net/article/91339.htm" 
+  target="_blank">IIS和4.0安装到底有没有先后顺序解答</A></LI></UL></DIV>
+<DIV class="lbd clearfix"><SPAN id="art_down" class="jbTestPos"></SPAN></DIV>
+<DIV id="shoucang"></DIV>
+<DIV class="tags mt10"><STRONG>Tags：</STRONG><A title="搜索关于win7的文章" href="http://img.jb51.net/tag/win7/1.htm" 
+target="_blank">win7</A> <A title="搜索关于IIS的文章" href="http://img.jb51.net/tag/IIS/1.htm" 
+target="_blank">IIS</A></DIV>
+<DIV class="relatedarticle clearfix mt5">
+<H2>相关文章</H2>
+<UL>
+  <LI><SPAN>2016-06-06</SPAN><A title="iis7.5 批量删除处理程序映射的方法" href="http://www.jb51.net/article/86763.htm" 
+  target="_blank">iis7.5 批量删除处理程序映射的方法</A></LI>
+  <LI><SPAN>2015-11-11</SPAN><A title="windows2003 IIS6 部署MVC3和MVC4程序的方法" href="http://www.jb51.net/article/74437.htm" 
+  target="_blank">windows2003 IIS6 部署MVC3和MVC4程序的方法</A></LI>
+  <LI><SPAN>2013-05-05</SPAN><A title="通过命令行方式批量设置保留IP地址的代码" href="http://www.jb51.net/article/36578.htm" 
+  target="_blank">通过命令行方式批量设置保留IP地址的代码</A></LI>
+  <LI><SPAN>2014-07-07</SPAN><A title="IIS7,IIS7.5 升级PHP5.3后站点变慢的解决方法" href="http://www.jb51.net/article/52876.htm" 
+  target="_blank">IIS7,IIS7.5 升级PHP5.3后站点变慢的解决方法</A></LI>
+  <LI><SPAN>2009-05-05</SPAN><A title="无法加载php_curl.dll解决办法" href="http://www.jb51.net/article/18265.htm" 
+  target="_blank">无法加载php_curl.dll解决办法</A></LI>
+  <LI><SPAN>2009-02-02</SPAN><A title="win2003 服务器设置完全简洁版" href="http://www.jb51.net/article/17260.htm" 
+  target="_blank">win2003 服务器设置完全简洁版</A></LI>
+  <LI><SPAN>2012-11-11</SPAN><A title="浅析ASP.NET安全性分析(加强asp.net 1.1/2.0安全性)" 
+  href="http://www.jb51.net/article/31836.htm" 
+  target="_blank">浅析ASP.NET安全性分析(加强asp.net 1.1/2.0安全性)</A></LI>
+  <LI><SPAN>2011-09-09</SPAN><A title="windows服务器下IIS6/7下PHP 无法加载 php_curl.dll 等动态链接库" 
+  href="http://www.jb51.net/article/28258.htm" 
+  target="_blank">windows服务器下IIS6/7下PHP 无法加载 php_curl.dll 等动态链接库</A></LI>
+  <LI><SPAN>2012-01-01</SPAN><A title="最简单使IIS支持ASPX的权限设置(不建议服务器设置)" href="http://www.jb51.net/article/29554.htm" 
+  target="_blank">最简单使IIS支持ASPX的权限设置(不建议服务器设置)</A></LI>
+  <LI><SPAN>2015-10-10</SPAN><A title="Microsoft Windows 2008 Server R2 iis7.5上传文件限制200K更改" 
+  href="http://www.jb51.net/article/73329.htm" target="_blank">Microsoft Windows 
+  2008 Server R2 iis7.5上传文件限制200K更改</A></LI></UL></DIV>
+<DIV class="lbd clearfix mt5"><SPAN id="art_down2" class="jbTestPos"></SPAN>
+</DIV><A href="http://www.jb51.net/article/29787.htm#comments"></A>
+<DIV id="comments">
+<H2>最新评论</H2>
+<DIV class="pd5">
+<DIV id="SOHUCS" sid="art_29787"></DIV></DIV></DIV></DIV><!--endborder--></DIV><!--end fl-->
+<DIV class="w300 fr">
+<DIV class="r300 clearfix"><SPAN id="side_up" class="jbTestPos"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">大家感兴趣的内容</H4>
+<UL class="newsList newList-in">
+  <LI><EM class="no1">1</EM><A title="win7下IIS的安装和配置 图文教程" href="http://www.jb51.net/article/29787.htm" 
+  target="_blank">win7下IIS的安装和配置 图文教程</A></LI>
+  <LI><EM class="no2">2</EM><A title="HTTP 错误 500.19- Internal Server Error 错误解决方法" 
+  href="http://www.jb51.net/article/28160.htm" target="_blank">HTTP 错误 500.19- 
+  Internal Ser</A></LI>
+  <LI><EM class="no3">3</EM><A title="VisualSVN Server的配置和使用方法 图文" href="http://www.jb51.net/article/17365.htm" 
+  target="_blank">VisualSVN Server的配置和使用方</A></LI>
+  <LI><EM class="no4">4</EM><A title="windows下apache+php+mysql 环境配置方法" href="http://www.jb51.net/article/30128.htm" 
+  target="_blank">windows下apache+php+mysql 环境</A></LI>
+  <LI><EM class="no5">5</EM><A title="windows tomcat配置大全[详细]" href="http://www.jb51.net/article/16401.htm" 
+  target="_blank">windows tomcat配置大全[详细]</A></LI>
+  <LI><EM class="no6">6</EM><A title="Win2003 IIS 安装方法 图文教程" href="http://www.jb51.net/article/21274.htm" 
+  target="_blank">Win2003 IIS 安装方法 图文教程</A></LI>
+  <LI><EM class="no7">7</EM><A title="Windows VPN服务器配置图文教程 超详细版" href="http://www.jb51.net/article/26601.htm" 
+  target="_blank">Windows VPN服务器配置图文教程 </A></LI>
+  <LI><EM class="no8">8</EM><A title="Win2003 服务器系统安装图文教程" href="http://www.jb51.net/article/23218.htm" 
+  target="_blank">Win2003 服务器系统安装图文教程</A></LI>
+  <LI><EM class="no9">9</EM><A title="解决Windows 2003“在系统启动时至少有一个服务或驱动程序产生错误”" 
+  href="http://www.jb51.net/article/23119.htm" target="_blank">解决Windows 
+  2003“在系统启动时</A></LI>
+  <LI><EM class="no10">10</EM><A title="2009年最新版 win2003 IIS6+PHP5+MySQL5+Zend Optimizer+phpMyAdmin安装配置教程" 
+  href="http://www.jb51.net/article/17408.htm" target="_blank">2009年最新版 win2003 
+  IIS6+PHP5</A></LI></UL></DIV></DIV>
+<DIV class="r300 clearfix mt10"><SPAN id="idctu" class="jbTestPos"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">最近更新的内容</H4>
+<UL class="newsListA">
+  <UL>
+    <LI><A title="asp.net RewritePath重定向HTTP头Content-Location暴露真实路径解决方法" href="http://www.jb51.net/article/88208.htm" 
+    target="_blank">asp.net RewritePath重定向HTTP头Content</A></LI>
+    <LI><A title="无法读取配置节 system.serviceModel 因为它缺少节声明的解决方法" href="http://www.jb51.net/article/32910.htm" 
+    target="_blank">无法读取配置节 system.serviceModel 因为</A></LI>
+    <LI><A title="从入侵者的角度浅谈服务器安全配置基本知识" href="http://www.jb51.net/article/26451.htm" 
+    target="_blank">从入侵者的角度浅谈服务器安全配置基本知</A></LI>
+    <LI><A title="Windows 安装IIS出现的问题（无法安装IIS，提示“安装程序无法复制文件IISApp.vbs”）" href="http://www.jb51.net/article/17369.htm" 
+    target="_blank">Windows 安装IIS出现的问题（无法安装IIS</A></LI>
+    <LI><A title="IIS7.5 http 1.1 新建应用程序失败的解决方法" href="http://www.jb51.net/article/50613.htm" 
+    target="_blank">IIS7.5 http 1.1 新建应用程序失败的解决</A></LI>
+    <LI><A title="windows 服务器 目录 安全详细设置(PJblog 博客)" href="http://www.jb51.net/article/19250.htm" 
+    target="_blank">windows 服务器 目录 安全详细设置(PJblo</A></LI>
+    <LI><A title="php对外发包解决方案(导致w3wp.exe很占cpu)" href="http://www.jb51.net/article/29277.htm" 
+    target="_blank">php对外发包解决方案(导致w3wp.exe很占cp</A></LI>
+    <LI><A title="ASP.NET Process Model之一 IIS 和 ASP.NET ISAPI" href="http://www.jb51.net/article/15472.htm" 
+    target="_blank">ASP.NET Process Model之一 IIS 和 ASP.N</A></LI>
+    <LI><A title="服务器一大堆错误日志的解决方法" href="http://www.jb51.net/article/14226.htm" 
+    target="_blank">服务器一大堆错误日志的解决方法</A></LI>
+    <LI><A title="使IIS支持PHP,ISAPI或CGI,FastCGI完全配置教程(最新php5.2.13配置方法)" href="http://www.jb51.net/article/25519.htm" 
+    target="_blank">使IIS支持PHP,ISAPI或CGI,FastCGI完全配置</A></LI></UL></UL></DIV></DIV>
+<DIV class="r300 clearfix mt10"><SPAN id="idctu1" 
+class="jbTestPos"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">常用在线小工具</H4>
+<UL class="newsListA"><SPAN id="bctools" class="jbTestPos"></SPAN></UL></DIV>
+</DIV>
+<DIV id="idctu2" class="r300 clearfix mt10"><SPAN id="idctu2" 
+class="jbTestPos"></SPAN></DIV>
+<DIV class="mt10 rFixedBox"><SPAN id="r_2" class="jbTestPos"></SPAN></DIV></DIV><!--end fr--></DIV>
+</DIV><!--end content-->
+<DIV id="footer">
+<DIV class="main clearfix">
+<P><A href="http://www.jb51.net/about.htm" target="_blank">关于我们</A> - <A href="http://www.jb51.net/support.htm" 
+target="_blank">广告合作</A> - <A href="http://www.jb51.net/linkus.htm" target="_blank">联系我们</A> 
+-  <A href="http://www.jb51.net/sm.htm" target="_blank">免责声明</A> -  <A href="http://www.jb51.net/sitemap.htm" 
+target="_blank">网站地图</A> - <A href="tencent://message/?uin=461478385&amp;Site=http://www.jb51.net" 
+target="_blank">投诉建议</A> - <A href="http://www.jb51.net/up.htm" 
+target="_blank">在线投稿</A></P>
+<P>&copy;CopyRight 2006-2016 JB51.Net Inc All Rights Reserved. 脚本之家 版权所有</P></DIV>
+</DIV><!--end footer--><LINK rel="stylesheet" type="text/css" href="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/shCore.css">
+<LINK rel="Stylesheet" type="text/css" href="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/shThemeDefault.css">
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/shCore.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/shAutoloader.js"></SCRIPT>
+
+<SCRIPT type="text/javascript"> 
+if (top.location != self.location)top.location=self.location;
+$('#content').find('img').each(function(){
+        var img = this;
+        if (img.width >= 650){
+            img.style.width = "650px";
+            img.style.height = "auto";
+            //$(img).removeAttr('height');
+            var aTag = document.createElement('a');
+            aTag.href = img.src;
+			aTag.target="_blank";
+            $(aTag).addClass('bPic')
+            .insertAfter(img).append(img)
+          }
+    });
+ $(window).scroll(function()
+    {	
+    	//rFixedBox跟随滚动
+    	var h = $(window).height();
+        var top = $(window).scrollTop();
+    	var rFixedBox = $('.rFixedBox').prev().offset();
+        var fixedTop = rFixedBox.top;
+		
+        if(top>=fixedTop+344)
+        {
+			var h1 = parseInt($('#content').children('.main').height());
+			if(parseInt(top) + 340 < h1){
+				$('.rFixedBox').css({'position':'fixed','top': 0});
+			}else{
+				$('.rFixedBox').css({'position':'absolute','top': h1-510});
+			}
+        }
+        else
+        {
+            $('.rFixedBox').css({'position':'static', 'top':0});   
+        }	
+       /* return true;*/
+    });
+SyntaxHighlighter.autoloader(
+	'applescript			/jslib/syntaxhighlighter/scripts/shBrushAppleScript.js',
+	'actionscript3 as3		/jslib/syntaxhighlighter/scripts/shBrushAS3.js',
+	'bash shell				/jslib/syntaxhighlighter/scripts/shBrushBash.js',
+	'coldfusion cf			/jslib/syntaxhighlighter/scripts/shBrushColdFusion.js',
+	'cpp c					/jslib/syntaxhighlighter/scripts/shBrushCpp.js',
+	'obj-c objc				/jslib/syntaxhighlighter/scripts/shBrushObjC.js',
+	'c# c-sharp csharp		/jslib/syntaxhighlighter/scripts/shBrushCSharp.js',
+	'css					/jslib/syntaxhighlighter/scripts/shBrushCss.js',
+	'delphi pascal			/jslib/syntaxhighlighter/scripts/shBrushDelphi.js',
+	'diff patch pas			/jslib/syntaxhighlighter/scripts/shBrushDiff.js',
+	'erl erlang				/jslib/syntaxhighlighter/scripts/shBrushErlang.js',
+	'groovy					/jslib/syntaxhighlighter/scripts/shBrushGroovy.js',
+	'haxe hx				/jslib/syntaxhighlighter/scripts/shBrushHaxe.js',
+	'java					/jslib/syntaxhighlighter/scripts/shBrushJava.js',
+	'jfx javafx				/jslib/syntaxhighlighter/scripts/shBrushJavaFX.js',
+	'js jscript javascript	/jslib/syntaxhighlighter/scripts/shBrushJScript.js',
+	'perl pl				/jslib/syntaxhighlighter/scripts/shBrushPerl.js',
+	'php					/jslib/syntaxhighlighter/scripts/shBrushPhp.js',
+	'text plain				/jslib/syntaxhighlighter/scripts/shBrushPlain.js',
+	'py python				/jslib/syntaxhighlighter/scripts/shBrushPython.js',
+	'ruby rails ror rb		/jslib/syntaxhighlighter/scripts/shBrushRuby.js',
+	'scala					/jslib/syntaxhighlighter/scripts/shBrushScala.js',
+	'sql					/jslib/syntaxhighlighter/scripts/shBrushSql.js',
+	'vb vbnet				/jslib/syntaxhighlighter/scripts/shBrushVb.js',
+	'ps powershell			/jslib/syntaxhighlighter/scripts/shBrushPowerShell.js',
+	'xml xhtml xslt html	/jslib/syntaxhighlighter/scripts/shBrushXml.js'
+);
+SyntaxHighlighter.all();
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/jbLoader.js"></SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+
+<DIV id="tongji">
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/tongji.js"></SCRIPT>
+
+<SCRIPT>
+(function(){
+var appid = 'cyrHH3dwi',
+conf = 'prod_1dc5dc80970106099d43fe242b7465fc';
+var doc = document,
+s = doc.createElement('script'),
+h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+s.type = 'text/javascript';
+s.charset = 'utf-8';
+s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+h.insertBefore(s,h.firstChild);
+window.SCS_NO_IFRAME = true;
+})();
+</SCRIPT>
+</DIV>
+<SCRIPT type="text/javascript" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/pl.htm"></SCRIPT>
+
+<SCRIPT type="text/javascript" charset="utf-8" src="win7下IIS的安装和配置%20图文教程_win服务器_脚本之家_files/js.js"></SCRIPT>
+<!-- published at 2016-8-25 14:50:58By dxycms qq:461478385  -->
+</DIV></BODY></HTML>

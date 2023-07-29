@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 1.学生管理 -->
+	<package name="p1" namespace="/stu" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="stulist">/student/stulist.jsp</result>
+			<result name="stumore">/student/stumore.jsp</result>
+			<result name="stualert">/student/stualert.jsp</result>
+			<result name="stuadd">/student/stuadd.jsp</result>
+			<result name="stujl">/student/stujl.jsp</result>
+			<result name="stustumore">/student/stustumore.jsp</result>
+			<result name="error">/error.jsp</result>
+			
+		</action>
+	</package>
+	<!-- 2.宿舍管理 -->
+	<package name="p2" namespace="/hourse" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="hrslist">/student/hrslist.jsp</result>
+			<result name="hrsalert">/student/hrsalert.jsp</result>
+			<result name="hrsadd">/student/hrsadd.jsp</result>
+			<result name="hrsadd">/student/hrsadd.jsp</result>
+			<result name="elelist">/student/elelist.jsp</result>
+		</action>
+	</package>
+	<!-- 3.班级管理 -->
+	<package name="p3" namespace="/classes" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="clslist">/student/clslist.jsp</result>
+			<result name="clsadd">/student/clsadd.jsp</result>
+			<result name="clsalert">/student/clsalert.jsp</result>
+		</action>
+	</package>
+	<!-- 4.成绩管理 -->
+	<package name="p4" namespace="/score" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="scolist">/student/scolist.jsp</result>
+			<result name="scoadd">/student/scoadd.jsp</result>
+			<result name="scostulist">/student/scostulist.jsp</result>
+		</action>
+	</package>
+	<!-- 5.谈心管理 -->
+	<package name="p5" namespace="/says" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="sayslist">/student/sayslist.jsp</result>
+			<result name="saysadd">/student/saysadd.jsp</result>
+			<result name="saysalert">/student/saysalert.jsp</result>
+			<result name="saysstulist">/student/saysstulist.jsp</result>
+			<result name="saysfankui">/student/saysfankui.jsp</result>
+			<result name="saysstualert">/student/saysstualert.jsp</result>
+		</action>
+	</package>
+	<!-- 6.毕业总结管理 -->
+	<package name="p6" namespace="/summary" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="smylist">/student/summarylist.jsp</result>
+			<result name="smyadd">/student/smyadd.jsp</result>
+			<result name="smyalert">/student/smyalert.jsp</result>
+			<result name="smystulist">/student/summarystulist.jsp</result>
+		</action>
+	</package>
+	<!-- 7.毕业就业管理 -->
+	<package name="p7" namespace="/job" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="joblist">/student/joblist.jsp</result>
+			<result name="jobadd">/student/jobadd.jsp</result>
+			<result name="jobalert">/student/jobalert.jsp</result>
+		</action>
+	</package>
+	<!-- 8.项目答辩成绩管理 -->
+	<package name="p8" namespace="/prj" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="prjlist">/student/prjlist.jsp</result>
+			<result name="prjadd">/student/prjadd.jsp</result>
+			<result name="prjdfs">/student/prjdfs.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="prjstulist">/student/prjstulist.jsp</result>
+		</action>
+	</package>
+	<!-- 9.意见反馈管理 -->
+	<package name="p9" namespace="/sbk" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="sbklist">/student/sbklist.jsp</result>
+			<result name="sbklist2">/student/sbklist2.jsp</result><!-- 回复 -->
+			<result name="sbklist3">/student/sbklist3.jsp</result><!-- 不显示 -->
+			<result name="sbkadd">/student/sbkadd.jsp</result>
+			<result name="sbkreply">/student/sbkreply.jsp</result><!-- 回复 -->
+			<result name="sbkreplyalert">/student/sbkreplyalert.jsp</result><!-- 修改回复 -->
+			<result name="sbkstulist">/student/sbkstulist.jsp</result>
+		</action>
+	</package>
+	<!-- 10.请假管理 -->
+	<package name="p10" namespace="/lev" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="levlist">/student/levlist.jsp</result>
+			<result name="levstulist">/student/levstulist.jsp</result>
+			<result name="levadd">/student/levadd.jsp</result>
+			<result name="levalert">/student/levalert.jsp</result>
+			<result name="levsx2" type="redirect">levsx2</result>
+		</action>
+	</package>
+	<!-- 11.备用电脑管理 -->
+	<package name="p11" namespace="/apl" extends="json-default">
+		<action name="*" class="com.ht.action.StuAction" method="{1}">
+			<result type="json"></result>
+			<result name="apllist">/student/apllist.jsp</result>
+			<result name="aplstulist">/student/aplstulist.jsp</result>
+			<result name="apladd">/student/apladd.jsp</result>
+			<result name="aplalert">/student/aplalert.jsp</result>
+			<result name="aplsx2" type="redirect">aplsx2</result>
+		</action>
+	</package>
+	<!-- 12.学生主页 -->
+	<package name="p12" namespace="/stumain" extends="json-default">
+		<action name="*" class="com.ht.action.StuMainAction" method="{1}">
+			<result type="json"></result>
+			<result name="index">/homepage2.jsp</result>
+		</action>
+	</package>
+</struts>

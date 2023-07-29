@@ -1,0 +1,9 @@
+visibility = 'hidden'隐藏 visible显示
+
+  	<c:set var="iframelist" value="${list}" scope="session"><!-- 保存本页面 -->
+  	</c:set>
+	<c:forEach items="${iframelist}" var="list">
+
+			<a href="goods?method=qtlist&id=${list.bottom_id }">${list.bottom }</a>&nbsp&nbsp<!-- 去商品详情了 -->
+					
+    	</c:forEach>

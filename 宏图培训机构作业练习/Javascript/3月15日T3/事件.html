@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body onload="alert('页面加载中')">
+	onclick鼠标确定事件<input type="button" value="点击" onclick="alert('我被点击了')"/>
+	<br/>
+	onchange值改变事件 一般用于下拉框 
+	<select onchange="alert('我被改变了')">
+		<option >1</option>
+		<option >2</option>
+		<option >3</option>
+	</select>
+	<br/>
+	也可以用在文本框（在文本框失去焦点时弹出）
+	<input type="text" onchange="alert('我被改变了')">
+	<br/>
+	onselect被选中时调用（主要用在文本框和文本域中）
+	<input type="text" onselect="alert('我被选了')">
+	<br/>
+	onfocus 得到焦点
+	<input type="text" onfocus="alert('我得到焦点了');">
+	<br/>
+	onblur失去焦点
+	<input type="text" onblur="alert('我失去焦点了')">
+	<br/>
+	onload 在页面加载时调用 页面一开始和加载后没先后顺序
+	<br/>
+	onmouseover/onmouseout 鼠标进入 鼠标一开
+	<font color="red" onmouseover="alert('鼠标进入')" onmouseout="alert('鼠标移开')">点我啊</font>
+	<br/>
+	onkeydown/onkeyup/onkeypress 键盘按下 键盘松开 键盘按下（不支持所以键）
+	<input type="text" onkeyup="alert('键盘松开了')" onkeypress="alert('键盘按下了');">
+	<!--onkeydown="alert('键盘按下了')"-->
+ </body>
+</html>

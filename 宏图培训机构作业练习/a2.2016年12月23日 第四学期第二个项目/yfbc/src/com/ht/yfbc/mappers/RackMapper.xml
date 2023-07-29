@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.RackDao">
+	<resultMap type="com.ht.yfbc.pojo.Rack" id="rackmap">
+		<id column="RID" property="rid" />
+		<result column="WHID" property="whid" />
+		<result column="RNAME" property="rname" />
+		<result column="RTYPE" property="rtype" />
+		<result column="UNIT" property="unit" />
+		<result column="RSIZE" property="rsize" />
+		<result column="RSURPLUS" property="rsurplus" />
+		<result column="STATU" property="statu" />
+		<result column="RDATE" property="rdate" />
+	</resultMap>
+	<resultMap type="com.ht.yfbc.pojo.Rack2" id="rackmap2"
+		extends="rackmap">
+		<association property="type" column="RTYPE"
+			select="com.ht.yfbc.dao.GoodtypeDao.selByid"></association>
+		<association property="warehouse" column="WHID"
+			select="com.ht.yfbc.dao.WarehouseDao.selWarehouseById"></association>
+	</resultMap>
+	
+	<select id="selRack" parameterType="String" resultMap="rackmap2">
+		select * from rack where whid = #{whid}
+	</select>
+	
+	<select id="selRackbyid" parameterType="String" resultType="com.ht.yfbc.pojo.Rack">
+		select * from rack where whid = #{whid}
+	</select>
+	
+	<select id="selRackByRid" parameterType="String" resultType="com.ht.yfbc.pojo.Rack">
+		select * from rack where rid = #{reid}
+	</select>
+
+	<insert id="insert" parameterType="com.ht.yfbc.pojo.Rack">
+		insert into rack values(sys_guid(),#{rname},#{whid},#{rtype},#{unit},#{rsize},#{rsurplus},#{statu},sysdate)
+	</insert>
+	
+	<!-- 1月2日 刘建杰写，为了摆货根据仓库和物品的单位来查询货架 -->
+	<select id="selRackforputway" parameterType="map" resultMap="rackmap2">
+		select * from rack
+		<where>
+		    <if test="whid!=null and whid!=''"> 
+		        and whid = #{whid}
+		    </if>
+		    <if test="unit!=null and unit!=''"> 
+		        and unit = #{unit}
+		    </if>
+		    <if test="statu!=null and statu!=''">
+		        and statu = #{statu}
+		    </if>
+		    <if test="sku!=null and sku!=''">
+		        and rtype = #{sku}
+		    </if>
+		</where>
+	</select>
+	<!-- 1月2日 刘建杰写，摆完货需要修改货架的剩余大小 -->
+	<update id="updaterackrsurplus" parameterType="map">
+	    update rack set rsurplus = rsurplus-#{size} where Rid = #{rid}
+	</update>
+	<!-- 1月13日 刘建杰写，封装 -->
+	<select id="selRackofMoveStorage" parameterType="String" resultMap="rackmap">
+		select * from rack where whid = #{whid}
+	</select>
+</mapper>

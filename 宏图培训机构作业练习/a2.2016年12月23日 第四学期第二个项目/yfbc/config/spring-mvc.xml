@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<beans xmlns="http://www.springframework.org/schema/beans"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="    
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+        http://www.springframework.org/schema/mvc   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd  
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+        
+	<!-- 使用注解的包 让com.ht.yfbc.action下面的注解有用 如：@Controller -->
+	<context:component-scan base-package="com.ht.yfbc.action" />
+    
+    <!-- 声明命名空间 作用域json解析器 -->    
+	<mvc:annotation-driven/>
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	    <property name="supportedMediaTypes">
+	    	<list>
+	    	    <value>text/html;charset=utf-8</value>
+	    	    <value>application/json;charset=utf-8</value>
+	    	</list>	
+	    </property>
+	</bean>
+	<bean
+	    class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	    <property name="messageConverters">
+	        <list>
+	            <ref bean="mappingJacksonHttpMessageConverter"/>
+	        </list>
+	    </property>
+	</bean>
+	
+	<!-- 视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<!-- 文件解析器 -->
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"/>  
+	    <property name="maxUploadSize" value="10000000"/><!-- 10兆 -->
+	</bean>
+
+	<!-- 这也是配置json时间类型转换的作用 -->
+	<mvc:annotation-driven  conversion-service="conversionService" />
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="registerDefaultFormatters" value="false"/>
+		<property name="formatterRegistrars">
+			<set>
+				<bean class="org.springframework.format.datetime.DateFormatterRegistrar">
+					<property name="formatter" ref="dateFormatter"/>
+				</bean>
+			</set>
+		</property>
+	</bean>
+	<bean id="dateFormatter" class="org.springframework.format.datetime.DateFormatter">
+		<property name="pattern" value="yyyy-MM-dd"/>
+	</bean>
+
+</beans>  

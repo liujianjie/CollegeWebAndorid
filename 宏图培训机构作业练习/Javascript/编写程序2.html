@@ -1,0 +1,32 @@
+<html>
+ <head>
+  <title> New Document </title>
+	<script>
+		function change(){
+			var sel=document.getElementById("sel");
+			//alert(sel.length);
+			for(var i=0;i<sel.length;i++){
+				if(sel.options[i].selected==true){
+					var val=document.getElementById("sel").options[i].value;
+					//alert(val);
+					var txt=document.getElementById("sel").options[i].text;
+				}
+			}
+			document.getElementById("tx1").value=val;
+			document.getElementById("tx2").value=txt;
+		}
+	</script>
+ </head>
+
+ <body>
+	<select id="sel" onchange="change();">
+		<option value="0">我</option>
+		<option value="1">叫</option>
+		<option value="2">刘</option>
+		<option value="3">建</option>
+		<option value="4">杰</option>
+	</select>
+	值<input type="text" id="tx1">
+	文本<input type="text" id="tx2">
+ </body>
+</html>

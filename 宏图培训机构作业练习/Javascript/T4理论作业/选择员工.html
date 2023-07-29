@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+	<script>
+		//function 
+		/*马雪怡
+张绮
+李轩
+蒋涛勇
+罗杰
+郝羽
+萧涛
+罗平雪
+陶晓海
+朱嘉
+谢怡*/
+		function selectzhiye(formname,wo){
+			//清空left_select
+			formname.left_select.options.length=0;
+			var zhiye=wo.value;
+			if(zhiye=="xue"){
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[0].text = "马雪怡"; 
+				formname.left_select.options[0].value= "1";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[1].text = "李轩"; 
+				formname.left_select.options[1].value= "2";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[2].text = "蒋涛勇"; 
+				formname.left_select.options[2].value= "3";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[3].text = "罗平雪"; 
+				formname.left_select.options[3].value= "4";
+			}else if(zhiye=="jiao"){
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[0].text = "郝羽"; 
+				formname.left_select.options[0].value= "5";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[1].text = "萧涛"; 
+				formname.left_select.options[1].value= "6";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[2].text = "陶晓海"; 
+				formname.left_select.options[2].value= "7";
+
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[3].text = "朱嘉"; 
+				formname.left_select.options[3].value= "8";
+			}else if(zhiye=="jiu"){
+				formname.left_select.add(document.createElement("option"));//加一个
+				formname.left_select.options[0].text = "谢怡"; 
+				formname.left_select.options[0].value= "9";
+			}
+		}
+		//第一个按钮
+		function one(frmname){
+			for(var i=0;i<frmname.left_select.length;i++){
+				if(frmname.left_select.options[i].selected==true){
+					//右边末尾加上值
+					//frmname.right_select.options[frmname.right_select.length]=new //Option(frmname.left_select.options[i].text,frmname.left_select.options[i].value);
+					frmname.right_select.add(document.createElement("option"));//加一个
+					frmname.right_select.options[frmname.right_select.length-1].text= frmname.left_select.options[i].text; 
+					frmname.right_select.options[frmname.right_select.length-1].value= frmname.left_select.options[i].value;
+					//左边去掉
+					frmname.left_select.options.remove(i);
+					i--;//
+				}
+			}
+
+		}
+
+		//第二个按钮
+		function two(frmname){
+			for(var i=0;i<frmname.left_select.length;i++){
+				//右边末尾加上值
+				frmname.right_select.options[frmname.right_select.length]=new Option(frmname.left_select.options[i].text,frmname.left_select.options[i].value);
+			}
+			frmname.left_select.length=0;
+
+		}
+		//第三个按钮
+		function three(frmname){
+			for(var i=0;i<frmname.right_select.length;i++){
+				if(frmname.right_select.options[i].selected===true){
+					frmname.left_select.options[frmname.left_select.length]=new Option(frmname.right_select.options[i].text,frmname.right_select.options[i].value);
+					//frmname.right_select.options[i] = new Option("");
+					//右边去掉
+					frmname.right_select.options.remove(i);
+					i--;//
+				}
+			}
+
+		
+		}
+		//第四个按钮
+		function four(frmname){
+			for(var i=0;i<frmname.right_select.length;i++){
+				frmname.left_select.options[frmname.left_select.length]=new
+				Option(frmname.right_select.options[i].text,frmname.right_select.options[i].value);
+			}
+			frmname.right_select.length=0;
+
+		}
+		//传值
+		function chuangfu(frmname){
+			//父类值
+			opener.document.frm.tx.value="";
+			alert("dsfdfd");
+			var str="";
+			for(var i=0;i<frmname.right_select.length;i++){
+				str+=frmname.right_select.options[i].text+" ";
+
+			}
+			opener.document.frm.tx.value=str;
+		}
+	</script>
+ </head>
+
+ <body>
+ <form name="frm">
+  <table border="1" align="center">
+	<tr>
+		<td colspan="3">
+			<select name="selectbumen" onchange="selectzhiye(this.form,this)">
+				<option>--选择部门--</option>
+				<option value="xue">学术部</option>
+				<option value="jiao">教职部</option>
+				<option value="jiu">就业部</option>
+			</select>
+		</td>
+		
+	</tr>
+	<tr align="center">
+		<td><select name="left_select" style="WIDTH: 152px; HEIGHT: 208px"  multiple>
+
+			</select>
+		</td>
+		<td><input type="button" value=" > " name="dayu" onclick="one(this.form);">
+			<br/>
+			<input type="button" value=">>>" name="ddayu" onclick="two(this.form);">
+			<br/>
+			<input type="button" value=" < " name="xiaoyu" onclick="three(this.form);">
+			<br/>
+			<input type="button" value="<<<" name="xxiaoyu" onclick="four(this.form);"></td>
+		<td><select name="right_select" style="WIDTH: 152px; HEIGHT: 208px"  multiple>
+
+			</select>
+		</td>
+	</tr>
+	<tr align="center">
+		<td colspan="3"><input type="button" value="确定" name="que" onclick="chuangfu(this.form);"></td>
+		
+	</tr>
+  
+  <table>
+  </form>
+ </body>
+</html>

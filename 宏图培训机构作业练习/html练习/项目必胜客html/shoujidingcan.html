@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>手机订餐</title>
+	</head>
+	<!-- 引入外部样式表  -->
+	<link rel="stylesheet" href="css/str.css"  type="text/css">
+	<!--引入结束-->
+	<style>
+	     .header{
+		   	width: 100%;
+		   	height: 21px;
+		  	background-color: #260007;
+		   	color: #fff;
+		}
+	  .header_top{	
+	  		width: 100%;
+			height: 62px;
+			background-color: #E60013;
+			z-index: 999;
+			position: relative;
+			 }
+			 
+		#footer{
+		
+		width: 100%;
+		height: 50px;
+		background-color: #F4F4F4;
+		position: absolute;
+		top: 955px;
+		border-top: 1px solid #E3E3E3;
+		z-index: 999;
+		}
+		#footer a{
+			color: #7F7F7F;
+			line-height: 42px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+			
+		}
+		#footer span{
+			color:#7F7F7F ;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+		}
+		#footer select{
+			color:#7F7F7F ;
+			border-top:2px solid #696969;
+			border-left:2px solid #696969;
+			position: relative;
+			top: -20px;
+			margin-left:25px;
+			border: 1px solid #7F7F7F;
+		}
+		#footer a:hover{
+			text-decoration: underline;
+		}
+		.sp{
+			margin-left: 25px;
+		}
+		.auto_5{
+       		width: 74.1%;
+			height: 900px;
+			margin: auto;
+			text-align: center;
+			margin-top: 18px;
+			}
+	</style>
+	<body>
+		<!--头部开始 -->
+		<div class="header"><marquee direction="left">欢迎网上订购</marquee></div>
+		<div class="header_top">
+				<a href="#"><img src="img/a9.png">
+		     <ul >
+				<li><a href="shouye.html" >首页</a></li>
+				<li><a href="kaishidingcan.html">开始订餐</a></li>
+				<li><a href="chaxundingcan.html">查询订餐</a></li>
+				<li><a href="shoujidingcan.html" style="background-color:#FF7585;">手机订餐</a></li>
+			</ul>
+		</div>
+		<!--头部结束-->
+		
+		<!--中间开始-->
+		<div class="auto_5">
+		    <img style="float: left;" src="img/index_02 (1).jpg">
+		    <img style="float: left;" src="img/2014-12-19_155517.png" >
+		    <img style="float: left;" src="img/index_04.jpg">
+		</div>
+		<!--中间开始-->
+		<!--尾部开始-->
+	 <div id="footer" >
+		
+		<img src="img/a.png"text-align: center;line-height: 42px;margin-top: -48px;margin-right: -340px;">
+		<a href="falvtiaokuan.html">法律条款|</a>
+		<a href="yinsitiaokuan.html">隐私条款|</a>
+		<a href="lianxiwomen.html">联系我们|</a>
+		<a href="http://www.yumcareers.cn/">加入我们</a>
+		<span class="sp">版权所有百胜（中国）投资有限公司沪ICP备05051779号</span>
+		<select style="color:#7f7f7f" onfocus="this.options[0].selected = true;" onchange="javascript:window.open(this.options[this.selectedIndex].value);">
+			<option>欢迎访问百胜餐饮其他品牌</option>
+			<option value="http://www.yum.com.cn/">中国百胜</option>
+			<option value="http://www.kfc.com.cn/">中国肯德基</option>
+			<option value="http://www.pizzahut.com.cn/">中国必胜客</option>
+			<option value="http://www.4008823823.com.cn">肯德基宅急送</option>
+			<option value="http://www.dfjb.com.cn/">东方既白</option>
+		</select>
+		</div>
+	</div>
+	<!--尾部结束-->
+	</body>
+</html>

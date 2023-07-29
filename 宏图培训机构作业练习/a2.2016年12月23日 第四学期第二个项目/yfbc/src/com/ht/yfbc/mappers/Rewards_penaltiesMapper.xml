@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Rewards_penaltiesDao">
+  <resultMap type="com.ht.yfbc.pojo.Rewards_penalties" id="rewards_penaltiesmap">
+  	<id column="id" property="id" />
+  	<result column="userid" property="userid" />
+  	<result column="bonus" property="bonus" />
+  	<result column="bonus_cause" property="bonus_cause" />
+  	<result column="fine" property="fine" />
+  	<result column="fine_cause" property="fine_cause" />
+  	<result column="recordtime" property="recordtime" />
+  </resultMap>
+  <insert id="addRewards_penalties" parameterType="rewards_penalties">
+  	insert into rewards_penalties(id,userid,bonus,bonus_cause,fine,fine_cause,recordtime)
+  		 values(sys_guid(),#{userid},#{bonus},#{bonus_cause},#{fine},#{fine_cause},#{recordtime})
+  </insert>
+  <select id="selRewards_penaltiesList" parameterType="map" resultType="rewards_penalties">
+  	 select *
+  from rewards_penalties rp
+ where userid = #{userid}
+   and to_char(rp.recordtime, 'yyyy-MM') = #{recordtime} 
+  </select>
+  <select id="selRewards_penaltiesListPage" parameterType="map" resultType="rewards_penalties">
+  	select * from (  select a.*, rownum rn
+   					from (
+   					select * from rewards_penalties rp 
+   					<where>
+   						<if test="positionid!=null and warehouseid!=null and positionid!='' and warehouseid!=''">
+							and userid in (select id from users where warehouseid=#{warehouseid} and positionid=#{positionid})
+						</if>
+   						<if test="recordtime!=null and recordtime!=''">
+   							and to_char(rp.recordtime, 'yyyy-MM') = #{recordtime} 
+   						</if>
+   					</where>
+   						) a where rownum &lt;= #{pageCount}*#{currPage}
+   				 )
+   	where rn &gt;= (#{pageCount}*(#{currPage}-1))+1
+  </select>
+  <select id="selCount" parameterType="map" resultType="Integer">
+  	select count(1) from rewards_penalties rp 
+					<where>
+						<if test="positionid!=null and warehouseid!=null and positionid!='' and warehouseid!=''">
+							and userid in (select id from users where warehouseid=#{warehouseid} and positionid=#{positionid})
+						</if>
+						<if test="recordtime!=null and recordtime!=''">
+							and to_char(rp.recordtime, 'yyyy-MM') = #{recordtime} 
+						</if>
+					</where>
+  </select>
+</mapper>

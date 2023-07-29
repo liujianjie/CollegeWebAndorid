@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Cars_changeDao">
+ 	<resultMap type="com.ht.yfbc.pojo.Cars_change" id="cars_changemap">
+ 		<id column="id" property="id"/>
+ 		<result column="warehouseid" property="warehouseid"/>
+ 		<result column="userid" property="userid"/>
+ 		<result column="carsid" property="carsid"/>
+ 		<result column="changedate" property="changedate"/>
+ 	</resultMap>
+ 	 <!-- 查询 -->
+ 	<select id="selCars_change" resultMap="cars_changemap">
+  		select * from cars_change
+  	</select>
+  		<!-- 分页查询 -->
+  	<select id="selCars_changePage" parameterType="map" resultType="com.ht.yfbc.pojo.Cars_change">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM cars_change ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+  </select>
+  <select id="selCount" resultType="java.lang.Integer">
+  	select count(1) from cars_change 
+  </select>
+  		<!-- 添加 -->
+  	<insert id="addCars_change" parameterType="cars_change">
+      	insert into cars_change 
+       		(id,carsid,userid,warehouseid,changedate )
+		values 
+			(sys_guid(),#{carsid},#{userid},#{warehouseid},#{changedate})
+  	</insert>
+  	<!-- 删除 -->
+  	<delete id="delCars_change" parameterType="String">
+	delete from cars_change where id=#{id}
+	</delete>
+</mapper>

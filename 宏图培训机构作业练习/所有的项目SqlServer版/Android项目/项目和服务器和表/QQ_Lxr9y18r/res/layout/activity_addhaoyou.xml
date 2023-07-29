@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F7">
+    <LinearLayout 
+        android:id="@+id/addhy_rl"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="8dp"
+	    android:background="#ffffff"
+	    android:weightSum="10">
+	    <EditText 
+	        android:id="@+id/addhy_rl_ed1"
+	        android:layout_width="0dp"
+	        android:layout_height="30dp"
+	        android:layout_weight="8.5"
+	        android:hint="QQ号/手机号/邮箱/群/公众号"
+	        android:textSize="12sp"
+	        android:background="@drawable/lianxirenfragment_sousuo_shape"/>
+	    <TextView 
+	        android:id="@+id/addhy_rl_tv"
+			android:layout_width="0dp"
+			android:layout_height="30dp"
+			android:layout_weight="1.5"
+			android:text="取消"
+			android:textColor="#12B9F6"
+			android:gravity="center"/>
+	</LinearLayout>
+	<ListView 
+	    android:id="@+id/addhy_lv"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/addhy_rl">
+	    
+	</ListView>
+	
+</RelativeLayout>

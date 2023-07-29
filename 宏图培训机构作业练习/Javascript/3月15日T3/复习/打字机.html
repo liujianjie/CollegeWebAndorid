@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+
+ </head>
+
+ <body onload="star();">
+	<span id="span"></span>
+	<script>
+		var str="立刻就暗示的风口浪尖你离开撒旦法， 水电费爱的发生的";
+		var i=1;
+		function star(){
+			var s=str.substring(0,i);
+			document.getElementById("span").innerHTML=s+"|";//覆盖
+			i++;
+			setTimeout("star();",100);
+		}
+	</script>
+ </body>
+</html>

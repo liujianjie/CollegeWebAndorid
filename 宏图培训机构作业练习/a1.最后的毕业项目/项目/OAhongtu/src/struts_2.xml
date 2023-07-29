@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="chen" namespace="/chenru" extends="json-default">
+		<action name="*" class="com.ht.action.CourseAction" method="{1}">
+		<result type="json"></result>
+		<result name="tologin" type="redirect">/index.jsp</result>
+		<result name="tologin1" type="redirect">/index.jsp</result>
+		<result name="backlogin" type="redirect">/login.jsp</result>
+ 			<result name="tolist">/jiaowu/courselist.jsp</result>
+ 			<result name="tocplist">/jiaowu/courseplanlist.jsp</result>
+ 			<result name="tocplist1">/jiaowu/courseplanlist1.jsp</result>
+ 			<result name="tocpadd">/jiaowu/courseplanadd.jsp</result>
+ 			<result name="todislist">/jiaowu/discusslist.jsp</result>
+ 			<result name="todislist1">/jiaowu/discusslist1.jsp</result>
+ 			<result name="todisadd">/jiaowu/discussadd.jsp</result>
+ 			<result name="toupdcou">/jiaowu/courseupd.jsp</result>
+ 			<result name="toupdcp">/jiaowu/courseplanupd.jsp</result>
+ 			<result name="toupddis">/jiaowu/discussupd.jsp</result>
+ 			<result name="tofedlist">/jiaowu/fedlist.jsp</result>
+ 			<result name="tofedadd">/jiaowu/fedadd.jsp</result>
+ 			<result name="toupdfed">/jiaowu/fedupd.jsp</result>
+ 			<result name="tostufedlist">/jiaowu/stufedlist.jsp</result>
+ 			<result name="tofeed">/jiaowu/feed.jsp</result>
+ 			<result name="viewfeed">/jiaowu/viewfeed.jsp</result>
+ 			<result name="viewfeed1">/jiaowu/viewfeed1.jsp</result>
+ 			<result name="viewfeed2">/jiaowu/viewfeed2.jsp</result>
+ 			<result name="viewfeed3">/jiaowu/viewfeed3.jsp</result>
+ 				<result name="viewfeed4">/jiaowu/viewfeed4.jsp</result>
+ 				<result name="viewfeed5">/jiaowu/viewfeed5.jsp</result>
+ 			<result name="viewdis">/jiaowu/viewdiscuss.jsp</result>
+ 			<result name="viewdis1">/jiaowu/viewdiscuss1.jsp</result>
+ 			
+ 			<result name="todutyslist">/jiaowu/dutyslist.jsp</result>
+ 			<result name="todutysadd">/jiaowu/dutysadd.jsp</result>
+ 			<result name="toupddutys">/jiaowu/dutysupd.jsp</result>
+ 			<result name="tomydutys">/jiaowu/mydutyslist.jsp</result>
+ 		</action>
+	</package>
+</struts>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.PutawayDao">
+  <resultMap type="Putaway" id="putawaymap">
+  	<id column="PTID" property="ptid" />
+  	<result column="INID" property="inid" />
+  	<result column="REID" property="reid" />
+  	<result column="SHEID" property="sheid" />
+  	<result column="WHID" property="whid" />
+  	<result column="PTBLN" property="ptbln" />
+  </resultMap>
+  
+  <resultMap type="com.ht.yfbc.pojo.putaway2" id="putawaymap2">
+  	<association property="war" column="WHID" select="com.ht.yfbc.dao.WarehouseDao.selWarehouseById"></association>
+  	<association property="rack" column="SHEID" select="com.ht.yfbc.dao.RackDao.selRackByRid"></association>
+  	<association property="ins" column="INID" select="com.ht.yfbc.dao.InStorageDao.selInStoragebyid"></association>
+  	<association property="rece" column="REID" select="com.ht.yfbc.dao.ReceivingDao.selReceivingbyid"></association>
+  </resultMap>
+  
+  <!-- 1月11日 刘建杰写 有商品信息要获取 但不用太多 -->
+  <resultMap type="putaway3" id="putawaymap3">
+  	<association property="rece" column="REID" select="com.ht.yfbc.dao.ReceivingDao.selReceivingbyid"></association>
+  </resultMap>
+  
+  <select id="selPutaway" resultMap="putawaymap2">
+  		select * from put_away
+  </select>
+  
+  <select id="selPutawayBywhid" parameterType="String" resultMap="putawaymap2">
+  		select * from put_away where whid = #{whid}
+  </select>
+  
+  <select id="selPutawaybywhid" parameterType="map" resultMap="putawaymap2">
+  		select * from put_away where whid = #{whid}
+  </select>
+  
+  <select id="selPutawayBypage" resultMap="putawaymap2" parameterType="map">
+		select * from (select a.*, rownum rn from put_away a where
+		#{max}>=rownum ) b where b.rn>#{min}
+	</select>
+	
+	<select id="selPutawayBypageByid" resultMap="putawaymap2" parameterType="map" >
+		select * from (select a.*, rownum rn from put_away a where
+		a.whid = #{whid} and #{max}>=rownum ) b where b.rn>#{min}
+	</select>
+  
+  <insert id="addPutaway" parameterType="Putaway">
+      insert into put_away values(sys_guid(),#{inid},#{reid},#{sheid},#{whid},1)
+  </insert>
+  
+  <select id="selPutawayByid" parameterType="String" resultMap="putawaymap2">
+  	select * from put_away where sheid = #{pid}
+  </select>
+  
+  <select id="selPutawayByPid" parameterType="String" resultMap="putawaymap2">
+  	select * from put_away where ptid = #{pid}
+  </select>
+  
+  <!-- 1月11日 移库流程的单子信息 -->
+  <select id="selPutawayByPid3" parameterType="String" resultMap="putawaymap3">
+  	select * from put_away where ptid = #{pid}
+  </select>
+  
+   <!-- 1月11日 移库流程的货物信息  分页-->
+  <select id="selPutawayByid3" parameterType="String" resultMap="putawaymap3">
+  	select * from put_away where sheid = #{pid}
+  </select>
+  
+  <!-- 修改状态为不在货架中了 -->
+  <update id="updatePtbln" parameterType="String">
+      update put_away set ptbln = 0 where ptid = #{ptid}
+  </update>
+  
+  <select id="selPutawayCount" resultType="int">
+  		select count(*) from put_away
+  </select>
+  
+</mapper>

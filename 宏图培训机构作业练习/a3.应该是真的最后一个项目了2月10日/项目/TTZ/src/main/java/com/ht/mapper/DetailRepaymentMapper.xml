@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.DetailRepaymentDao">
+	<resultMap type="DetailRepayment" id="DetailRepaymentMap">
+		<id column="repay_id" property="repay_id" />
+		<result column="b_id" property="b_id" />
+		<result column="periods" property="periods" />
+		<result column="repay_interest" property="repay_interest" />
+		<result column="repay_capital" property="repay_capital" />
+		<result column="repay_corpus" property="repay_corpus" />
+		<result column="repay_date" property="repay_date" />
+		<result column="repay_status" property="repay_status" />
+		<result column="actual_repay_date" property="actual_repay_date" />
+		<result column="actual_repay_capital" property="actual_repay_capital" />
+	</resultMap>
+	<insert id="insertReplayJH" parameterType="DetailRepayment">
+		insert into
+		DetailRepayment
+		values(sys_guid(),#{b_id},#{periods},
+		#{repay_interest},#{repay_capital},
+		#{repay_corpus},#{repay_date},
+		#{repay_status},#{actual_repay_date},
+		#{actual_repay_capital})
+	</insert>
+	<select id="selDetailMoney" resultType="double">
+		select
+		nvl(sum(repay_capital),0) from DetailRepayment where repay_status=1
+	</select>
+	<select id="SeeMyDetailRepayment" resultType="DetailRepayment">
+		select * from
+		DetailRepayment where b_id=#{b_id}
+	</select>
+</mapper>

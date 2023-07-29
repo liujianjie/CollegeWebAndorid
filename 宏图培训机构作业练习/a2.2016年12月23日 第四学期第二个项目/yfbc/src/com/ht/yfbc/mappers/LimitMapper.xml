@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.LimitDao">
+  <resultMap type="com.ht.yfbc.pojo.Limit" id="limitmap">
+  	<id column="id" property="id" />
+  	<result column="lmtname" property="lmtname" />
+  </resultMap>
+  
+  <select id="selLimitList"  resultType="com.ht.yfbc.pojo.Limit">
+  	select * from limit
+  </select>
+  <select id="selLimitNameById" parameterType="java.lang.String" resultType="java.lang.String">
+  	select lmtname from limit where id=#{value}
+  </select>
+  
+</mapper>

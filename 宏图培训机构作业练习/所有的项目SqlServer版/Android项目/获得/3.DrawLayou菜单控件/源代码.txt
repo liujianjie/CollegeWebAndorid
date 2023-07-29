@@ -1,0 +1,78 @@
+package com.example.viewpagers;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.DrawerLayout.DrawerListener;
+import android.view.View;
+
+public class MainActivity extends Activity{	
+	
+	DrawerLayout layout;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO 自动生成的方法存根
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		layout = (DrawerLayout) this.findViewById(R.id.drlayout);
+		layout.setDrawerListener(new DrawerListener() {
+			@Override  
+            public void onDrawerStateChanged(int newState) {  
+                // 状态改变时回调  
+                  
+            }  
+              
+            @Override  
+            public void onDrawerSlide(View drawerView, float slideOffset) {  
+                // 滑动时不断的回调  
+                // 在这里可以实现很多功能 比如说菜单的缩放  
+            }  
+              
+            @Override  
+            public void onDrawerOpened(View drawerView) {  
+                // 打开  
+                  
+            }  
+              
+            @Override  
+            public void onDrawerClosed(View drawerView) {  
+                // 关闭  
+                  
+            } 
+		});
+	}
+}
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>  
+<android.support.v4.widget.DrawerLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:id="@+id/drlayout"
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" >  
+  
+    <!-- 侧滑菜单部分 被掩盖的部分 写在下面 -->  
+  
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:layout_gravity="start"  
+        android:background="@android:color/holo_blue_light"  
+        android:orientation="vertical" >  
+    </LinearLayout>  
+    <!-- 内容部分 -->  
+  
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:background="@android:color/holo_orange_light"  
+        android:orientation="vertical" >  
+    </LinearLayout>  
+  
+ </android.support.v4.widget.DrawerLayout>  

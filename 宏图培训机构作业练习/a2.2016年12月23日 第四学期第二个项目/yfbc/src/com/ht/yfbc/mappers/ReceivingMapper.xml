@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.ReceivingDao">
+  <resultMap type="Receiving" id="receivingmap">
+  	<id column="REID" property="reid" />
+  	<result column="INID" property="inid" />
+  	<result column="RECEIVEDATE" property="receivedate" javaType="java.util.Date"/>
+  	<result column="WHID" property="whid" />
+  	<result column="PRODUCTNAME" property="productname" />
+  	<result column="SKU" property="sku" />
+  	<result column="PURCHASEQTY" property="purchaseqty" />
+  	<result column="UNIT" property="unit" />
+  	<result column="SHORTQTY" property="shortqty" />
+  	<result column="PARTFLAG" property="partflag" />
+  	<result column="PUTSTATE" property="putstate" />
+  </resultMap>
+  
+  <select id="selReceiving" parameterType="map" resultType="Receiving">
+  		select * from (select rownum r,i.* from receiving i
+  		<where>
+  		    <if test="pagecount!=null and pagecount!=''">
+  		        and rownum &lt;=(#{pagecount}*#{currpage}) 
+  		    </if>
+  		    <if test="whid!=null and whid!=''">
+  		        and whid = #{whid}
+  		    </if>
+  		    <if test="unit!=null and unit!=''">
+  		        and unit = #{unit} 
+  		    </if>
+  		    <if test="sku!=null and sku!=''">
+  		        and sku = #{sku} 
+  		    </if>
+  		</where>
+  		order by receivedate desc)where r&gt;(#{currpage}-1)*#{pagecount}
+  </select>
+  <insert id="addReceiving" parameterType="Receiving">
+      insert into receiving values(sys_guid(),#{inid},#{receivedate},#{whid},#{productname},#{sku},#{purchaseqty},#{unit},#{shortqty},#{partflag},0)
+  </insert>
+  
+  <!-- 修改已摆货状态 -->
+  <update id="updatePutstate" parameterType="String">
+      update receiving set putstate = 1 where reid = #{ids}
+  </update>
+  
+  <select id="selReceivingbyid" parameterType="String" resultType="com.ht.yfbc.pojo.Receiving">
+  		select * from receiving where reid = #{reid}
+  </select>
+  
+  <!-- 分页 1月13日-->
+  <select id="selReceivingCount" resultType="int">
+  		select count(*) from receiving
+  		<where>
+  		    <if test="whid!=null and whid!=''">
+  		        and whid = #{whid}
+  		    </if>
+  		    <if test="unit!=null and unit!=''">
+  		        and  unit =#{unit}
+  		    </if>
+  		    <if test="sku!=null and sku!=''">
+  		        and  sku =#{sku}
+  		    </if>
+  		</where>
+  </select>
+</mapper>

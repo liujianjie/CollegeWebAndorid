@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="client" namespace="/liulirong" extends="json-default">
+		<action name="*" class="com.ht.action.DatasAction" method="{1}">
+		<!--  type="redirect"重定向 -->
+			<result type="json"></result>
+			<result name="todept">/datas/deptlist.jsp</result>
+			<result name="tolist" type="redirect">/liulirong/deptlist.action</result>
+			<result name="todeptadd">/datas/deptadd.jsp</result>
+			<result name="toupd">/datas/deptupd.jsp</result>
+			
+			<result name="todeptmanlist">/datas/deptmans.jsp</result>
+			<!-- 班级巡查 -->
+			<result name="toxuncha">/datas/addxuncha.jsp</result>
+			<result name="toxunlist">/datas/listxun.jsp</result>
+			<!-- 宿舍巡查 -->
+			<result name="toroomlist">/datas/roomlist.jsp</result>
+			<result name="tomyroomlist">/datas/myroomlist.jsp</result>
+			<result name="toroomadd">/datas/addroom.jsp</result>
+			<result name="toroomupd">/datas/updroom.jsp</result>
+			
+			<!-- 日志 -->
+			<result name="torlist">/datas/rizhilist.jsp</result>
+			<result name="tomyrizhi">/datas/myrizhilist.jsp</result>
+			<result name="torizhiupd">/datas/rizhiupd.jsp</result>
+		</action>
+		<action name="emp" class="com.ht.action.EmpAction">
+			<result name="toemplist">/datas/emplist.jsp</result>
+			<result name="toaddemp">/datas/addemp.jsp</result>
+			<result name="toempupd">/datas/updemp.jsp</result>
+			<result name="toviewemp">/datas/empview.jsp</result>
+			
+			<!-- 权限管理 -->
+			<result name="torootlist">/datas/rootemp.jsp</result>
+			<result name="torootemplist">/datas/rootemplist.jsp</result>
+			
+			<result name="tostulist">/datas/studentlist.jsp</result>
+			<result name="tosturoot">/datas/sturoot.jsp</result>
+			
+		</action>
+		<action name="exam" class="com.ht.action.ExamineAction">
+			<result type="json"></result>
+			<!-- 考勤 -->
+			<result name="tokaolist">/datas/kaolist.jsp</result>
+			<result name="tomykaolist">/datas/mykaolist.jsp</result>
+			<result name="toaddkao">/datas/kaoqin.jsp</result>
+			
+			<!-- 请/休假 -->
+			<result name="tolisthol">/datas/hollist.jsp</result>
+			<result name="tomylisthol">/datas/myhollist.jsp</result>
+			<result name="toaddhol">/datas/holadd.jsp</result>
+			<result name="toholupd">/datas/holupd.jsp</result>
+			
+			<!-- 加班 -->
+			<result name="tojialist">/datas/jiabanlist.jsp</result>
+			<result name="tomyjiaban">/datas/myjiabanlist.jsp</result>
+			<result name="toaddjia">/datas/jiabanadd.jsp</result>
+			<result name="tojiaupd">/datas/jiabanupd.jsp</result>
+			
+			<!-- 值班 -->
+			<result name="tozhiban">/datas/zhibanlist.jsp</result>
+			<result name="toupd_zhiban">/datas/upd_zhiban.jsp</result>
+			<result name="flush_zhiban" type="redirect">exam!zhiban.action</result>
+		</action>
+	</package>
+</struts>

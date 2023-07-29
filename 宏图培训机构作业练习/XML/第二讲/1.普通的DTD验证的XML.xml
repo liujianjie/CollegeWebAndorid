@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<!DOCTYPE computernote[
+	<!ELEMENT ti (#PCDATA)>
+	<!ELEMENT style (#PCDATA)>
+	<!ELEMENT cpu (#PCDATA)>
+	<!ELEMENT price (#PCDATA)>
+	<!ELEMENT computer (style,cpu,price)>
+	<!ELEMENT computernote (ti,computer)> 
+]>
+
+<computernote>
+	<ti>电脑信息笔记</ti>
+	<computer>
+		<style>华硕</style>
+		<cpu>酷睿i5</cpu>
+		<price>4000</price>
+	</computer>
+</computernote>

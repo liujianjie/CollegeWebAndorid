@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>查询订餐</title>
+	
+	<!-- 引入外部样式表  -->
+	<link rel="stylesheet" href="css/str.css" type="text/css">
+	<!--引入结束-->
+	<style>
+	     .header{
+		   	width: 100%;
+		   	height: 21px;
+		  	background-color: #260007;
+		   	color: #fff;
+		}
+	    .header_top{	
+	  		width: 100%;
+			height: 62px;
+			background-color: #E60013;
+			z-index: 999;
+			position: relative;
+			 }
+		 
+	    .dingcan{
+			position: fixed;
+			right:16.5%;
+			top: 110px;
+			width: 940px;
+			height: 380px;
+			z-index: 995;
+			background-color: #FFFFFF;
+			text-align: center;
+			font-size: 13px;
+			color: #7F7F7F;
+			border-radius: 5PX;
+		}
+       .dingcan p{
+       	margin-top: 8px;
+       }
+		#footer{
+		
+		width: 100%;
+		height: 50px;
+		background-color: #F4F4F4;
+		position: absolute;
+		top: 580px;
+		border-top: 1px solid #E3E3E3;
+		z-index: 999;
+		}
+		#footer a{
+			color: #7F7F7F;
+			line-height: 42px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+			
+		}
+		#footer span{
+			color:#7F7F7F ;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+		}
+		#footer select{
+			color:#7F7F7F ;
+			border-top:2px solid #696969;
+			border-left:2px solid #696969;
+			position: relative;
+			top: -20px;
+			margin-left:25px;
+			border: 1px solid #7F7F7F;
+		}
+		#footer a:hover{
+			text-decoration: underline;
+		}
+		.sp{
+			margin-left: 25px;
+		}
+		#btn{
+			width: 165px;
+			height: 45px;
+			background-color: #E92833;
+			border-radius: 5px;
+			color: white;
+			font-size: 20px;
+			margin-top: 10px;
+			border: 0px;
+		}
+      .text{
+			width: 264px;
+			height: 30px;
+			border-radius: 3px;
+			border:1px solid #C8C8C8;
+			margin-top: 20px;
+			font-size:18px;
+			color: black;
+		}
+		.chaxun{
+			width: 100%;
+			height: 100%;
+			background:#B3B3B3;
+			position: fixed;
+			z-index: 999;
+		    filter:alpha(opacity=70);  /*支持 IE 浏览器*/
+            -moz-opacity:0.70; /*支持 FireFox 浏览器*/
+            opacity:0.70;  /*支持 Chrome, Opera, Safari 等浏览器*/
+	}
+		
+	</style>
+	<body>
+	 <!--头部开始 -->
+		<div class="header"><marquee direction="left">欢迎网上订购</marquee></div>
+		<div class="header_top">
+				<a href="#"><img src="img/a9.png">
+		     <ul >
+				<li><a href="shouye.html" >首页</a></li>
+				<li><a href="kaishidingcan.html">开始订餐</a></li>
+				<li><a href="chaxundingcan.html" style="background-color:#FF7585;">查询订餐</a></li>
+				<li><a href="shoujidingcan.html">手机订餐</a></li>
+			</ul>
+		</div>
+		<!--头部结束-->
+		<!--查询订单开始-->
+		<div class="dingcan">
+	 <form action="#">	
+	 <p><input type="text" class="text" id="box" placeholder="请输入手机号码或电子邮箱" ></p>
+	 <p style="margin-left:337px;"><img id=xianshi src="img/2014-12-19_140918.png" style="display: none;" ></p>
+	 <p><button id="btn">开始订餐</button></p>
+	 </form>
+	 </div>
+	<!--尾部开始-->
+	 <div id="footer" >
+		
+		<img src="img/a.png"text-align: center;line-height: 42px;margin-top: -48px;margin-right: -340px;">
+		<a href="falvtiaokuan.html">法律条款|</a>
+		<a href="yinsitiaokuan.html">隐私条款|</a>
+		<a href="lianxiwomen.html">联系我们|</a>
+		<a href="http://www.yumcareers.cn/">加入我们</a>
+		<span class="sp">版权所有百胜（中国）投资有限公司沪ICP备05051779号</span>
+		<select style="color:#7f7f7f" onfocus="this.options[0].selected = true;" onchange="javascript:window.open(this.options[this.selectedIndex].value);">
+			<option>欢迎访问百胜餐饮其他品牌</option>
+			<option value="http://www.yum.com.cn/">中国百胜</option>
+			<option value="http://www.kfc.com.cn/">中国肯德基</option>
+			<option value="http://www.pizzahut.com.cn/">中国必胜客</option>
+			<option value="http://www.4008823823.com.cn">肯德基宅急送</option>
+			<option value="http://www.dfjb.com.cn/">东方既白</option>
+		</select>
+		</div>
+	</div>
+	<!--尾部结束-->
+	
+	</body>
+	<script>
+		var btn=document.getElementById("btn");
+		var box=document.getElementById("box");
+		var xs=document.getElementById("xianshi");
+	    box.onfocus=function(){
+		   	xs.style.display="none";
+		   	}
+		box.onblur=function(){
+			var txt=document.getElementById("box").value;
+			var rag=new RegExp("([a-z]|[A-Z]|[0-9])([a-z]|[A-Z]|[0-9]|[\._]){0,}@([a-z]|[A-Z]|[0-9]){1,}\.(com|net|cn|(com\.cn))","g");
+		    var rbg=new RegExp("((134[0-8])|(13[5-9][0-9])|(147[0-9])|(15[0-2][0-9])|(15[7-9][0-9]))([0-9]{7})","g");
+			var rcg=new RegExp("((13[0-2])|(15[5-6])|(18[5-6]))([0-9]{8})","g");
+			var rdg=new RegExp("((133)|(153)|(180)|(189))([0-9]{8})","g");
+		    if(txt.length==0){
+		   	xs.style.display="block";
+		   	return  false;
+		   }
+		   
+		   if(!rag.test(txt)&&!rbg.test(txt)&&!rcg.test(txt)&&!rdg.test(txt)){
+		   	 xs.style.display="block";
+		   	 return  false;
+			}
+		  }
+		  btn.onclick=function(){
+		  	var txt=document.getElementById("box").value;
+			 if(txt==""){
+		  	 	xs.style.display="block";
+		  	 }else{
+		  	 }
+			} 
+	</script>
+</html>

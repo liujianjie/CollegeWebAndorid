@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="informationsDao">
+	<resultMap type="informations" id="infoMap">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="replyCount" property="replyCount" />
+		<result column="viewCount" property="viewCount" />
+		<result column="lastposttime" property="lastposttime" javaType="java.util.Date"/>
+		<result column="reportTime" property="reportTime" javaType="java.util.Date"/>
+		<collection property="replieies" column="id" select="repliesDao.findAllToInfo"></collection>
+	</resultMap>
+	<select id="findAllInformations" resultMap="infoMap">
+		select * from informations
+	</select>
+	<select id="findInfoById" resultMap="infoMap" parameterType="int">
+		select * from informations where id=#{id}
+	</select>
+	<update id="updateInfo" parameterType="map">
+		update informations
+		<set>
+			<if test="view==1">
+				viewCount=viewCount+1,
+			</if>
+			<if test="reply==1">
+			replyCount=replyCount+1,
+			lastposttime=sysdate,
+			</if>
+		</set>
+			where id=#{id}
+	</update>
+</mapper>

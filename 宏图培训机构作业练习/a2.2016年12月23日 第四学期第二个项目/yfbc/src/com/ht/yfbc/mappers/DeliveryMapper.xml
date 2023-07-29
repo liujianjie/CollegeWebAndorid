@@ -1,0 +1,47 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.DeliveryDao">
+	<resultMap type="com.ht.yfbc.pojo.Delivery" id="deliverymap">
+		<id column="DEID" property="deid" />
+		<result column="PRODUCTNAME" property="productname" />
+		<result column="SKU" property="sku" />
+		<result column="PURCHASEQTY" property="purchaseqty" />
+		<result column="UNIT" property="unit" />
+		<result column="SUPPLIER" property="supplier" />
+		<result column="SUPPLIERNO" property="supplierno" />
+		<result column="RECEIVENAME" property="receivename" />
+		<result column="RECEIVENO" property="receiveno" />
+		<result column="WHID" property="whid" />
+		<result column="INNO" property="inno" />
+		<result column="STATU" property="statu" />
+		<result column="UNIVALENT" property="univalent" />
+		<result column="PRICE" property="price" />
+	</resultMap>
+
+	<select id="seldeBypage" parameterType="map" resultType="com.ht.yfbc.pojo.Delivery">
+		select * from (select a.*, rownum rn from delivery a where
+		#{max}>=rownum ) b where b.rn>#{min}
+	</select>
+	
+	<select id="seldeBypage2" parameterType="map" resultType="com.ht.yfbc.pojo.Delivery">
+		select * from (select a.*, rownum rn from delivery a where
+		#{max}>=rownum and whid =#{whid}) b where b.rn>#{min}
+	</select>
+
+	<!-- 添加 -->
+	<insert id="insert" parameterType="com.ht.yfbc.pojo.Delivery">
+		insert into delivery
+		values(sys_guid(),#{productname},#{sku},#{purchaseqty},#{unit},#{supplier},#{supplierno},#{receivename},#{receiveno},#{whid},#{inno},'1',#{univalent},#{price})
+	</insert>
+	
+	<select id="seldeAll" resultType="com.ht.yfbc.pojo.Delivery">
+		select * from delivery
+	</select>
+	
+	<select id="seldeAll2" parameterType="String" resultType="com.ht.yfbc.pojo.Delivery">
+		select * from delivery where whid = #{whid}
+	</select>
+	
+	<update id="updateStatu" parameterType="String">
+		update delivery set statu = '0' where deid = #{deid}
+	</update>
+</mapper>

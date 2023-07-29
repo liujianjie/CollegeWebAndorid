@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+	xs:noNamespaceSchemaLocation="1.xsd">
+	可以自由加入内容了
+	<stu_name>刘建杰</stu_name>
+	<stu_age>34</stu_age>
+	<birthday>1998-11-13</birthday><!-- 必须是月份 -->
+	<age>11</age>
+	<stu_sex>男</stu_sex>
+	<stu_nub>181</stu_nub>
+	<adress></adress>
+	
+	<!-- 子元素和属性的处理了 -->
+	<country sheng="jiangxi">男和谁相拥</country>
+	<name>
+		<mingname>只有内容</mingname>
+		<!-- <xingname>子元素</xingname> --><!-- choice -->
+	</name>
+	<marry qiname="没有结婚">0</marry><!-- 是否结婚 0为没 1为有 -->
+	
+	<!-- 元素组合属性组 -->
+	<ysz>
+		<xingname></xingname>
+		<mingname></mingname>
+	</ysz>
+	
+	<sxz xingname="呵呵" mingname="哈哈">	
+	</sxz>
+</student>

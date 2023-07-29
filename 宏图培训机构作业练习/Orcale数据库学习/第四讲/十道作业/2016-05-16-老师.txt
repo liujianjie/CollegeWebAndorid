@@ -1,0 +1,104 @@
+--2、查询拥有最少员工的部门的基本信息。
+/** 可以把select的结果集当成一张表*/
+select t.dname
+  from (select e.deptno, count(*) emp_count
+          from emp e
+         group by e.deptno
+         order by emp_count) tmp1,
+       dept t
+ where rownum = 1
+   and tmp1.deptno = t.deptno
+/** 左连接就是以左表为基准  
+    内连接是以两表都有的数据为基准
+    where条件查询相当于就是内连接
+    左右连接跟外键没有关系
+*/
+select * from emp e left join dept t on e.deptno = t.deptno
+select * from emp for update
+
+--3、查询出平均工资最高的部门信息。
+
+select *
+  from (select e.deptno, avg(e.sal)
+          from emp e
+         group by e.deptno
+         order by avg(e.sal) desc) tmp1,
+       dept t
+ where rownum = 1
+   and tmp1.deptno = t.deptno
+   
+   
+
+--4、查询出工资比所在部门平均工资高的员工信息。         
+select *
+  from emp e,
+       (select e.deptno, avg(e.sal) avg_sal
+          from emp e
+         group by e.deptno
+         order by avg(e.sal) desc) tmp1
+ where tmp1.deptno = e.deptno and tmp1.avg_sal < e.sal
+
+--5、查询出没有员工的部门信息。
+select * from dept t where t.deptno not in (select e.deptno from emp e)
+
+(10,20,30)
+/**  select语句的结果集可以当成一个表达式的值*/
+not exisits 
+
+select * from dept t where not exists (select * from emp e where e.deptno = t.deptno) 
+
+--6、查询出‘研发部’RESEARCH、‘销售部’sals下的所有员工信息。
+select e.ename
+  from dept t, emp e
+ where t.dname = 'RESEARCH'
+    OR t.dname = 'SALES'
+   and t.deptno = e.deptno
+
+-8、查询所有员工信息，并显示其工资（如果工资在低于3000，那么显示灰领；如果工资在3000到5000之间，显示白领；如果工资大于5000显示金领）
+select e.*,
+       (case
+         when e.sal < 1000 then
+          '灰领'
+         when e.sal < 2000 then
+          '白领'
+         else
+          '其它'
+       end) sal_level
+  from emp e
+
+--9、将员工表的数据复制到newEmp表中。  
+create table newemp5  as select * from emp
+
+insert into newemp5 select * from newemp5
+
+select * from newemp5
+
+/**  可以把一个select语句的结果集当成是 where条件判断的表达式的值*/
+
+select *
+  from emp e
+ where e.sal <
+       (select min(sal)
+          from emp e
+         where e.deptno =
+               (select t.deptno from dept t where t.dname = 'RESEARCH'))
+               
+select ee.ename,
+       (select min(sal)
+          from emp e
+         where e.deptno =
+               (select t.deptno from dept t where t.dname = 'RESEARCH')) min_sal
+  from emp ee
+/** 可以把select语句的结果集当成一个字段*/
+
+
+select t.dname
+  from (select e.deptno, count(*) count_emp from emp e group by e.deptno) tmp2,
+        dept t
+ where tmp2.count_emp > (select avg(count_emp)
+                           from (select e.deptno, count(*) count_emp
+                                   from emp e
+                                  group by e.deptno) tmp1)
+       and t.deptno = tmp2.deptno
+
+

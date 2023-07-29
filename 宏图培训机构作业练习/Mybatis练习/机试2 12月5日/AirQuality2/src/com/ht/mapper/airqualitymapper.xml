@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.daoi.AirQualityDaoI">
+   <resultMap type="AirQualityBean" id="air">
+	    <id property="a_id" column="a_id"/>
+	    <result property="d_id" column="d_id" />
+	    <result property="a_time" column="a_time"/>
+	    <result property="a_pm10" column="a_pm10"/>
+	    <result property="a_pm25" column="a_pm25"/>
+	    <result property="a_station" column="a_station"/>
+	    <result property="a_latetime" column="a_latetime"/>
+	   	<association property="dis" column="d_id"
+	   	    select="com.ht.daoi.AirQualityDaoI.seldisproperties">
+	   	    
+	   	</association>
+	</resultMap>
+	<select id="selcount" resultType="int">
+	    select count(*) from air_quality_index
+	</select>
+	
+	<!-- 所有air对象 -->
+	<select id="selairlist" parameterType="map" resultMap="air">
+	    select * from(select rownum r,s.* from air_quality_index s where rownum &lt;=(#{pagecount}*#{currpage}))where r&gt;(#{currpage}-1)*#{pagecount}
+	</select>
+	
+<!-- 	 级联查询  -->
+	<select id="seldisproperties" parameterType="int" resultType="DistrictBean">
+	    select * from district where d_id = #{a}
+	</select>
+	
+	<!-- 部分列表 -->
+	<select id="selairlistofdid" parameterType="map" resultMap="air">
+	     select * from(select rownum r,s.* from air_quality_index s where rownum &lt;=(#{pagecount}*#{currpage}) and d_id = #{id})where r&gt;(#{currpage}-1)*#{pagecount}
+	</select>
+	
+	<select id="selcountofid" parameterType="int" resultType="int">
+	    select count(*) from air_quality_index where d_id = #{d}
+	</select>
+	<!-- 添加 -->
+	<insert id="addair" parameterType="AirQualityBean">
+	   insert into air_quality_index values(seq_air.nextval,#{d_id},#{a_time},#{a_pm10},#{a_pm25},#{a_station},#{a_latetime})
+	</insert> 
+	
+	<!-- 详情 -->
+	<select id="airxq" parameterType="int" resultMap="air">
+	     select * from air_quality_index where a_id = #{a}
+	</select>
+	
+	<!-- 修改 -->
+	<update id="alertair" parameterType="AirQualityBean" >
+	    update air_quality_index set d_id = #{d_id} ,a_time=#{a_time},a_pm10=#{a_pm10},a_pm25=#{a_pm25},a_station=#{a_station},a_latetime=#{a_latetime} where a_id =#{a_id} 
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delair" parameterType="int">
+	    delete from air_quality_index where a_id = #{a}
+	</delete>
+</mapper>

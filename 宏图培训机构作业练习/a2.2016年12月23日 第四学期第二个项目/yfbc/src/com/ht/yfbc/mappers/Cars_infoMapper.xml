@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.Cars_infoDao">
+	<resultMap type="com.ht.yfbc.pojo.Cars_info" id="cars_infomap">
+		<id column="id" property="id" />
+		<result column="carsname" property="carsname" />
+		<result column="carsweight" property="carsweight" />
+		<result column="carscubage" property="carscubage" />
+		<result column="carsnum" property="carsnum" />
+		<result column="carsenginenum" property="carsenginenum" />
+		<result column="carsinsurancenum" property="carsinsurancenum" />
+		<result column="carsbuydate" property="carsbuydate" />
+		<result column="warehouseid" property="warehouseid" />
+		<result column="carsisvacancy" property="carsisvacancy" />
+		<!-- <collection property="warehouses" column="WHID" select="com.ht.yfbc.dao.WarehouseDao.selWarehouseById"></collection> -->
+	</resultMap>
+	<!-- 查询 -->
+	<select id="selCars_info" resultMap="cars_infomap">
+		select * from cars_info
+	</select>
+	<!-- 分页查询 -->
+	<select id="selCars_infoPage" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Cars_info">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM cars_info ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+	</select>
+	<select id="selCount" resultType="java.lang.Integer">
+		select count(1) from cars_info
+	</select>
+	<!-- 添加 -->
+	<insert id="addCars_info" parameterType="cars_info">
+		insert into cars_info
+		(id,carsname,carsweight,carscubage,carsnum,carsenginenum,carsinsurancenum,carsbuydate,warehouseid,carsisvacancy
+		)
+		values
+		(sys_guid(),#{carsname},#{carsweight},#{carscubage},#{carsnum},#{carsenginenum},#{carsinsurancenum},#{carsbuydate},#{warehouseid},#{carsisvacancy})
+	</insert>
+	<!-- 删除 -->
+	<delete id="delcars" parameterType="cars_info">
+		delete from cars_info where id=#{id}
+	</delete>
+
+	<select id="selCars_infobywhid" parameterType="String"
+		resultType="cars_info">
+		select * from cars_info where warehouseid = #{value}
+	</select>
+	<select id="selCars_infoNameById" parameterType="String"
+		resultType="String">
+		select carsname from cars_info where id=#{id}
+	</select>
+	<select id="selCars_infobyid" parameterType="String" resultType="com.ht.yfbc.pojo.Cars_info">
+		select * from cars_info where id = #{value}
+	</select>
+	<update id="updCars_info" parameterType="cars_info" >
+		update cars_info set
+		carsname = #{carsname},carsweight = #{carsweight},carscubage =
+		#{carscubage},carsnum = #{carsnum},carsenginenum =
+		#{carsenginenum},carsinsurancenum =
+		#{carsinsurancenum},carsbuydate = #{carsbuydate},warehouseid = #{warehouseid},carsisvacancy =
+		#{carsisvacancy}
+		where id = #{id}
+	</update>
+	
+	<!-- 空闲和仓库条件 -->
+	<select id="selCars_infobywhidandstate" parameterType="String"
+		resultType="cars_info">
+		select * from cars_info where warehouseid = #{value} and carsisvacancy=0
+	</select>
+</mapper>

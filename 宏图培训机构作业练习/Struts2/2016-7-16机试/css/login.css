@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* manage */
+
+/*chenyichun*/
+input{border:none;}
+#wrap{background:#347ba6;padding-top:42px;}
+#main{ width:358px;height:376px; background:url(../images/login_bg.png) no-repeat left center; margin: 0 auto;padding:250px 0 0 230px;}
+.login tr td{ height:30px; line-height:30px;color:#005179;}
+.login_input{width:155px; border:1px solid #838383; height:22px; line-height:22px; margin-left:10px;}
+.user_login{color:#fff; font-size:24px;padding-left:100px; height:42px; line-height:42px; font-weight:bold;}
+.w95{width:95px;}
+.code{background:#5c5c5c;width:60px;margin-left:4px;  height:25px; line-height:25px; float:left; text-align:center; cursor:pointer;}
+.code_img{ width:60px;  height:25px;line-height:25px; }
+.checkbox{margin-left:6px;}
+.login_submit{ background:url(../images/loginSubmit_bg.png) no-repeat left center; height:24px; line-height:24px; width:82px; color:#fff; text-align:center; cursor:pointer;margin-left:11px;}

@@ -1,0 +1,45 @@
+select * from EMP t
+create table classes (
+       cno integer,
+       cname varchar2(100)
+
+)
+rename CLASS to CLASSES
+--向classes表添加数据
+insert into classes values(1,'宏图15春1班');
+insert into classes values(1002,'宏图15春2班');
+insert into classes values(1003,'宏图15秋1班');
+select * from classes for update;
+
+--向classes表修改数据
+update classes set cno=1001 where cno=1;
+
+select * from student for update;
+--向学生表添加字段
+alter table student add height number(4,1)
+alter table student add cno integer
+
+--向学生表修改字段
+alter table student modify height number(5,1)
+
+--向学生表删除字段
+alter table student drop column height
+
+--向classes表添加主键约束
+alter table classes add constraint PK_cls primary key(cno) 
+
+--向student表添加唯一约束
+alter　table student add constraint UN_stu unique(stu_name)
+
+--向student表添加外键约束
+alter table student add constraint FK_cno foreign key(cno) references classes(cno);
+
+--向student表添加检查约束
+alter table student add constraint CK_age check(stu_age>0 and stu_age<=100)
+
+--添加数据了
+insert into student values(1,'张三',18,1001)
+insert into student values(2,'李四',18,1001)
+
+--关联表的查询
+select * from student s inner join classes c on s.cno=c.cno 

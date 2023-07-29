@@ -1,0 +1,97 @@
+SQL> conn scott/tiger;
+Connected to Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 
+Connected as scott
+ 
+SQL> create user test identitied by 123 default tablespace users;
+ 
+create user test identitied by 123 default tablespace users
+ 
+ORA-00922: 选项缺失或无效
+ 
+SQL> create user "test" identitied by "123" default tablespace users;
+ 
+create user "test" identitied by "123" default tablespace users
+ 
+ORA-00922: 选项缺失或无效
+ 
+SQL> create user "test" identified by "123" default tablespace users;
+ 
+create user "test" identified by "123" default tablespace users
+ 
+ORA-01031: 权限不足
+ 
+SQL> conn test/123
+SQL> conn test/123;
+SQL> conn 刘建杰/123；
+SQL> conn 刘建杰/123;
+Connected to Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 
+Connected as 刘建杰
+ 
+SQL> show user;
+User is "刘建杰"
+ 
+SQL> create table TT(stu_no integer,stu_name varchar2(50));
+ 
+create table TT(stu_no integer,stu_name varchar2(50))
+ 
+ORA-01031: 权限不足
+ 
+SQL> create table ab(a number(5), b varchar2(20));  
+ 
+create table ab(a number(5), b varchar2(20))
+ 
+ORA-01950: 对表空间 'LJJ' 无权限
+ 
+SQL> create table ab(a number(5), b varchar2(20));
+ 
+Table created
+ 
+SQL> create table TT(stu_no integer,stu_name varchar2(50));
+ 
+Table created
+ 
+SQL> select * from scott.dept;
+ 
+select * from scott.dept
+ 
+ORA-00942: 表或视图不存在
+ 
+SQL> select * from scott.dept;
+ 
+DEPTNO DNAME          LOC
+------ -------------- -------------
+    10 ACCOUNTING     NEW YORK
+    20 RESEARCH       DALLAS
+    30 SALES          CHICAGO
+    40 OPERATIONS     BOSTON
+ 
+SQL> create user "test" identified by "123" account unlock;
+ 
+create user "test" identified by "123" account unlock
+ 
+ORA-01031: 权限不足
+ 
+SQL> create user "test" identified by "123" account unlock;
+ 
+create user "test" identified by "123" account unlock
+ 
+ORA-01920: 用户名 'test' 与另外一个用户名或角色名发生冲突
+ 
+SQL> create user "test2" identified by "123" account unlock;
+ 
+User created
+ 
+SQL> grant create session to test;
+ 
+grant create session to test
+ 
+ORA-01917: 用户或角色 'TEST' 不存在
+ 
+SQL> conn test2/123;
+SQL> grant create session to test2;
+ 
+grant create session to test2
+ 
+ORA-01917: 用户或角色 'TEST2' 不存在
+ 
+SQL> 

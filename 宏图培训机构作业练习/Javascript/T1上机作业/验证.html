@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+	<script>
+		function yanzhegn(){
+			var a1=document.frm.ps1.value;
+			var a2=document.frm.ps2.value;
+			if(a1==""){
+				alert("请输入第一个数");
+			}else if(a2==""){
+				alert("请输入第二个数");
+			}else{
+				if(a1==a2){
+					alert("两次密码输入正确");
+				}else{
+					alert("两次密码输入不一致");
+					//焦点
+					document.frm.ps1.value="";
+					document.frm.ps2.value="";
+					//document.frm.ps1.focus();
+					//document.frm.ps1.select();选中
+					//id选择焦点
+					document.getElementById('ps11').focus();
+				}
+			}
+		}
+	
+	</script>
+ </head>
+
+ <body>
+	<form name="frm">
+		<input type="password" name="ps1" id="ps11"/>
+		<br/>
+		<input type="password" name="ps2"/>
+		<br/>
+		<input type="button" value="确定" onclick="yanzhegn();"/>
+	</form>
+ </body>
+</html>

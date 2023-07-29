@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+	<script>
+		//构造实体类
+		function emp(id,name,age){
+			this.id=id;
+			this.name=name;
+			this.age=age;
+		}
+		empp=new emp(1,"张三",18);
+		document.write("学号是："+empp.id+"名字是："+empp.name+"年龄是："+empp.age);
+		
+		for(var c in empp){
+			alert(empp[c]);
+		}
+
+	</script>
+ </body>
+</html>

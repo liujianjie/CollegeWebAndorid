@@ -1,0 +1,81 @@
+		<script type="text/javascript">
+			$(function(){
+				$.post("stu/list",{},function(data){
+					var list=data.list;
+					$.each(list,function(index,stu){
+						var tr = $("<tr>",{
+						});
+						var td = $("<td>",{
+							"text":stu.intenname
+						});
+						var td2 = $("<td>",{
+							"text":stu.intensex,
+							"class":"center"
+						});
+						var td3 = $("<td>",{
+							"text":stu.intenbir,
+							"class":"center"
+						});
+						var td4 = $("<td>",{
+							"text":stu.intenfat,
+							"class":"center"
+						});
+						var td5 = $("<td>",{
+							"text":stu.intentel,
+							"class":"center"
+						});
+						var td6 = $("<td>",{
+							"text":stu.intenfatel,
+							"class":"center"
+						});
+						var td7 = $("<td>",{
+							
+						});
+						
+						var a1 = $("<a>",{
+							"class":"btn btn-success",
+							"href":"#"
+						});
+						var i1=$("<i>",{
+							"class":"glyphicon glyphicon-zoom-in icon-white",
+							"text":"View "
+						});
+						a1.append(i1);
+						
+						var a2 = $("<a>",{
+							"class":"btn btn-info",
+							"href":"#"
+						});
+						var i2=$("<i>",{
+							"class":"glyphicon glyphicon-edit icon-white",
+							"text":"±à¼­"
+						});
+						a2.append(i2);
+						
+						var a3 = $("<a>",{
+							"class":"btn btn-danger",
+							"href":"#"
+						});
+						var i3=$("<i>",{
+							"class":"glyphicon glyphicon-trash icon-white",
+							"text":"Delete"
+						});
+						a3.append(i3);
+						
+						td7.append(a1);
+						td7.append(a2);
+						td7.append(a3);
+						tr.append(td);
+						tr.append(td2);
+						tr.append(td3);
+						tr.append(td4);
+						tr.append(td5);
+						tr.append(td6);
+						tr.append(td7);
+						$("#th").append(tr);
+					});
+					
+				
+				},"json")
+			});
+		</script>

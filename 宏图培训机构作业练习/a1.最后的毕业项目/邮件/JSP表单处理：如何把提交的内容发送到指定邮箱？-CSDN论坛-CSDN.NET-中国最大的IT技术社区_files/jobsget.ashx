@@ -1,0 +1,1 @@
+document.write('<li><a href="http://geek.csdn.net/news/detail/84232" target=_blank>OpenStack 的“钱”景</a></li>');

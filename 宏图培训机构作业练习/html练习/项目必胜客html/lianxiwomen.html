@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	
+	<!-- 引入外部样式表  -->
+	<link rel="stylesheet" href="css/str.css" type="text/css">
+	<!--引入结束-->
+	<style>
+		 .header{
+		   	width: 100%;
+		   	height: 21px;
+		  	background-color: #260007;
+		   	color: #fff;
+		}
+	  .header_top{	
+	  		width: 100%;
+			height: 62px;
+			background-color: #E60013;
+			z-index: 999;
+			position: relative;
+			 }
+		 /*尾部的开始*/
+		#footer{
+			width: 100%;
+			height: 50px;
+			background-color: #F4F4F4;
+			position: absolute;
+			border-top: 1px solid #E3E3E3;
+			z-index: 999;
+		}
+		#footer a{
+			color: #7F7F7F;
+			line-height: 42px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+		}
+		#footer span{
+			color:#7F7F7F ;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+		}
+		#footer select{
+			color:#7F7F7F ;
+			border-top:2px solid #696969;
+			border-left:2px solid #696969;
+			position: relative;
+			top: -20px;
+			margin-left:25px;
+			border: 1px solid #7F7F7F;
+		}
+		#footer a:hover{
+			text-decoration: underline;
+		}
+		.sp{
+			margin-left: 25px;
+		}	
+		/*尾部的结束*/
+		/*联系我们的开始*/
+		.big_2{
+				width:  80%;
+				height: 500px;
+				margin: 150px 150px 50px 150px;
+				background-color: #fff;
+				line-height: 25px;
+				font-weight: normal;
+				font-size: 14px;
+				text-align: center;
+			}
+			.big_2 a{
+				text-decoration: none;
+			}
+			.big_4{
+				
+				width:  90%;
+				height: 200px;
+				line-height: 25px;
+				font-weight: normal;
+				font-size: 14px;
+				text-align: center;
+				margin: auto;
+				
+			}
+			.lianxi{
+				height: 200px;
+				width: 90%;
+				margin-left:54px ;
+			}
+			.lianxi div{
+				height: 150px;
+				width: 100px;
+				float: left;
+				margin-left: 150px;
+				
+			}
+			.lianxi div img{
+				margin: 17px;
+				text-align: center;
+			}
+		</style>
+	<body>
+		<!--头部开始 -->
+		<div class="header"><marquee direction="left">欢迎网上订购</marquee></div>
+		<div class="header_top">
+				<a href="#"><img src="img/a9.png">
+		     <ul >
+				<li><a href="shouye.html" style="background-color:#FF7585;">首页</a></li>
+				<li><a href="kaishidingcan.html">开始订餐</a></li>
+				<li><a href="chaxundingcan.html">查询订餐</a></li>
+				<li><a href="shoujidingcan.html">手机订餐</a></li>
+			</ul>
+		</div>
+		<!--头部结束-->
+		
+		<div class="big_2">
+			<div class="big_4"">
+			<p><h2 style="text-align: center;">联系我们</h2>
+			<p>如果您对"必胜宅急送"有任何问题，建议您先从以下常见问题中，查找最适合的解答。如仍未获得想要解答，请点击<a href="tencent://message/?uin=965464273&Site=企业网站&Menu=yes" style="color: #EE7900;">"咨询与投诉"</a>，我们的网站服务人员将在
+			<br>上班时间（周一至周五9:00-18:00）尽快与您联系！谢谢您！
+			</div>
+		<div class="lianxi">
+			<div><a href="zhifu.html"><img src="img/zhifu.jpg">支付方式</a></div>
+			<div><a href="wenti.html"><img src="img/wenti.jpg">常见问题</a></div>
+			<div><a href="tencent://message/?uin=1437311518&Site=企业网站&Menu=yes"><img src="img/lx.jpg">联系客服</a></div>
+			</div>
+		</div>
+		<!--尾部开始-->
+	 <div id="footer" >
+		
+		<img src="img/a.png"text-align: center;line-height: 42px;margin-top: -48px;margin-right: -340px;">
+		<a href="falvtiaokuan.html">法律条款|</a>
+		<a href="yinsitiaokuan.html">隐私条款|</a>
+		<a href="lianxiwomen.html">联系我们|</a>
+		<a href="http://www.yumcareers.cn/">加入我们</a>
+		<span class="sp">版权所有百胜（中国）投资有限公司沪ICP备05051779号</span>
+		<select style="color:#7f7f7f" onfocus="this.options[0].selected = true;" onchange="javascript:window.open(this.options[this.selectedIndex].value);">
+			<option>欢迎访问百胜餐饮其他品牌</option>
+			<option value="http://www.yum.com.cn/">中国百胜</option>
+			<option value="http://www.kfc.com.cn/">中国肯德基</option>
+			<option value="http://www.pizzahut.com.cn/">中国必胜客</option>
+			<option value="http://www.4008823823.com.cn">肯德基宅急送</option>
+			<option value="http://www.dfjb.com.cn/">东方既白</option>
+		</select>
+		</div>
+	</div>
+	<!--尾部结束-->
+	</body>
+</html>

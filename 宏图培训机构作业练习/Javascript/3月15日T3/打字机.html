@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+
+ </head>
+
+ <body onload="star();">
+	<font id="fnt"></font>
+	<script>
+		var str="呵呵我房间是考<font color='red' size=6>虑到解放了卡</font>萨丁九分裤就是大开两个坚<input type='button' value='我是按钮'>老公家的<img src='0.png'>开始了价格凉快圣诞节管理会计是的看老公家离开的世界观凉快圣诞节管理科金士顿离开禁锢第十六撒旦看老公家打开了功能，模拟";
+		var i=0;
+		function star(){
+			if(i<str.length+1){
+				var s=str.substring(0,i);
+				document.getElementById("fnt").innerHTML=s+"_";
+				i++;
+				setTimeout("star();",100);
+			}
+		}
+
+	</script>  
+ </body>
+</html>

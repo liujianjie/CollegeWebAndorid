@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+	<script>
+		var s="你好 javascript";
+		var s1="HELLO JAVASCRIPT";
+		var s2="hello,javascript";
+		document.write("s的length属性是："+s.length+"<br/>");
+		document.write("s的big方法是："+s.big()+"<br/>");
+		document.write("s的small方法是："+s.small()+"<br/>");
+		document.write("s的bold方法是："+s.bold()+"<br/>");
+		document.write("s的blink方法是："+s.blink()+"<br/>");
+		document.write("s2的toUpperCase方法是："+s.toUpperCase()+"<br/>");
+		document.write("s1的toLowerCase方法是："+s.toLowerCase()+"<br/>");
+		document.write("s1的fontcolor方法是："+s.fontcolor("red")+"<br/>");
+		//substring 从几开始从几结束
+		document.write(s1.substring(3,6));
+
+		alert(s2.indexOf("，"));//区分中英大小
+
+		//indexOF 查找位置 查找内容的位置
+		document.write(s1.indexOf("H"));	//没有返回-1
+//		alert(s2.indexOf("ello"));//查找是查找 这 ello 字符串 如果有返回第一个数的位置 如果没有			返回-1
+		//判断e——mail格式
+		var email="234234@qq.com";
+		if(email.indexOf("@")==-1||email.indexOf(".com")==-1||email.indexOf(".com")<email.indexOf("@")){
+			alert("错误");
+		}
+
+		//split 可以根据某个符号将字符串分割成数组
+		var v="红，蓝，绿，紫";
+		var ccr=v.split(",");//这个中英不分
+		for(var b in ccr){
+			document.write(ccr[b]);
+		}
+		
+	</script>
+ </body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.BackgroundUserDao">
+	<resultMap type="BackGroundUser" id="backgroundusermap">
+		<id column="b_id" property="b_id" />
+		<result column="b_username" property="b_username" />
+		<result column="b_pwd" property="b_pwd" />
+		<result column="b_tel" property="b_tel" />
+		<result column="b_sex" property="b_sex" />
+		<result column="b_address" property="b_address" />
+		<result column="b_positionid" property="b_positionid" />
+		<result column="b_touxiang" property="b_touxiang" />
+		<result column="b_statu" property="b_statu" />
+	</resultMap>
+
+	<select id="getBackGroudUser" parameterType="map" resultType="BackGroundUser">
+		select * from background_user where b_username = #{username} and b_pwd
+		= #{pwd}
+	</select>
+
+	<select id="selbackuserlist" parameterType="map" resultType="BackGroundUser">
+		select * from(select rownum r,s.* from background_user s where
+		rownum&lt;=(#{pageCount}*#{currPage}))where
+		r&gt;(#{currPage}-1)*#{pageCount}
+	</select>
+
+	<select id="selbackuserlistAll" resultType="BackGroundUser">
+		select * from
+		background_user
+	</select>
+
+	<select id="selbackuserlistsize" resultType="int">
+		select count(*) from
+		background_user
+	</select>
+
+	<select id="selBackGroudUser" parameterType="String" resultType="BackGroundUser">
+		select * from background_user where b_id = #{b_id}
+	</select>
+
+	<!-- 没有状态 -->
+	<update id="updBackGroundUser" parameterType="BackGroundUser">
+		update background_user
+		<set>
+			<if test="b_username!=null and b_username!=''">
+				b_username = #{b_username},
+			</if>
+			<if test="b_pwd!=null and b_pwd!=''">
+				b_pwd = #{b_pwd},
+			</if>
+			<if test="b_tel!=null and b_tel!=''">
+				b_tel = #{b_tel},
+			</if>
+			<if test="b_sex!=null and b_sex!=''">
+				b_sex = #{b_sex},
+			</if>
+			<if test="b_address!=null and b_address!=''">
+				b_address = #{b_address},
+			</if>
+			<if test="b_positionid!=null and b_positionid!=''">
+				b_positionid = #{b_positionid},
+			</if>
+			<if test="b_touxiang!=null and b_touxiang!=''">
+				b_touxiang = #{b_touxiang},
+			</if>
+		</set>
+		where b_id = #{b_id}
+	</update>
+
+	<!-- 添加 -->
+	<insert id="addBackGroundUser" parameterType="BackGroundUser">
+		<selectKey keyProperty="b_id" resultType="String" order="BEFORE">
+			select sys_guid() from dual
+		</selectKey>
+		<!-- 主键已赋值成功 -->
+		insert into background_user values
+		(#{b_id},#{b_username},#{b_pwd},#{b_tel},#{b_sex},#{b_address},#{b_positionid},#{b_touxiang},1)
+	</insert>
+
+	<delete id="delBackGroundUser" parameterType="String">
+		delete from
+		background_user where b_id = #{id}
+	</delete>
+	<!-- // 验证用户名是否存在YanZhengBackUsername -->
+	<select id="YanZhengBackUsername" parameterType="String"
+		resultType="int">
+		select count(*) from background_user where
+		b_username=#{b_username}
+	</select>
+</mapper>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+<!--     开启注解 -->
+    <context:annotation-config/>
+<!--     spring 扫包 扫描 com.ht包下的所有类都可以使用注解 -->
+    <context:component-scan base-package="com.ht">
+<!--     	过滤Controller,不用spring实例化，由springmvc注解完成 让注解@Resource有用？ -->
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>	
+	<!-- 整合持久化框架 -->		
+	<!-- a.读取属性文件，获得连接信息 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations">
+	        <list>
+	            <value>classpath:jdbc.properties</value>
+	        </list>
+	    </property>
+	</bean>	
+	<!-- b.配置数据源 随意id -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${driver}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${username}"></property>
+		<property name="password" value="${password}"></property>
+	</bean>
+	<!-- c.配置sqlsessionfactory 随意id -->
+	<bean id="sqlSessionFactoryes"
+	    class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <!-- 注入数据源 -->
+	   	<property name="dataSource" ref="dataSource"></property>
+	   	<!-- mybatis主配置文件 -->
+	   	<property name="configLocation"
+	   	    value="classpath:config.xml"></property>
+	   	<!-- 自动扫描mapper文件 -->
+	   	<property name="mapperLocations" value="classpath:com/ht/mapper/*mapper.xml"></property>
+	</bean>
+	
+	<!-- mapper代理 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.ht.daoi"></property>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryes"></property>    
+	</bean>
+	
+	<!-- d.配置事务管理器 -->
+	<bean id="txManager"
+	    class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 2 配置Daoimp -->
+<!-- 	<bean id="infordaoimp" class="com.ht.daoimp.InforDaoImp"> -->
+<!-- 	    <property name="sqlSessionFactory"  ref="sqlSessionFactoryes"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="repliesDaoImp" class="com.ht.daoimp.RepliesDaoImp"> -->
+<!-- 	    <property name="sqlSessionFactory"  ref="sqlSessionFactoryes"></property> -->
+<!-- 	</bean> -->
+	
+<!--  	3 配置service  -->
+<!-- 	<bean id="informationsimp" class="com.ht.serviceimp.Informationsimp"> -->
+<!-- 	    <property name="infordao"  ref="infordaoimp"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="repliesimp" class="com.ht.serviceimp.Repliesimp"> -->
+<!-- 	    <property name="indao"  ref="infordaoimp"></property> -->
+<!-- 	    <property name="redao"  ref="repliesDaoImp"></property> -->
+<!-- 	</bean> -->
+	
+	<!-- 4 Controller -->
+<!-- 	<bean class="com.ht.action.InforColler"> -->
+<!-- 	    <property name="ss"  ref="informationsimp"></property> -->
+<!-- 	    <property name="ss2" ref="repliesimp"></property> -->
+<!-- 	</bean> -->
+	
+</beans>

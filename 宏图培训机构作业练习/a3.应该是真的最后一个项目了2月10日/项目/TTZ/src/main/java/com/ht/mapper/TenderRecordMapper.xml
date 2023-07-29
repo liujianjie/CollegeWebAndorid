@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.TenderRecordDao">
+	<resultMap type="TenderRecord" id="TenderRecordMap">
+		<id column="tender_id" property="tender_id" />
+		<result column="t_id" property="t_id" />
+		<result column="tender_money" property="tender_money" />
+		<result column="tender_time" property="tender_time" />
+		<result column="tender_name" property="tender_name" />
+		<result column="tender_type" property="tender_type" />
+		<result column="tender_statu" property="tender_statu" />
+		<result column="sign_statu" property="sign_statu" />
+		<result column="tender_interest" property="tender_interest" />
+		<result column="tender_fee" property="tender_fee" />
+	</resultMap>
+
+	<select id="TenderRecordList" resultType="TenderRecord"
+		parameterType="map">
+		select * from (select
+		rownum r, b.* from TenderRecord b
+		where
+		rownum
+		&lt;= #{pageCount} *
+		#{currPage} and b.tender_statu = 1)
+		where r
+		&gt;
+		(#{currPage} - 1) * #{pageCount}
+	</select>
+
+	<select id="SelTenderRecord" resultType="int">
+		select count(*) from
+		TenderRecord where tender_statu = 1
+	</select>
+
+	<select id="TenderRecordPoundage" resultType="int">
+		select
+		nvl(sum(tender_fee),0) from TenderRecord where tender_statu = 2
+	</select>
+
+	<select id="TenderRecoreAmount" resultType="int">
+		select
+		nvl(sum(tender_money),0) from TenderRecord where tender_statu = 1
+	</select>
+
+	<select id="TenderRecordEarnings" resultType="int">
+		select
+		nvl(sum(tender_interest),0) from TenderRecord where tender_statu = 1
+	</select>
+
+	<select id="TenderRecordCompleted" resultType="TenderRecord"
+		parameterType="map">
+		select * from
+		(select
+		rownum r, b.* from TenderRecord b
+		where
+		rownum
+		&lt;= #{pageCount}
+		*
+		#{currPage} and b.tender_statu = 2)
+		where r
+		&gt;
+		(#{currPage} - 1) *
+		#{pageCount}
+	</select>
+
+	<select id="SelTenderRecordCompleted" resultType="int">
+		select count(*)
+		from
+		TenderRecord where tender_statu = 2
+	</select>
+
+	<select id="TenderRecordZhong" resultType="int">
+		select count(*) from
+		TenderRecord
+	</select>
+
+	<select id="TenderRecordSum" resultType="int">
+		select
+		nvl(sum(tender_money),0)
+		from TenderRecord where tender_statu = 2
+	</select>
+
+	<select id="selTenderSumMoney" resultType="double">
+		select
+		nvl(sum(tender_money),0) from TenderRecord
+	</select>
+
+	<select id="SelHuiKuan" parameterType="map" resultType="TenderRecord">
+		select *
+		from (select
+		rownum r, b.* from TenderRecord b
+		where
+		rownum
+		&lt;=
+		#{pageCount} *
+		#{currPage} and b.tender_statu = 4) where r
+		&gt;
+		(#{currPage} - 1) * #{pageCount}
+	</select>
+
+	<select id="SelHuiKuanCount" resultType="int">
+		select count(*) from
+		TenderRecord where tender_statu = 4
+	</select>
+
+	<select id="MoHuSelTenderRecord" resultMap="TenderRecordMap"
+		parameterType="map">
+		select * from TenderRecord
+		<where>
+			<if test="tender_time!=null">
+				to_char(tender_time,'yyyy-MM-dd') = #{tender_time}
+			</if>
+		</where>
+	</select>
+
+	<select id="sel_tend_list" resultMap="TenderRecordMap"
+		parameterType="map">
+		select * from TenderRecord
+		<where>
+			<if test="tender_statu!=null">
+				tender_statu = #{tender_statu}
+			</if>
+		</where>
+	</select>
+
+
+	<select id="SelMoneyRecord" resultType="MoneyRecord"
+		parameterType="map">
+		select * from (select
+		rownum r, b.* from MoneyRecord b
+		where
+		rownum
+		&lt;= #{pageCount} *
+		#{currPage})
+		where r
+		&gt;
+		(#{currPage} -
+		1) * #{pageCount}
+	</select>
+
+	<select id="SelMoneyRecordCount" resultType="int">
+		select count(*) from
+		MoneyRecord
+	</select>
+
+	<select id="TouZiJilu" resultType="TenderRecord" parameterType="map">
+		select * from (select
+		rownum r, b.* from TenderRecord b
+		where
+		rownum
+		&lt;= #{pageCount} *
+		#{currPage})
+		where r
+		&gt;
+		(#{currPage} - 1) *
+		#{pageCount}
+	</select>
+
+	<select id="TouZiJiluCount" resultType="int">
+		select count(*) from
+		TenderRecord
+	</select>
+
+	<select id="SelMoneyRecordByID" resultType="MoneyRecord"
+		parameterType="String">
+		select * from moneyrecord where p_userid=#{p_userid} and
+		m_jytype='投资收益'
+	</select>
+
+	<select id="SumMoney" resultType="int">
+		select
+		nvl(sum(m_yxmoney),0)
+		from moneyrecord where m_jytype='投资收益'
+	</select>
+	<select id="selectTenderRecordstatu0" parameterType="map"
+		resultType="TenderRecord">
+		select * from (select rownum r,t.* from TenderRecord t
+		where
+		rownum&lt;= #{pageCount} *#{currPage} and t.tender_name=#{userid}
+		and
+		t.tender_statu in(0,5,6) )
+		where
+		r&gt;(#{currPage} - 1)*#{pageCount}
+	</select>
+	<select id="selectTenderRecordstatu0Count" parameterType="String"
+		resultType="int">
+		select count(*)
+		from TenderRecord where
+		tender_name=#{userid} and
+		tender_statu in(0,5,6)
+	</select>
+
+	<!-- // 更改投资的状态()债权转让中 public int insertTenderRecord(TenderRecord ten); -->
+	<update id="updateTenderRecordstatu5" parameterType="String">
+		update
+		TenderRecord set tender_statu='5' where tender_id=#{tender_id}
+	</update>
+	<!-- // 债权转让后插入新的投资 -->
+	<insert id="insertTenderRecord" parameterType="TenderRecord">
+		insert into
+		TenderRecord
+		values(#{t_id},sys_guid(),#{tender_money},sysdate,#{tender_name},#{tender_type},#{tender_statu},#{sign_statu},0,0)
+	</insert>
+	<!-- // 查询单个投资 -->
+	<select id="selectOneTenderRecordForTender_id" parameterType="String"
+		resultType="TenderRecord">
+		select
+		t.*,(select zsname from ttzuser where
+		userid=t.tender_name)
+		zsname,(select rate from borrowmoney where
+		b_id=t.t_id) rate,
+		(select
+		psex from people where ptel=(select tel from
+		ttzuser where
+		userid=t.tender_name ))
+		sex
+		from TenderRecord t where
+		t.tender_id=#{tender_id}
+	</select>
+	<!-- // // 更改投资的状态()债权转让完成 -->
+	<update id="updateTenderRecordstatu6" parameterType="String">
+		update
+		TenderRecord set tender_statu='6' where tender_id=#{tender_id}
+	</update>
+
+	<select id="SumlistMoney" resultType="TenderRecord">
+		select * from (select
+		sum(TENDER_MONEY)mon,(select zsname from ttzuser where
+		userid=tender_name)zsname from TENDERRECORD
+		group by
+		TENDER_NAME order
+		by mon DESC )where rownum &lt;=5
+	</select>
+
+	<select id="SumInterest" resultType="TenderRecord">
+		select * from (select
+		sum(TENDER_INTEREST)mon,(select zsname from ttzuser where
+		userid=tender_name)zsname from TENDERRECORD
+		group by
+		TENDER_NAME order
+		by mon DESC )where rownum &lt;=5
+	</select>
+
+</mapper>

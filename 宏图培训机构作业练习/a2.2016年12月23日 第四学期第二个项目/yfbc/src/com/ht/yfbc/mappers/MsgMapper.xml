@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.IMsgDao">
+	<resultMap type="com.ht.yfbc.pojo.Msgpojo" id="msgMap">
+		<id column="id" property="id" />
+		<result column="msgtitle" property="msgtitle" />
+		<result column="msgcon" property="msgcon" />
+		<result column="msgstatu" property="msgstatu" />
+		<result column="msgtopeople" property="msgtopeople" />
+		<result column="msgpeople" property="msgpeople" />
+		<result column="msgtime" property="msgtime" javaType="java.util.Date" />
+		<result column="msgfile" property="msgfile" />
+	</resultMap>
+	<resultMap type="com.ht.yfbc.pojo.Msg2" id="msgMap2" extends="msgMap">
+		<association property="user" column="MSGPEOPLE"
+			select="com.ht.yfbc.dao.UsersDao.seluserbyname"></association>
+	</resultMap>
+	<select id="selmsglist" resultType="com.ht.yfbc.pojo.Msgpojo">
+		select * from msg where
+		msgstatu = '1' order by
+		msgtime desc
+	</select>
+
+	<select id="selmsgmylist" resultType="com.ht.yfbc.pojo.Msgpojo">
+		select * from msg where
+		msgpeople=#{username} and msgstatu=#{statu} order by
+		msgtime desc
+	</select>
+
+	<select id="ajaxlist" resultMap="msgMap2">
+		select * from (select * from msg
+		where
+		msgstatu = '1' order by msgtime desc) b
+		where 10>=rownum
+	</select>
+
+	<select id="ajaxlist2" resultMap="msgMap2">
+		select * from (select * from
+		msg where
+		msgstatu = '1' order by msgtime desc) b
+		where 2>=rownum
+	</select>
+
+	<delete id="del" parameterType="String">
+		delete from msg where id=#{id}
+	</delete>
+
+	<insert id="addmsg" parameterType="com.ht.yfbc.pojo.Msgpojo">
+		insert into msg
+		(id,msgtitle,msgcon,msgstatu,msgtopeople,msgpeople,msgtime,msgfile)
+		values(sys_guid(),#{msgtitle},#{msgcon},#{msgstatu},
+		#{msgtopeople},#{msgpeople},#{msgtime},#{msgfile})
+	</insert>
+
+	<select id="toupdmsg" resultMap="msgMap" parameterType="map">
+		select *
+		from msg where id=#{id}
+	</select>
+	<update id="updmsg" parameterType="com.ht.yfbc.pojo.Msgpojo">
+		update msg set
+		msgtitle=#{msgtitle},msgcon=#{msgcon}, msgstatu=#{
+		msgstatu},msgtopeople=#{msgtopeople},
+		msgpeople=#{msgpeople},msgtime=#{msgtime} where id=#{id}
+	</update>
+
+	<update id="changestatu" parameterType="com.ht.yfbc.pojo.Msgpojo">
+		update msg set
+		msgstatu=#{msgstatu} where id=#{id}
+	</update>
+
+
+	<select id="findmsgmylist" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Msgpojo">
+		select * from (select a.*, rownum rn from msg a where
+		#{pageCount}*#{currPage}>=rownum and msgstatu=#{statu} and
+		msgpeople=#{username} order by msgtime desc) b
+		where b.rn >
+		=(#{pageCount}*(#{currPage}-1))+1
+	</select>
+
+	<select id="findmsglist" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Msgpojo">
+		select * from (select a.*, rownum rn from msg a where
+		#{pageCount}*#{currPage}>=rownum and a.msgstatu = '1' order by msgtime
+		desc) b
+		where b.rn > =(#{pageCount}*(#{currPage}-1))+1
+	</select>
+</mapper>

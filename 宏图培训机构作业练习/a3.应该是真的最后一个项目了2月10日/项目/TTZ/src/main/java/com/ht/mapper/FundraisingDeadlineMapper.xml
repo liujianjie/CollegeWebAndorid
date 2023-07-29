@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.FundraisingDeadlineDao">
+	<resultMap type="FundraisingDeadline" id="FundraisingDeadlineMap">
+		<id column="fid" property="fid" />
+		<result column="jiekuantime" property="jiekuantime" />
+		<result column="choukuantime" property="choukuantime" />
+	</resultMap>
+
+	<select id="FundraisingDeadlinelist" resultMap="FundraisingDeadlineMap">
+		select * from
+		FundraisingDeadline order by Choukuantime asc
+	</select>
+
+
+	<insert id="addFun" parameterType="FundraisingDeadline">
+		insert into
+		FundraisingDeadline values(sys_guid(),#{jiekuantime},#{choukuantime})
+	</insert>
+
+	<select id="toupdFun" resultMap="FundraisingDeadlineMap"
+		parameterType="String">
+		select * from FundraisingDeadline where fid=#{fid}
+	</select>
+
+	<update id="updFun" parameterType="FundraisingDeadline">
+		update FundraisingDeadline set
+		jiekuantime=#{jiekuantime},choukuantime=#{choukuantime} where
+		fid=#{fid}
+	</update>
+
+	<delete id="delFun" parameterType="String">
+		delete from
+		FundraisingDeadline where fid=#{fid}
+	</delete>
+
+</mapper>

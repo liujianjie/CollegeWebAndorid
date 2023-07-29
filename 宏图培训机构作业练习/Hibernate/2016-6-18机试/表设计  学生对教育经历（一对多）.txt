@@ -1,0 +1,16 @@
+
+学生 student
+stu_id学生ID  主键
+stu_name学生姓名
+stu_age年龄
+stu_sex性别
+stu_desc个人说明
+
+
+教育经历 jingli
+jl_jid主键ID
+stuid学生ID
+jl_starttime开始时间
+jl_endtime结束时间
+jl_school学校
+

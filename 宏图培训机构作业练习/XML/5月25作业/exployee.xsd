@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 命名空间 相当于java文件里面的import这个关键字  把规范引入 --> 
+<!-- 定制元素，习惯从根元素开始定义 -->
+<!-- 1.定制一个复合类型的元素(嵌套了别的子元素)，必须要先写xs:complexType,xs:sequence,元素的属性写在complextype里面 -->
+<!-- 2.定制一个简单类型的元素(没有嵌套别的子元素而且还包含内容，并且没有属性),必须要写xs:simpleType-->
+<!-- 3.复合类型的元素并且加了内容的 先写xs:complextype,再加上mixed="true" -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="qualified">   
+         <xs:element name="employees">        				   
+         	<xs:complexType>
+         		<xs:sequence>
+         			<xs:element name="employee">   
+         				  <xs:complexType>
+         				  	<xs:sequence>
+         				  		<xs:element name="name" type="xs:string"></xs:element>
+         				  		<xs:element name="age"  >
+         				  			<xs:simpleType>
+         				  				<xs:restriction base="xs:integer">
+         				  					<xs:minInclusive value="0"></xs:minInclusive>
+         				  					<xs:maxInclusive value="120"></xs:maxInclusive>
+         				  				</xs:restriction>
+         				  			</xs:simpleType>   
+         				  		</xs:element>
+         				  		<xs:element name="sex" default="男">
+         				  			<xs:simpleType>
+         				  				<xs:restriction base="xs:string">
+         				  					<xs:enumeration value="男"></xs:enumeration>
+         				  					<xs:enumeration value="女"></xs:enumeration>
+         				  				</xs:restriction>
+         				  			</xs:simpleType>   
+         				  		</xs:element>
+         				  		<xs:element name="country" fixed="中国">  
+         				  		</xs:element>
+         				  		<xs:element name="height" type="xs:float"></xs:element>
+         				  		<xs:element name="connect">
+         				  			<xs:complexType mixed="true">
+         				  				<xs:sequence>
+         				  					<xs:element name="email" >
+         				  						<xs:simpleType>
+         				  							<xs:restriction base="xs:string">
+         				  								<!--[] 里面的内容是可以选择的-->
+         				  								<!--{a,b} 前面的表示重复的次数的范围  -->
+         				  								<!-- @ 固定的字符串只要直接拼接就行-->
+         				  								<!-- (\.) 转义字符-->
+         				  								<!-- 字符串的选择写再(|||)-->  
+         				  								<xs:pattern value="[a-zA-Z0-9_]{1,11}@[a-zA-Z0-9_-]{2,5}(\.)(com|cn|net)" ></xs:pattern>
+         				  							</xs:restriction>
+         				  						</xs:simpleType>
+         				  					</xs:element>  
+         				  					<xs:element name="phone" >
+         				  						<xs:simpleType>
+         				  							<xs:restriction base="xs:string">
+         				  								<xs:pattern value="[1][3|5|8|7][0-9]{9}" ></xs:pattern>
+         				  							</xs:restriction>
+         				  						</xs:simpleType>
+         				  					</xs:element>    
+         				  					<xs:element name="address">
+         				  						<xs:simpleType>
+			         				  				<xs:restriction base="xs:string">
+			         				  					<xs:enumeration value="赣州"></xs:enumeration>
+			         				  					<xs:enumeration value="广州"></xs:enumeration>
+			         				  					<xs:enumeration value="杭州"></xs:enumeration>
+			         				  					<xs:enumeration value="苏州"></xs:enumeration>
+			         				  				</xs:restriction>
+			         				  			</xs:simpleType> 
+         				  					</xs:element>       
+         				  				</xs:sequence>
+         				  			</xs:complexType>   
+         				  		</xs:element>
+         				  	</xs:sequence>
+         				  	<xs:attribute name="id" type="xs:string"></xs:attribute>
+         				  </xs:complexType>
+         			</xs:element>
+         		</xs:sequence>
+         	</xs:complexType>   	
+         </xs:element>
+</xs:schema>      

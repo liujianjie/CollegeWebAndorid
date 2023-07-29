@@ -1,0 +1,29 @@
+--时间日期
+--1.当天凌晨0点
+select trunc(sysdate) from dual
+
+--2.本月最后一天
+select last_day(sysdate) from dual
+
+--3.本月第一天
+select trunc(sysdate,'MONTH') from dual
+
+--4.下个月第一天
+select add_months(trunc(sysdate,'month'),1) from dual;
+
+--5.今年第一天
+select trunc(sysdate,'year') from dual
+
+--6.本周第一天
+select trunc(sysdate,'day') from dual
+
+--7.下个星期六
+select next_day(sysdate,7) from dual
+
+--8.获得今天12点
+select trunc(sysdate)+12/24 from dual
+
+--9.获得今天 15:15:15
+select to_char((sysdate),'yyyy-MM-dd hh24:mi:ss')||' 15:15:15' from dual
+
+select trunc(sysdate)+((1+1/60+1/60/60)*15/24) from dual 

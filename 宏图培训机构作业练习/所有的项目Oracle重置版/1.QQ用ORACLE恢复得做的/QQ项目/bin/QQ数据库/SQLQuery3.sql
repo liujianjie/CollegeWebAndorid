@@ -1,0 +1,1 @@
+select * from QQ where qqnum in(select friqq from qqfrid where myqq=2836 and groupname='∫√”—') order by status desc

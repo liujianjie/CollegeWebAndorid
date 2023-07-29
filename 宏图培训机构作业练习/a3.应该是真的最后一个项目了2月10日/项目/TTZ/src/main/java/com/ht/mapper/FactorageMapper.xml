@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.FactorageDao">
+	<resultMap type="Factorage" id="FactorageMap">
+		<id column="fact_id" property="fact_id" />
+		<result column="b_username" property="b_username" />
+		<result column="fact_money" property="fact_money" />
+		<result column="fact_upd_money" property="fact_upd_money" />
+		<result column="fact_type" property="fact_type" />
+		<result column="fact_distribe" property="fact_distribe" />
+		<result column="fact_no" property="fact_no" />
+		<result column="fact_time" property="fact_time" />
+		<result column="fact_statu" property="fact_statu" />
+		<result column="user_id" property="user_id" />
+	</resultMap>
+
+	<select id="ListFactorage" resultType="Factorage">
+		select * from factorage
+	</select>
+	<select id="CountFactorage" resultType="Integer">
+		select Count(*) from
+		factorage
+	</select>
+</mapper>

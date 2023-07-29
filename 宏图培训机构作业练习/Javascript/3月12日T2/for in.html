@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+
+ </head>
+
+ <body>
+	<ol>
+		<script>
+			shuzu=new Array("红色","黄色","绿色","紫色");
+			for(var i=1;i<shuzu.length;i++){
+				document.write("<li>"+shuzu[i]);
+			}
+			document.write("<br>");
+			document.write("<br>");
+			for(var c in shuzu){
+				document.write("<li>"+shuzu[c]);//只能递增的简单循环
+			}
+		</script>
+	</ol>
+ </body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.GoodtypeDao">
+  <resultMap type="com.ht.yfbc.pojo.Goodtype" id="typemap">
+  	<id column="TID" property="tid" />
+  	<result column="TNAME" property="tname" />
+  	</resultMap>
+  	
+  	
+  	<select id="seltype" resultType="com.ht.yfbc.pojo.Goodtype">
+  		select * from goodtype
+  	</select>
+  	
+  	
+  	<select id="selByid" parameterType="String" resultType="com.ht.yfbc.pojo.Goodtype">
+  		select * from goodtype where tid = #{rtype}
+  	</select>
+</mapper>

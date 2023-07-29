@@ -1,0 +1,4 @@
+select * from ACT_GE_BYTEARRAY t
+select * from ACT_GE_PROPERTY t
+select * from ACT_RE_DEPLOYMENT t
+select * from ACT_RE_PROCDEF t

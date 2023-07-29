@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.ExpendDao">
+	<resultMap type="com.ht.yfbc.pojo.Expend" id="expendmap">
+		<id column="id" property="id" />
+		<result column="exptime" property="exptime" javaType="java.util.Date" />
+		<result column="exptypes" property="exptypes" />
+		<result column="money" property="money" />
+	</resultMap>
+	<insert id="addExpend" parameterType="expend">
+		insert into expend values(sys_guid(),#{exptime},#{exptypes},#{money})
+	</insert>
+	<select id="selExpendListByMap" parameterType="map" resultType="expend">
+		select * from expend ex 
+		<where>
+			<if test="exptime!=null and exptime!=''">
+				and to_char(ex.exptime,'yyyy-MM') =#{exptime}
+			</if>
+		</where>
+	</select>
+	<select id="selExpendList" resultType="com.ht.yfbc.pojo.Expend">
+		select * from expend order by exptime desc
+	</select>
+	
+	<!-- 分页查询 -->
+	<select id="findExpendList" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Expend">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM expend order by exptime desc) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+	</select>
+	<select id="selCount" resultType="java.lang.Integer">
+		select count(1) from expend
+	</select>
+
+	<delete id="delExpend" parameterType="String">
+		delete from expend where
+		id=#{id}
+	</delete>
+
+	<update id="updExpend" parameterType="com.ht.yfbc.pojo.Expend">
+		update expend set exptime =
+		#{exptime},exptypes = #{exptypes},money =#{money} where id = #{id}
+	</update>
+	
+	<select id="selexpend" parameterType="map" resultType="java.lang.Double">
+		select sum(money) from expend ex where to_char(ex.exptime,'yyyy-MM')=#{exptime}
+	</select>
+</mapper>

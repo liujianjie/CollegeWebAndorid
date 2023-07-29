@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.PositionDao">
+  <resultMap type="com.ht.yfbc.pojo.Position" id="positionmap">
+  	<id column="id" property="id" />
+  	<result column="pname" property="pname" />
+  </resultMap>
+  
+  <select id="selPositionList"  resultType="com.ht.yfbc.pojo.Position">
+  	select * from position
+  </select>
+  <select id="selPositionNameById" parameterType="java.lang.String" resultType="java.lang.String">
+  	select pname from position where id=#{id}
+  </select>
+  <select id="selPositionIdByName" parameterType="java.lang.String" resultType="java.lang.String">
+  	select id from position where pname=#{pname}
+  </select>
+  <!-- 分页查询 -->
+	<select id="selCars_posiPage" parameterType="map"
+		resultType="com.ht.yfbc.pojo.Position">
+		  	<![CDATA[SELECT * FROM
+		(
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM position ) A
+		   WHERE ROWNUM <= #{pageCount}*#{currPage}
+		)
+		WHERE RN >= (#{pageCount}*(#{currPage}-1))+1 ]]>
+	</select>
+	<select id="selCount" resultType="java.lang.Integer">
+		select count(1) from position
+	</select>
+	
+	<!-- 添加 -->
+	<insert id="addposi" parameterType="position">
+		insert into position
+		(id,pname)
+		values
+		(sys_guid(),#{pname})
+	</insert>
+	<!-- 删除 -->
+	<delete id="delposi" parameterType="position">
+		delete from position where id=#{id}
+	</delete>
+</mapper>

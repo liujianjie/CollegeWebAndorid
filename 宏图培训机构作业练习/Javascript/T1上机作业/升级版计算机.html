@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+	var d=new Date();
+	document.write("欢迎使用javascript "+d);
+	function jisuan(){
+		var a1=document.frm.ty1.value;
+		var a2=document.frm.ty2.value;
+		var sm=document.frm.计算.value;
+		if(isNaN(a1)){
+			alert("请正确输入第一个数");
+		}else if(isNaN(a2)){
+			alert("请正确输入第二个数");
+		}
+		//不为空
+		if(a1==""){
+			alert("请输入第一个数");
+		}else if(a2==""){
+			alert("请输入第二个数");
+		}else{
+			if(sm=="+"){
+				document.frm.ty3.value=parseInt(a1)+parseInt(a2);
+			}
+			if(sm=="-"){
+				document.frm.ty3.value=parseInt(a1)-parseInt(a2);
+			}
+			if(sm=="*"){
+				document.frm.ty3.value=parseInt(a1)*parseInt(a2);
+			}
+			if(sm=="/"){
+				document.frm.ty3.value=parseInt(a1)/parseInt(a2);
+			}
+		}
+		
+	}
+  </script>
+ </head>
+
+ <body>
+	<form name="frm">
+		<input type="text" name="ty1"/>
+		<!--文本框-->
+		<select name="计算">	
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="text" name="ty2"/>
+		<input type="button" value="确定" onclick="jisuan();"/>
+		<input type="text" name="ty3">
+	</form>
+ </body>
+</html>

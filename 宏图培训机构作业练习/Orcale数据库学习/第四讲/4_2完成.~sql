@@ -1,0 +1,103 @@
+--4_2主要对emp表的操作 涉及 高级子查询 和一些比较nb的方法 还有逻辑这些
+
+select * from emp for update
+
+--order by -desc -asc(默认)
+select * from emp order by deptno desc
+
+--between and :包含边界值
+select * from emp where sal between 1500 and 3000
+
+--not between and ：不包含边界值
+select * from emp where sal not between 1500 and 3000
+
+--in ,not in
+select * from emp where deptno in(20,10)
+select * from emp where deptno not in(20,10)
+
+--like,not like
+select * from emp where job not like '%MANAGER%'
+
+--连接
+select * from dept for update
+--内链接
+select * from emp e inner join dept d on e.deptno=d.deptno
+
+--左外连接
+select * from emp e left join dept d on e.deptno=d.deptno
+
+--右外连接
+select * from emp e right join dept d on e.deptno=d.deptno
+
+--全外连接
+select * from emp e full join dept d on e.deptno=d.deptno
+
+--交叉连接
+select * from emp e cross join dept d 
+
+--对自身的查询 查询所有员工的经理
+select e.empno 员工号,e.ename 员工名,e.mgr 经理号,m.ename 经理 from emp e,emp m where e.mgr=m.empno
+
+--替代变量 需在命令窗口
+总的就是
+define a=10;
+define a;
+&a;使用
+undefine a;删除
+
+--删除数据
+delete from student where stu_id=2;--是dml语言 将会做大量日志记录
+
+truncate--不能删单个数据 属于 ddl定义语言 事务将不会回滚，不做日志记录，不能加条件
+
+--重命名
+rename student to students;
+
+--分组
+--1.group by 
+select job,deptno,sum(sal) from emp group by (job,deptno)
+
+--2.group by rollup 分的很细
+select job,deptno,sum(sal) from emp group by rollup(job,deptno)
+
+--3.group by cube 分的很细
+select job,deptno,sum(sal) from emp group by cube(job,deptno)
+
+--4.group by(多个字段)
+select deptno,job,sum(sal) from emp group by(deptno,job);
+select job,mgr,sum(sal) from emp group by(job,mgr);
+
+--5。group by grouping sets((多个字段),(多个字段)) 整合
+select job,deptno,mgr,sum(sal) from emp group by grouping sets((deptno,job),(job,mgr));
+
+--高级子查询(查询deptno/mgr条件同时满足的数据) 
+select * from emp where (deptno,mgr) in(select deptno,mgr from emp )
+
+    
+--查询工资比部门平均工资高的员工
+select sal from emp
+
+select deptno,avg(sal)avg_sal from emp group by deptno
+
+select * from emp a,(select deptno,avg(sal)avg_sal from emp group by deptno) b where a.deptno=b.deptno and a.sal>b.avg_sal
+
+--标量子查询
+select ename,(
+       case 
+       when sal<500 then '实习生'
+       when sal<1000 then '打工仔'
+       when sal<2000 then '技术人员'
+       when sal>4000 then '蓝领'
+       else '未明确'
+       end
+       ) from emp
+
+--查询员工按部门名称排序 order by
+select * from emp e order by (select job from emp p where e.empno=p.empno);
+
+--查询有员工的部门 exists
+select * from dept d
+where exists(
+select * from emp e where e.deptno=d.deptno)
+
+--查询部门总工资大于所有部门工资平均值的部门

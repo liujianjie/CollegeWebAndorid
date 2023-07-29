@@ -1,0 +1,26 @@
+SQL> ttitle center '书籍信息';
+SQL> btitle '制作人：刘建杰';
+SQL> select * from bool;
+select * from bool
+              *
+第 1 行出现错误: 
+ORA-00942: 表或视图不存在 
+
+
+SQL> select * from book;
+
+                                    书籍信息                                    
+    BOOKID                                                                      
+----------                                                                      
+BOOKNAME                                                                        
+--------------------------------------------------------------------------------
+     PRICE                                                                      
+----------                                                                      
+         1                                                                      
+精通j2ee                                                                        
+        50                                                                      
+                                                                                
+
+                                 制作人：刘建杰
+
+SQL> spool off;

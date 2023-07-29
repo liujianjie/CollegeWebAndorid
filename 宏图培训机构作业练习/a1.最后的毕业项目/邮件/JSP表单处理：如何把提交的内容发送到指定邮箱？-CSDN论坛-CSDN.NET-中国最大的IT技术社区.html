@@ -1,0 +1,2437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0036)http://bbs.csdn.net/topics/310125122 -->
+<html class="csdn-bbs"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ca-pub-8990951720398508.js"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(1)"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(2)"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(3)"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(4)"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(5)"></script><script type="text/javascript" async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(6)"></script><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/hm.js"></script>
+    <script type="text/javascript" id="82590140821412210" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/getrecs.json" charset="UTF-8" async=""></script><script async="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/engageya_loader.js"></script><script id="allmobilize" charset="utf-8" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/allmobilize.min.js"></script><style type="text/css"></style>
+<meta http-equiv="Cache-Control" content="no-transform">
+<link rel="alternate" media="handheld" href="http://bbs.csdn.net/topics/310125122#">
+
+    
+    <title>JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区</title>
+
+    <link href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/main-a20d644e7582b99ee25e793fab53ee22.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/btn.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/application-73a79ab67b5eca88701b728d54cb956b.js" type="text/javascript"></script>
+    <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/atsuggest.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="za8lDkp86XQxWLM7XZXxwj5O6Sx7WR+6E1/YXnMmA7I=" name="csrf-token">
+    <link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+<link rel="stylesheet" href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/index.css">
+<script language="javascript" type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/tracking.js"></script>
+
+      <link href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/sh-7ba87e2a26838d9e4e41a78d9a2405e6.css" media="all" rel="stylesheet" type="text/css">
+  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/sh-83dfe6b3d61bfd8fe4da30e0d7046ae0.js" type="text/javascript"></script>
+  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/login.js" type="text/javascript"></script>
+    <style>
+        #topic-detail-ad-ul{width:960px;float:left;font-size:1px;margin:0;padding:0}
+        #topic-detail-ad-l{float:left;}
+        #topic-detail-ad-r{float:right;}
+        #topic-detail-ad-ul li{list-style: none;}
+    </style>
+
+    <!--  js for ask-->
+      <script type="text/javascript">
+          window.bbsInfoflag = true;
+      </script>
+
+    <link href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ask_float_block.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wmd.js"></script>
+
+    <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/showdown.js"></script>
+
+    <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/prettify.js"></script>
+
+    <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ask_float_block.js"></script>
+
+      <script type="text/javascript">
+          // 快速回复
+          $(document).ready(function () {
+          $("#com-quick-reply-bbs").bind("click", function(){
+              //_gaq.push(['_trackEvent','function', 'onclick', 'BBS_articles_youhuifu']);
+              $("#post_body").focus();
+              window.scrollTo(0, $(document).height());
+          });
+        });
+      </script>
+    <!--  js for ask  end-->
+  <style type="text/css"></style><script type="text/javascript" charset="utf-8" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/tracking(1).js"></script><script type="text/javascript" charset="utf-8" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/main.js"></script><link href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/bdsstyle.css" rel="stylesheet" type="text/css"><link type="text/css" rel="stylesheet" href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/style.css"><link rel="stylesheet" type="text/css" href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/style(1).css"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/get_ads.php" type="text/javascript"></script><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/logger.js"></script></head>
+  <body id="topics-show"><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_renren rrw">人人网</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_douban db">豆瓣网</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_thx thx">和讯微博</a></li><li><a href="http://bbs.csdn.net/topics/310125122#" class="bds_more">更多...</a></li></ul><p><a href="http://bbs.csdn.net/topics/310125122#" class="goWebsite">百度分享</a></p></div></div></div>
+    <!-- <script type="text/javascript" src="http://c.csdnimg.cn/pubnav/js/pub_topnav_2011.js"></script> -->
+
+<!--全屏-->
+<ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57" id="revive-0-0"></ins>
+<!--全屏-->
+
+<script id="toolbar-tpl-scriptId" skin="black" prod="bbs" fixed="true" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://bbs.csdn.net/?ref=toolbar_logo" class="img bbs-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="http://passport.csdn.net/account/mobileregister?ref=toolbar&action=mobileRegister">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="about:block" frameborder="0" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix" style="display:none;"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt style="border: none;"><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/100x100.jpg"></a></dt>                        <dd class="info" style="border: none;"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-left" style="margin-left:132px; width:18px; height:27px; white-space:nowrap; overflow:hidden;"><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div id="chasnew123" class="hasnew" style="display: none;"></div>                <div id="cappsarea123" class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd> <a href="http://lib.csdn.net/?ref=toolbar" target="_blank">知识库</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                      <dd style="display:none"> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd style="display:none"> <a href="http://job.csdn.net/?ref=toolbar" target="_blank">JOB<img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="http://edu.csdn.net/?ref=toolbar" target="_blank">学院<img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                      <dd> <a href="http://mall.csdn.net/?ref=toolbar" target="_blank">C币兑换<img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+      <!-- 统计代码 -->
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script><script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/repoAddr2.js"></script>
+
+
+    <div class="news-nav">
+  <div class="container">
+    <div class="nav-bar">
+      <a href="http://bbs.csdn.net/home" class="">首页</a>
+      <span class="dropdown">
+  <a href="http://bbs.csdn.net/topics/310125122#">精选版块</a>
+  <span class="caret"></span>
+  <div class="dropdown-menu">
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/Mobile">移动开发</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/ios">iOS</a>
+        <a href="http://bbs.csdn.net/forums/Android">Android</a>
+        <a href="http://bbs.csdn.net/forums/Qt">Qt</a>
+        <a href="http://bbs.csdn.net/forums/WindowsMobile">WP</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/CloudComputing">云计算</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/AWS">IaaS</a>
+        <a href="http://bbs.csdn.net/forums/CloudFoundry">Pass/SaaS</a>
+        <a href="http://bbs.csdn.net/forums/hadoop">分布式计算/Hadoop</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/Java">Java技术</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/J2SE">Java SE</a>
+        <a href="http://bbs.csdn.net/forums/Java_WebDevelop">Java Web 开发</a>
+        <a href="http://bbs.csdn.net/forums/J2EE">Java EE</a>
+        <a href="http://bbs.csdn.net/forums/JavaOther">Java其他相关</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/DotNET">.NET技术</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/DotNETFramework">.NET Framework</a>
+        <a href="http://bbs.csdn.net/forums/CSharp">C#</a>
+        <a href="http://bbs.csdn.net/forums/DotNETAnalysisAndDesign">.NET分析与设计</a>
+        <a href="http://bbs.csdn.net/forums/ASPDotNET">ASP .NET</a>
+        <a href="http://bbs.csdn.net/forums/VBDotNET">VB .NET</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/WebDevelop">Web开发</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/PHP">PHP</a>
+        <a href="http://bbs.csdn.net/forums/JavaScript">JavaScript</a>
+        <a href="http://bbs.csdn.net/forums/ASP">ASP</a>
+        <a href="http://bbs.csdn.net/forums/HTMLCSS">HTML(CSS)</a>
+        <a href="http://bbs.csdn.net/forums/HTML5">HTML5</a>
+        <a href="http://bbs.csdn.net/forums/Apache">Apache</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/topics/310125122#">开发语言/框架</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/Delphi">Delphi</a>
+        <a href="http://bbs.csdn.net/forums/VC">VC/MFC</a>
+        <a href="http://bbs.csdn.net/forums/VB">VB</a>
+        <a href="http://bbs.csdn.net/forums/Cpp">C/C++</a>
+        <a href="http://bbs.csdn.net/forums/BCB">C++ Builder</a>
+        <a href="http://bbs.csdn.net/forums/OtherLanguage">其他开发语言</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/topics/310125122#">数据库开发</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/MSSQL">MS-SQL Server</a>
+        <a href="http://bbs.csdn.net/forums/Oracle">Oracle</a>
+        <a href="http://bbs.csdn.net/forums/PowerBuilder">PowerBuilder</a>
+        <a href="http://bbs.csdn.net/forums/Informatica">Informatica</a>
+        <a href="http://bbs.csdn.net/forums/OtherDatabase">其他数据库开发</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/Embedded">硬件/嵌入式开发</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/WinCE">嵌入开发(WinCE)</a>
+        <a href="http://bbs.csdn.net/forums/Embedded_driver">驱动开发/核心开发</a>
+        <a href="http://bbs.csdn.net/forums/Embedded_hardware">硬件设计</a>
+        <a href="http://bbs.csdn.net/forums/Embedded_SCM">单片机/工控</a>
+        <a href="http://bbs.csdn.net/forums/ASM">汇编语言</a>
+        <a href="http://bbs.csdn.net/forums/VxWorks">VxWorks开发</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt><a href="http://bbs.csdn.net/forums/Linux">Linux/Unix社区</a></dt>
+      <dd>
+        <a href="http://bbs.csdn.net/forums/Linux_System">系统维护与使用区</a>
+        <a href="http://bbs.csdn.net/forums/Linux_Development">应用程序开发区</a>
+        <a href="http://bbs.csdn.net/forums/Linux_Kernel">内核源代码研究区</a>
+        <a href="http://bbs.csdn.net/forums/Linux_Driver">驱动程序开发区</a>
+        <a href="http://bbs.csdn.net/forums/Linux_Hardware">CPU和硬件区</a>
+      </dd>
+    </dl>
+  </div>
+</span>
+
+      <a href="http://bbs.csdn.net/help" class="">论坛帮助</a>
+      <a href="http://bbs.csdn.net/rank" class="">论坛牛人</a>
+      <a href="http://bbs.csdn.net/map" class="">论坛地图</a>
+      <a href="http://bbs.csdn.net/ask" class="">专家问答</a>
+    </div>
+  </div>
+</div>
+    <div class="wraper">
+        <!-- 页顶通栏 -->
+    <div id="Topic_Top">
+      <!--<style type="text/css">-->
+          <!--/*body,ul{width:960px;float:left;font-size:1px;margin:0;padding:0}*/-->
+          <!--/*ul li.l{float:left;}*/-->
+          <!--/*ul li.r{float:right;}*/-->
+          <!--/*li{list-style: none;}*/-->
+      <!--</style>-->
+      <!--<body>-->
+      <ul id="topic-detail-ad-ul">
+      	<li>
+      		<div class="J_adv" data-view="true" data-mod="ad_popu_178" data-mtp="43" data-order="20" data-con="ad_content_690" style="width: 960px; height: 90px;"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:960px;height:90px" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/1778791602" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:960px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:960px;background-color:transparent"><iframe width="960" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle || []).push({});</script></div>
+      	</li>
+        <!--<li class="l" id="topic-detail-ad-l">
+          <ins data-revive-zoneid="53" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+        </li>
+        <li class="r" id="topic-detail-ad-r">
+          <ins data-revive-zoneid="54" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+        </li>-->
+      </ul>
+      <!--</body>-->
+    </div>
+
+      <!--[if IE]>
+<style type="text/css" media="screen">
+  .control_area .control .drop_menu{border:3px solid #ccc \9; _*border:3px solid #ccc;}
+</style>
+<![endif]-->
+
+<!-- 页顶Button (D3) -->
+<div marginwidth="0" marginheight="0" scrolling="no" width="100%">
+  
+  
+  <style>
+      body {margin:0px;padding:0px;}
+      .bbs_top_ad{clear:both; text-align:left; display:block; *display:inline-block; width:960px; margin:2px 0; padding:2px 9px; border:solid 1px #a9cbee; /* -moz-border-radius:8px; background:#d8d8d8; */ color:#000; list-style:none; font-size:12px; line-height:20px;}
+      .bbs_top_ad:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+      .bbs_top_ad a{color:#666; text-decoration:none;}
+      .bbs_top_ad a:hover{text-decoration:underline;}
+      .bbs_top_ad *{margin:0; padding:0; list-style:none;}
+      .bbs_top_ad h3{width:330px; max-width:330px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:14px; line-height:20px;}
+      .bbs_top_ad h3:after{content:"...";}
+      .bbs_top_ad h3 a{color:#000;}
+      .bbs_top_ad .area_1 li,
+      .bbs_top_ad .area_2 li{padding:0 0 0 9px; background:url(http://c.csdnimg.cn/www/images/point_1.gif) no-repeat left 8px; width:340px; height:20px; overflow:hidden; display:inline-block;}
+      .bbs_top_ad .area_1{float:left; width:350px; overflow:hidden; margin:0 10px 0 0; padding:4px 0; /*background:#f8f8f8;*/}
+      .bbs_top_ad .area_2{position:relative; float:left; width:355px; overflow:hidden; margin:0 20px 0 0; padding:4px 0; /*background:#f8f8f8;*/}
+      .bbs_top_ad .area_2 ul{height:80px; overflow:hidden;}
+      .area_1 ul {height:40px; overflow:hidden;}
+      #scrollDiv li { display:inherit; width:200px; }
+      #scrollDiv2 li { background:url(http://c.csdnimg.cn/www/images/point_pin.gif) no-repeat left 4px; }
+      .bbs_top_ad #btn1{float:left; width:15px; height:15px; border:none; background:#5d5d5d; color:#fff; font-size:12px; line-height:15px; cursor:pointer;}
+      .bbs_top_ad #btn2{float:left; margin-left:10px; width:15px; height:15px; border:none; background:#5d5d5d; color:#fff; font-size:12px; line-height:15px; cursor:pointer;}
+      .bbs_top_ad .area_3{float:left; width:220px; overflow:hidden; padding:4px 0 0 0;}
+      .bbs_top_ad .area_3 a{color:#000;}
+      .bbs_top_ad .area_3 dt{margin-bottom: 5px;}
+      .bbs_top_ad .area_3 dd{width:193px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; padding:0 0 0 17px; background:url(http://c.csdnimg.cn/www/images/point_huo.gif) no-repeat left 3px;}
+      /* .bbs_top_ad .area_3 dd:after{content:"...";}*/
+      .bbs_top_ad .area_1 h3 li,.bbs_top_ad .area_2 h3 li { list-style:none; background:none; padding:0;}
+  </style>
+  <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/jquery.scroll.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $("#scrollDiv").Scroll({ line: 4, speed: 1, timer: 6000, left: "btn1", right: "btn2" });
+          $("#scrollDiv2").Scroll({ line: 8, speed: 1, timer: 6000 });
+          jQuery.noConflict();
+      });
+  </script>
+
+
+
+<div class="bbs_top_ad">
+  <div class="area_1">
+    <h3>
+      <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/jobsget.ashx"></script><li><a href="http://geek.csdn.net/news/detail/84232" target="_blank">OpenStack 的“钱”景</a></li>
+    </h3>
+    <ul>
+      <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/jobsget(1).ashx"></script><li><a href="http://www.csdn.net/article/2016-04-13/2826618-Unite2016Shanghai-keynote" target="_blank">Unite2016Shanghai成功闭幕 中国已成其最大社区</a></li><li><a href="http://www.csdn.net/article/2016-03-23/2826612-Unite2016Shanghai" target="_blank">Unity全球领袖齐聚 Unite2016Shanghai精彩议题公布</a></li>
+    </ul>
+    <div style="float:left;width:260px;">
+      <div id="scrollDiv1">
+        <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ArticleGet.ashx"></script><ul><li><a href="http://www.csdn.net/article/2016-08-26/15840434" target="_blank" title="搭载中科创达核心计算模块 高通骁龙平台无人机正式量产出货">搭载中科创达核心计算模块 高通骁...</a></li><li><a href="http://www.csdn.net/article/2016-08-24/15840379" target="_blank" title="华为企业云产业合作高峰论坛：聚焦打造云计算、大数据产业生态">华为企业云产业合作高峰论坛：聚焦...</a></li><li><a href="http://www.csdn.net/article/2016-08-24/15840376" target="_blank" title="极验验证正式成为数据中心联盟理事单位">极验验证正式成为数据中心联盟理事...</a></li><li><a href="http://www.csdn.net/article/2016-08-24/15840367" target="_blank" title="云擎深圳，信息惠民">云擎深圳，信息惠民</a></li><li><a href="http://www.csdn.net/article/2016-08-23/15840334" target="_blank" title="浅读金融行业安全报告">浅读金融行业安全报告</a></li><li><a href="http://www.csdn.net/article/2016-08-19/15840273" target="_blank" title="国内最佳 腾讯手机管家连续三次实现AV-Test双100%病毒查杀率">国内最佳 腾讯手机管家连续三次实...</a></li><li><a href="http://www.csdn.net/article/2016-08-19/15840241" target="_blank" title="华为企业云产业合作高峰论坛：聚焦云时代产业生态建设">华为企业云产业合作高峰论坛：聚焦...</a></li><li><a href="http://www.csdn.net/article/2016-08-01/15839888" target="_blank" title="极验验证：传统验证码破解算法浅析">极验验证：传统验证码破解算法浅析</a></li><li><a href="http://www.csdn.net/article/2016-08-01/15839884" target="_blank" title="玉溪以“云”服务民生 打造城市管理创新引擎">玉溪以“云”服务民生 打造城市管...</a></li><li><a href="http://www.csdn.net/article/2016-07-27/15839795" target="_blank" title="浅析深度学习模型与应用">浅析深度学习模型与应用</a></li><li><a href="http://www.csdn.net/article/2016-07-27/15839794" target="_blank" title="6大理由~说说我为什么要参加华为Docker应用创意大赛!">6大理由~说说我为什么要参加华为...</a></li><li><a href="http://www.csdn.net/article/2016-07-22/15839709" target="_blank" title="BeeCloud宣布推出“订阅支付”服务">BeeCloud宣布推出“订阅支...</a></li><li><a href="http://www.csdn.net/article/2016-07-21/15839706" target="_blank" title="华为智慧城市生态圈行动计划盛大发布">华为智慧城市生态圈行动计划盛大发...</a></li><li><a href="http://www.csdn.net/article/2016-07-21/15839705" target="_blank" title="华为发布智慧城市解决方案整体架构：一云二网三平台">华为发布智慧城市解决方案整体架构...</a></li><li><a href="http://www.csdn.net/article/2016-07-21/15839704" target="_blank" title="国家信息中心和华为智慧城市联合创新实验室揭牌仪式隆重举办">国家信息中心和华为智慧城市联合创...</a></li><li><a href="http://www.csdn.net/article/2016-07-13/15839453" target="_blank" title="小鸟云跨界摇滚  携多企业力办“摇滚＆黑客”演唱会">小鸟云跨界摇滚  携多企业力办“...</a></li><li><a href="http://www.csdn.net/article/2016-06-30/15839145" target="_blank" title="小鸟云0元活动激增5万用户  服务能力依然卓越">小鸟云0元活动激增5万用户  服...</a></li><li><a href="http://www.csdn.net/article/2016-06-15/15838704" target="_blank" title="革新传统服务模式  小鸟云催生高可信云服务">革新传统服务模式  小鸟云催生高...</a></li><li><a href="http://www.csdn.net/article/2016-06-08/15838595" target="_blank" title="网站安全检查渐成常态，盛邦安全带来深度解读">网站安全检查渐成常态，盛邦安全带...</a></li><li><a href="http://www.csdn.net/article/2015-12-01/15831681" target="_blank" title="中国企业疑遭境外黑客勒索  阿里云将施以援手">中国企业疑遭境外黑客勒索  阿里...</a></li><li><a href="http://www.csdn.net/article/2015-11-19/15831129" target="_blank" title="阿里巴巴庄卓然：引领移动电商背后的技术航母">阿里巴巴庄卓然：引领移动电商背后...</a></li><li><a href="http://www.csdn.net/article/2015-11-18/15831083" target="_blank" title="如何站在双11的肩膀上 详解阿里云企业级互联网架构">如何站在双11的肩膀上 详解阿里...</a></li><li><a href="http://www.csdn.net/article/2015-11-17/15831000" target="_blank" title="供不应求 阿里云扩建香港数据中心">供不应求 阿里云扩建香港数据中心</a></li><li><a href="http://www.csdn.net/article/2015-11-17/15830997" target="_blank" title="中国电信天翼开放平台发布电信+联通融合版SDK计费能力">中国电信天翼开放平台发布电信+联...</a></li><li><a href="http://www.csdn.net/article/2015-11-12/15830790" target="_blank" title="2015信息安全大数据公司排名琅琊榜">2015信息安全大数据公司排名琅...</a></li><li><a href="http://www.csdn.net/article/2015-11-12/15830775" target="_blank" title="双十一玩嗨了吧！别忘了谢谢华为敏捷Wi-Fi">双十一玩嗨了吧！别忘了谢谢华为敏...</a></li><li><a href="http://www.csdn.net/article/2015-11-12/15830772" target="_blank" title="融合创新，云领未来">融合创新，云领未来</a></li><li><a href="http://www.csdn.net/article/2015-11-12/15830757" target="_blank" title="敏捷”数据中心网络助力“敏捷”云计算">敏捷”数据中心网络助力“敏捷”云...</a></li><li><a href="http://www.csdn.net/article/2015-11-12/15830756" target="_blank" title="智慧社区助力地产行业占领互联网入口 ——华为智慧社区研讨会“引爆”金陵古城">智慧社区助力地产行业占领互联网入...</a></li><li><a href="http://www.csdn.net/article/2015-11-11/15830705" target="_blank" title="华为敏捷数据中心为兰州银行构建互联网业务灾备系统">华为敏捷数据中心为兰州银行构建互...</a></li><li><a href="http://www.csdn.net/article/2015-11-11/15830703" target="_blank" title="华为WLAN助力河西学院校园无线网络建设">华为WLAN助力河西学院校园无线...</a></li><li><a href="http://www.csdn.net/article/2015-11-11/15830701" target="_blank" title="简单、开放、弹性：2015云数据中心研讨会实地体验SDN">简单、开放、弹性：2015云数据...</a></li><li><a href="http://www.csdn.net/article/2015-11-11/15830698" target="_blank" title="华为助力山东省统计局开启高清视频会议新时代">华为助力山东省统计局开启高清视频...</a></li><li><a href="http://www.csdn.net/article/2015-11-02/15830117" target="_blank" title="企业数据上云很难吗？阿里云说有了数据传输就是小意思">企业数据上云很难吗？阿里云说有了...</a></li><li><a href="http://www.csdn.net/article/2015-10-26/15829761" target="_blank" title="大数据解读2015TAI大会">大数据解读2015TAI大会</a></li><li><a href="http://www.csdn.net/article/2015-10-22/15829554" target="_blank" title="阿里云在基因领域的大动作：携手华大基因推精准医疗应用云平台">阿里云在基因领域的大动作：携手华...</a></li><li><a href="http://www.csdn.net/article/2015-10-22/15829495" target="_blank" title="山石网科化身“虚拟机贴身保镖”">山石网科化身“虚拟机贴身保镖”</a></li><li><a href="http://www.csdn.net/article/2015-10-22/15829494" target="_blank" title="云巴：稳定的服务没有捷径">云巴：稳定的服务没有捷径</a></li><li><a href="http://www.csdn.net/article/2015-10-19/15829315" target="_blank" title="FREE WiFi">FREE WiFi</a></li><li><a href="http://www.csdn.net/article/2015-10-19/15829313" target="_blank" title="微信群海量信息管理">微信群海量信息管理</a></li><li><a href="http://www.csdn.net/article/2015-10-19/15829311" target="_blank" title="智能光伏发电的云端监控管理平台">智能光伏发电的云端监控管理平台</a></li><li><a href="http://www.csdn.net/article/2015-10-19/15829295" target="_blank" title="智能手环算什么！看看飞行员的专用可穿戴设备">智能手环算什么！看看飞行员的专用...</a></li><li><a href="http://www.csdn.net/article/2015-10-19/15829294" target="_blank" title="甭打嘴仗，传统租车业有救了！云上的Smart方案">甭打嘴仗，传统租车业有救了！云上...</a></li><li><a href="http://www.csdn.net/article/2015-09-29/15828763" target="_blank" title="挑选 IBM Bluemix 作为云平台的10大理由">挑选 IBM Bluemix 作...</a></li><li><a href="http://www.csdn.net/article/2015-09-29/15828762" target="_blank" title="挑选 IBM Bluemix 作为云平台的10大理由">挑选 IBM Bluemix 作...</a></li><li><a href="http://www.csdn.net/article/2015-09-28/15828758" target="_blank" title="阿里云四剑齐发，游戏开发者可享6千~100万专项基金">阿里云四剑齐发，游戏开发者可享6...</a></li><li><a href="http://www.csdn.net/article/2015-09-25/15828710" target="_blank" title="IBM Bluemix 开发者锦标赛">IBM Bluemix 开发者锦...</a></li><li><a href="http://www.csdn.net/article/2015-09-24/15828639" target="_blank" title="总要问个为什么？">总要问个为什么？</a></li><li><a href="http://www.csdn.net/article/2015-09-18/15828346" target="_blank" title="吴翰清：让安全成为云上每位用户都用得起的服务">吴翰清：让安全成为云上每位用户都...</a></li><li><a href="http://www.csdn.net/article/2015-09-15/15828204" target="_blank" title="阿里云推动全世界最大的植物基因组测序项目上云">阿里云推动全世界最大的植物基因组...</a></li></ul>
+      </div>
+    </div><div style="float:left;padding-top:22px;">
+    <button id="btn1" style="cursor: pointer;">&lt;&lt;</button>
+    <button id="btn2" style="cursor: pointer;">&gt;&gt;</button></div>
+  </div>
+  <div class="area_2">
+    <h3>
+      <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/getcmsad.ashx"></script><p><a target="_blank" href="http://edu.csdn.net/"><font color="#000000"><strong>屌丝逆袭？舍我其谁！</strong></font></a> </p>
+    </h3>
+    <div id="scrollDiv" class="scrollDiv">
+      <ul style="margin-left: 0px;">
+        <!--<script type="text/javascript">-->
+        <!--var url = encodeURIComponent(location.href);-->
+        <!--var id = 3;-->
+        <!--function ad_two_callback(ad_result){-->
+        <!--$('#scrollDiv2 ul').append(ad_result);-->
+        <!--};-->
+        <!--document.write(unescape('%3Cscript%20src%3D%22http%3A//a.pongo.cn/Job/GetAdForCallBack%3Fid%3D'+id+'%26UrlAdParam%3D'+encodeURIComponent(url)+'%26CallBack%3D'+ 'ad_two_callback' +'%22%20type%3D%22text/javascript%22%3E%3C/script%3E')); -->
+        <!--</script>-->
+        <script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/getcmsad(1).ashx"></script>       
+      <li><a target="_blank" href="http://csdn.net/app"><font color="#666">【CSDN APP】程序员必备</font></a></li><li><a target="_blank" href="http://lib.csdn.net/"><font color="#666">CSDN知识库-知识精华</font></a></li><li><a target="_blank" href="http://csdn.net/app"><font color="#666">把博客放进口袋</font></a></li><li><a target="_blank" href="http://csdn.net/app"><font color="#666">CSDN移动客户端，全新亮相</font></a></li></ul>
+    </div>
+  </div>
+  <div class="area_3">
+    <dl>
+      <dt>
+        <div class="J_adv" data-view="true" data-mod="ad_popu_55" data-mtp="34" data-order="21" data-con="ad_content_359" style="width: 220px; height: 120px;"><!-- 广告占位容器 --><div id="cpro_u2394820"><iframe id="iframeu2394820_0" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(10).html" width="220" height="120" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><!-- 投放代码 --><script type="text/javascript">   /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({        id: 'u2394820'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/c.js" type="text/javascript"></script></div>
+      </dt>
+
+    </dl>
+  </div>
+</div>
+
+</div>
+<!--<iframe id="frm_tt1" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="100%" src="/sda/TopicBodyTop.htm?v=1"></iframe>-->
+<script type="text/javascript">
+//  setTimeout(function () { document.getElementById("frm_tt1").src = "/sda/TopicBodyTop.htm?v="+new Date().getTime(); }, 5000);
+
+  $(function(){
+      //获取要定位元素距离浏览器顶部的距离
+      $ = jQuery;
+      var navH = $(".detail_title_fixed").offset().top;
+      $(".detail_title_fixed").hide();
+
+      var show_detail_title_fixed = true;
+      //滚动条事件
+      $(window).scroll(function(){
+
+          //获取滚动条的滑动距离
+          var scroH = $(this).scrollTop();
+
+          //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+          if(show_detail_title_fixed){
+              if(scroH>=navH){
+                  $(".detail_title_fixed").css({"position":"fixed","top":"0","border":"1px #198cc5 solid","z-index":"99999"});
+                  $(".detail_title_fixed").show();
+              }else if(scroH<navH){
+                  $(".detail_title_fixed").css({"position":"static"});
+                  $(".detail_title_fixed").hide();
+              }
+          }
+      });
+
+      $("#close_detail_title_fixed").click(function(){
+          show_detail_title_fixed = false;
+          $(".detail_title_fixed").hide();
+      });
+
+      $("#com-back-home").click(function(){
+        window.location.href="/";
+      });
+
+      $("#com-back-channel").click(function(){
+          window.location.href="/forums/Java_WebDevelop";
+      });
+  })
+</script>
+
+<div class="bread_nav">
+  <a href="http://www.csdn.net/" target="_blank">CSDN</a> <em>&gt;</em>
+  <a href="http://bbs.csdn.net/" target="_blank">CSDN论坛</a> <em>&gt;</em>
+    <a href="http://bbs.csdn.net/forums/Java" target="_blank">Java</a> <em>&gt;</em>
+  <a href="http://bbs.csdn.net/forums/Java_WebDevelop" target="_blank">Web 开发</a>
+</div>
+
+<div class="flash_messages">
+</div>
+
+<div class="control_area top">
+  <form name="form" id="form">
+    
+    <span class="back_to_forum_list"><a href="http://bbs.csdn.net/forums/Java_WebDevelop">返回列表</a></span>
+    <div class="control">
+      <ul>
+        <li class="drop_menu_wrap drop_menu_down">
+          <a href="http://bbs.csdn.net/topics/310125122#" class="drop_toggle btn_1 " rel="nofollow">
+            <span>
+              <img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_set.gif" alt="">管理菜单<img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/arrow_down.gif" alt="">
+            </span>
+          </a>
+          <ul class="drop_menu" style="display: none; top:26px;">
+              <li><a href="http://bbs.csdn.net/topics/310125122/top" class="fancybox" rel="nofollow">置顶</a></li>
+
+  <li><a href="http://bbs.csdn.net/topics/310125122/recommend" data-confirm="您确定要推荐该帖吗？帖子被推荐后将奖励发帖用 户88个可用分和3个C币!" data-method="put" rel="nofollow">推荐</a></li>
+
+  <li><a href="http://bbs.csdn.net/topics/310125122/lock" class="fancybox" rel="nofollow">锁定</a></li>
+
+<li><a href="http://bbs.csdn.net/topics/310125122/move" class="fancybox" rel="nofollow">移动</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/edit" class="fancybox" rel="nofollow">编辑</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/destroy_edit" class="fancybox" rel="nofollow">删除</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/add_point" class="fancybox" rel="nofollow">帖子加分</a></li>
+  <li><a href="http://bbs.csdn.net/topics/310125122/highlight" class="fancybox" rel="nofollow">帖子高亮</a></li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/310125122/close" class="btn_1 close_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_over.gif" alt="">结帖</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/new?forum_id=Java_WebDevelop" class="btn_1 create_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_publish.gif" alt="">发帖</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/310125122#new_post" class="btn_1 reply_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_return.gif" alt="">回复</span>
+          </a>
+        </li>
+          <li>
+            <a href="http://bbs.csdn.net/topics/310125122/attetion" class="btn_1 reply_topic" rel="nofollow">
+              <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_attention_topic.png" title="关注">关注</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </form>
+</div>
+
+<div class="h-entry">
+  <a class="p-author" href="http://bbs.csdn.net/topics/310125122#">ghyrdfj</a>
+</div>
+
+
+<div class="detail_tbox">
+    <div class="detail_title_fixed" style="display: block; position: fixed; top: 0px; border: 1px solid rgb(25, 140, 197); z-index: 99999;">
+      <h1>
+            <span class="title text_overflow">JSP表单处理：如何把提交的内容发送到指定邮箱？</span>
+        <span>
+          [问题点数：40分，结帖人ghyrdfj]
+        </span>
+      </h1>
+
+      <div class="fixed-r">
+        <a href="http://bbs.csdn.net/topics/310125122#new_post" class="bbs-btn-blue26">快速回复</a>
+            <a href="http://bbs.csdn.net/topics/310125122?list=lz" class="bbs-btn-blue26">只显示楼主</a>
+            <a href="http://bbs.csdn.net/topics/310125122/attetion" class="bbs-btn-blue26">关注帖子</a>
+        <a href="javascript:void(0);" id="close_detail_title_fixed" class="bbs-btn-close"> </a>
+      </div>
+    </div>
+    <div class="detail_title">
+      <h1>
+          <span class="title text_overflow">JSP表单处理：如何把提交的内容发送到指定邮箱？</span>
+        <span>
+          [问题点数：40分，结帖人ghyrdfj]
+        </span>
+      </h1>
+      <div class="fr">
+        <select name="filter_posts">
+          <option value="default">不显示删除回复</option>
+          <option value="all">显示所有回复</option>
+          <option value="star">显示星级回复</option>
+          <option value="pointed">显示得分回复</option>
+          <option value="lz">只显示楼主</option>
+        </select>
+        <a href="http://my.csdn.net/my/favorite/miniadd?u=http://bbs.csdn.net/topics/310125122&t=JSP%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86%EF%BC%9A%E5%A6%82%E4%BD%95%E6%8A%8A%E6%8F%90%E4%BA%A4%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%91%E9%80%81%E5%88%B0%E6%8C%87%E5%AE%9A%E9%82%AE%E7%AE%B1%EF%BC%9F" id="fav" class="fav" rel="nofollow"><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/nolines_plus.gif" alt="">收藏</a>
+      </div>
+    </div>
+</div>
+<div class="detailed">
+    
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-310125122" class="post topic " data-post-id="310125122" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info topic pointed" data-username="ghyrdfj" data-floor="">
+                <div class="data">
+            <strong class="fr">
+              楼主
+            </strong>
+          <span class="time">
+              发表于：
+            2009-07-04 10:51:59
+          </span>
+        </div>
+        <div class="post_body">
+
+              <div class="tag">
+              </div>
+
+            今天做的JSP页面处理，发现连接数据库老出问题，现在决定不用数据库。直接把页面提交&nbsp;的内容发送到指定&nbsp;的邮箱！！！！（但没有写过，不会写）<br>
+不知道哪位高人，能帮我写个这样的语句来，在此谢谢了！！！！！
+
+              <div id="topic-extra-info">
+                <div class="social-share">
+  <!-- Baidu Button BEGIN -->
+  <span id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+    <a class="bds_tsina" title="分享到新浪微博" href="http://bbs.csdn.net/topics/310125122#"></a>
+    <a class="bds_tqq" title="分享到腾讯微博" href="http://bbs.csdn.net/topics/310125122#"></a>
+    <span class="bds_more">更多</span>
+    <a class="shareCount" href="http://bbs.csdn.net/topics/310125122#" title="累计分享0次">0</a>
+  </span>
+  <span class="prompt">分享到：</span>
+  <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3329407" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/bds_s_v2.js"></script>
+  
+  <script type="text/javascript">
+    var bds_config = {
+      "snsKey": { 
+        'tsina': '3657746030',
+        'tqq': '801356742',
+      }
+    };
+
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+  </script>
+  <!-- Baidu Button END -->
+</div>
+
+              <div id="topic-suggest">
+        <div id="real_topic">
+          <div class="related-tags" id="suggest_tags">
+<span>相关知识库：</span>
+<a target="_blank" href="http://lib.csdn.net/base/livetechnology">直播技术</a>
+<a target="_blank" href="http://lib.csdn.net/base/agile">敏捷</a>
+<a target="_blank" href="http://lib.csdn.net/base/go">Go</a>
+<a target="_blank" href="http://lib.csdn.net/base/machinelearning">机器学习</a>
+</div>
+
+          <div class="related-topics tracking-ad" data-pid="bbs" data-mod="popu_18" id="suggest_topics">
+</div>
+          <div class="related-topics" data-pid="bbs" data-mod="popu_84" id="suggest_course">
+</div>
+        </div>
+        <!--<div id="job_bbs_reco">-->
+          <!--<script src="http://c.csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script>-->
+        <!--</div>-->
+</div></div>
+
+              <!-- 主帖下Banner (D4) -->
+              <!-- 主帖下文字 (D5) -->
+                  <div marginwidth="0" marginheight="0" scrolling="no" width="100%">
+                    <style type="text/css">
+    /***Business text AD***/
+    /*body {margin:0; padding: 0;font:normal 12px simsun; }*/
+    .adtxt{text-align:center;}
+    .adtxt ul{margin:5px 0;border-top:1px solid #B9B9B9;border-bottom:1px solid #B9B9B9;background-color:#F2F6FB;padding:5px 0;}
+    .adtxt ul li{display: inline-block;font-size:12px;}
+    .adtxt ul li a{color:#333;}
+    /*a{color: #002D93;text-decoration:none;}*/
+    /*a:visited{color: #B00;text-decoration:none;}*/
+    /*a:hover{color: #B00; text-decoration: underline;}*/
+</style>
+
+
+<div id="bd_ad_2" style="margin:0; padding-bottom:5px; display:block; text-align: center">
+  <div class="J_adv" data-view="true" data-mod="ad_popu_58" data-mtp="43" data-order="20" data-con="ad_content_123" style="width: 728px; height: 90px;"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/8197924482" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle || []).push({});</script></div>
+</div>
+<div class="adtxt">
+  <ul>
+    <li>
+      <div class="J_adv" data-view="true" data-mod="ad_popu_59" data-mtp="34" data-order="21" data-con="ad_content_130" style="width: 250px; height: 40px;"><!-- 广告占位容器 --><div id="cpro_u1636200"><iframe id="iframeu1636200_0" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm.html" width="200" height="22" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><!-- 投放代码 --><script type="text/javascript">   /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({        id: 'u1636200'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/c.js" type="text/javascript"></script></div>
+    </li>
+    <li>
+      <div class="J_adv" data-view="true" data-mod="ad_popu_60" data-mtp="34" data-order="21" data-con="ad_content_131" style="width: 250px; height: 40px;"><!-- 广告占位容器 --><div id="cpro_u1636201"><iframe id="iframeu1636201_0" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(7).html" width="200" height="22" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><!-- 投放代码 --><script type="text/javascript">   /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({        id: 'u1636201'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/c.js" type="text/javascript"></script></div>
+    </li>
+    <li>
+      <div class="J_adv" data-view="true" data-mod="ad_popu_61" data-mtp="34" data-order="21" data-con="ad_content_132" style="width: 250px; height: 40px;"><!-- 广告占位容器 --><div id="cpro_u1636204"><iframe id="iframeu1636204_0" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(8).html" width="200" height="22" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><!-- 投放代码 --><script type="text/javascript">   /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({        id: 'u1636204'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/c.js" type="text/javascript"></script></div>
+    </li>
+  </ul>
+</div>
+
+                  </div>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/310125122/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/310125122/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/310125122/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/topics/310125122/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/topics/310125122/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+    <span class="return_time">回复次数：14</span>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+    
+    <script>
+        var topic_suggest = $('#topic-suggest');
+        $('#topic-extra-info').append(topic_suggest);
+      </script>
+
+
+  
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311257956" class="post  " data-post-id="311257956" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="xuexijava">
+            <a href="http://my.csdn.net/xuexijava" rel="nofollow" target="_blank"><img alt="xuexijava" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_xuexijava.jpg"></a>
+          </dt>
+
+            <dd id="2011805_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/2011805/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="2011805_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/2011805/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/xuexijava" rel="nofollow" target="_blank" title="xuexijava">xuexijava</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">xuexijava</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T5" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t5.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：2623
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：46
+正常结帖：46
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="xuexijava" data-floor="1">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311257956">#1</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-04 11:34:45
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            关注
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-1" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311257956/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311257956/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311257956/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311257956/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311257956/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311258078" class="post  " data-post-id="311258078" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="maosenmin">
+            <a href="http://my.csdn.net/maosenmin" rel="nofollow" target="_blank"><img alt="maosenmin" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_maosenmin.jpg"></a>
+          </dt>
+
+            <dd id="4174900_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/4174900/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="4174900_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/4174900/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/maosenmin" rel="nofollow" target="_blank" title="maosenmin">maosenmin</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">maosenmin</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T3" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t3.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：576
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：125
+正常结帖：125
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info pointed" data-username="maosenmin" data-floor="2">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311258078">#2</a>
+              得分：5
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-04 11:41:51
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            用jmail吧，可以玩玩，我以前做着玩的，一个论坛里发邮件的用的是jmail。
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-2" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311258078/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311258078/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311258078/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311258078/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311258078/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311259280" class="post  " data-post-id="311259280" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="ghyrdfj" data-floor="3">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311259280">#3</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-04 13:05:52
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            不会噢~~~~哪个高人，能把具体的语句写出来给我们看看噢
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-3" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311259280/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311259280/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311259280/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311259280/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311259280/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311259954" class="post  " data-post-id="311259954" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="Sunny_kaka">
+            <a href="http://my.csdn.net/Sunny_kaka" rel="nofollow" target="_blank"><img alt="Sunny_kaka" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_sunny_kaka.jpg"></a>
+          </dt>
+
+            <dd id="5444117_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/5444117/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="5444117_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/5444117/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/Sunny_kaka" rel="nofollow" target="_blank" title="Sunny_kaka">Sunny_kaka</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">Sunny_kaka</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T3" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t3.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：700
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：67
+正常结帖：67
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="Sunny_kaka" data-floor="4">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311259954">#4</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-04 13:55:52
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            楼主自己下个JavaMail去看看demo.<br>
+会比较有乐趣
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-4" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311259954/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311259954/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311259954/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311259954/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311259954/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311260818" class="post  " data-post-id="311260818" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="ghyrdfj" data-floor="5">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311260818">#5</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-04 14:56:53
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            ~~~~噢，比较着急要这方面的东西，呵呵！<br>
+还是希望哪位能帮我写一下！<br>
+我查一下你说的东西
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-5" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311260818/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311260818/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311260818/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311260818/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311260818/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311282746" class="post  " data-post-id="311282746" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="ghyrdfj" data-floor="6">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311282746">#6</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-06 10:38:45
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            ~~~~~~~~~~~~
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-6" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311282746/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311282746/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311282746/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311282746/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311282746/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311287404" class="post  " data-post-id="311287404" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="puhongchun">
+            <a href="http://my.csdn.net/puhongchun" rel="nofollow" target="_blank"><img alt="puhongchun" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_puhongchun.jpg"></a>
+          <div class="user_material" id="user_meterial_1472384506595" style="display: none;">
+  <div class="user_material_bg">
+    <div class="placeholder"></div>
+    <div class="arrow-left"></div>
+    <dl>
+      <dt><a href="http://my.csdn.net/puhongchun" target="_blank"><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/2_puhongchun.jpg" class="avatar_75"></a></dt>
+      <dd>账号:<a href="http://my.csdn.net/puhongchun" target="_blank">puhongchun</a></dd>
+      <dd class="nickname">昵称:<span class="name2nick">puhongchun</span></dd>
+      <dd>
+      <a class="button add follow_btn" data-username="puhongchun" href="javascript:void(0);">关注</a>
+      <a href="http://blog.csdn.net/puhongchun" class="button" target="_blank">博客</a><a href="http://my.csdn.net/puhongchun" class="button" target="_blank">空间</a> </dd>
+    </dl>
+      <ol>
+        最新帖子:
+          <li><a href="http://bbs.csdn.net/topics/350239413" target="_blank" title=".net网站奇怪问题">.net网站奇怪问题</a></li>
+          <li><a href="http://bbs.csdn.net/topics/340147894" target="_blank" title=".net如何实现数据采集程序">.net如何实现数据采集程序</a></li>
+          <li><a href="http://bbs.csdn.net/topics/330265519" target="_blank" title="JavaScript创建XML">JavaScript创建XML</a></li>
+      </ol>
+      <a href="http://bbs.csdn.net/users/puhongchun/topics" class="more" target="_blank">更多 &gt;&gt;</a>
+  </div>
+</div></dt>
+
+            <dd id="4515020_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/4515020/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="4515020_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/4515020/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/puhongchun" rel="nofollow" target="_blank" title="puhongchun">puhongchun</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">puhongchun</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T3" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t3.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：778
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：92.11%
+总发帖：38
+正常结帖：35
+未结帖：3">结帖率：92.11%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="puhongchun" data-floor="7">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311287404">#7</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-06 13:24:47
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            lz你要登录那个邮箱，如果我帮你实现了你给我分嘛好不？<br>
+<br>
+你告诉我你要登录那个邮箱，
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-7" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311287404/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311287404/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311287404/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311287404/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311287404/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311288005" class="post  " data-post-id="311288005" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="ghyrdfj" data-floor="8">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311288005">#8</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-06 13:48:23
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            楼上把代码发来！！！邮箱：ghyrdfj@163.com
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-8" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311288005/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311288005/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311288005/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311288005/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311288005/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311303707" class="post  " data-post-id="311303707" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="ghyrdfj">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank"><img alt="ghyrdfj" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_ghyrdfj.jpg"></a>
+          </dt>
+
+            <dd id="6650319_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6650319/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6650319_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6650319/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/ghyrdfj" rel="nofollow" target="_blank" title="ghyrdfj">ghyrdfj</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">ghyrdfj</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：5
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：13
+正常结帖：13
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="ghyrdfj" data-floor="9">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311303707">#9</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 09:27:58
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            ~~~还是没有找到解决的方法啊，哪位说一下~~
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-9" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311303707/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311303707/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311303707/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311303707/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311303707/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311308556" class="post  " data-post-id="311308556" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="yukang_ky">
+            <a href="http://my.csdn.net/yukang_ky" rel="nofollow" target="_blank"><img alt="yukang_ky" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_yukang_ky.jpg"></a>
+          </dt>
+
+            <dd id="2616242_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/2616242/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="2616242_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/2616242/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/yukang_ky" rel="nofollow" target="_blank" title="yukang_ky">yukang_ky</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">yukang_ky</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T4" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t4.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：1540
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：90.32%
+总发帖：31
+正常结帖：28
+未结帖：3">结帖率：90.32%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info pointed" data-username="yukang_ky" data-floor="10">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311308556">#10</a>
+              得分：30
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 11:37:02
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            这是用的apache的commons-email-1.1.jar的SimpleEmail做的一个简单的邮件发送，代码入下：<br>
+<br>
+<div><div id="highlighter_136170" class="syntaxhighlighter  java"><div class="toolbar"><span>Java code</span><span class="clipboardCopyBtn" title="复制"><div class="d_clip_button"></div></span><span class="clipboardWindowBtn"><a href="http://bbs.csdn.net/topics/310125122#clipboardWindow" title="源码">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java comments">/*</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;Copyright&nbsp;(c)&nbsp;2004-2007&nbsp;Isnet&nbsp;Corporation&nbsp;All&nbsp;Rights&nbsp;Reserved.</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;&nbsp;This&nbsp;software&nbsp;is&nbsp;the&nbsp;proprietary&nbsp;information&nbsp;of&nbsp;Isnet&nbsp;Corporation.</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;Use&nbsp;is&nbsp;subject&nbsp;to&nbsp;license&nbsp;terms.</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*/</code></div><div class="line number7 index6 alt2"><code class="java comments">package&nbsp;test.email;</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="java comments">import&nbsp;org.apache.commons.mail.EmailException;</code></div><div class="line number10 index9 alt1"><code class="java comments">import&nbsp;org.apache.commons.mail.SimpleEmail;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="java comments">/**</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;&lt;p&gt;简单邮件发送</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;@version&nbsp;2009-7-7&lt;p&gt;</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;</code><code class="java comments">*&nbsp;@author&nbsp;kangyu&lt;p&gt;</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;</code><code class="java comments">*/</code></div><div class="line number20 index19 alt1"><code class="java keyword">public</code>&nbsp;<code class="java keyword">class</code>&nbsp;<code class="java plain">TestCommon&nbsp;{</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String[]&nbsp;args)&nbsp;{</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">SimpleEmail&nbsp;email&nbsp;=&nbsp;</code><code class="java keyword">new</code>&nbsp;<code class="java plain">SimpleEmail();</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//设置发送主机的服务器地址&nbsp;</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.setHostName(</code><code class="java string">"smtp.163.com"</code><code class="java plain">);</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code>&nbsp;<code class="java plain">{</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//设置收件人邮箱</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.addTo(</code><code class="java string">"kangyu.cn@163.com"</code><code class="java plain">,</code><code class="java string">"kangyu"</code><code class="java plain">);</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//设置发件人邮箱</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.setFrom(</code><code class="java string">"kangyu.cn@163.com"</code><code class="java plain">,</code><code class="java string">"kangyu"</code><code class="java plain">);</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//如果要求身份验证，设置用户名、密码，分别为发件人在邮件服务器上注册的用户名和密码&nbsp;</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.setAuthentication(</code><code class="java string">"kangyu"</code><code class="java plain">,&nbsp;</code><code class="java string">"******"</code><code class="java plain">);</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//设置邮件的主题</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.setSubject(</code><code class="java string">"Hello,This&nbsp;is&nbsp;my&nbsp;first&nbsp;email&nbsp;Application"</code><code class="java plain">);</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//邮件正文消息</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.setMsg(</code><code class="java string">"I&nbsp;am&nbsp;kangyu,This&nbsp;is&nbsp;JavaMail&nbsp;Application"</code><code class="java plain">);</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">email.send();</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"邮件发送成功！"</code><code class="java plain">);</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}&nbsp;</code><code class="java keyword">catch</code>&nbsp;<code class="java plain">(EmailException&nbsp;e)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">e.printStackTrace();</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number46 index45 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-10" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311308556/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311308556/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311308556/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311308556/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311308556/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311310119" class="post  " data-post-id="311310119" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="fys249931556">
+            <a href="http://my.csdn.net/fys249931556" rel="nofollow" target="_blank"><img alt="fys249931556" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_fys249931556.jpg"></a>
+          <div class="user_material" id="user_meterial_1472384535214" style="display: none;">
+  <div class="user_material_bg">
+    <div class="placeholder"></div>
+    <div class="arrow-left"></div>
+    <dl>
+      <dt><a href="http://my.csdn.net/fys249931556" target="_blank"><img src="http://avatar.csdn.net/7/F/C/2_fys249931556.jpg" class="avatar_75"></a></dt>
+      <dd>账号:<a href="http://my.csdn.net/fys249931556" target="_blank">fys249931556</a></dd>
+      <dd class="nickname">昵称:<span class="name2nick">fys249931556</span></dd>
+      <dd>
+      <a class="button add follow_btn" data-username="fys249931556" href="javascript:void(0);">关注</a>
+      <a href="http://blog.csdn.net/fys249931556" class="button" target="_blank">博客</a><a href="http://my.csdn.net/fys249931556" class="button" target="_blank">空间</a> </dd>
+    </dl>
+      <ol>
+        最新帖子:
+          <li><a href="http://bbs.csdn.net/topics/330157596" target="_blank" title="求一条统计 累计录入信息最高 的SQL语句">求一条统计 累计录入信息最高 ...</a></li>
+          <li><a href="http://bbs.csdn.net/topics/310088843" target="_blank" title="高分求教shadowbox js调用方法。SOS">高分求教shadowbox js调用方法。...</a></li>
+          <li><a href="http://bbs.csdn.net/topics/310029124" target="_blank" title="求教：ASP如何获取项目路径">求教：ASP如何获取项目路径</a></li>
+      </ol>
+      <a href="http://bbs.csdn.net/users/fys249931556/topics" class="more" target="_blank">更多 &gt;&gt;</a>
+  </div>
+</div></dt>
+
+            <dd id="1704122_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/1704122/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="1704122_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/1704122/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/fys249931556" rel="nofollow" target="_blank" title="fys249931556">fys249931556</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">fys249931556</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T5" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t5.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：3848
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：31
+正常结帖：31
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info pointed" data-username="fys249931556" data-floor="11">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311310119">#11</a>
+              得分：5
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 12:28:05
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            话说这个并不难。。<br>
+<br>
+找个jmail的例子一看，基本上就OK。
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-11" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311310119/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311310119/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311310119/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311310119/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311310119/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311312406" class="post  " data-post-id="311312406" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="chaobin05240108">
+            <a href="http://my.csdn.net/chaobin05240108" rel="nofollow" target="_blank"><img alt="chaobin05240108" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_chaobin05240108.jpg"></a>
+          </dt>
+
+            <dd id="8972152_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/8972152/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="8972152_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/8972152/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/chaobin05240108" rel="nofollow" target="_blank" title="chaobin05240108">chaobin05240108</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">chaobin05240108</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T2" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t2.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：130
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：3
+正常结帖：3
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="chaobin05240108" data-floor="12">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311312406">#12</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 13:44:40
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            在baidu上随便搜一下jmail就会找到很多例子
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-12" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311312406/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311312406/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311312406/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311312406/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311312406/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311314003" class="post  deleted" data-post-id="311314003" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="liujiaqiid">
+            <a href="http://my.csdn.net/liujiaqiid" rel="nofollow" target="_blank"><img alt="liujiaqiid" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_liujiaqiid.jpg"></a>
+          </dt>
+
+            <dd id="2119709_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/2119709/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="2119709_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/2119709/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/liujiaqiid" rel="nofollow" target="_blank" title="liujiaqiid">liujiaqiid</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">liujiaqiid</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T2" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t2.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：417
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：30
+正常结帖：30
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info deleted" data-username="liujiaqiid" data-floor="13">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311314003">#13</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 14:36:13
+          </span>
+        </div>
+        <div class="post_body">
+            <div class="deleted_message">
+                该回复于2009-08-12 23:14:53被版主删除
+            </div>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-13" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311314003/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311314003/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="post-311314491" class="post  " data-post-id="311314491" data-is-topic-locked="false">
+  <colgroup><col width="180"><col></colgroup>
+  <tbody><tr>
+      <td rowspan="2" valign="top" class="wirter">
+                <dl class="user_info ">
+          <dt class="user_head" data-username="hujun_zero">
+            <a href="http://my.csdn.net/hujun_zero" rel="nofollow" target="_blank"><img alt="hujun_zero" class="avatar" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/1_hujun_zero.jpg"></a>
+          </dt>
+
+            <dd id="6011967_bbs-btn-close-attention" class="bbs-user-att" style="display:none;">
+              <a href="http://bbs.csdn.net/users/6011967/cancel_attention" class="bbs-btn-blue25 bbs-btn-close-attention" data-method="get" data-remote="true">取消关注</a>
+            </dd>
+            <dd id="6011967_bbs-btn-attention" class="bbs-user-att">
+              <a href="http://bbs.csdn.net/users/6011967/attention" class="bbs-btn-blue25 bbs-btn-attention" data-method="get" data-remote="true">关注</a>
+            </dd>
+
+          <dd class="username">
+            <a href="http://my.csdn.net/hujun_zero" rel="nofollow" target="_blank" title="hujun_zero">hujun_zero</a>
+            
+          </dd>
+          <dd class="nickname">
+            <span class="name2nick">hujun_zero</span>
+          </dd>
+
+          <dd>
+            本版等级：<img alt="T1" class="topic_show_user_level" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/t1.png">
+            <div class="topic_show_posts">
+              <div class="smallTittle">
+                <div class="JianJiao" style="left: 40%; top: -8px; position: absolute; width: 0; height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent; border-bottom: 8px solid #ffffff;"></div>
+                本版专家分：82
+              </div>
+            </div>
+          </dd>
+
+          <dd class="close_rate" title="用户结帖率：100%
+总发帖：4
+正常结帖：4
+未结帖：0">结帖率：100%</dd>
+
+          <dd class="showTittleDD">
+
+          </dd>
+
+        </dl>
+
+      </td>
+      <td valign="top" class="post_info " data-username="hujun_zero" data-floor="14">
+                <div class="data">
+            <span class="fr">
+              <a href="http://bbs.csdn.net/topics/310125122#post-311314491">#14</a>
+              得分：0
+            </span>
+          <span class="time">
+              回复于：
+            2009-07-07 14:51:13
+          </span>
+        </div>
+        <div class="post_body">
+
+
+            主要是代码里面不包含有从页面上提交的表单数据<br>
+基本的东西还是蛮容易写的
+
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom">
+          <div class="control">
+    <div id="post-forum-bulletin-14" class="fl tracking-ad" data-mod="popu_9">
+    </div>
+  <div class="fr">
+      <a href="http://bbs.csdn.net/posts/311314491/digg?topic_id=310125122" class="red digg" data-method="put" data-remote="true" rel="nofollow">对我有用[0]</a>
+      <a href="http://bbs.csdn.net/posts/311314491/bury?topic_id=310125122" class="bury" data-method="put" data-remote="true" rel="nofollow">丢个板砖[0]</a>
+      <a href="http://bbs.csdn.net/topics/310125122#quote" class="quote" rel="nofollow">引用</a> |
+      <a href="http://bbs.csdn.net/posts/311314491/report?topic_id=310125122" class="fancybox red report_spam" rel="nofollow">举报 </a> |
+    <span class="manage-toggle">
+      <div class="manage" style="display: none;">
+          <a href="http://bbs.csdn.net/posts/311314491/edit" class="fancybox" rel="nofollow">编辑</a>
+          <a href="http://bbs.csdn.net/posts/311314491/destroy_edit" class="fancybox" rel="nofollow">删除</a>
+      </div>
+      管理
+    </span>
+  </div>
+</div>
+
+
+      </td>
+  </tr>
+</tbody></table>
+
+
+
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        topics_page_js.show_page();
+    });
+</script>
+
+<input type="hidden" id="autosave_post_val" value="">
+<input type="hidden" id="autosave_old_post_val">
+<!-- <div class='around&#45;topics'> -->
+<!--   <span class='preview'> -->
+<!--      -->
+<!--   </span> -->
+<!--   | -->
+<!--   <span class='next'> -->
+<!--      -->
+<!--   </span> -->
+<!-- </div> -->
+
+<div class="control_area bottom">
+  <form name="form" id="form">
+    
+    <span class="back_to_forum_list"><a href="http://bbs.csdn.net/forums/Java_WebDevelop">返回列表</a></span>
+    <div class="control">
+      <ul>
+        <li class="drop_menu_wrap drop_menu_up">
+          <a href="http://bbs.csdn.net/topics/310125122#" class="drop_toggle btn_1 drop_toggle_up" rel="nofollow">
+            <span>
+              <img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_set.gif" alt="">管理菜单<img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/arrow_down.gif" alt="">
+            </span>
+          </a>
+          <ul class="drop_menu" style="display: none; bottom:26px">
+              <li><a href="http://bbs.csdn.net/topics/310125122/top" class="fancybox" rel="nofollow">置顶</a></li>
+
+  <li><a href="http://bbs.csdn.net/topics/310125122/recommend" data-confirm="您确定要推荐该帖吗？帖子被推荐后将奖励发帖用 户88个可用分和3个C币!" data-method="put" rel="nofollow">推荐</a></li>
+
+  <li><a href="http://bbs.csdn.net/topics/310125122/lock" class="fancybox" rel="nofollow">锁定</a></li>
+
+<li><a href="http://bbs.csdn.net/topics/310125122/move" class="fancybox" rel="nofollow">移动</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/edit" class="fancybox" rel="nofollow">编辑</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/destroy_edit" class="fancybox" rel="nofollow">删除</a></li>
+<li><a href="http://bbs.csdn.net/topics/310125122/add_point" class="fancybox" rel="nofollow">帖子加分</a></li>
+  <li><a href="http://bbs.csdn.net/topics/310125122/highlight" class="fancybox" rel="nofollow">帖子高亮</a></li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/310125122/close" class="btn_1 close_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_over.gif" alt="">结帖</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/new?forum_id=Java_WebDevelop" class="btn_1 create_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_publish.gif" alt="">发帖</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://bbs.csdn.net/topics/310125122#new_post" class="btn_1 reply_topic" rel="nofollow">
+            <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_return.gif" alt="">回复</span>
+          </a>
+        </li>
+          <li>
+            <a href="http://bbs.csdn.net/topics/310125122/attetion" class="btn_1 reply_topic" rel="nofollow">
+              <span><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ico_attention_topic.png" title="关注">关注</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </form>
+</div>
+<!--AdForward Begin:-->
+<div class="J_adv" data-view="true" data-mod="ad_popu_62" data-mtp="43" data-order="20" data-con="ad_content_125" style="width: 960px; height: 90px;"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:960px;height:90px" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/2556735882" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:960px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:960px;background-color:transparent"><iframe width="960" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle || []).push({});</script></div>
+<!--AdForward End-->
+<script>
+(function(E,n,G,A,g,Y,a){E['EngageyaObject']=g;E[g]=E[g]||function(){ (E[g].q=E[g].q||[]).push(arguments)},E[g].l=1*new Date();Y=n.createElement(G), a=n.getElementsByTagName(G)[0];Y.async=1;Y.src=A;a.parentNode.insertBefore(Y,a)})(window,document,'script','//widget.goingnative.cn/engageya_loader.js','__engWidget');
+__engWidget('createWidget',{wwei:'ENGAGEYA_WIDGET_70',pubid:46,webid:94,wid:70});
+</script>
+<div id="ENGAGEYA_WIDGET_70"><div id="eng_recs_holder_82590140821412210" class="eng_recs_holder"><style>#eng_top_ww_widget_82590140821412210 .eng_top_ww_widget{}#eng_top_ww_widget_82590140821412210 .eng_ww_widget{display:inline-block;direction:ltr;position:relative;margin-bottom:2px;margin-left:0px;margin-right:0px;text-align:center;padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:5px;}#eng_top_ww_widget_82590140821412210 .eng_ww_title{text-align:left;}#eng_top_ww_widget_82590140821412210 .eng_ww_close{position:absolute;top:8px;right:8px;cursor:pointer;font-size:20px;}#eng_top_ww_widget_82590140821412210 .eng_asw{display:block;margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;}#eng_top_ww_widget_82590140821412210 .eng_widget_sw{width:151.66px;text-align:left;position:relative;display:inline-block;margin-left:10px;}#eng_top_ww_widget_82590140821412210 .eng_widget_in{width:100%;}#eng_top_ww_widget_82590140821412210 .eng_widget_is{}#eng_top_ww_widget_82590140821412210 .eng_widget_dn{font-size:10px;text-decoration:none !important;display:inline-block;width:100%;}#eng_top_ww_widget_82590140821412210 .eng_widget_img{width:100%;height:auto;border-radius:inherit;margin-bottom:5px;}#eng_top_ww_widget_82590140821412210 .eng_widget_href{border-radius:inherit;}#eng_top_ww_widget_82590140821412210 .eng_rows_seperator{height:10px;}#eng_top_ww_widget_82590140821412210 .eng_branding{text-align:right;margin:8px 0px 0px 0px;}#eng_top_ww_widget_82590140821412210 .eng_branding a{color:#BBB;font-size:12px;font-family:arial;}#eng_top_ww_widget_82590140821412210 .eng_ww_widget{color:#000;}#eng_top_ww_widget_82590140821412210 .eng_widget_sw{vertical-align:top;margin-bottom:10px}#eng_top_ww_widget_82590140821412210 .eng_widget_vsw .eng_widget_img_w::after{content:'';background-image: url(//widget.goingnative.cn/img/vplay.png);position:absolute;left:40%;top:42%;width:35px;height:26px;z-index:2;}#eng_top_ww_widget_82590140821412210 .eng_widget_href{position:relative;display:block !important;visibility:visible !important;}#eng_top_ww_widget_82590140821412210 .eng_widget_in{width:100%;line-height:1.4;}#eng_top_ww_widget_82590140821412210 .eng_widget_dn{color:#CDCDCD;}#eng_top_ww_widget_82590140821412210 .eng_ww_title{padding:0px;margin:0px 0px 5px 0px;}#eng_top_ww_widget_82590140821412210 .eng_ww_ttl_span1{display:block;padding:5px 0px;float:none !important;}#eng_top_ww_widget_82590140821412210 .eng_widget_img_w{position:relative;}#eng_top_ww_widget_82590140821412210 .eng_widget_img{margin-bottom:5px;display:block;}#eng_sw_0_70{margin-left:0px !important;}#eng_asw_82590140821412210 img{
+height: 112px !important;
+}
+
+#eng_asw_82590140821412210{
+border: 1px solid #A9CBEE !important;
+padding: 10px 28px 10px 28px !important;
+}
+
+#eng_ww_title_82590140821412210{
+display:none;
+border: 1px solid #A9CBEE !important;
+    padding: 0px 28px 10px 28px !important;
+    height: 28px !important;
+    background: #eff4fb !important;
+    border-top: 1px solid #A9CBEE !important;
+    line-height: 28px !important;
+    margin: 0px 0px -1px 0px !important;
+}
+
+#eng_asw_82590140821412210 .eng_widget_sw{
+    width: 142px !important;
+    height: 149px !important;
+    overflow: hidden !important;
+padding-top: 10px !important;
+}
+
+#eng_top_ww_widget_82590140821412210.eng_widget_is {
+  display: block; 
+  text-overflow: ellipsis;
+  word-wrap: break-word;  overflow: hidden;
+  max-height: 1.8em;
+  line-height: 3.6em;
+}
+#eng_brnd_70{
+//display:none;
+}
+.eng_widget_dn {
+display: none !important;
+}</style><div class="eng_top_ww_widget" id="eng_top_ww_widget_82590140821412210"><div class="eng_ww_widget" id="eng_ww_widget_70"><div class="eng_ww_title" id="eng_ww_title_82590140821412210"><span class="eng_ww_ttl_span1">精彩内容推荐：</span><span class="eng_ww_ttl_span2"></span></div><div class="eng_asw" id="eng_asw_82590140821412210"><div id="eng_sw_0_70" class="eng_widget_sw"><a id="eng_href_0_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="只身前往美女聚集地..." onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894972&amp;dwebid=127&amp;wid=70&amp;ll=1&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=18&amp;posttype=0&amp;reqp=SZrLEnd2s3mSmzpnV00rOUZMl4DnSeG6LmCb%252Fg%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=WSoRhhNKJBcdh2LGnY%252BfwcCAkDYfY0AJ3k%252FLLJFGXnws5VuSlSOH4EmrBbMbrQJ%252FeUzdauXRgXR532HS%252B%252FyLL%252FKHzwL67jTD%252BlrXC%252FYX1Ct2vou03CuDTMsJuGF6WnQzUuWGyPjsGmfyiMWk&#39;;return true;"><div id="eng_img_w_0_70" class="eng_widget_img_w"><img id="eng_img_0_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4a42851f5_156677_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_0_70" class="eng_widget_in"><span id="eng_is_0_70" class="eng_widget_is">只身前往美女聚集地...</span><span id="eng_dn_0_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div><div id="eng_sw_1_70" class="eng_widget_sw"><a id="eng_href_1_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="与神仙姐姐探讨另类修炼大法" onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894971&amp;dwebid=127&amp;wid=70&amp;ll=2&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=21&amp;posttype=0&amp;reqp=AjCrhSTZJSptJRsSPgOPAahuzZikCbX0munfvA%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=Ewoprjuj3NY03HwtMJPqZ94T6LccflrE9BPOytyGP0T3tZa%252BcZO33Zpa1umitoCdR%252FLiW2sHQ2kvze2e%252B1Z0FZUxua8f32e2j4CQgG3FqSMugn4ue3BhQ95RPD0izhVKAq6aC%252FoExtiuYUOz&#39;;return true;"><div id="eng_img_w_1_70" class="eng_widget_img_w"><img id="eng_img_1_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4a2ab8e5b_158849_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_1_70" class="eng_widget_in"><span id="eng_is_1_70" class="eng_widget_is">与神仙姐姐探讨另类修炼大法</span><span id="eng_dn_1_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div><div id="eng_sw_2_70" class="eng_widget_sw"><a id="eng_href_2_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="开启旷世爱恋再续前世情缘" onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894969&amp;dwebid=127&amp;wid=70&amp;ll=3&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=21&amp;posttype=0&amp;reqp=4VWeb5nE0GxXEnFPgt66wfFY%252BKqSSDRxpPAcqw%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=cNymAdh91NYvsVdZaMmSW1YCEhUOBWde1k2Bc9FdRglEV0aKlzbFEOOJwqWJPouYS03oCGYRM5OsUgAtca1VkXeruKJ0POUDJFk8pK3MBJ4J8pPi2vTv9mB6zMP4qHnQeIszj5np7B7xlguz&#39;;return true;"><div id="eng_img_w_2_70" class="eng_widget_img_w"><img id="eng_img_2_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4a1826f26_133874_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_2_70" class="eng_widget_in"><span id="eng_is_2_70" class="eng_widget_is">开启旷世爱恋再续前世情缘</span><span id="eng_dn_2_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div><div id="eng_sw_3_70" class="eng_widget_sw"><a id="eng_href_3_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="飘然出尘，涴涴清风风无遮！美人世无双！" onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894978&amp;dwebid=127&amp;wid=70&amp;ll=4&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=21&amp;posttype=0&amp;reqp=N6euhrx3bcXQckYRP5T%252Fvey%252FFZta7JEwq0X0Pg%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=a5hxXjiGVX9RzXlE2%252BtVzVAxs4OwTvE2TBkLSJkHs6Iq3oWQ7Ru4b6Ov66OUu4TxwmERmFGdGLa9CrwZITgJXNQBA9ASzdkMBj0%252F81Zr5AH6ZTH3ZK323C6hVsvmCVN3AOZsTxh0LTPTls8k&#39;;return true;"><div id="eng_img_w_3_70" class="eng_widget_img_w"><img id="eng_img_3_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4ab355d50_123627_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_3_70" class="eng_widget_in"><span id="eng_is_3_70" class="eng_widget_is">飘然出尘，涴涴清风风无遮！美人世无双！</span><span id="eng_dn_3_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div><div id="eng_sw_4_70" class="eng_widget_sw"><a id="eng_href_4_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="品诛仙原著给你机会做主角" onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894975&amp;dwebid=127&amp;wid=70&amp;ll=5&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=21&amp;posttype=0&amp;reqp=k92wTlE4OhtVnLUkpeCpzbaSf1WfaJpMZL%252FvcA%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=gIjUWYMdg3R8ME5YL%252B2347M0LgA%252B8K%252BJiLoR%252F7tKSfgBlkRR7otiYJSMYX%252BYRLF8wOGxsOSTBNDDCYmhjnutWmuCesE0LWaTVAFgseU%252FDB%252Fh16Of0RE4vyb5kRtOETuA3DUpzwRSyjx%252FPW4r&#39;;return true;"><div id="eng_img_w_4_70" class="eng_widget_img_w"><img id="eng_img_4_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4aa2c13be_184937_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_4_70" class="eng_widget_in"><span id="eng_is_4_70" class="eng_widget_is">品诛仙原著给你机会做主角</span><span id="eng_dn_4_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div><div id="eng_sw_5_70" class="eng_widget_sw"><a id="eng_href_5_70" class="eng_widget_href eng_ads" target="_blank" href="http://zhuxian.wanmei.com/newhome.htm?dida=hd1608000000000695&pageinfo=wmadap&type=1" onclick="" title="九年情思青云知  落雨撑花待人归" onmousedown="this.href=&#39;//cs-recs.goingnative.cn/gas-api/click.json?spid=0&amp;swebid=94&amp;ssubid=&amp;dpid=1894982&amp;dwebid=127&amp;wid=70&amp;ll=6&amp;target=http%3A%2F%2Fzhuxian.wanmei.com%2Fnewhome.htm%3Fdida%3Dhd1608000000000695%26pageinfo%3Dwmadap%26type%3D1&amp;rectype=21&amp;posttype=0&amp;reqp=9ymLkMa600hajeRrnl831FojDiqxpPhQ3URhcQ%253D%253D&amp;reqid=e7de9405-4f0d-45d0-9498-225c034b8558&amp;c=MC4w&amp;widprfl=-1&amp;url=VLjrdnht7lQStA1eD0j7dGYsa2cWetLKukYMydcrzLjzyZDqxozM3PTsmXqDfRHgVDnRV5lTrSvK77beCq7CRxKWcuwpVi5nUAQ6glCj0TCFdrpBrfvISz%252BMJ0Htx%252Btn4hJtjEHpxizN0eiA&#39;;return true;"><div id="eng_img_w_5_70" class="eng_widget_img_w"><img id="eng_img_5_70" class="eng_widget_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/campaigns.goingnative.cn.57ac4acf4b11e_194113_2.jpg" data-pin-no-hover="true"></div><div id="eng_in_5_70" class="eng_widget_in"><span id="eng_is_5_70" class="eng_widget_is">九年情思青云知  落雨撑花待人归</span><span id="eng_dn_5_70" class="eng_widget_dn">诛仙-完美世界</span></div></a></div></div><div id="eng_brnd_70" class="eng_branding"><a href="http://goingnative.cn/" target="_blank" title="GoingNative powered by Engageya"><img id="eng_brnd_img_70" class="eng_brnd_img" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/gn.png" width="20px" height="20px"></a><a href="http://goingnative.cn/" style="color:#1686C6;" target="_blank" title="GoingNative powered by Engageya">&nbsp;GoingNative</a></div></div></div></div></div>
+
+<div class="comt">
+  <div class="ad_l">
+    <!-- 回复框文字 (D6) -->
+    <div id="topic_buttom_left_ad">
+      <div class="J_adv" data-view="true" data-mod="ad_popu_63" data-mtp="43" data-order="20" data-con="ad_content_124" style="width: 220px; height: 90px;"><script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:220px;height:90px" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/4312949202" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:220px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:220px;background-color:transparent"><iframe width="220" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle || []).push({});</script></div>
+    </div>
+    <ul class="tracking-ad" data-mod="popu_10">
+        <li><a href="http://bbs.csdn.net/topics/391990114" class="title_style_red title_style_bold" target="_blank">C币兑换大会门票</a></li>
+        <li><a href="http://ask.csdn.net/subjects/5" class="title_style_red title_style_bold" target="_blank">大型网站之架构专家在问答</a></li>
+        <li><a href="http://lib.csdn.net/base/22" class="title_style_red title_style_bold" target="_blank">JQuery知识库上线</a></li>
+        <li><a href="http://bss.csdn.net/m/topic/edu_exam" class="title_style_red title_style_bold" target="_blank">2016软考必过秘籍</a></li>
+    </ul>
+    <div class="ad_new tracking-ad" style="padding: 0 0 50px 0" data-mod="popu_11">
+      <h4><img alt="" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/csdn_logo_blue.gif"></h4>
+      <p class="title">
+      
+      </p>
+      <p class="con">
+      
+      </p>
+    </div>
+  </div>
+  <div class="reply">
+      <h3>本帖子已过去太久远了，不再提供回复功能。</h3>
+  </div>
+</div>
+<script>
+  $(function(){
+    $('.refresh-captcha').on('click', function(e){
+      e.preventDefault();
+      $('.captcha').load('/captchas/new');
+    });
+  });
+  $(function(){
+      showsuggest('post_body');
+  });
+</script>
+
+
+
+<!-- 对联广告 -->
+<div id="ad_left" style="display:none">
+  <div>
+    <div class="J_adv" data-view="true" data-mod="ad_popu_56" data-mtp="41" data-order="21" data-con="ad_content_133" style="width: 1px; height: 1px; position: fixed; right: 10px; bottom: 10px; background-color: transparent;"><div name="location_parent_f"></div><script>for (var i=0;i<document.getElementsByName('location_parent_f').length;i++){document.getElementsByName('location_parent_f')[i].parentNode.style.height='1px';document.getElementsByName('location_parent_f')[i].parentNode.style.width='1px';document.getElementsByName('location_parent_f')[i].parentNode.style.position='fixed';document.getElementsByName('location_parent_f')[i].parentNode.style.right='10px';document.getElementsByName('location_parent_f')[i].parentNode.style.bottom='10px';document.getElementsByName('location_parent_f')[i].parentNode.style.backgroundColor='transparent';}</script><!-- 广告占位容器 --><div id="cpro_u2364642" style="box-sizing: content-box; width: 131px; height: 301px; overflow: hidden; z-index: 2147483647; position: fixed; top: 150px; left: 33px;"><div style="box-sizing: content-box;width:120px;height:270px;padding:4px;border:#acacac 1px solid;overflow:hidden;"><iframe id="cpro_u2364642_iframe" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(9).html" width="120" height="270" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><div id="cpro_u2364642_closebtn" style="box-sizing: content-box;position:absolute;width:131px;height:20px;top:NaNpx;left:0;cursor:pointer;background-color:#999999;color:#fff;font-size:12px;font-family: 微软雅黑;text-align:center;line-height:20px;">关闭</div></div><!-- 投放代码 --><script type="text/javascript">    (window.cproArray = window.cproArray || []).push({        id: 'u2364642'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/f.js" type="text/javascript"></script></div>
+<script type="text/javascript">  
+  $(function(){
+      if ($(parent.window).width() >= 1280) {
+          parent.$('#ad_left').show();
+      }
+  });
+</script>
+  </div>
+</div>
+<div id="ad_right" style="display:none">
+  <div>
+    <div class="J_adv" data-view="true" data-mod="ad_popu_57" data-mtp="41" data-order="21" data-con="ad_content_134" style="width: 1px; height: 1px; position: fixed; right: 10px; bottom: 10px; background-color: transparent;"><div name="location_parent_f"></div><script>for (var i=0;i<document.getElementsByName('location_parent_f').length;i++){document.getElementsByName('location_parent_f')[i].parentNode.style.height='1px';document.getElementsByName('location_parent_f')[i].parentNode.style.width='1px';document.getElementsByName('location_parent_f')[i].parentNode.style.position='fixed';document.getElementsByName('location_parent_f')[i].parentNode.style.right='10px';document.getElementsByName('location_parent_f')[i].parentNode.style.bottom='10px';document.getElementsByName('location_parent_f')[i].parentNode.style.backgroundColor='transparent';}</script><!-- 广告占位容器 --><div id="cpro_u2570227" style="box-sizing: content-box; width: 131px; height: 301px; overflow: hidden; z-index: 2147483647; position: fixed; top: 150px; right: 33px;"><div style="box-sizing: content-box;width:120px;height:270px;padding:4px;border:#acacac 1px solid;overflow:hidden;"><iframe id="cpro_u2570227_iframe" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(11).html" width="120" height="270" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><div id="cpro_u2570227_closebtn" style="box-sizing: content-box;position:absolute;width:131px;height:20px;top:NaNpx;left:0;cursor:pointer;background-color:#999999;color:#fff;font-size:12px;font-family: 微软雅黑;text-align:center;line-height:20px;">关闭</div></div><!-- 投放代码 --><script type="text/javascript">    (window.cproArray = window.cproArray || []).push({        id: 'u2570227'      });  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/f.js" type="text/javascript"></script></div>
+<script type="text/javascript">    
+    $(function(){
+        if ($(parent.window).width() >= 1280) {
+            parent.$('#ad_right').show();
+        }
+    });
+</script>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    window.onresize = function(){
+      if($(parent.window).width() <= 1280){
+        $('#ad_right').hide();
+        $('#ad_left').hide();
+      } else {
+          $('#ad_right').show();
+          $('#ad_left').show();
+      }
+    };
+      if ($(parent.window).width() >= 1280) {
+          $('#ad_right').show();
+          $('#ad_left').show();
+      }
+  });
+
+</script>
+
+
+<!-- 浮层弹窗广告 -->
+<!--AdForward Begin:-->
+<div id="ad_pop">
+<div class="J_adv" data-view="true" data-mod="ad_popu_64" data-mtp="40" data-order="21" data-con="ad_content_135" style="width: 1px; height: 1px; position: fixed; right: 10px; bottom: 10px; z-index: 999; background-color: transparent;"><div id="location_parent"></div><script>document.getElementById('location_parent').parentNode.style.height='1px';document.getElementById('location_parent').parentNode.style.width='1px';document.getElementById('location_parent').parentNode.style.position='fixed';document.getElementById('location_parent').parentNode.style.right='10px';document.getElementById('location_parent').parentNode.style.bottom='10px';document.getElementById('location_parent').parentNode.style.zIndex=999;document.getElementById('location_parent').parentNode.style.backgroundColor='transparent';</script><!-- 广告占位容器 --><div id="cpro_u2392825" style="box-sizing: content-box; width: 311px; height: 286px; overflow: hidden; z-index: 2147483647; position: fixed; bottom: 10px; right: 10px;"><div style="box-sizing: content-box;width:300px;height:250px;padding:4px;border:#acacac 1px solid;overflow:hidden;position:absolute;left:0;top:25px;"><iframe id="cpro_u2392825_iframe" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/wcbm(12).html" width="300" height="250" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><div id="cpro_u2392825_closebtn" style="box-sizing: content-box;position:absolute;width:61px;height:20px;top:0;left:250px;margin:0;padding:0;margin-bottom:5px;cursor:pointer;overflow:hidden;"><div style="box-sizing: content-box;width:40px;height:20px;background-color:#999999;color:#fff;float:left;margin-right:1px;font-size:12px;font-family:微软雅黑;text-align: center;line-height:20px;">关闭</div><a style="maring:0;padding:0;display:inline-block;border:none;overflow:hidden;height:20px;line-height:20px;cursor:pointer;width:20px;background:url(&#39;//cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/xuanfu_close.png&#39;) no-repeat 0 0;margin-bottom:3px;float:left"></a></div></div><!-- 投放代码 --><script type="text/javascript">(window['cproStyleApi'] = window['cproStyleApi'] || {})['u2392825']={at:'3',rsi0:'300',rsi1:'250',pat:'17',tn:'baiduCustNativeAD_xuanfu',rss1:'#FFFFFF',conBW:'1',adp:'1',ptt:'0',titFF:'%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91',titFS:'14',rss2:'#000000',titSU:'0'};/*服务器频道首页置顶Banner960*90，创建于2014-7-3*/(window.cproArray = window.cproArray || []).push({id:'u2392825'});  </script>  <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/f.js" type="text/javascript"></script></div>
+<!--AdForward End-->
+</div>
+
+<!-- go-backhome   go-backchannel-->
+<!-- <button id="com-back-home" class="btn btn-top bbs-btn-gray28 bbs-btn-backhome" title="回到首页" style="cursor: pointer; border: 0px none; bottom: 35px; width: 80px; height: 28px; margin: 0px; padding: 0px; position: fixed; right: 40px; display: block; padding-right:13px;">回到首页</button>
+<button id="com-back-channel" class="btn btn-top bbs-btn-gray28 bbs-btn-backchannel" title="回到频道" style="cursor: pointer; border: 0px none; bottom:68px; width: 80px; height: 28px; margin: 0px; padding: 0px; position: fixed; right: 40px; display: block; padding-right:13px;">回到频道</button> -->
+    </div>
+    <script type="text/javascript" language="javascript" charset="utf-8">
+window.bbsInfoflag = true;
+
+//<![CDATA[
+$(function(){
+  $('.post .post_body fieldset+br').remove();
+  $('.post .post_body blockquote').each(function(index, item) {
+    var first_child = $(item).find(':first');
+    if($(item).contents().get(0) !== undefined &&
+      $(item).contents().get(0).nodeName.toLowerCase() === 'br' &&
+      first_child.prop('tagName').toLowerCase() === 'br') {
+      first_child.remove();
+    }
+  });
+  
+    var bulletin_link = '<a href="http://bbs.csdn.net/topics/392010081" class="title_style_black title_style_bold" target="_blank">建什么知识库，你说了算</a>'
+    $('#post-forum-bulletin-1').html(bulletin_link);
+});
+
+$(".showTittleDD span").hover(
+        function () {
+            $(this).find(".showTittle")[0].style.display="inline-block";
+        },
+        function () {
+                $(this).find(".showTittle")[0].style.display="none";
+        }
+);
+
+$(".topic_show_user_level").hover(
+    function () {
+    $(this).next().find(".smallTittle")[0].style.display="inline-block";
+
+
+    },
+    function () {
+        $(this).next().find(".smallTittle")[0].style.display="none";
+    }
+);
+//]]>
+var auto_save_time = null;
+$(document).ready(function(){
+    autosavecontent = $("#autosave_post_val").val();
+    if(autosavecontent != ''){$("#post_body").val(autosavecontent);}
+    auto_save_time = setInterval(autosave, 90*1000);
+});
+function autosave(){
+    var content =  $("#post_body").val();
+    var old_content = $("#autosave_old_post_val").val();
+    topic_id = 310125122
+    if(content != "" && content != old_content) {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '/posts/autosave_post',
+            data: {
+                content: content,
+                topic_id: topic_id
+            },
+            success: function (result) {
+                $("#autosave_old_post_val").val(content);
+            },
+            error: function (result) {
+              if(result.status == 403 && result.responseText == '需要登录'){
+                  clearInterval(auto_save_time);
+              }
+            }
+        })
+    }
+}
+
+$(function(){
+    // 课程推荐
+    $.ajax({
+        url: "http://internalapi.csdn.net/psearch/psearch/query",
+        type: "GET",
+        data: {_client_: "rcommend_course",
+                pro_id: "310125122",
+                pro_type: "discussion_topic",
+                fields: "created_at,tag,id,title,pic,stu_count,good_ratio,rc_flag,source_type",
+                size: 4,
+                user_id: "",
+                index_name: "pro_course_v2",
+                "x-acl-token": "wU4kru3sXrPwPGLhVloh9PV-n4YK"
+               },
+        dataType: 'JSONP',
+        success: function(result){
+            var res_arr = result['hits'];
+            var text = "";
+            if(res_arr.length > 0){
+                text = "<span>相关推荐：</span><ul>";
+                for(var key in res_arr){
+                    var id = res_arr[key]['object']['id'];
+                    var title = res_arr[key]['object']['title'];
+                    text += "<li><a href='http://edu.csdn.net/course/detail/" +  id + "'" + " target='_blank'>" + title + "</a></li>";
+                }
+                text += "</ul>";
+            }
+
+            $('#suggest_course').html(text);
+
+            var m = $("#suggest_course");
+
+            //控制新创基数据触发曝光开关
+            if(m.length>0){
+                m.each(function(i){
+                    console.log(i);
+                    trackingAd($(this));
+                });
+            }
+        }
+    });
+
+    // 标签推荐
+    $.ajax({
+        type: 'get',
+        url: 'http://internalapi.csdn.net/recommend/tag/suggest',
+        dataType: 'JSONP',
+        data: {title: "JSP表单处理：如何把提交的内容发送到指定邮箱？",
+                body: "今天做的JSP页面处理，发现连接数...",
+                type: "csdn",
+                "x-acl-token": "b4PPTlauakrI2cRr1Tg3PzfykTMK"
+        },
+        success: function(data){
+            var text= "";
+            var es = [];
+            if(data.length > 0){
+                text += "<span>相关主题推荐：</span>";
+                for(var key in data){
+                    var name = data[key]['name'];
+                    es[key] = name;
+                    text += "<a href='http://www.csdn.net/tag/" +  name + "'" + " target='_blank'>" + name + "</a>";
+                }
+            }
+
+
+            //$('#suggest_tags').html(text);
+
+            // 帖子推荐
+            if(es.length > 0){
+                $.ajax({
+                    url: "http://internalapi.csdn.net/tag/tag/search",
+                    size: 4,
+                    type: "GET",
+                    data: {
+                        types: "topic",
+                        tagNames: es.join(','),
+                        size: 4,
+                        "x-acl-token": "dDH/ijXIA58154g38-QLg8mnNAsK"
+                    },
+                    dataType: 'JSONP',
+                    success: function(result){
+                        var res_arr = result['result'];
+                        var text = "";
+                        if(res_arr.length > 0){
+                            text = "<span>相关推荐：</span><ul>";
+                            for(var key in res_arr){
+                                var id = res_arr[key]['id'];
+                                var title = res_arr[key]['title'];
+                                var url = res_arr[key]['url'];
+                                text += "<li><a href='" +  url + "'" + " target='_blank'>" + title + "</a></li>";
+                            }
+                            text += "</ul>";
+                        }
+
+                        $('#suggest_topics').html(text);
+                    }
+                });     
+            }
+
+        }
+    });
+
+});
+
+
+</script>
+<script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ad-bbs.js"></script>
+
+    
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+ 
+</style>
+
+    <script src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/component.js"></script>
+    <script language="javascript" type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/async_new.js"></script>
+<div id="a9784604d" style="width: 1px; height: 1px; display: none;">
+	<script id="adJs9784604" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/9784604.js"></script>
+	<script>document.getElementById("adJs9784604").src = "http://ads.csdn.net/js/opt/9784604.js?t=" + Math.random();</script>
+</div>
+<script type="text/javascript">
+  document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+</script><script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/pub_footer_2014.css"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="http://bbs.csdn.net/topics/310125122#" target="_blank" class="qq qqcustomer_s">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&uin=2251809102&site=qq&menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;09002463&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2016, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display:none; position:absolute; z-index:9990; width:170px">  <iframe src="about:blank" frameborder="0" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void 0" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/notify.js"></script><input type="hidden" id="aa_g_data_ids">
+<script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/msg.popup.js"></script>
+
+<script type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/cnick.js"></script>
+<script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/toolbar.js"></script>
+  
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><link rel="stylesheet" type="text/css" media="screen" href="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/ask_float_fonts_css-6b30a53970eb5c3a2a045e3df585b475.css"><div data-mod="popu_64" class="csdn-tracking-statistics" chg-blk="0"><a id="com-quick-reply-bbs" title="快速回复" style="top:210px"></a><a id="com-back-channel" title="回到频道" style="top:248px"></a><a id="com-back-home" title="回到首页" style="top:286px"></a><a id="com-d-top-a" style="top: 324px; display: inline;" title="返回顶部" onclick=""></a> </div><div class="pop_edit ask_second comm_ask_second"><h3>提问</h3><span class="ask_float_span">您的问题将会被发布在“<a class="ask_float_channel" href="http://ask.csdn.net/" target="_blank" style="cursor:pointer">技术问答</a>”频道</span><a href="http://bbs.csdn.net/topics/310125122#" nodetype="close" class="close">×</a><div class="context"><div class="err_div"><span class="err_ico"></span><span class="err_txt">该问题已存在，请勿重复提问</span></div><div class="input_div"><input id="askInputSecond" type="text" style="font-size:14px;" placeholder="问题标题"></div><div class="cm_box"><div class="cm_dialog"></div> <div class="pop_cm cm_add_link"><input type="text" placeholder="链接内容" id="af_cm_link_txt"><input type="text" placeholder="链接地址" id="af_cm_link_url"><input type="text" placeholder="链接提示" id="af_cm_link_tit"><div class="text-right"><span class="btn btn-default btn-sm" id="add_link_btn">插入链接</span> </div> </div><div class="pop_cm cm_add_img"><div class="nav-tabs"><a class="img_tab active" href="http://bbs.csdn.net/topics/310125122#tab_upload">本地上传</a><a class="img_tab" href="http://bbs.csdn.net/topics/310125122#tab_weburl">网络图片</a></div><div class="tab_panel active" id="tab_upload"><div class="set_img"><iframe src="./JSP表单处理：如何把提交的内容发送到指定邮箱？-CSDN论坛-CSDN.NET-中国最大的IT技术社区_files/upload.html"></iframe></div></div><div class="tab_panel" id="tab_weburl"><input type="text" placeholder="图片地址" id="af_cm_img_url"><input type="text" placeholder="图片说明" id="af_cm_img_alt"><div class="text-right"><span class="btn btn-default btn-sm" id="add_img_btn">插入图片</span> </div></div> </div></div> <textarea id="editor_all" rows="8" style="display: none;"></textarea><div class="editor-toolbar"><i class="separator">|</i><a class="icon-headline" title="标题一（Ctrl+Alt+1）"></a><a class="icon-heading" title="标题二（Ctrl+Alt+2）"></a><a class="icon-bold" title="粗体（Ctrl+B）"></a><a class="icon-italic" title="斜体（Ctrl+I）"></a><i class="separator">|</i><a class="icon-quote-left" title="引用（Ctrl+’）"></a><a class="icon-code" title="插入代码片（Ctrl+,）"></a><a class="icon-list-ul" title="无序列表（Ctrl+L）"></a><a class="icon-list-ol" title="有序列表（Ctrl+Alt+L）"></a><i class="separator">|</i><a class="icon-link" title="添加链接（Ctrl+K）"></a><a class="icon-picture" title="添加图片（Ctrl+Alt+I）"></a><i class="separator">|</i><a class="icon-reply" title="撤退（Ctrl+Z）"></a><a class="icon-share-alt" title="前进（Ctrl+Shift+Z）"></a><i class="separator">|</i><a class="icon-info" href="http://ask.csdn.net/pages/markdown" target="_blank" title="markdown语法参考"></a><a class="icon-preview" title="预览"></a><i class="separator">|</i></div><div class="CodeMirror cm-s-paper CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="min-width: 33px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>&nbsp;<span style="display: inline-block; width: 1px; margin-right: -1px;">&nbsp;</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code"></div><div class="CodeMirror-cursor" style="visibility: hidden;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="visibility: hidden;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters" style="display: none;"></div></div></div><div class="editor-statusbar"><span class="lines">0</span><span class="words">0</span><span class="cursor">0:0</span></div><div class="div_tags clearfix"><div id="divSearchTags" class="tags_con"><input type="text"></div><input type="hidden" name="txtSearchTags"></div><div id="ask2_tagRecomm_div" class="drt_tagRecomm tracking-ad" data-mod="popu_73"><span class="drt_tit">推荐标签：</span></div></div><div class="success"><div class="left_area"><input id="chk_cb" type="checkbox"><span class="wyxs">我要悬赏</span><input id="cb_num" class="cb_num" readonly="true"><span class="phib_rii"><span> 币</span></span></div><a href="http://bbs.csdn.net/topics/310125122#" nodetype="cancel" class="cancel">取消</a><a href="http://bbs.csdn.net/topics/310125122#" nodetype="ok" class="ok">发布</a></div></div><div id="common_ask_div_sc" class="searchContainer"><div class="sTitle">可能存在类似的问题：</div><div class="sFooter"><a class="sFirstNewAsk">我想提一个新问题</a></div></div><div id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"></div>
+  </div>
+</div></body></html>

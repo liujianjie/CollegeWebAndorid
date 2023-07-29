@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+	function check(){
+		var ss=document.frm.ty1.value;
+		if(ss.trim()==""){
+			alert("用户名不能为空");
+			document.frm.ty1.value="";
+			document.frm.ty1.focus();
+		}
+	}
+	var ss="fsdafasdfsdf";
+	var count=0;
+	for(var i=0;i<ss.length;i++){
+		var s2=ss.substring(i,i+1);
+		if(s2=="a"){
+			count++;
+		}
+	}
+	alert("ss字符串中有"+count+"个a");
+  </script>
+ </head>
+
+ <body>
+	<form name="frm">
+	用户名：	<input type="text" name="ty1" /><br/>
+	<input type="button" name="bt1" value="验证" onclick="check();"/>
+	
+	</form>
+	<script>
+		document.frm.ty1.focus();
+	</script>
+ </body>
+</html>

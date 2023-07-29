@@ -1,0 +1,18 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.PickingListDao">
+  <resultMap type="PickingList" id="pickinglistmap">
+  	<id column="PIID" property="piid" />
+  	<result column="OUTID" property="outid" />
+  	<result column="SKU" property="sku" />
+  	<result column="SALEQTY" property="saleqty" />
+  </resultMap>
+  
+  <!-- 查询所有出库计划单 -->
+  <select id="selPickingList" resultType="PickingList">
+      select * from picking_list
+  </select>
+  <insert id="addPickingList" parameterType="PickingList">
+      insert into picking_list values(sys_guid(),sys_guid(),10,10)
+  </insert>
+  
+</mapper>

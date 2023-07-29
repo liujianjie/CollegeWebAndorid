@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.ChatDao">
+	<resultMap type="com.ht.yfbc.pojo.Chat" id="chatmap">
+		<id column="CHID" property="chid" />
+		<result column="SETID" property="setid" />
+		<result column="GETID" property="getid" />
+		<result column="SETDATE" property="setdate" />
+		<result column="CHTEXT" property="chtext" />
+	</resultMap>
+	<resultMap type="com.ht.yfbc.pojo.Chat2" id="chatmap2"
+		extends="chatmap">
+		<association property="setuser" column="SETID"
+			select="com.ht.yfbc.dao.UsersDao.seluserbyid"></association>
+		<association property="getuser" column="GETID"
+			select="com.ht.yfbc.dao.UsersDao.seluserbyid"></association>
+	</resultMap>
+
+	<select id="selChat" parameterType="map" resultMap="chatmap2">
+		select * from
+		chat where (setid = #{setid} and getid = #{getid}) or (setid =
+		#{getid} and getid = #{setid})
+
+	</select>
+
+	<select id="selChatIndex" parameterType="String" resultMap="chatmap2">
+		select c.*,rownum rn from chat c where
+		getid=#{getid} and 5 >rownum order by
+		c.setdate desc
+	</select>
+	
+	<select id="selChatIndex2" parameterType="String" resultMap="chatmap2">
+		select c.*,rownum rn from chat c where
+		getid=#{getid}  order by
+		c.setdate desc
+	</select>
+	
+	<select id="selChatIndex3" parameterType="String" resultMap="chatmap2">
+		select c.*,rownum rn from chat c where
+		getid=#{getid}
+	</select>
+
+	<insert id="insertChat" parameterType="com.ht.yfbc.pojo.Chat">
+		insert into chat
+		values(sys_guid(),#{setid},#{getid},#{setdate},#{chtext})
+	</insert>
+</mapper>

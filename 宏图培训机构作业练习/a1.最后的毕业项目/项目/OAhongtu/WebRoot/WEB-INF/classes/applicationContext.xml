@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver">
+		</property>
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:orcl">
+		</property>
+		<property name="username" value="liujianjie"></property>
+		<property name="password" value="liujianjie"></property>
+		</bean>
+	<bean id="sFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<!-- 日常办公vo -->
+				<value>com/ht/vo/Dept.hbm.xml</value>
+				<value>com/ht/vo/Deptmans.hbm.xml</value>
+				<value>com/ht/vo/Emp.hbm.xml</value>
+				<value>com/ht/vo/Jobs.hbm.xml</value>
+				<value>com/ht/vo/Family.hbm.xml</value>
+				<value>com/ht/vo/Education.hbm.xml</value>
+				<value>com/ht/vo/Xuncha.hbm.xml</value>
+				<value>com/ht/vo/Rizhi.hbm.xml</value>
+				<value>com/ht/vo/Sroom.hbm.xml</value>
+				<value>com/ht/vo/Kaoqin.hbm.xml</value>
+				<value>com/ht/vo/Holday.hbm.xml</value>
+				<value>com/ht/vo/Jiaban.hbm.xml</value>
+				<value>com/ht/vo/Zhiban.hbm.xml</value>
+				<value>com/ht/vo/Userroot.hbm.xml</value>
+				
+				 <!-- 招生管理模块vo对象 -->
+				<value>com/ht/vo3/Applystudent.hbm.xml</value>
+				<value>com/ht/vo3/Applystudent2.hbm.xml</value>
+				
+				<!-- 教务管理模块vo对象 -->
+				<value>com/ht/vo2/Course.hbm.xml</value>
+				<value>com/ht/vo2/Courseplan.hbm.xml</value>
+				<value>com/ht/vo2/Discuss.hbm.xml</value>
+				<value>com/ht/vo2/Feedback.hbm.xml</value>
+				<value>com/ht/vo2/Fed.hbm.xml</value>
+				<value>com/ht/vo2/Dutys.hbm.xml</value>
+				<value>com/ht/vo2/Saveyear.hbm.xml</value>
+				
+				<!-- 学生模块vo对象 -->
+				<value>com/ht/vo5/Student.hbm.xml</value>
+				<value>com/ht/vo5/Says.hbm.xml</value>
+				<value>com/ht/vo5/Sback.hbm.xml</value>
+				<value>com/ht/vo5/Job.hbm.xml</value>
+				<value>com/ht/vo5/Application.hbm.xml</value>
+				<value>com/ht/vo5/Elements.hbm.xml</value>
+				<value>com/ht/vo5/Computer.hbm.xml</value>
+				<value>com/ht/vo5/Leave.hbm.xml</value>
+				<value>com/ht/vo5/Summary.hbm.xml</value>
+				<value>com/ht/vo5/Classes.hbm.xml</value>
+				<value>com/ht/vo5/Hourse.hbm.xml</value>
+				<value>com/ht/vo5/Score.hbm.xml</value>
+				<value>com/ht/vo5/Projectf.hbm.xml</value>
+				<value>com/ht/vo5/Defenses.hbm.xml</value>
+				<value>com/ht/vo5/Reply.hbm.xml</value>
+				
+				
+				<!--财务VO -->
+				<value>com/ht/vo4/Shouru.hbm.xml</value>
+				<value>com/ht/vo4/Zhichu.hbm.xml</value>
+				<value>com/ht/vo4/Xuefei.hbm.xml</value>
+				<value>com/ht/vo4/JiaoqingZhuangtai.hbm.xml</value>
+				<value>com/ht/vo4/Salary.hbm.xml</value>
+				
+				<!-- 通知vo -->
+				<value>com/ht/vo6/Msg.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 日常办公系统模块的service -->
+	<bean id="dService" class="com.ht.service.impl.DatasServiceimpl"></bean>
+	<bean id="eService" class="com.ht.service.impl.EmpServiceimpl"></bean>
+	<bean id="xService" class="com.ht.service.impl.ExamineServiceimpl"></bean>
+	
+	<!-- 教务管理系统模块的service -->
+	<bean id="couService" class="com.ht.service.impl.CourseServiceImpl"></bean>
+	<!-- 学生模块的service -->
+	<bean id="sService" class="com.ht.service.impl.StuServiceimpl"></bean>
+	  <!-- 招生模块的Service -->
+	  <bean id="aService" class="com.ht.service.impl.ApplyServiceImpl"></bean>
+	
+	<!-- 财务Service -->
+	<bean id="cService" class="com.ht.service.impl.CaiwuServiceImpl"></bean>
+	
+	<!-- 通知Service -->
+	<bean id="tService" class="com.ht.service.impl.TongZhiServiceImpl"></bean>
+</beans>

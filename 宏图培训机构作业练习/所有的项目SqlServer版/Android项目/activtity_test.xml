@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#12B7F1" >
+
+        <TextView
+            android:id="@+id/login_text_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="填写注册信息"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/login_text_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/aa"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="返回"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="#F9F9FB" >
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ebebeb" >
+        </View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/qqlist_classify_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="15dip"
+                android:text="头       像"
+                android:textColor="#6CC6EF"
+                android:textSize="@dimen/activity_horizontal_margin" />
+
+            <ImageView
+                android:id="@+id/action_settings"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/zzs" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dip"
+            android:background="#ebebeb" >
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tx"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="中国+86"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tx3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="请输入你的手机号码"
+                    android:orientation="vertical"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tx11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="昵       称"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tx13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="请输入你的昵称"
+                    android:orientation="vertical"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tx4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="密       码"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tx5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="字母/数字/最大20位"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tx6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="确认密码"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tx7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="请再输入密码"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tx14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="  性       别"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+                
+                 <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/female1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="8dip"
+                        android:layout_marginLeft="110dip"
+                        android:text="男"
+                        android:textColor="#ADAEA9"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="8dip"
+                        android:text="女"
+                        android:textColor="#ADAEA9"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tv8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="地       址"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tv7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="请输入地址"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tv10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginTop="15dip"
+                    android:text="个性签名"
+                    android:textColor="#6CC6EF"
+                    android:textSize="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/action_settings_tv11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:hint="这个人很懒，什么也没留下"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#F9F9FB" >
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tv14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="我已阅读并同意使用"
+                    android:textColor="#cccccc"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/qqlist_classify_tv15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="10dp"
+                    android:text="条款和隐私政策"
+                    android:textColor="#6BDCF8"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dip"
+                android:background="#ebebeb" >
+            </View>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

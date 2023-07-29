@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#F6F6F7">
+    <RelativeLayout 
+        android:id="@+id/lianxiren_rl_top"
+	    android:layout_width="match_parent"
+	    android:layout_height="45dp"
+        android:background="#12B9F6"> 
+        <TextView 
+            android:id="@+id/lianxiren_rl_tv1_lxr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"/>
+        <TextView 
+            android:id="@+id/lianxiren_rl_tv2_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"/>
+
+        <com.example.qq_lxr9y18r.RoundView
+            android:id="@+id/lianxiren_rl_ig"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/bb" />
+
+	</RelativeLayout>
+	<RelativeLayout 
+	    android:id="@+id/lianxiren_rl2_top2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/lianxiren_rl_top"
+	    android:background="#ffffff">
+        <TextView 
+		    android:id="@+id/lianxiren_rl2_et_sousuo"
+		    android:layout_width="match_parent"
+		    android:layout_height="25dp"
+		    android:gravity="center"
+		    android:hint="搜索"
+		    android:textSize="12sp"
+		    android:background="@drawable/lianxirenfragment_sousuo_shape"
+		    android:layout_marginLeft="8dp"
+		    android:layout_marginRight="8dp"
+		    android:layout_marginTop="4dp"
+		    android:enabled="true"/>
+
+	</RelativeLayout>
+	<LinearLayout
+	    android:id="@+id/lianxiren_ll2_top3"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_below="@id/lianxiren_rl2_top2"
+	    android:weightSum="3"
+	    android:background="#ffffff">
+        
+	    <RelativeLayout 
+	        android:layout_width="0dp"
+	        android:layout_height="70dp"
+	        android:layout_weight="1">
+	        <ImageView 
+		        android:id="@+id/lianxiren_ll2_iv1_xpy"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/newfrieng"/>
+
+	        <TextView
+	            android:id="@+id/lianxiren_ll2_tv1_count"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginRight="35dp"
+	            android:textColor="@android:color/holo_red_light" />
+	        
+	    </RelativeLayout>
+	    
+	    <ImageView 
+	        android:id="@+id/lianxiren_ll2_iv2_qun"
+	        android:layout_width="0dp"
+	        android:layout_height="70dp"
+	        android:layout_weight="1"
+	        android:src="@drawable/troop"/>
+	    <ImageView 
+	        android:id="@+id/lianxiren_ll2_iv3_gzh"
+	        android:layout_width="0dp"
+	        android:layout_height="70dp"
+	        android:layout_weight="1"
+	        android:src="@drawable/pbaccount"/>
+	    
+	</LinearLayout>
+	<ExpandableListView 
+        android:id ="@+id/lianxiren_lv"   
+	    android:layout_width ="match_parent"   
+	    android:layout_height ="wrap_content"
+	    android:background="#ffffff"   
+        android:layout_below="@id/lianxiren_ll2_top3"
+        android:layout_marginTop="15dp">
+	    
+     </ExpandableListView>
+	
+</RelativeLayout>

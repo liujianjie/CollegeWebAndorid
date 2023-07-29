@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.InStorageDao">
+  <resultMap type="InStorage" id="instoragemap">
+  	<id column="INID" property="inid" />
+  	<result column="PRODUCTNAME" property="productname" />
+  	<result column="SKU" property="sku"/>
+  	<result column="PURCHASEQTY" property="purchaseqty" />
+  	<result column="UNIT" property="unit" />
+  	<result column="SUPPLIER" property="supplier" />
+  	<result column="SUPPLIERNO" property="supplierno" />
+  	<result column="RECEIVENAME" property="receivename" />
+  	<result column="RECEIVENO" property="receiveno" />
+  	<result column="ARRIVALDATE" property="arrivaldate" javaType="java.util.Date" />
+  	<result column="WHID" property="whid" />
+  	<result column="INNO" property="inno" />
+  	<result column="INSTATE" property="instate" />
+  </resultMap>
+  
+  <select id="selInStoragelist" parameterType="map" resultType="InStorage">
+  		select * from (select rownum r,i.* from in_storage i  
+  		<where>
+  		    <if test="pagecount!=null and pagecount!=''">
+  		        and rownum &lt;=(#{pagecount}*#{currpage}) 
+  		    </if>
+  		    <if test="starttime!=null and starttime!=''">
+  		        and arrivaldate &gt;= to_date(#{starttime},'yyyy-mm-dd') 
+  		    </if>
+  		    <if test="endtime!=null and endtime!=''">
+  		        and arrivaldate &lt;= to_date(#{endtime},'yyyy-mm-dd') 
+  		    </if>
+  		    <if test="whid!=null and whid!=''">
+  		        and whid = #{whid} 
+  		    </if>
+  		</where>
+  		order by arrivaldate desc)where r&gt;(#{currpage}-1)*#{pagecount}
+  </select>
+  
+  <select id="selInStoragelist2" parameterType="map" resultType="InStorage">
+  		select * from (select rownum r,i.* from in_storage i  
+  		<where>
+  		    <if test="pagecount!=null and pagecount!=''">
+  		        and rownum &lt;=(#{pagecount}*#{currpage}) 
+  		    </if>
+  		    <if test="whid!=null and whid!=''">
+  		        and whid = #{whid}
+  		    </if>
+  		    <if test="starttime!=null and starttime!=''">
+  		        and arrivaldate &gt;= to_date(#{starttime},'yyyy-mm-dd') 
+  		    </if>
+  		    <if test="endtime!=null and endtime!=''">
+  		        and arrivaldate &lt;= to_date(#{endtime},'yyyy-mm-dd') 
+  		    </if>
+  		</where>
+  		order by arrivaldate desc)where r&gt;(#{currpage}-1)*#{pagecount}
+  </select>
+  
+  <insert id="addInStorage" parameterType="InStorage">
+      <!-- 是整进整出 没有退货 不越库 -->
+      insert into in_storage values(sys_guid(),#{productname},#{sku},#{purchaseqty},#{unit},#{supplier},#{supplierno},#{receivename},#{receiveno},#{arrivaldate},#{whid},#{inno},0)
+  </insert>
+  <select id="selInStorage" parameterType="String" resultType="InStorage"> 
+      select * from in_storage where inid = #{id}
+  </select>
+  
+  <!-- 联级查询所用 -->
+  <select id="selInStoragebyid" parameterType="String" resultType="InStorage"> 
+      select * from in_storage where inid = #{inid}
+  </select>
+  
+  <!-- 修改状态为已收货 -->
+  <update id="updateStorageState" parameterType="String">
+      update in_storage set instate = 1 where inid = #{ids}
+  </update>
+  
+  <!-- 分页所用 1月13日 -->
+  <select id="selInStorageCount" parameterType="map" resultType="int"> 
+      select count(*) from in_storage 
+      	<where>
+  		    <if test="whid!=null and whid!=''">
+  		        and whid = #{whid}
+  		    </if>
+  		    <if test="starttime!=null and starttime!=''">
+  		        and arrivaldate &gt;= to_date(#{starttime},'yyyy-mm-dd') 
+  		    </if>
+  		    <if test="endtime!=null and endtime!=''">
+  		        and arrivaldate &lt;= to_date(#{endtime},'yyyy-mm-dd') 
+  		    </if>
+  		</where>
+  </select>
+  
+</mapper>

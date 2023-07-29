@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.DetailreceivablesDao">
+	<resultMap type="Detailreceivables" id="DetailreceivablesMap">
+		<id column="dr_id" property="dr_id" />
+		<result column="tender_id" property="tender_id" />
+		<result column="repay_id" property="repay_id" />
+		<result column="capitals" property="capitals" />
+		<result column="interest" property="interest" />
+		<result column="principal_interest" property="principal_interest" />
+		<result column="principal_date" property="principal_date" />
+		<result column="rece_status" property="rece_status" />
+		<result column="actual_interest" property="actual_interest" />
+		<result column="actual_date" property="actual_date" />
+		<result column="factorage" property="factorage" />		
+	</resultMap>
+</mapper>

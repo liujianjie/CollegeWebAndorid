@@ -1,0 +1,23 @@
+PrintWriter out = response.getWriter();
+			
+			ServletContext sc=this.getServletContext();//applction实例化
+			
+			//String uname=(String) request.getSession().getAttribute("aa");
+			//获取自己的名字
+			HttpSession session=request.getSession();
+			JRuserBean jr=(JRuserBean)session.getAttribute("jruser");
+			String uname=jr.getUname();
+			
+			String amessage=(String) sc.getAttribute("message");//获取原来的内容
+			
+			sc.setAttribute("message", amessage+uname+"说:"+request.getParameter("message")+"\r\n");
+			
+			response.sendRedirect("qiantai_chart/khdchart.jsp");
+
+
+
+<form action="jieshou?method=test" method="post">
+<textarea rows="20" cols="50" ><%=application.getAttribute("message") %></textarea><br>
+<input type="text" name="message">
+<input type="submit" value="发送 ">
+</form> 

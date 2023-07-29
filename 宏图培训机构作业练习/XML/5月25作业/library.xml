@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 1.把xml文件编写出来，相当于是把一个成品做好 -->
+<!-- 2.先把叶子节点写出来，就是定义叶子元素-->
+<!-- 3.把叶子元素的属性依次定义出来-->
+<!-- 4.向上递归，找叶子的父元素，一直递归到根节点-->
+<!-- 5.定制一些特殊的需求，跟业务逻辑相关的需求-->
+<!DOCTYPE library[
+	<!ELEMENT booktypename (#PCDATA)>     
+	<!ELEMENT bookname (#PCDATA)>   
+	<!ELEMENT price (#PCDATA)>
+	<!ELEMENT writername (#PCDATA)>
+	<!ELEMENT sex (#PCDATA)>   
+	<!ELEMENT QQ (#PCDATA)>
+	<!ELEMENT email (#PCDATA)>   
+	<!ELEMENT book  (bookname,price)>
+	<!ELEMENT books (book+)>
+	<!ELEMENT booktype (booktypename,books)>
+	<!ELEMENT writer (writername,sex,(QQ|email))>
+	<!ELEMENT writers (writer+)>
+	<!ELEMENT library (booktype+,writers)>  
+	
+	<!ATTLIST writer writerno ID #REQUIRED>
+	<!ATTLIST booktype booktypeno CDATA #REQUIRED>
+	<!ATTLIST book bookno CDATA #REQUIRED>
+	<!ATTLIST book writer IDREF #REQUIRED>
+	<!ATTLIST price pricetype CDATA #FIXED "RMB">
+					
+]>
+<library>
+	<booktype booktypeno="L1001">
+		<booktypename>计算机</booktypename>
+		<books>   
+			<!-- IDREF ID引用类型，是写别的元素的属性为ID的值-->
+			<book bookno="T1001" writer="z001">  
+				<bookname>Think in Java</bookname>	
+				<price pricetype="RMB">65.8</price>			
+			</book>      
+		</books>  
+	</booktype>            
+	<writers>      
+		<writer writerno="z001">      
+			<writername>Simth</writername>
+			<sex>男</sex>
+			<email>10753611@qq.com</email>	
+		</writer>
+	</writers>
+</library>

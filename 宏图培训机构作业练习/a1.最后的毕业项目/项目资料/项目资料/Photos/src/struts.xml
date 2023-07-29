@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--如果一个package下有action需要使用Ajax 那么需要将package中的extends 改成 json-default  -->
+	<package name="client" namespace="/ht" extends="json-default">
+		<action name="photo" class="com.ht.action.PhotoAction">
+			<result type="json"></result>
+			<result name="toindex" type="redirect">/index.jsp</result>
+		</action>
+	</package>
+</struts>

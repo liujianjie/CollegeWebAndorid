@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>九阴真经-官方网站-蜗牛-真武侠 大江湖-四年侠梦四年心 潜龙乱世史诗资料片震撼公测</title>
+  <meta name="description" content="《九阴真经》是蜗牛公司致力重新诠释传统中国武侠文化的大型多人网络游戏，在崭新设计思维和中国风美术画面基础上，以真武侠为理念构建在线江湖，注入无等级、创新PK、奇遇等一系列划武侠网游时代先河的元素，还原了一个真实恢弘的武侠江湖世界。"/>
+  <meta name="keywords" content="九阴真经,九阴真经ol,九阴,九阴官网,九阴真经官方网站,侠客行,真武侠,网游,武侠网游,武侠游戏,蜗牛,蜗牛游戏"/>
+  <meta name="copyright" content="苏州蜗牛数字科技股份有限公司"/>
+  <!-- @ design:chensj @ f2e jinxj @ cms: -->
+  <link rel="stylesheet" type="text/css" href="http://static.woniu.com/stylesheets/base.css"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+  <script charset="utf-8" src="http://static.woniu.com/scripts/jquery/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="wb-head">
+<a href="http://9yin.woniu.com/"class="logo"target="_blank"></a>
+<div class="video-box"><a href="javascript:;"class="video-btn" id="j-vod" data-file="dmp.flv"><span class="by"></span><span class="sj"></span></a></div>
+  <div class="wb-contain">
+   <!--  <div class="slogan"></div>
+    <div class="sg">
+      <em id="j-vod" data-file="dmp.flv"></em>
+    </div> -->
+  </div>
+</div>
+<div class="wb-li">
+  <div class="wb-contain clearfix">
+    <div class="lb">
+      <div class="main">
+        <span id="j-lq" class="btn">立即领取</span>
+        <img src="images/lb.png">
+      </div>
+    </div>
+    <div class="mreg">
+      <div id="j-fastreg-form" class="main"></div>
+      <div id="j-fastreg-ok" style="display:none">
+        <p>
+          <b>恭喜获得新手礼包</b><br>
+          请立即登录游戏领取<br>
+          复制礼包代码： <br>
+          <span class="awardCode">_</span><br>
+          礼包领取规则：<br>
+          登录《九阴真经》在地图上<br>
+          搜索各大主城“领奖大使”<br>
+          点击领奖大使选择兑换领奖码。
+        </p>
+      </div>
+    </div>
+    <div class="hl">
+      <div class="main">
+        <a wn_tj_down="tg_9yin_wm23" class="btn download" href="javascript:;" wntj_href="http://client.9yin.woniu.com/9yin587/9yinDownLoader_587.exe ">高速下载器下载</a>
+        <a wn_tj_down="tg_9yin_wm23" class="btn" href="javascript:;"  wntj_href="http://client.9yin.woniu.com/9yin514/9yin_V1.0.1.514.rar">HTTP下载</a>
+
+        <img src="images/hl.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wb-cj">
+  <div class="wb-contain clearfix">
+		<div class="tuiguang">
+		  <a href="http://9yin.woniu.com/static/act/201607/fytx/" target="_blank"><div class="j-join"></div></a>
+		</div>
+		<div id="j-clip">
+			<a href="http://9yin.woniu.com/static/act/201607/fytx88/index.html" target="_blank">
+			  <div class="j-page"><div class="j-text"></div></div>
+			  <div class="j-page"><div class="j-text"></div></div>
+			  <div class="j-page"><div class="j-text"></div></div>
+			</a>
+		</div>
+  </div>
+</div>
+
+<div class="wb-cj">
+  <div class="wb-contain clearfix">
+		<div id="j-cjbanner" class="main">
+        <div class="j-fade-wrap">
+          <ul>
+            <li><img src="images/tab_1.jpg"></li>
+            <li><img src="images/tab_2.jpg"></li>
+            <li><img src="images/tab_3.jpg"></li>
+            <li><img src="images/tab_4.jpg"></li>
+          </ul>
+        </div>
+      </div>
+      <ul id="j-cjtab" class="tab clearfix">
+        <li class="current tab1">
+          <p></p>
+        </li>
+        <li class="tab2">
+          <p></p>
+        </li>
+        <li class="tab3">
+          <p></p>
+        </li>
+        <li class="tab4">
+          <p></p>
+        </li>
+      </ul>
+  </div>
+</div>
+
+<div class="box3" style="background-image: url(images/cont1/dmp.jpg);">
+  <div class="nav">
+      <a href="javascript:;" class="a1 current"></a>
+      <a href="javascript:;" class="a2"></a>
+      <a href="javascript:;" class="a3"></a>
+  </div>
+  
+  <!--新八大门派-->
+  <div class="cont">
+      <div class="menu menu1">
+          <a href="javascript:;" class="a6 current" data-src="images/cont1/dmp.jpg">达摩派</a>
+          <a href="javascript:;" class="a8" data-src="images/cont1/wxj.jpg">五仙教</a>
+          <a href="javascript:;" class="a5" data-src="images/cont1/hsp.jpg">华山派</a>
+          <a href="javascript:;" class="a7" data-src="images/cont1/ssg.jpg">神水宫</a>
+          <a href="javascript:;" class="a1" data-src="images/cont1/cfbj.jpg">长风镖局</a>
+          <a href="javascript:;" class="a2" data-src="images/cont1/nlb.jpg">念萝坝</a>
+          <a href="javascript:;" class="a3" data-src="images/cont1/gmp.jpg">古墓派</a>
+          <a href="javascript:;" class="a4" data-src="images/cont1/xdm.jpg">血刀门</a>
+      </div>
+
+      <!--达摩派-->
+      <div class="mp-cont" style="display: block;">
+          门派阵营：正派<br>
+          门派定位：近战<br>
+          门派武器：徒手丨长棍<br>
+          武学特色：以武入禅丨至阳至刚<br>
+          门派武学：大慈大悲千叶手 | 伏魔棍法
+      </div>
+
+      <!--五仙教-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：邪<br>
+          门派定位：近战<br>
+          门派武器：徒手丨双环<br>
+          武学特色：千蛛万邪手丨蛊月仙环诀<br>
+          门派武学：灵蛊无双 | 运毒高手
+      </div>
+      
+      <!--华山派-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：正派<br>
+          门派定位：近战<br>
+          门派武器：单剑<br>
+          武学特色：剑势凌厉，来去如风<br>
+          门派武学：华山剑法丨狂风快剑<br>
+      </div>
+
+      <!--神水宫-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：中立<br>
+          门派定位：远程/近战<br>
+          门派武器：徒手/双刺<br>
+          武学特色：似水连绵，攻守兼备<br>
+          门派武学：逝水诀丨惊雪刺
+
+      </div>
+
+      <!--长风镖局-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：侠义<br>
+          门派定位：近战<br>
+          门派武器：枪<br>
+          武学特色：光明磊落，横扫千军<br>
+          门派武学：霸王枪法 | 岳家枪法
+
+      </div>
+
+      <!--念萝坝-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：邪派<br>
+          门派定位：远程/近战<br>
+          门派武器：空手/暗器/匕首<br>
+          武学特色：魅惑之中，暗藏杀机<br>
+          门派武学：天魔舞 | 胭脂血
+
+      </div>
+
+      <!--古墓派-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：侠义<br>
+          门派定位：远程/近战<br>
+          门派武器：剑<br>
+          武学特色：柔而不逊，美而不华<br>
+          门派武学：天心剑诀 | 玉女素心剑
+
+      </div>
+
+      <!--血刀门-->
+      <div class="mp-cont none" style="display: none;">
+          门派阵营：邪派<br>
+          门派定位：近战<br>
+          门派武器：刀<br>
+          武学特色：凶狠残暴、嗜血滔天<br>
+          门派武学：地域摄魂刀 | 血刀诀
+
+      </div>
+
+  </div>
+
+  <!--八大宗派-->
+  <div class="cont none">
+      
+      <div class="menu menu2">
+          <a href="javascript:;" class="a1 current" data-src="images/cont2/sl.jpg">少林</a>
+          <a href="javascript:;" class="a2" data-src="images/cont2/wd.jpg">武当</a>
+          <a href="javascript:;" class="a3" data-src="images/cont2/em.jpg">峨眉</a>
+          <a href="javascript:;" class="a4" data-src="images/cont2/gb.jpg">丐帮</a>
+          <a href="javascript:;" class="a5" data-src="images/cont2/jzt.jpg">君子堂</a>
+          <a href="javascript:;" class="a6" data-src="images/cont2/jyw.jpg">锦衣卫</a>
+          <a href="javascript:;" class="a7" data-src="images/cont2/tm.jpg">唐门</a>
+          <a href="javascript:;" class="a8" data-src="images/cont2/jlg.jpg">极乐谷</a>
+      </div>
+
+      <!--少林-->
+      <div class="mp-cont none">
+          门派阵营：正派<br>
+          门派定位：近战<br>
+          门派武器：拳脚/棍棒<br>
+          武学特色：群体晕眩<br>
+          门派武学：太祖长拳|达摩棍法|韦陀棍法
+
+      </div>
+      <!--武当-->
+      <div class="mp-cont">
+          门派阵营：正派<br>
+          门派定位：近战<br>
+          门派武器：拳/剑<br>
+          武学特色：持久群攻<br>
+          门派武学：两仪剑法 | 太极剑法 | 清风剑法
+
+      </div>
+
+      <!--峨眉-->
+      <div class="mp-cont none">
+          门派阵营：正派<br>
+          门派定位：近战/远程<br>
+          门派武器：掌指/匕首<br>
+          武学特色：群体疗伤<br>
+          门派武学：云霞刺|离别刺|金顶绵掌
+
+      </div>
+
+      <!--丐帮-->
+      <div class="mp-cont none">
+          门派阵营：正派<br>
+          门派定位：近战<br>
+          门派武器：拳脚/棍棒<br>
+          武学特色：群体伤害<br>
+          门派武学：灵蛇棒法|哭丧棒法|莲花掌法
+
+
+      </div>
+
+      <!--君子堂-->
+      <div class="mp-cont none">
+          门派阵营：中立<br>
+          门派定位：中程<br>
+          门派武器：双剑/乐器<br>
+          武学特色：音律攻击<br>
+          门派武学：逍遥腿法|无涯剑法|落英飞花
+
+      </div>
+
+      <!--锦衣卫-->
+      <div class="mp-cont none">
+          门派阵营：邪派<br>
+          门派定位：远程<br>
+          门派武器：刀剑/拳脚<br>
+          武学特色：阴险毒辣<br>
+          门派武学：失魂刀法|鹰爪拳|追魂爪
+
+      </div>
+
+      <!--唐门-->
+      <div class="mp-cont none">
+          门派阵营：中立<br>
+          门派定位：远程<br>
+          门派武器：飞镖/匕首<br>
+          武学特色：毒药暗器<br>
+          门派武学：迷魂镖|金蛇刺|分光捉影刺
+
+
+      </div>
+
+      <!--极乐谷-->
+      <div class="mp-cont none">
+          门派阵营：邪派<br>
+          门派定位：远程<br>
+          门派武器：刀剑/拳脚<br>
+          武学特色：阴险毒辣<br>
+          门派武学：追风刀法|天绝地灭刺|腐骨掌
+
+      </div>
+  </div>
+
+  <!--江湖门派-->
+  <div class="cont none">
+      <div class="menu menu2">
+          <a href="javascript:;" class="a1 current" data-src="images/cont3/xjz.jpg">徐家庄</a>
+          <a href="javascript:;" class="a2" data-src="images/cont3/wgm.jpg">无根门</a>
+          <a href="javascript:;" class="a3" data-src="images/cont3/thd.jpg">桃花岛</a>
+          <a href="javascript:;" class="a4" data-src="images/cont3/wssz.jpg">万兽山庄</a>
+          <a href="javascript:;" class="a5" data-src="images/cont3/jzsj.jpg">金针沈家</a>
+          <a href="javascript:;" class="a6" data-src="images/cont3/yhg.jpg">移花宫</a>
+      </div>
+
+      <!--徐家庄-->
+      <div class="mp-cont none">
+          门派阵营：侠义<br>
+          门派定位：近战<br>
+          门派武器：尺<br>
+          武学特色：刚猛势沉、坚不可摧<br>
+          门派武学：三清真气 | 乌墨尺法
+      </div>
+
+      <!--无根门-->
+      <div class="mp-cont">
+          门派阵营：邪派<br>
+          门派定位：远程/近战<br>
+          门派武器：剑<br>
+          武学特色：唯快不破<br>
+          门派武学：浑天宝鉴 | 辟邪剑谱 | 断魂阵
+      </div>
+
+      <!--桃花岛-->
+      <div class="mp-cont none">
+          门派阵营：邪派<br>
+          门派定位：远程/近战<br>
+          门派武器：玉箫、剑<br>
+          武学特色：音律攻击，身法飘忽<br>
+          门派武学：碧波心经 | 碧海潮声曲 | 九宫八卦阵
+      </div>
+
+      <!--万兽山庄-->
+      <div class="mp-cont none">
+          门派阵营：中立<br>
+          门派定位：近战<br>
+          门派武器：徒手<br>
+          武学特色：刚猛，行如猛兽<br>
+          门派武学：伏养气功 | 龙虎霸王拳
+      </div>
+
+      <!--金针沈家-->
+      <div class="mp-cont none">
+          门派阵营：中立<br>
+          门派定位：远程/疗伤<br>
+          门派武器：金针暗器<br>
+          武学特色：医治伤病，舍己救人<br>
+          门派武学：金关玉锁二十四诀 | 三阳玄针
+      </div>
+
+      <!--移花宫-->
+      <div class="mp-cont none">
+          门派阵营：中立<br>
+          门派定位：远程/近战<br>
+          门派武器：护指<br>
+          武学特色：借力打力<br>
+          门派武学：明玉神功 | 花神七式
+
+      </div>
+
+  </div>
+</div>
+<script type="text/javascript" src="http://static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+<script charset="UTF-8" src="http://static.woniu.com/script/widget/passport/passport-0.2.0.js"></script>
+<script charset="UTF-8" src="http://static.woniu.com/public/fastreg/fastreg-1.0.1.js"></script>
+<script charset="UTF-8" src="http://static.woniu.com/script??/cake/slide/slide-1.0.0-min.js,/cake/fade/fade-1.0.0-min.js,/cake/overlay/overlay-1.0.1-min.js,/swfobject/swfobject.js,/jwplayer/jwplayer-6.6.1.js"></script>
+<script charset="UTF-8" src="js/index.js"></script>
+</body>
+</html>

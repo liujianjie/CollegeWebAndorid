@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.yfbc.dao.SalaryDao">
+ 	<resultMap type="com.ht.yfbc.pojo.Salary" id="salarymap">
+ 		<id column="id" property="id"/>
+ 		<result column="userid" property="userid"/>
+ 		<result column="positionid" property="positionid" />
+ 		<result column="basesal" property="basesal" />
+ 		<result column="deduction_wage" property="deduction_wage" />
+ 		<result column="bonus" property="bonus" />
+ 		<result column="fine" property="fine" />
+ 		<result column="sfgz" property="sfgz" />
+ 		<result column="time" property="time" javaType="java.util.Date"/>
+ 		
+ 	</resultMap>
+ 	<insert id="addSalary" parameterType="salary">
+ 		insert into salary
+ 			(id,userid,positionid,basesal,deduction_wage,bonus,fine,sfgz,time)
+ 		values(sys_guid(),#{userid},#{positionid},#{basesal},#{deduction_wage},#{bonus},#{fine},#{sfgz},#{time})
+ 	</insert>
+ 	<select id="selSalaryListPage" parameterType="map" resultType="salary">
+  	select * from (  select a.*, rownum rn
+   					from (
+   					select * from salary sal 
+   					<where>
+   						<if test="time!=null and time!=''">
+   							and to_char(sal.time, 'yyyy-MM') = #{time} 
+   						</if>
+   					</where>
+   						) a where rownum &lt;= #{pageCount}*#{currPage}
+   				 )
+   	where rn &gt;= (#{pageCount}*(#{currPage}-1))+1
+  </select>
+  	<select id="selSalaryListByUserId" parameterType="String" resultType="salary">
+  		select * from salary where userid=#{userid} order by time
+  	</select>
+  	<select id="selSalaryList" parameterType="map" resultType="salary">
+  		select * from salary sal
+  		<where>
+  			<if test="time!=null and time!=''">
+  				and to_char(sal.time,'yyyy-MM')=#{time} 
+  			</if>
+  		</where>
+  	</select>
+  	<select id="selCount" parameterType="map" resultType="Integer">
+  		select count(1) from salary sal
+  		<where>
+			<if test="time!=null and time!=''">
+				and to_char(sal.time, 'yyyy-MM') = #{time} 
+			</if>
+		</where>
+  	</select>
+  	<update id="updateSalaryById" parameterType="basesalary" >
+  	</update>
+  	<delete id="deleteSalaryById" parameterType="String">
+  		delete from salary where id=#{id}
+  	</delete>
+  	<select id="isExist" parameterType="map" resultType="salary">
+  		select * from salary sal where userid=#{userid} and to_char(sal.time,'yyyy-MM')=#{time} 
+  	</select>
+  	<select id="selSfgzByMap" parameterType="map" resultType="java.lang.Double">
+  		select sum(sfgz) from salary sal where to_char(sal.time, 'yyyy-MM')=#{time}
+  	</select>
+</mapper>

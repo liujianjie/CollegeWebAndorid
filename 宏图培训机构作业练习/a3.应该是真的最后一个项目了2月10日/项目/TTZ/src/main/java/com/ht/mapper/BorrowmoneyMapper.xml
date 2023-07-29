@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.BorrowmoneyDao">
+	<resultMap type="Borrowmoney" id="BorrowmoneyMap">
+		<id column="b_id" property="b_id" />
+		<result column="b_money" property="b_money" />
+		<result column="manage_money" property="manage_money" />
+		<result column="paid_money" property="paid_money" />
+		<result column="should_money" property="should_money" />
+		<result column="repay_money" property="repay_money" />
+		<result column="collection_money" property="collection_money" />
+		<result column="principal_money" property="principal_money" />
+		<result column="fine_money" property="fine_money" />
+		<result column="tb_money" property="tb_money" />
+		<result column="rate" property="rate" />
+		<result column="tb_unreward" property="tb_unreward" />
+		<result column="tb_rewardtype" property="tb_rewardtype" />
+		<result column="tb_reward" property="tb_reward" />
+		<result column="repayment" property="repayment" />
+		<result column="tb_minmoney" property="tb_minmoney" />
+		<result column="yx_time" property="yx_time" />
+		<result column="borrowqx" property="borrowqx" />
+		<result column="tb_maxmoney" property="tb_maxmoney" />
+		<result column="borrow_yt" property="borrow_yt" />
+		<result column="borrow_bt" property="borrow_bt" />
+		<result column="borrow_sm" property="borrow_sm" />
+		<result column="borrow_time" property="borrow_time" />
+		<result column="borrow_type" property="borrow_type" />
+		<result column="mbsj" property="mbsj" />
+		<result column="realreplay_time" property="realreplay_time" />
+		<result column="statu" property="statu" />
+		<result column="sfdxb" property="sfdxb" />
+		<result column="b_password" property="b_password" />
+		<result column="tb_openmessage" property="tb_openmessage" />
+		<result column="succes_completion" property="succes_completion" />
+		<result column="borrow_fbtime" property="borrow_fbtime" />
+		<result column="repay_startime" property="repay_startime" />
+		<result column="repay_lasttime" property="repay_lasttime" />
+		<result column="dbw" property="dbw" />
+		<result column="release_time" property="release_time" />
+		<result column="dbx" property="dbx" />
+		<result column="tid" property="tid" />
+		<result column="tname" property="tname" />
+	</resultMap>
+
+	<resultMap type="Borrowmoney2" id="BorrowmoneyMap2">
+		<result column="syday" property="syday" />
+	</resultMap>
+
+	<select id="selBorrow" resultType="Borrowmoney" parameterType="String">
+		select * from Borrowmoney where tid=#{id} and statu !=0
+	</select>
+	<select id="selAllBorrow" resultType="Borrowmoney">
+		select b.*,(select tid from
+		ttzuser where userid=b.tid) ttz_tid from Borrowmoney b
+		where b.statu
+		in(0,1,2)
+		order by b.borrow_time desc
+	</select>
+	<select id="selBorrowByid" resultMap="BorrowmoneyMap"
+		parameterType="String">
+		select * from Borrowmoney where b_id=#{id}
+	</select>
+	<insert id="Insertborrow" parameterType="Borrowmoney">
+		<selectKey keyProperty="b_id" resultType="String" order="BEFORE">
+			select sys_guid() from dual
+		</selectKey>
+		insert into borrowmoney
+		values(#{b_id},#{b_money},#{manage_money},#{paid_money},#{should_money},#{repay_money},
+		#{collection_money},#{principal_money},#{fine_money},#{tb_money},
+		#{rate},#{tb_unreward},#{tb_rewardtype},#{tb_reward},#{repayment},#{tb_minmoney},#{yx_time},
+		#{borrowqx},#{tb_maxmoney},#{borrow_yt},#{borrow_bt},#{borrow_sm},#{borrow_time},#{borrow_type},
+		#{mbsj},#{realreplay_time},#{statu},#{sfdxb},#{b_password},#{tb_openmessage},#{succes_completion},#{borrow_fbtime},#{repay_startime},
+		#{repay_lasttime},#{dbw},#{release_time},#{dbx},#{tid},#{tname})
+	</insert>
+	<update id="updBorrowStatu" parameterType="map">
+		update Borrowmoney set
+		statu = #{statu},borrow_fbtime=sysdate where b_id=#{id}
+	</update>
+
+	<!-- index展示页 有剩余天数，前两条 标题，金额，利率，已筹金额 状态,贷款型号 剩余时间：当前时间-（还款时间+期限）， 条件：当前时间-（还款时间+期限）<=0 -->
+	<select id="selBorrowMoneySomeList" parameterType="map"
+		resultMap="BorrowmoneyMap2">
+		select rownum,
+		b.b_id,b.borrow_bt,b.b_money,b.borrowqx,b.rate,b.statu,b.tb_money,b.borrow_type
+		from Borrowmoney b WHERE
+		BORROWQX&gt;=#{ltyue} and
+		BORROWQX&lt;=#{gtyue}
+		and rownum&lt;=2
+		and statu=2
+		order by
+		b.borrowqx
+	</select>
+
+	<!-- id 借款标题，借款金额 利息 状态 期限还款方式，类型没有,一筹金额 list.jsp页面 -->
+	<select id="selMoreBorrowMoneySomeList" parameterType="map"
+		resultMap="BorrowmoneyMap">
+		select
+		b_id,borrow_bt,b_money,rate,statu,repayment,borrowqx,tb_money,borrow_type
+		from(select rownum r,s.* from Borrowmoney s where
+		rownum&lt;=(#{pageCount}*#{currPage}) and statu in(2,3,4) )where
+		r&gt;(#{currPage}-1)*#{pageCount}
+	</select>
+
+
+	<select id="selBorrowListsize" resultType="int">
+		select count(*) from
+		Borrowmoney where statu in(2,3,4)
+	</select>
+
+	<!-- 有条件查询 list.jsp页面 -->
+	<select id="selMoreBorrowMoneySomeListWhere" parameterType="map"
+		resultMap="BorrowmoneyMap">
+		select *
+		from(select rownum r,s.* from Borrowmoney s where
+		rownum&lt;=(#{pageCount}*#{currPage})
+		<if test="borrow_type!=null and borrow_type!=''">
+			and borrow_type = #{borrow_type}
+		</if>
+		<if test="borrowqx!=null and borrowqx!=''">
+			and borrowqx &gt;= #{borrowqx}
+			<if test="borrowqxg!=null and borrowqxg!=''">
+				and borrowqx &lt;= #{borrowqxg}
+			</if>
+		</if>
+		<if test="repayment!=null and repayment!=''">
+			and repayment = #{repayment}
+		</if>
+		<if test="ratel!=null and ratel!=''">
+			and rate &gt;= #{ratel}
+		</if>
+		<if test="rateg!=null and rateg!=''">
+			and rate &lt;= #{rateg}
+		</if>
+		and statu in(2,3,4)
+		)where
+		r&gt;(#{currPage}-1)*#{pageCount}
+	</select>
+	<!-- 有条件的大小 -->
+	<select id="selBorrowListWheresize" parameterType="map"
+		resultType="int">
+		select count(*) from
+		Borrowmoney where statu in(2,3,4)
+		<if test="borrow_type!=null and borrow_type!=''">
+			and borrow_type = #{borrow_type}
+		</if>
+		<if test="borrowqx!=null and borrowqx!=''">
+			and borrowqx &gt;= #{borrowqx}
+			<if test="borrowqxg!=null and borrowqxg!=''">
+				and borrowqx &lt;= #{borrowqxg}
+			</if>
+		</if>
+		<if test="repayment!=null and repayment!=''">
+			and repayment = #{repayment}
+		</if>
+		<if test="ratel!=null and ratel!=''">
+			and rate &gt;= #{ratel}
+		</if>
+		<if test="rateg!=null and rateg!=''">
+			and rate &lt;= #{rateg}
+		</if>
+	</select>
+
+	<!-- 还款期限：还款最终期限-当前时间，条件： 当前时间大于开始还款时间 和 最终还款时间 大于当前时间 round 会进十 -->
+	<select id="getBorrowMoney" resultMap="BorrowmoneyMap2"
+		parameterType="String">
+		select b.*,round((yx_time-sysdate
+		),0) syday
+		from
+		Borrowmoney b where b_id=#{id}
+	</select>
+
+
+	<!-- 调用存储过程 更改借款表投资总额 和投资 插入资金记录 和投资记录表数据 调用存储过程 -->
+	<insert id="goBorrowmoneyTZ" parameterType="map">
+		{call
+		pack_tz.to_tz(#{tzje},#{tzcard},${zffs},#{myid},#{p_b_id},#{sjbh})}
+	</insert>
+
+
+	<!-- 更改借款表 条件更改 -->
+	<update id="updateBorrowmoneyTJ" parameterType="map"></update>
+
+	<!-- 查询满标后的借款 -->
+	<select id="selBorrowMoneymb" resultMap="BorrowmoneyMap">
+		select * from
+		borrowmoney where statu in(3,4)
+	</select>
+
+	<!-- 根据借款id查找该笔借款的所有投资 -->
+	<select id="selectTenderRecordForT_ID" parameterType="String"
+		resultType="TenderRecord">
+		select t.*,(select zsname from ttzuser where
+		userid=t.tender_name) zsname from TenderRecord t where t.t_id=#{t_id}
+		and tender_statu!=6
+	</select>
+
+	<!-- 列表 -->
+	<select id="sel_borrow" resultMap="BorrowmoneyMap">
+		select * from borrowmoney
+	</select>
+
+	<!-- 还款 -->
+	<insert id="Tohuankuang" parameterType="map">
+		begin
+		<!-- 更改已还款总额 -->
+		update borrowmoney
+		set REPAY_MONEY=REPAY_MONEY+#{repay_money} where
+		b_id=#{b_id};
+		<!-- 将该笔还款记录改为已还款 实际还款日期 -->
+		update detailrepayment set repay_status='1' ,actual_repay_date=sysdate
+		where
+		repay_id=#{repay_id};
+		<!-- 扣除账户余额 -->
+		<!-- 余额支付 -->
+		<if test="zffs==1">
+			update ttzuser set money=money-#{repay_money} where
+			userid=#{userid};
+			insert into MONEYRECORD
+			values(sys_guid(),#{userid},'还款',#{repay_money},#{money}-#{repay_money},0,0,sysdate,'余额支付',#{sjbh});
+		</if>
+		<!-- 银行卡支付 -->
+		<if test="zffs==2">
+			update bankcard set BKMONEY=BKMONEY-#{repay_money} where
+			BKCARD=#{tzcard};
+			insert into MONEYRECORD
+			values(sys_guid(),#{userid},'还款',#{repay_money},#{tzcardye}-#{repay_money},0,0,sysdate,'银行卡支付',#{sjbh});
+		</if>
+		end;
+	</insert>
+	<!-- 还款 给投资人收益 -->
+	<insert id="TohuankuangSY" parameterType="map">
+		begin
+		update ttzuser set money=money-#{sy_money} where
+		userid=#{userid};
+		<!-- 插入资金记录表 -->
+		insert into MONEYRECORD
+		values(sys_guid(),#{userid},'投资收益',#{sy_money},0,0,0,sysdate,#{sy_xq},#{sjbh});
+		<!-- 插入消息 -->
+		insert into Forengmessage
+		values(sys_guid(),'您有一笔钱收益',#{sy_money},#{userid},sysdate,'1','1');
+		end;
+	</insert>
+
+	<!-- vip团发布 -->
+	<insert id="InsertVipborrow" parameterType="Borrowmoney">
+		insert into
+		borrowmoney
+		values(sys_guid(),#{b_money},0.00,0.00,0.00,0.00,
+		0.00,0.00,0.00,0.00,
+		#{rate},'','','','vip团',#{tb_minmoney},#{yx_time},
+		'',#{b_money},'vip团',#{borrow_bt},#{borrow_sm},sysdate,'vip团',
+		sysdate,sysdate,'11','0','123','1',0.00,sysdate,sysdate,
+		sysdate,'',sysdate,'','admin','admin')
+	</insert>
+
+	<!-- // 按类型查找借款(vip团) -->
+	<select id="selectBorrowMoneyVip" parameterType="map"
+		resultMap="BorrowmoneyMap2">
+		select b.*,round((b.yx_time-sysdate
+		),0) syday from borrowmoney b
+		<if test="statu=='全部vip团'">
+			where b.statu in(10,11)
+		</if>
+		<if test="statu=='已开团'">
+			where b.statu='10'
+		</if>
+	</select>
+
+	<!-- // 更改vip团的状态(10 开启 11结束) public int updateVipBorrowmoney(Map<String, 
+		Object> map); -->
+	<update id="updateVipBorrowmoney" parameterType="map">
+		update
+		borrowmoney set statu=#{statu} where b_id=#{b_id}
+	</update>
+
+	<!-- //查找发布中的散标 public List<Borrowmoney> selectBorrowMoneyOnStatu2(); -->
+	<select id="selectBorrowMoneyOnStatu2" resultType="Borrowmoney">
+		select * from
+		Borrowmoney where statu='2'
+	</select>
+
+	<!-- vip投资 -->
+	<insert id="goBorrowmoneyVipTZ" parameterType="map">
+		{call
+		pack_tz.to_viptz(#{tzje},#{myid},#{p_b_id})}
+	</insert>
+
+	<select id="selTongji" resultMap="BorrowmoneyMap">
+		select
+		to_char(b.borrow_time,'dd') times,sum(b.b_money) from BORROWMONEY b
+		where to_char(b.borrow_time,'yyyy/MM')=to_char(sysdate,'yyyy/MM')
+		group by to_char(b.borrow_time,'dd')
+		order by
+		to_char(b.borrow_time,'dd') asc
+	</select>
+
+	<!-- //发布债权转让信息 -->
+	<insert id="InsertZaiQuanborrow" parameterType="Borrowmoney">
+		insert into
+		borrowmoney
+		values(sys_guid(),#{b_money},0.00,0.00,0.00,0.00,
+		0.00,0.00,0.00,0.00,
+		#{rate},'','','','债权转让',#{tb_minmoney},#{yx_time},
+		'',#{b_money},'债权转让',#{borrow_bt},#{borrow_sm},sysdate,'债权转让',
+		sysdate,sysdate,'12','0','123','1',0.00,sysdate,sysdate,
+		sysdate,'',sysdate,#{dbx},#{tid},#{tname})
+	</insert>
+
+	<!-- 查找债权抵押的借款 -->
+	<select id="selectBorrowMoneyZaiQuanstatu12" resultMap="BorrowmoneyMap2">
+		select
+		b.*, round((b.yx_time-sysdate ),0) syday from Borrowmoney b where
+		statu='12'
+	</select>
+
+	<!-- 购买债权 -->
+	<insert id="goBorrowmoneyZaiquan" parameterType="map">
+		{call
+		pack_tz.to_GmZaiQuan(#{tzje},#{tzcard},${zffs},#{myid},#{p_b_id},#{sjbh},#{old_b_id})}
+	</insert>
+
+	<!-- 条件查询借贷信息 -->
+	<select id="sel_borrow_statu" resultMap="BorrowmoneyMap"
+		parameterType="map">
+		select * from Borrowmoney
+		<where>
+			<if test="statu!=null">
+				statu = #{statu}
+			</if>
+		</where>
+	</select>
+
+</mapper>

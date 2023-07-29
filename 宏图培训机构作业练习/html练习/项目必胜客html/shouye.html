@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+	</head>
+	 <!-- 载入 jquery 的 js 和 slider插件的js 注意顺序 -->
+	 <script src="js/jquery-1.11.1.min.js"></script>
+	 <script src="js/jquery.flexslider-min.js"></script>
+	<!--载入js完毕-->
+	<!-- 载入 slider插件的css  -->
+	  <link  rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+	  <link  rel="stylesheet" type="text/css" href="css/demo.css"/>
+	<!--载入css完毕-->
+	
+	<!-- 就是将  class=flexslider 的 div  包装成 图片轮播插件-->
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider();
+		});
+	</script>
+	<!-- 引入外部样式表  -->
+	<link rel="stylesheet" href="css/str.css" type="text/css">
+	<!--引入结束-->
+	<style>
+	 body{
+                width:100%;
+                height:100%;
+               
+            }
+	      .header_top ul{
+			list-style: none;
+			padding: 0px;
+			margin-left: 380px;
+			margin-top:-61px;
+			
+		}
+	    .header{
+		   	width: 100%;
+		   	height: 21px;
+		  	background-color: #260007;
+		   	color: #fff;
+		}
+	  .header_top{	
+	  		width: 100%;
+			height: 62px;
+			background-color: #E60013;
+			z-index: 999;
+			position: relative;
+			 }
+		 .left_menu{
+			
+				width: 150px;
+				float: left;
+				z-index: 998;
+				position: relative;
+				left:10px ;
+				font-size: 15px;
+				top: -3px;
+			}
+		#container{
+			height: 340px;
+			position: absolute;
+			left: 205px;
+			width: 100%;
+	   }
+		.flex-caption{
+			text-align: right;
+		}
+		.dingcan{
+			position: absolute;
+			right: 65px;
+			top: 83px;
+			width: 280px;
+			height: 335px;
+			z-index: 995;
+			background-color: #FFFCF3;
+			text-align: center;
+			font-size: 13px;
+			color: #7F7F7F;
+		}
+       .dingcan p{
+       	margin-top: 8px;
+       }
+       .text{
+			width: 203px;
+			height: 25px;
+			border-radius: 3px;
+			border:1px solid #C8C8C8;
+		}
+		#btn{
+			width: 165px;
+			height: 45px;
+			background-color: #E92833;
+			border-radius: 5px;
+			color: white;
+			font-size: 20px;
+			border: 0px;
+		}
+		
+		#footer{
+		
+		width: 100%;
+		height: 50px;
+		background-color: #F4F4F4;
+		position: absolute;
+		top: 870px;
+		border-top: 1px solid #E3E3E3;
+		z-index: 999;
+		}
+		#footer a{
+			color: #7F7F7F;
+			line-height: 42px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+			
+		}
+		#footer span{
+			color:#7F7F7F ;
+			font-size: 13px;
+			position: relative;
+			top: -20px;
+		}
+		#footer select{
+			color:#7F7F7F ;
+			border-top:2px solid #696969;
+			border-left:2px solid #696969;
+			position: relative;
+			top: -20px;
+			margin-left:25px;
+			border: 1px solid #7F7F7F;
+		}
+		#footer a:hover{
+			text-decoration: underline;
+		}
+		.sp{
+			margin-left: 25px;
+		}
+		.dian{
+			margin-left: -150px;
+		}
+		#center{
+			width:86.3%;
+			height: 450px;
+			position: absolute;
+			left: 120px;
+			top: 420px;
+			background-color: #FFFFFF;
+		}
+		#center1{
+			text-align: center;
+			color:#D8C28F ;
+			font-size: 15px;
+			height: 40px;
+			
+		}
+		#h1{
+			width:75px;
+			border-color:#D8C28F ;
+			position: relative;
+			top: 15px;
+			left: 80px;
+		}
+		#h2{
+			width:75px;
+			border-color:#E0D2B1 ;
+			position: relative;
+			top: -15px;
+			left: -80px;
+		}
+		#center2{
+			text-align: center;
+			height: 160px;
+			width: 93%;
+			margin: auto;
+		}
+		#spen1{
+			position: absolute;
+			left:-15px ;
+			top: 63px;
+			z-index: 9999;
+		}
+		#left{
+			width: 112px;
+		    height: 240px;
+		    background-color:#623E38;
+		    position: relative;
+	    	}
+		#div1{
+			height: 25px;
+			font-size: 8px;
+		}
+		#div1 a{
+			color: black;
+			text-decoration: none;
+		}
+		#div1 a:hover{
+			color: black;
+			text-decoration:underline;
+		}
+		#q{
+			background-color:#FFF6E6;
+			height: 27px;
+			font-size: 10px;
+			width:96.7%;
+			line-height: 27px;
+			margin-left:40px;
+			color: #C2AAB1;
+		}	
+	</style>
+	   <script type="text/javascript" src="js/christmassnow.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('body').christmassnow({
+                    snowflaketype: 23, // 1 to 25 types of flakes are available change the number from 1 to 25. each one contain different images.
+                    snowflakesize: 2, //snowflakesize is 1 then it get the size of the image as random , if the snowflakesize is 2 means size of the image as custom
+                    snowflakedirection: 1, // 1 means default no wind (top to bottom), 2 means random, 3 means left to right and 4 means  right to left
+                    snownumberofflakes: 4, // number of flakes is user option
+                    snowflakespeed: 10, // falling speed of flake 10 sec is default
+                    flakeheightandwidth: 15 // if you are mention that option flakesize is 2 then this flakeheightandwidth should work values are in pixels 16*16.
+                });
+            });
+        </script>
+        
+    </head>
+ 	<body>
+		<div class="drop">
+        </div>
+<div style="text-align:center;clear:both">
+</div>
+		<!--头部开始 -->
+		<div class="header"><marquee direction="left">欢迎网上订购</marquee></div>
+		<div class="header_top">
+				<a href="#"><img src="img/a9.png">
+		     <ul >
+				<li><a href="shouye.html" style="background-color:#FF7585;">首页</a></li>
+				<li><a href="kaishidingcan.html">开始订餐</a></li>
+				<li><a href="chaxundingcan.html">查询订餐</a></li>
+				<li><a href="shoujidingcan.html">手机订餐</a></li>
+			</ul>
+		</div>
+		<!--头部结束-->
+		<!--左侧菜单栏开始-->
+		<div class="left_menu">
+			<ul>
+				<li  ><a href="#" target="frame1" style="color:#EF7B01 ;background-color: #412026;">菜单</a></li>
+				<li><a href="dangjitexuan.html" target="frame1">当季特选</a></li>	
+				<li><a href="pisa.html" target="frame1">比萨</a></li>	
+				<li><a href="fanshi.html" target="frame1">饭食</a></li>	
+				<li><a href="yimian.html" target="frame1">意面</a></li>	
+				<li><a href="mixian.html" target="frame1">米线</a></li>	
+				<li><a href="xiaochi.html" target="frame1">小吃</a></li>
+				<li><a href="yinliao.html" target="frame1">饮料</a></li>
+				<li><a href="tang.html" target="frame1">汤</a></li>	
+				<li><a href="shalashuiguo.html" target="frame1">沙拉水果</a></li>
+				<li><a href="tiandian.html#aa" target="frame1">甜点</a></li>
+				<li><a href="#" target="frame1" style="color:#EF7B01 ;height:30px ;background-color: #412026;">优惠</a></li>
+				<li><a href="xianshigou.html" target="frame1" >12小时限购</a></li>
+				<li><a href="reyin.html" target="frame1" >热饮第二份半价</a></li>
+				<li><a href="chaojitaocan.html" target="frame1" >超值套餐</a></li>
+				<li><a href="gongzuoriwucan.html" target="frame1" >15元起午餐</a></li>
+				<li><a href="xiawucha.html" target="frame1" >优质下午茶</a></li>
+				<div id=left></div>
+			</ul>
+			</div>
+			<!--左侧导航栏结束-->
+	
+
+	   
+	   <!--轮播层开始-->
+	   <div id="container">
+		 <div class="flexslider">
+	     <ul class="slides">
+	    	<li>
+	    		<a href="#"><img src="img/Banner_1_2014_12_10_19_03_45.jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="dangjitexuan.html"><img src="img/Banner_1_2014_11_25_17_00_22.jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="chaojitaocan.html"><img src="img/Banner_1_2014_11_25_17_00_42 (1).jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="chaojitaocan.html"><img src="img/Banner_1_2014_11_25_17_01_01.jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="xiaochi.html"><img src="img/Banner_1_2014_11_25_17_01_27.jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="reyin.html"><img src="img/Banner_1_2014_12_06_10_53_39.jpg" /></a>
+	    	</li>
+	    	<li>
+	    		<a href="shoujidingcan.html"><img src="img/Banner_1_2014_11_25_17_02_31.jpg" /></a>
+	    	</li>
+	    </ul>
+	    </div>
+	 </div>
+	 <!--轮播层 结束-->
+	 <div class="dingcan">
+	 <form action="http://www.baidu.com">	
+	 <p>	
+	 <input  type="radio" name="sex" checked="checked" id=xz1>外送&nbsp;&nbsp;
+	 <input  type="radio" name="sex" id=xz2>自取
+	 </p>
+	 <p><input type="text" class="text" id="box" placeholder="请输入手机号码或邮箱" ></p>
+	 <p style="padding-left: 37px"><img id=xianshi src="img/2014-12-17_181440.png" style="display: none;" ></p>
+	 <p id="box1"><input  type="checkbox"  checked="checked" style="margin-left: -150px;" />记住我</p>
+	 <p style="padding-left: 37px"><img id=xianshi2 src="img/2014-12-18_104325.png" style="display: none;" ></p>
+	 <p><button id="btn">开始订餐</button></p>
+	 <p style="padding-left: 37px;text-align: left;line-height: 20px;font-size:10px;">友情提示：如果你曾使用我们的订餐服<br>务，请输入您上次使用的电子邮箱或手<br>机号码</p>
+	 </form>
+	 </div>
+	 <!--中心图片-->
+	 <div id="center">
+	 	<div id="center1">
+	 	<hr id=h1>超值特惠<hr id=h2>
+	 	<span id=spen1><img id=img1 src="img/IClass_type4.gif"></span>
+	    </div>
+	    <div id="center2">
+	 	   <a href="#"><img src="img/Banner_2_2014_11_25_17_03_27.jpg" ></a>
+	 	   <a href="#"><img src="img/Banner_2_2014_11_25_17_03_41.jpg" style="margin-left: 8px;" ></a>
+	 	   <a href="#"><img src="img/Banner_2_2014_11_25_17_04_24.jpg" style="margin-left: 8px;"></a>
+	    </div>
+	    <div id="center1">
+	 	<hr id=h1>新品推荐<hr id=h2>
+	    </div>
+	    <div id="center2">
+	    <div >	
+	 	<a href="#"><img src="img/20141201_29688.jpg" style="width: 13%;margin-top: 20px;"></a>
+	 	<a href="#"><img src="img/20141201_29386.jpg" style="width: 13%;margin-top: 20px;margin-left: 100px;" ></a>
+	 	<a href="#"><img src="img/20141103_28261.jpg" style="width: 13%;margin-top: 20px;margin-left: 100px;"></a>
+	 	<a href="#"><img src="img/20141103_28176.jpg" style="width: 13%;margin-top: 20px;margin-left: 100px;"></a>
+	 	</div>
+	 	<div id=div1>
+	 		<a href="#">皇冠芝心澳洲牛肉比萨</a>
+	 		<a href="#"style="margin-left: 110px;">新加坡特色娘惹鸡排焗饭</a>
+	 		<a href="#"style="margin-left: 110px;">港式上汤牛肉米线加蛋</a>
+	 		<a href="#"style="margin-left: 170px;">肉香满溢比萨</a>
+	 	</div>	
+	    </div>
+	    <div id=q>必胜宅急送实行专属菜单。不同城市的送餐菜单有所不同。不同时段产品品项及价格有所不同。工作日特惠午餐及下午茶产品只在部分时段供。</div>
+	 </div>
+	 <!--尾部开始-->
+	 <div id="footer" >
+		
+		<img src="img/a.png"text-align: center;line-height: 42px;margin-top: -48px;margin-right: -340px;">
+		<a href="falvtiaokuan.html">法律条款|</a>
+		<a href="yinsitiaokuan.html">隐私条款|</a>
+		<a href="lianxiwomen.html">联系我们|</a>
+		<a href="http://www.yumcareers.cn/">加入我们</a>
+		<span class="sp">版权所有百胜（中国）投资有限公司沪ICP备05051779号</span>
+		<select style="color:#7f7f7f" onfocus="this.options[0].selected = true;" onchange="javascript:window.open(this.options[this.selectedIndex].value);">
+			<option>欢迎访问百胜餐饮其他品牌</option>
+			<option value="http://www.yum.com.cn/">中国百胜</option>
+			<option value="http://www.kfc.com.cn/">中国肯德基</option>
+			<option value="http://www.pizzahut.com.cn/">中国必胜客</option>
+			<option value="http://www.4008823823.com.cn">肯德基宅急送</option>
+			<option value="http://www.dfjb.com.cn/">东方既白</option>
+		</select>
+	    </div>
+	</div>
+	
+
+	<!--尾部结束-->
+	<div id="daiyanbao_com_content" closerate="0" playrate="0" style="position: fixed;_position: absolute;text-align: left;overflow: visible;bottom :0;right:0;display:block; z-index:999;">
+<script src="//res.daiyanbao.com/freevideojs/304/1/13229773599.js"></script>
+</div>
+	<script>
+		var btn=document.getElementById("btn");
+		var box=document.getElementById("box");
+		var xz1=document.getElementById("xz1");
+		var xz2=document.getElementById("xz2");
+		var box1=document.getElementById("box1");
+		var xs=document.getElementById("xianshi");
+		var xs2=document.getElementById("xianshi2");
+		xz1.onclick=function(){
+				f1();
+		}
+		xz2.onclick=function(){
+				f2();
+		}
+		function f2(){
+					if(xz2.checked==true){
+					box.placeholder="请输入你手机号"
+					box1.removeChild(box1.firstChild);
+					box1.removeChild(box1.firstChild);
+					var ipt=document.createElement("input");
+					ipt.placeholder="请输入你的姓名";
+					ipt.className="text";
+					ipt.id="name";
+					ipt.name="aa";
+					box1.appendChild(ipt);
+					xs.style.display="none";
+					box.value="";
+					}
+		  var name=document.getElementById("name");
+		  name.onfocus=function(){
+		   	xs2.style.display="none";
+		   	}
+		  name.onblur=function(){
+		 	if(name.value.length==0)
+		 	  xs2.style.display="block";
+		   	else 
+		   	  xs2.style.display="none";	
+		   	
+		   	}	
+					
+				}
+			
+			
+			function f1(){
+					  box.placeholder="请输入手机号码或邮箱";
+					  var ipt=document.createElement("input");
+					  var span=document.createElement("span");
+					  box1.removeChild(box1.firstChild);
+					  span.innerHTML="记住我";
+					  ipt.type="checkbox";
+					  ipt.checked="checked";
+					  ipt.className="dian";
+					  ipt.id="name";
+					  ipt.name="name";
+			          box1.appendChild(ipt);
+					  box1.appendChild(span);
+					  xs.style.display="none";
+					  box.value="";
+					  xs2.style.display="none";
+					}
+			
+				
+			box.onfocus=function(){
+		   	xs.style.display="none";
+		   	}
+		   	var txt=document.getElementById("box").value;
+			
+			box.onblur=function(){
+			var txt=document.getElementById("box").value;
+			var rag=new RegExp("([a-z]|[A-Z]|[0-9])([a-z]|[A-Z]|[0-9]|[\._]){0,}@([a-z]|[A-Z]|[0-9]){1,}\.(com|net|cn|(com\.cn))","g");
+		    var rbg=new RegExp("((134[0-8])|(13[5-9][0-9])|(147[0-9])|(15[0-2][0-9])|(15[7-9][0-9]))([0-9]{7})","g");
+			var rcg=new RegExp("((13[0-2])|(15[5-6])|(18[5-6]))([0-9]{8})","g");
+			var rdg=new RegExp("((133)|(153)|(180)|(189))([0-9]{8})","g");
+		    if(txt.length==0){
+		   	xs.style.display="block";
+		   	return  false;
+		   }
+		   
+		   if(!rag.test(txt)&&!rbg.test(txt)&&!rcg.test(txt)&&!rdg.test(txt)){
+		   	 xs.style.display="block";
+		   	 return  false;
+			}
+		  }
+		  btn.onclick=function(){
+		  	var aa=document.getElementsByName("aa");
+		  	 if(box.value==""){
+		  	 	xs.style.display="block";
+		  	 	return  false;
+		  	 }else if(aa[0].value==""){
+		  	 	xs2.style.display="block";
+		  	 	return  false;
+		  	 }else{
+		  	 	document.forms[0].submit();
+		  	 }
+			} 
+			
+	</script>
+	</body>
+</html>

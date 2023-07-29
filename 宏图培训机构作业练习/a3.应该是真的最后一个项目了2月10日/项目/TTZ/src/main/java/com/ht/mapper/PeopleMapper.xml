@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ht.dao.PeopleDao">
+	<resultMap type="People" id="PeopleMap">
+		<id column="pid" property="pid" />
+		<result column="pname" property="pname" />
+		<result column="psex" property="psex" />
+		<result column="ptel" property="ptel" />
+		<result column="pcard" property="pcard" />
+		<result column="paddress" property="paddress" />
+	</resultMap>
+
+	<select id="selPeople" resultType="People" parameterType="map">
+		select
+		* from People where pname=#{pname} and pcard=#{pcard}
+	</select>
+
+	<select id="selectOnePeopleForIDcard" parameterType="String"
+		resultType="People">
+		select * from People where pcard=(select idcard from
+		ttzuser where userid=#{userid})
+	</select>
+
+</mapper>

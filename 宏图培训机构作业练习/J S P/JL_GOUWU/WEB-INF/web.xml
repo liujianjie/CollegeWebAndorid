@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+    <!-- 配置Filter -->
+	<filter>
+		<filter-name>filter</filter-name>
+		<filter-class>Filter.filterservlet</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+  	<servlet-name>mold</servlet-name>
+  	<servlet-class>servlet_houtai.MoldServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>mold</servlet-name>
+  	<url-pattern>/mold</url-pattern>
+  </servlet-mapping>
+  
+  	<servlet>
+  	<servlet-name>bottom</servlet-name>
+  	<servlet-class>servlet_houtai.BottomServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>bottom</servlet-name>
+  	<url-pattern>/bottom</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+  	<servlet-name>goods</servlet-name>
+  	<servlet-class>servlet_houtai.GoodsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>servlet_houtai.IndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JieShou</servlet-name>
+    <servlet-class>servlet_houtai.JieShou</servlet-class>
+  </servlet>
+
+
+  
+  <servlet-mapping>
+  	<servlet-name>goods</servlet-name>
+  	<url-pattern>/goods</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JieShou</servlet-name>
+    <url-pattern>/jieshou</url-pattern>
+  </servlet-mapping>
+</web-app>

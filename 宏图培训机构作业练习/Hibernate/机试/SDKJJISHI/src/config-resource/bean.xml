@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 注入datasource -->
+	<bean id="dsource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:orcl</value>
+		</property>
+		<property name="username">
+			<value>scott</value>
+		</property>
+		<property name="password">
+			<value>tiger</value>
+		</property>
+	</bean>
+	
+	<!-- 注入sessionfactory -->
+	<bean id="sessionfactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<!-- 数据源 -->
+		<property name="dataSource">
+			<ref local="dsource"/>
+		</property>
+		<!-- 映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>vomapping/student.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 配置数据库信息 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9iDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<!-- 注入service -->
+	<bean id="stuservice" class="serviceImp.StuImp">
+		<property name="sessionFactory">
+			<ref local="sessionfactory"/>
+		</property>
+	</bean>
+</beans>

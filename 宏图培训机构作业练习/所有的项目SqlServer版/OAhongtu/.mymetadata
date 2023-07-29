@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="OAhongtu"
+  id="myeclipse.1469147733036"
+  context-root="/OAhongtu"
+  j2ee-spec="1.4"
+  archive="OAhongtu.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
